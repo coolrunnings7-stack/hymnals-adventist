@@ -14,8 +14,10 @@
       "bundleIdentifier": "org.adventist.hymnals",
       "infoPlist": {
         "UIBackgroundModes": [
+          "audio",
           "audio"
-        ]
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
