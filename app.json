@@ -28,9 +28,9 @@
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
-    "plugins": [
-      "expo-av"
-    ],
+    
+      
+    
     "extra": {
       "eas": {
         "projectId": "171e33d9-16d6-40ca-84f7-2307bcd6d1af"
