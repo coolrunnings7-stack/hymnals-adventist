@@ -10,8 +10,8 @@
       "backgroundColor": "#1a3a5c"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "org.adventist.hymnals",
+      "supportsTablet": true,     
+ "bundleIdentifier": "com.therunningpreacher.hymnals",
       "infoPlist": {
         "UIBackgroundModes": [
           "audio",
