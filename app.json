@@ -27,7 +27,7 @@
   "foregroundImage": "./assets/images/adaptive-icon.png",
   "backgroundColor": "#11283e"
 },
-      "package": "org.adventist.hymnals",
+      "package": "package": "com.therunningpreacher.hymnals",
       "versionCode": 1,
       "permissions": [
         "android.permission.RECORD_AUDIO",
