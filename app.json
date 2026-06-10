@@ -4,11 +4,13 @@
     "slug": "hymnals-adventist",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "resizeMode": "contain",
-      "backgroundColor": "#1a3a5c"
-    },
+  "image": "./assets/images/splash.png",
+  "resizeMode": "contain",
+  "backgroundColor": "#11283e"
+},
     "ios": {
       "supportsTablet": true,     
  "bundleIdentifier": "com.therunningpreacher.hymnals",
@@ -21,6 +23,10 @@
       }
     },
     "android": {
+     "adaptiveIcon": {
+  "foregroundImage": "./assets/images/adaptive-icon.png",
+  "backgroundColor": "#11283e"
+},
       "package": "org.adventist.hymnals",
       "versionCode": 1,
       "permissions": [
