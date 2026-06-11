@@ -7,36 +7,26 @@
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-  "image": "./assets/images/splash.png",
-  "resizeMode": "contain",
-  "backgroundColor": "#11283e"
-},
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#11283e"
+    },
     "ios": {
-      "supportsTablet": true,     
- "bundleIdentifier": "com.therunningpreacher.hymnals",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.therunningpreacher.hymnals",
       "infoPlist": {
-        "UIBackgroundModes": [
-          "audio",
-          "audio"
-        ],
+        "UIBackgroundModes": ["audio"],
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-     "adaptiveIcon": {
-  "foregroundImage": "./assets/images/adaptive-icon.png",
-  "backgroundColor": "#11283e"
-},
-      "package": "package": "com.therunningpreacher.hymnals",
-      "versionCode": 1,
-      "permissions": [
-        "android.permission.RECORD_AUDIO",
-        "android.permission.MODIFY_AUDIO_SETTINGS"
-      ]
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#11283e"
+      },
+      "package": "com.therunningpreacher.hymnals",
+      "permissions": []
     },
-    
-      
-    
     "extra": {
       "eas": {
         "projectId": "171e33d9-16d6-40ca-84f7-2307bcd6d1af"
