@@ -1,293 +1,221 @@
-import { useState } from 'react';
+// Hymnals of the Adventist Movement — v1.0
+// Real SDAH 1985 data (695 hymns). Other editions marked "coming" until verified.
+import React, { useState, useMemo } from 'react';
 import {
-  View, Text, TextInput, FlatList, TouchableOpacity,
-  StyleSheet, SafeAreaView, StatusBar, ScrollView
+  SafeAreaView, View, Text, TextInput, FlatList, TouchableOpacity,
+  StyleSheet, StatusBar, ScrollView,
 } from 'react-native';
+import { SDAH1985, EDITIONS, sectionFor } from './hymns_data';
 
-const EDITIONS = [
-  { code: 'MILLENNIAL1849', label: 'Millennial Harp', year: 1849, count: 120, color: '#6b4226' },
-  { code: 'SDA1869', label: 'Hymns & Tunes', year: 1869, count: 308, color: '#4a5568' },
-  { code: 'CHRIST1908', label: 'Christ in Song', year: 1908, count: 900, color: '#744210' },
-  { code: 'CHURCH1941', label: 'Church Hymnal', year: 1941, count: 703, color: '#2d4a62' },
-  { code: 'SDA1985', label: 'SDA Hymnal', year: 1985, count: 695, color: '#1a3a5c' },
-];
-
-const HYMNS = [
-  { id: 1, num: 1, title: 'Praise to the Lord, the Almighty', line: 'Praise to the Lord, the Almighty, the King of creation', tags: ['praise', 'worship'], verses: 4, chorus: false },
-  { id: 2, num: 2, title: 'Holy, Holy, Holy', line: 'Holy, holy, holy! Lord God Almighty', tags: ['worship', 'Trinity'], verses: 4, chorus: false },
-  { id: 3, num: 3, title: 'A Mighty Fortress Is Our God', line: 'A mighty fortress is our God, a bulwark never failing', tags: ['faith', 'strength'], verses: 4, chorus: false },
-  { id: 4, num: 4, title: 'Great Is Thy Faithfulness', line: 'Great is Thy faithfulness, O God my Father', tags: ['faithfulness', 'morning'], verses: 3, chorus: true },
-  { id: 5, num: 5, title: 'How Great Thou Art', line: 'O Lord my God, when I in awesome wonder', tags: ['nature', 'praise'], verses: 4, chorus: true },
-  { id: 6, num: 6, title: 'Nearer, My God, to Thee', line: 'Nearer, my God, to Thee, nearer to Thee', tags: ['prayer', 'devotion'], verses: 5, chorus: false },
-  { id: 7, num: 7, title: 'What a Friend We Have in Jesus', line: 'What a friend we have in Jesus, all our sins and griefs to bear', tags: ['prayer', 'comfort'], verses: 3, chorus: false },
-  { id: 8, num: 8, title: 'Blessed Assurance', line: 'Blessed assurance, Jesus is mine', tags: ['assurance', 'joy'], verses: 3, chorus: true },
-  { id: 9, num: 9, title: 'Immortal, Invisible, God Only Wise', line: 'Immortal, invisible, God only wise', tags: ['worship', 'eternity'], verses: 4, chorus: false },
-  { id: 10, num: 10, title: 'The Lord Is My Shepherd', line: 'The Lord is my Shepherd; no want shall I know', tags: ['trust', 'peace'], verses: 4, chorus: false },
-  { id: 11, num: 11, title: 'Lead Me to Calvary', line: 'King of my life, I crown Thee now', tags: ['calvary', 'salvation'], verses: 4, chorus: true },
-  { id: 12, num: 12, title: 'Day by Day', line: 'Day by day and with each passing moment', tags: ['daily', 'trust'], verses: 3, chorus: false },
-];
-
+// ---- Public-domain lyrics starter set (all texts pre-1929, public domain) ----
+// Full lyric coverage for every public-domain hymn ships in updates.
 const LYRICS = {
-  1: [
-    { label: 'Verse 1', chorus: false, text: 'Praise to the Lord, the Almighty, the King of creation!\nO my soul, praise Him, for He is thy health and salvation!\nAll ye who hear,\nNow to His temple draw near;\nJoin me in glad adoration.' },
-    { label: 'Verse 2', chorus: false, text: 'Praise to the Lord, who over all things so wondrously reigneth,\nShielding thee under His wings, yea, so gently sustaineth!\nHast thou not seen\nHow all thou needest hath been\nGranted in what He ordaineth?' },
-    { label: 'Verse 3', chorus: false, text: 'Praise to the Lord, who doth prosper thy work and defend thee;\nSurely His goodness and mercy shall ever attend thee.\nPonder anew\nWhat the Almighty can do,\nWho with His love doth befriend thee.' },
-    { label: 'Verse 4', chorus: false, text: 'Praise to the Lord! O let all that is in me adore Him!\nAll that hath life and breath, come now with praises before Him!\nLet the Amen\nSound from His people again;\nGladly forever adore Him.' },
-  ],
-  4: [
-    { label: 'Verse 1', chorus: false, text: 'Great is Thy faithfulness, O God my Father,\nThere is no shadow of turning with Thee;\nThou changest not, Thy compassions they fail not;\nAs Thou hast been Thou forever wilt be.' },
-    { label: 'Chorus', chorus: true, text: 'Great is Thy faithfulness!\nGreat is Thy faithfulness!\nMorning by morning new mercies I see;\nAll I have needed Thy hand hath provided—\nGreat is Thy faithfulness, Lord, unto me!' },
-    { label: 'Verse 2', chorus: false, text: 'Summer and winter, and springtime and harvest,\nSun, moon, and stars in their courses above\nJoin with all nature in manifold witness\nTo Thy great faithfulness, mercy, and love.' },
-    { label: 'Verse 3', chorus: false, text: 'Pardon for sin and a peace that endureth,\nThine own dear presence to cheer and to guide;\nStrength for today and bright hope for tomorrow,\nBlessings all mine, with ten thousand beside!' },
-  ],
-  5: [
-    { label: 'Verse 1', chorus: false, text: 'O Lord my God, when I in awesome wonder\nConsider all the worlds Thy hands have made,\nI see the stars, I hear the rolling thunder,\nThy power throughout the universe displayed.' },
-    { label: 'Chorus', chorus: true, text: 'Then sings my soul, my Saviour God, to Thee:\nHow great Thou art, how great Thou art!\nThen sings my soul, my Saviour God, to Thee:\nHow great Thou art, how great Thou art!' },
-    { label: 'Verse 2', chorus: false, text: 'When through the woods and forest glades I wander\nAnd hear the birds sing sweetly in the trees,\nWhen I look down from lofty mountain grandeur\nAnd hear the brook and feel the gentle breeze.' },
-  ],
+  1: ["Praise to the Lord, the Almighty, the King of creation!\nO my soul, praise Him, for He is thy health and salvation!\nAll ye who hear, now to His temple draw near;\nJoin me in glad adoration!",
+      "Praise to the Lord, who o'er all things so wondrously reigneth,\nShelters thee under His wings, yea, so gently sustaineth!\nHast thou not seen how thy desires e'er have been\nGranted in what He ordaineth?"],
+  73: ["Holy, holy, holy, Lord God Almighty!\nEarly in the morning our song shall rise to Thee;\nHoly, holy, holy, merciful and mighty!\nGod in three persons, blessed Trinity!",
+       "Holy, holy, holy! all the saints adore Thee,\nCasting down their golden crowns around the glassy sea;\nCherubim and seraphim falling down before Thee,\nWhich wert, and art, and evermore shalt be."],
+  108: ["Amazing grace! how sweet the sound,\nThat saved a wretch like me!\nI once was lost, but now am found,\nWas blind, but now I see.",
+        "'Twas grace that taught my heart to fear,\nAnd grace my fears relieved;\nHow precious did that grace appear\nThe hour I first believed!"],
+  287: ["Softly and tenderly Jesus is calling,\nCalling for you and for me;\nSee, on the portals He's waiting and watching,\nWatching for you and for me.",
+        "Come home, come home,\nYe who are weary, come home;\nEarnestly, tenderly, Jesus is calling,\nCalling, O sinner, come home!"],
+  313: ["Just as I am, without one plea,\nBut that Thy blood was shed for me,\nAnd that Thou bidd'st me come to Thee,\nO Lamb of God, I come! I come!",
+        "Just as I am, and waiting not\nTo rid my soul of one dark blot,\nTo Thee whose blood can cleanse each spot,\nO Lamb of God, I come, I come!"],
+  318: ["Lord Jesus, I long to be perfectly whole;\nI want Thee forever to live in my soul;\nBreak down every idol, cast out every foe;\nNow wash me, and I shall be whiter than snow.",
+        "Whiter than snow, yes, whiter than snow;\nNow wash me, and I shall be whiter than snow."],
+  330: ["Take my life and let it be\nConsecrated, Lord, to Thee;\nTake my moments and my days,\nLet them flow in ceaseless praise.",
+        "Take my hands and let them move\nAt the impulse of Thy love;\nTake my feet and let them be\nSwift and beautiful for Thee."],
+  462: ["Blessed assurance, Jesus is mine!\nO what a foretaste of glory divine!\nHeir of salvation, purchase of God,\nBorn of His Spirit, washed in His blood.",
+        "This is my story, this is my song,\nPraising my Savior all the day long;\nThis is my story, this is my song,\nPraising my Savior all the day long."],
+  499: ["What a friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!",
+        "O what peace we often forfeit,\nO what needless pain we bear,\nAll because we do not carry\nEverything to God in prayer!"],
+  530: ["When peace, like a river, attendeth my way,\nWhen sorrows like sea billows roll;\nWhatever my lot, Thou hast taught me to say,\nIt is well, it is well with my soul.",
+        "It is well with my soul,\nIt is well, it is well with my soul."],
+  590: ["When we walk with the Lord\nIn the light of His word,\nWhat a glory He sheds on our way!\nWhile we do His good will,\nHe abides with us still,\nAnd with all who will trust and obey.",
+        "Trust and obey, for there's no other way\nTo be happy in Jesus, but to trust and obey."],
+  633: ["Sing the wondrous love of Jesus,\nSing His mercy and His grace;\nIn the mansions bright and blessed\nHe'll prepare for us a place.",
+        "When we all get to heaven,\nWhat a day of rejoicing that will be!\nWhen we all see Jesus,\nWe'll sing and shout the victory!"],
 };
 
+const NAVY = '#11283e';
+const NAVY_LIGHT = '#1b3a58';
+const GOLD = '#d4a84e';
+const CREAM = '#f6f2e8';
+
 export default function App() {
-  const [selectedEdition, setSelectedEdition] = useState('SDA1985');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [favorites, setFavorites] = useState(new Set());
-  const [currentHymn, setCurrentHymn] = useState(null);
-  const [activeTab, setActiveTab] = useState('lyrics');
+  const [edition, setEdition] = useState('SDAH1985');
+  const [query, setQuery] = useState('');
+  const [favorites, setFavorites] = useState({});
+  const [selected, setSelected] = useState(null);
+  const [tab, setTab] = useState('all'); // all | favorites
 
-  const filteredHymns = HYMNS.filter(h => {
-    if (!searchQuery) return true;
-    const q = searchQuery.toLowerCase();
-    return h.title.toLowerCase().includes(q) ||
-      h.line.toLowerCase().includes(q) ||
-      h.tags.some(t => t.includes(q));
-  });
+  const activeEdition = EDITIONS.find(e => e.id === edition);
 
-  const toggleFavorite = (id) => {
-    setFavorites(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id); else next.add(id);
-      return next;
-    });
-  };
+  const data = useMemo(() => {
+    if (edition !== 'SDAH1985') return [];
+    let list = SDAH1985;
+    if (tab === 'favorites') list = list.filter(h => favorites[h.n]);
+    const q = query.trim().toLowerCase();
+    if (!q) return list;
+    if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
+    return list.filter(h => h.t.toLowerCase().includes(q));
+  }, [edition, query, favorites, tab]);
 
-  if (currentHymn) {
+  const toggleFav = (n) =>
+    setFavorites(f => ({ ...f, [n]: !f[n] }));
+
+  // ---------- Detail view ----------
+  if (selected) {
+    const lyr = LYRICS[selected.n];
     return (
-      <DetailScreen
-        hymn={currentHymn}
-        favorites={favorites}
-        toggleFavorite={toggleFavorite}
-        onBack={() => { setCurrentHymn(null); setActiveTab('lyrics'); }}
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-      />
+      <SafeAreaView style={s.root}>
+        <StatusBar barStyle="light-content" />
+        <View style={s.header}>
+          <TouchableOpacity onPress={() => setSelected(null)}>
+            <Text style={s.back}>‹ Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleFav(selected.n)}>
+            <Text style={s.fav}>{favorites[selected.n] ? '♥' : '♡'}</Text>
+          </TouchableOpacity>
+        </View>
+        <ScrollView contentContainerStyle={s.detail}>
+          <Text style={s.detailNum}>No. {selected.n}</Text>
+          <Text style={s.detailTitle}>{selected.t}</Text>
+          <Text style={s.detailSection}>{sectionFor(selected.n)}</Text>
+          <Text style={s.detailEdition}>The Seventh-day Adventist Hymnal (1985)</Text>
+          <View style={s.rule} />
+          {lyr ? (
+            lyr.map((v, i) => (
+              <Text key={i} style={s.verse}>{v}</Text>
+            ))
+          ) : (
+            <View style={s.comingBox}>
+              <Text style={s.comingTitle}>Full lyrics coming soon</Text>
+              <Text style={s.comingText}>
+                We're adding complete, carefully verified lyrics for every
+                public-domain hymn in free updates — starting with the most
+                loved hymns. Thank you for your patience and support!
+              </Text>
+            </View>
+          )}
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 
-  const currentEdition = EDITIONS.find(e => e.code === selectedEdition);
-
+  // ---------- List / coming soon ----------
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#1a3a5c" />
-      <View style={styles.header}>
-        <View style={styles.headerTop}>
-          <View>
-            <Text style={styles.headerTitle}>Hymnals of the</Text>
-            <Text style={styles.headerSubtitle}>Adventist Movement</Text>
-          </View>
-        </View>
-        <View style={styles.searchBar}>
-          <Text style={styles.searchIcon}>🔍</Text>
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Search title, first line, topic..."
-            placeholderTextColor="rgba(255,255,255,0.5)"
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-          />
-        </View>
-      </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}
-        style={styles.editionBar} contentContainerStyle={styles.editionList}>
-        {EDITIONS.map(e => {
-          const isActive = e.code === selectedEdition;
-          return (
-            <TouchableOpacity key={e.code} onPress={() => setSelectedEdition(e.code)}
-              style={[styles.pill, { backgroundColor: isActive ? e.color : '#f0ede4', borderColor: isActive ? e.color : '#d8d0c0' }]}>
-              <Text style={[styles.pillYear, { color: isActive ? 'rgba(255,255,255,0.7)' : '#9a9a9a' }]}>{e.year}</Text>
-              <Text style={[styles.pillTitle, { color: isActive ? '#fff' : '#3a3a3a' }]}>{e.label}</Text>
-              <Text style={[styles.pillCount, { color: isActive ? 'rgba(255,255,255,0.6)' : '#9a9a9a' }]}>{e.count} hymns</Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
-      <View style={styles.infoBar}>
-        <Text style={styles.infoText}>
-          {searchQuery ? `${filteredHymns.length} results for "${searchQuery}"` : `${currentEdition?.title} · ${currentEdition?.year} · ${currentEdition?.count} hymns`}
-        </Text>
-      </View>
-      <FlatList
-        data={filteredHymns}
-        keyExtractor={item => String(item.id)}
-        contentContainerStyle={{ paddingBottom: 20 }}
-        ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#ede8de', marginLeft: 62 }} />}
-        renderItem={({ item }) => (
-          <TouchableOpacity style={styles.hymnRow} onPress={() => setCurrentHymn(item)} activeOpacity={0.7}>
-            <View style={styles.hymnNum}>
-              <Text style={styles.hymnNumText}>{item.num}</Text>
-            </View>
-            <View style={styles.hymnInfo}>
-              <Text style={styles.hymnTitle} numberOfLines={1}>{item.title}</Text>
-              <Text style={styles.hymnLine} numberOfLines={1}>{item.line}</Text>
-              <View style={styles.tagRow}>
-                {item.tags.slice(0, 2).map(tag => (
-                  <View key={tag} style={styles.tag}><Text style={styles.tagText}>{tag}</Text></View>
-                ))}
-                <Text style={styles.verseCount}>{item.verses}v{item.chorus ? ' + chorus' : ''}</Text>
-              </View>
-            </View>
-            <View style={styles.hymnActions}>
-              <TouchableOpacity onPress={() => toggleFavorite(item.id)}>
-                <Text style={{ fontSize: 20, color: favorites.has(item.id) ? '#c8922a' : '#ccc' }}>
-                  {favorites.has(item.id) ? '❤️' : '🤍'}
-                </Text>
-              </TouchableOpacity>
-              <Text style={{ fontSize: 16, color: '#ccc', marginTop: 6 }}>›</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-    </SafeAreaView>
-  );
-}
+    <SafeAreaView style={s.root}>
+      <StatusBar barStyle="light-content" />
+      <Text style={s.appTitle}>Hymnals of the Adventist Movement</Text>
 
-function DetailScreen({ hymn, favorites, toggleFavorite, onBack, activeTab, setActiveTab }) {
-  const lyrics = LYRICS[hymn.id] || [{ label: 'Verse 1', chorus: false, text: hymn.line + '...' }];
-  const isFav = favorites.has(hymn.id);
-  return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#1a3a5c" />
-      <View style={styles.header}>
-        <View style={styles.headerTop}>
-          <TouchableOpacity onPress={onBack} style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ fontSize: 20, color: '#fff', marginRight: 6 }}>‹</Text>
-            <Text style={{ fontSize: 15, color: '#fff' }}>Back</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => toggleFavorite(hymn.id)}>
-            <Text style={{ fontSize: 22 }}>{isFav ? '❤️' : '🤍'}</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.headerTitle}>{hymn.title}</Text>
-        <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>{hymn.line}</Text>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 7 }}>
-          {hymn.tags.map(tag => (
-            <View key={tag} style={{ backgroundColor: 'rgba(255,255,255,0.15)', borderRadius: 4, paddingHorizontal: 8, paddingVertical: 2 }}>
-              <Text style={{ fontSize: 11, color: 'rgba(255,255,255,0.9)' }}>{tag}</Text>
-            </View>
-          ))}
-        </View>
-      </View>
-      <View style={styles.tabBar}>
-        {[{ key: 'lyrics', label: '📄 Lyrics' }, { key: 'music', label: '🎵 Music' }, { key: 'index', label: '🔀 Editions' }].map(tab => (
-          <TouchableOpacity key={tab.key} onPress={() => setActiveTab(tab.key)}
-            style={[styles.tab, activeTab === tab.key && styles.tabActive]}>
-            <Text style={[styles.tabText, activeTab === tab.key && styles.tabTextActive]}>{tab.label}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-      <ScrollView contentContainerStyle={{ padding: 16, paddingBottom: 40 }}>
-        {activeTab === 'lyrics' && lyrics.map((verse, idx) => (
-          <View key={idx} style={verse.chorus ? styles.chorusBlock : styles.verseBlock}>
-            <Text style={verse.chorus ? styles.chorusLabel : styles.verseLabel}>{verse.label}</Text>
-            <Text style={styles.verseText}>{verse.text}</Text>
-          </View>
-        ))}
-        {activeTab === 'music' && (
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Audio Playback</Text>
-            <View style={{ flexDirection: 'row', gap: 8, marginBottom: 16 }}>
-              {['Organ', 'Piano', 'A cappella'].map(inst => (
-                <TouchableOpacity key={inst} style={styles.instrumentBtn}>
-                  <Text style={styles.instrumentText}>{inst}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
-              <Text style={{ fontSize: 28, color: '#9a9a9a' }}>⏮</Text>
-              <View style={styles.playButton}><Text style={{ fontSize: 28, color: '#fff' }}>▶</Text></View>
-              <Text style={{ fontSize: 28, color: '#9a9a9a' }}>⏭</Text>
-            </View>
-          </View>
-        )}
-        {activeTab === 'index' && (
-          <View>
-            <Text style={{ fontSize: 13, color: '#7a7060', marginBottom: 12 }}>
-              This hymn appears across multiple SDA hymnal editions.
+      {/* Edition pills */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.pillRow}>
+        {EDITIONS.map(e => (
+          <TouchableOpacity
+            key={e.id}
+            style={[s.pill, edition === e.id && s.pillActive]}
+            onPress={() => setEdition(e.id)}>
+            <Text style={[s.pillText, edition === e.id && s.pillTextActive]}>
+              {e.name} {e.year ? `(${e.year})` : ''}
             </Text>
-            {[{ year: 1941, edition: 'The Church Hymnal', num: 9, color: '#2d4a62' },
-              { year: 1985, edition: 'SDA Hymnal', num: hymn.num, color: '#1a3a5c' }].map((entry, idx) => (
-              <View key={idx} style={styles.indexRow}>
-                <View style={[styles.indexYear, { backgroundColor: entry.color }]}>
-                  <Text style={styles.indexYearText}>{entry.year}</Text>
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.indexEdition}>{entry.edition}</Text>
-                  <Text style={styles.indexNum}>Hymn #{entry.num}</Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        )}
+          </TouchableOpacity>
+        ))}
       </ScrollView>
+
+      {activeEdition.status === 'coming' ? (
+        <View style={s.comingScreen}>
+          <Text style={s.comingBig}>♪</Text>
+          <Text style={s.comingTitle}>{activeEdition.name} ({activeEdition.year})</Text>
+          <Text style={s.comingText}>
+            The complete, verified index of this historic hymnal is being
+            prepared and will arrive in a free update. We refuse to show
+            inaccurate hymn lists — every number will be right.
+          </Text>
+        </View>
+      ) : (
+        <>
+          <TextInput
+            style={s.search}
+            placeholder="Search by number or title…"
+            placeholderTextColor="#7e93a8"
+            value={query}
+            onChangeText={setQuery}
+          />
+          <View style={s.tabRow}>
+            <TouchableOpacity onPress={() => setTab('all')}>
+              <Text style={[s.tab, tab === 'all' && s.tabActive]}>All 695 Hymns</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setTab('favorites')}>
+              <Text style={[s.tab, tab === 'favorites' && s.tabActive]}>♥ Favorites</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={data}
+            keyExtractor={h => String(h.n)}
+            initialNumToRender={25}
+            renderItem={({ item, index }) => {
+              const sec = sectionFor(item.n);
+              const prevSec = index > 0 ? sectionFor(data[index - 1].n) : null;
+              return (
+                <View>
+                  {sec !== prevSec && !query && tab === 'all' && (
+                    <Text style={s.sectionHeader}>{sec}</Text>
+                  )}
+                  <TouchableOpacity style={s.row} onPress={() => setSelected(item)}>
+                    <Text style={s.rowNum}>{item.n}</Text>
+                    <Text style={s.rowTitle} numberOfLines={1}>{item.t}</Text>
+                    <TouchableOpacity onPress={() => toggleFav(item.n)}>
+                      <Text style={s.rowFav}>{favorites[item.n] ? '♥' : '♡'}</Text>
+                    </TouchableOpacity>
+                  </TouchableOpacity>
+                </View>
+              );
+            }}
+            ListEmptyComponent={
+              <Text style={s.empty}>
+                {tab === 'favorites'
+                  ? 'No favorites yet — tap ♡ on any hymn.'
+                  : 'No hymns match your search.'}
+              </Text>
+            }
+          />
+        </>
+      )}
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f8f6f0' },
-  header: { backgroundColor: '#1a3a5c', padding: 16, paddingTop: 12 },
-  headerTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
-  headerTitle: { fontSize: 20, fontWeight: '700', color: '#fff' },
-  headerSubtitle: { fontSize: 13, fontWeight: '500', color: '#e8b04a' },
-  searchBar: { backgroundColor: 'rgba(255,255,255,0.13)', borderRadius: 10, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 8, gap: 8 },
-  searchIcon: { fontSize: 16 },
-  searchInput: { flex: 1, fontSize: 14, color: '#fff' },
-  editionBar: { backgroundColor: '#fff', borderBottomWidth: 0.5, borderBottomColor: '#e8e0d0', maxHeight: 80 },
-  editionList: { paddingHorizontal: 12, paddingVertical: 8, gap: 8 },
-  pill: { borderRadius: 8, borderWidth: 0.5, paddingHorizontal: 10, paddingVertical: 6, marginRight: 6, minWidth: 80, alignItems: 'center' },
-  pillYear: { fontSize: 10 },
-  pillTitle: { fontSize: 12, fontWeight: '500' },
-  pillCount: { fontSize: 10 },
-  infoBar: { backgroundColor: '#f0ede4', paddingHorizontal: 14, paddingVertical: 6, borderBottomWidth: 0.5, borderBottomColor: '#e8e0d0' },
-  infoText: { fontSize: 11, color: '#7a7060' },
-  hymnRow: { flexDirection: 'row', alignItems: 'center', padding: 12, paddingHorizontal: 14, backgroundColor: '#fff' },
-  hymnNum: { width: 36, height: 36, borderRadius: 6, backgroundColor: '#f0ede4', alignItems: 'center', justifyContent: 'center', marginRight: 10 },
-  hymnNumText: { fontSize: 12, fontWeight: '500', color: '#7a7060' },
-  hymnInfo: { flex: 1, marginRight: 8 },
-  hymnTitle: { fontSize: 15, fontWeight: '500', color: '#1a1a1a', marginBottom: 2 },
-  hymnLine: { fontSize: 12, color: '#7a7060', marginBottom: 4 },
-  tagRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  tag: { backgroundColor: '#f0ede4', borderRadius: 3, paddingHorizontal: 5, paddingVertical: 1 },
-  tagText: { fontSize: 10, color: '#7a7060' },
-  verseCount: { fontSize: 10, color: '#9a9a9a', marginLeft: 3 },
-  hymnActions: { alignItems: 'center', gap: 4 },
-  tabBar: { flexDirection: 'row', backgroundColor: '#fff', borderBottomWidth: 0.5, borderBottomColor: '#e8e0d0' },
-  tab: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 10, borderBottomWidth: 2, borderBottomColor: 'transparent' },
-  tabActive: { borderBottomColor: '#1a3a5c' },
-  tabText: { fontSize: 12, color: '#7a7060' },
-  tabTextActive: { color: '#1a3a5c', fontWeight: '500' },
-  verseBlock: { backgroundColor: '#fff', borderRadius: 10, borderWidth: 0.5, borderColor: '#e8e0d0', padding: 14, marginBottom: 10 },
-  chorusBlock: { backgroundColor: '#fdf6eb', borderLeftWidth: 3, borderLeftColor: '#c8922a', borderRadius: 10, padding: 14, marginBottom: 10 },
-  verseLabel: { fontSize: 10, fontWeight: '700', color: '#1a3a5c', textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 6 },
-  chorusLabel: { fontSize: 10, fontWeight: '700', color: '#c8922a', textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 6 },
-  verseText: { fontSize: 16, lineHeight: 28, color: '#1a1a1a' },
-  card: { backgroundColor: '#fff', borderRadius: 12, borderWidth: 0.5, borderColor: '#e8e0d0', padding: 16, marginBottom: 14 },
-  cardTitle: { fontSize: 15, fontWeight: '500', color: '#1a1a1a', marginBottom: 12 },
-  instrumentBtn: { flex: 1, borderWidth: 0.5, borderColor: '#e8e0d0', borderRadius: 7, paddingVertical: 7, alignItems: 'center' },
-  instrumentText: { fontSize: 12, color: '#3a3a3a' },
-  playButton: { width: 56, height: 56, borderRadius: 28, backgroundColor: '#1a3a5c', alignItems: 'center', justifyContent: 'center' },
-  indexRow: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fff', borderRadius: 10, borderWidth: 0.5, borderColor: '#e8e0d0', padding: 12, marginBottom: 8, gap: 12 },
-  indexYear: { width: 50, height: 50, borderRadius: 7, alignItems: 'center', justifyContent: 'center' },
-  indexYearText: { fontSize: 13, fontWeight: '700', color: '#fff' },
-  indexEdition: { fontSize: 14, fontWeight: '500', color: '#1a1a1a' },
-  indexNum: { fontSize: 12, color: '#7a7060', marginTop: 2 },
+const s = StyleSheet.create({
+  root: { flex: 1, backgroundColor: NAVY },
+  appTitle: { color: GOLD, fontSize: 19, fontWeight: '700', textAlign: 'center', marginVertical: 12 },
+  pillRow: { flexGrow: 0, paddingHorizontal: 10, marginBottom: 8 },
+  pill: { backgroundColor: NAVY_LIGHT, paddingHorizontal: 14, paddingVertical: 8, borderRadius: 18, marginRight: 8, borderWidth: 1, borderColor: '#2c4a68' },
+  pillActive: { backgroundColor: GOLD, borderColor: GOLD },
+  pillText: { color: '#b8c7d6', fontSize: 13 },
+  pillTextActive: { color: NAVY, fontWeight: '700' },
+  search: { backgroundColor: NAVY_LIGHT, color: CREAM, marginHorizontal: 14, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10, fontSize: 15, marginBottom: 6 },
+  tabRow: { flexDirection: 'row', justifyContent: 'center', gap: 24, marginBottom: 6 },
+  tab: { color: '#7e93a8', fontSize: 14, paddingVertical: 4 },
+  tabActive: { color: GOLD, fontWeight: '700' },
+  sectionHeader: { color: GOLD, fontSize: 13, fontWeight: '700', paddingHorizontal: 16, paddingTop: 14, paddingBottom: 4, textTransform: 'uppercase', letterSpacing: 0.5 },
+  row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 11, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#23415e' },
+  rowNum: { color: GOLD, width: 44, fontSize: 15, fontWeight: '700' },
+  rowTitle: { color: CREAM, flex: 1, fontSize: 15 },
+  rowFav: { color: GOLD, fontSize: 18, paddingLeft: 10 },
+  empty: { color: '#7e93a8', textAlign: 'center', marginTop: 40, paddingHorizontal: 30 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingVertical: 10 },
+  back: { color: GOLD, fontSize: 17 },
+  fav: { color: GOLD, fontSize: 22 },
+  detail: { paddingHorizontal: 22, paddingBottom: 40 },
+  detailNum: { color: GOLD, fontSize: 15, fontWeight: '700', marginTop: 6 },
+  detailTitle: { color: CREAM, fontSize: 24, fontWeight: '700', marginTop: 4 },
+  detailSection: { color: '#9fb3c6', fontSize: 14, marginTop: 6, fontStyle: 'italic' },
+  detailEdition: { color: '#7e93a8', fontSize: 12, marginTop: 2 },
+  rule: { height: 2, backgroundColor: GOLD, opacity: 0.6, marginVertical: 16, width: 90 },
+  verse: { color: CREAM, fontSize: 16, lineHeight: 25, marginBottom: 18 },
+  comingScreen: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 36 },
+  comingBig: { color: GOLD, fontSize: 52, marginBottom: 10 },
+  comingBox: { backgroundColor: NAVY_LIGHT, borderRadius: 12, padding: 18, marginTop: 6 },
+  comingTitle: { color: GOLD, fontSize: 17, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
+  comingText: { color: '#c4d2de', fontSize: 14, lineHeight: 21, textAlign: 'center' },
 });
