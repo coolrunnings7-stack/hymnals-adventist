@@ -12,12 +12,12 @@
       "distribution": "internal"
     },
     "production": {
-     "autoIncrement": true,
-     "ios": {
+      "autoIncrement": true,
+      "ios": {
         "image": "latest"
       },
       "android": {
-        "buildType": "app-bundlek"
+        "buildType": "app-bundle"
       }
     }
   },
