@@ -1,14 +1,15 @@
-// Hymnals of the Adventist Movement — v1.0
-// Real SDAH 1985 data (695 hymns). Other editions marked "coming" until verified.
-import React, { useState, useMemo } from 'react';
+// Hymnals of the Adventist Movement — v1.0.1
+// Changes: persistent favorites (AsyncStorage) + audio playback foundation
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
   SafeAreaView, View, Text, TextInput, FlatList, TouchableOpacity,
   StyleSheet, StatusBar, ScrollView,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Audio } from 'expo-av';
 import { SDAH1985, EDITIONS, sectionFor } from './hymns_data';
+import { AUDIO } from './audio_manifest';
 
-// ---- Public-domain lyrics starter set (all texts pre-1929, public domain) ----
-// Full lyric coverage for every public-domain hymn ships in updates.
 const LYRICS = {
   1: ["Praise to the Lord, the Almighty, the King of creation!\nO my soul, praise Him, for He is thy health and salvation!\nAll ye who hear, now to His temple draw near;\nJoin me in glad adoration!",
       "Praise to the Lord, who o'er all things so wondrously reigneth,\nShelters thee under His wings, yea, so gently sustaineth!\nHast thou not seen how thy desires e'er have been\nGranted in what He ordaineth?"],
@@ -40,13 +41,63 @@ const NAVY = '#11283e';
 const NAVY_LIGHT = '#1b3a58';
 const GOLD = '#d4a84e';
 const CREAM = '#f6f2e8';
+const FAV_KEY = 'hymnals_favorites_v1';
 
 export default function App() {
   const [edition, setEdition] = useState('SDAH1985');
   const [query, setQuery] = useState('');
   const [favorites, setFavorites] = useState({});
+  const [favsLoaded, setFavsLoaded] = useState(false);
   const [selected, setSelected] = useState(null);
-  const [tab, setTab] = useState('all'); // all | favorites
+  const [tab, setTab] = useState('all');
+  const soundRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  // ---- Persistent favorites ----
+  useEffect(() => {
+    AsyncStorage.getItem(FAV_KEY)
+      .then(v => { if (v) setFavorites(JSON.parse(v)); })
+      .catch(() => {})
+      .finally(() => setFavsLoaded(true));
+  }, []);
+
+  const toggleFav = (n) => {
+    setFavorites(f => {
+      const nf = { ...f, [n]: !f[n] };
+      AsyncStorage.setItem(FAV_KEY, JSON.stringify(nf)).catch(() => {});
+      return nf;
+    });
+  };
+
+  // ---- Audio ----
+  const stopSound = async () => {
+    if (soundRef.current) {
+      try { await soundRef.current.unloadAsync(); } catch (e) {}
+      soundRef.current = null;
+    }
+    setPlaying(false);
+  };
+
+  const togglePlay = async (n) => {
+    if (soundRef.current) {
+      if (playing) { await soundRef.current.pauseAsync(); setPlaying(false); }
+      else { await soundRef.current.playAsync(); setPlaying(true); }
+      return;
+    }
+    try {
+      await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+      const { sound } = await Audio.Sound.createAsync(AUDIO[n]);
+      soundRef.current = sound;
+      sound.setOnPlaybackStatusUpdate(st => {
+        if (st.didJustFinish) { setPlaying(false); sound.setPositionAsync(0); }
+      });
+      setPlaying(true);
+      await sound.playAsync();
+    } catch (e) { setPlaying(false); }
+  };
+
+  const openHymn = (h) => setSelected(h);
+  const closeHymn = async () => { await stopSound(); setSelected(null); };
 
   const activeEdition = EDITIONS.find(e => e.id === edition);
 
@@ -60,17 +111,14 @@ export default function App() {
     return list.filter(h => h.t.toLowerCase().includes(q));
   }, [edition, query, favorites, tab]);
 
-  const toggleFav = (n) =>
-    setFavorites(f => ({ ...f, [n]: !f[n] }));
-
-  // ---------- Detail view ----------
   if (selected) {
     const lyr = LYRICS[selected.n];
+    const hasAudio = !!AUDIO[selected.n];
     return (
       <SafeAreaView style={s.root}>
         <StatusBar barStyle="light-content" />
         <View style={s.header}>
-          <TouchableOpacity onPress={() => setSelected(null)}>
+          <TouchableOpacity onPress={closeHymn}>
             <Text style={s.back}>‹ Back</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => toggleFav(selected.n)}>
@@ -82,11 +130,14 @@ export default function App() {
           <Text style={s.detailTitle}>{selected.t}</Text>
           <Text style={s.detailSection}>{sectionFor(selected.n)}</Text>
           <Text style={s.detailEdition}>The Seventh-day Adventist Hymnal (1985)</Text>
+          {hasAudio && (
+            <TouchableOpacity style={s.playBtn} onPress={() => togglePlay(selected.n)}>
+              <Text style={s.playBtnText}>{playing ? '❚❚  Pause' : '▶  Play'}</Text>
+            </TouchableOpacity>
+          )}
           <View style={s.rule} />
           {lyr ? (
-            lyr.map((v, i) => (
-              <Text key={i} style={s.verse}>{v}</Text>
-            ))
+            lyr.map((v, i) => <Text key={i} style={s.verse}>{v}</Text>)
           ) : (
             <View style={s.comingBox}>
               <Text style={s.comingTitle}>Full lyrics coming soon</Text>
@@ -102,13 +153,10 @@ export default function App() {
     );
   }
 
-  // ---------- List / coming soon ----------
   return (
     <SafeAreaView style={s.root}>
       <StatusBar barStyle="light-content" />
       <Text style={s.appTitle}>Hymnals of the Adventist Movement</Text>
-
-      {/* Edition pills */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.pillRow}>
         {EDITIONS.map(e => (
           <TouchableOpacity
@@ -121,7 +169,6 @@ export default function App() {
           </TouchableOpacity>
         ))}
       </ScrollView>
-
       {activeEdition.status === 'coming' ? (
         <View style={s.comingScreen}>
           <Text style={s.comingBig}>♪</Text>
@@ -161,7 +208,7 @@ export default function App() {
                   {sec !== prevSec && !query && tab === 'all' && (
                     <Text style={s.sectionHeader}>{sec}</Text>
                   )}
-                  <TouchableOpacity style={s.row} onPress={() => setSelected(item)}>
+                  <TouchableOpacity style={s.row} onPress={() => openHymn(item)}>
                     <Text style={s.rowNum}>{item.n}</Text>
                     <Text style={s.rowTitle} numberOfLines={1}>{item.t}</Text>
                     <TouchableOpacity onPress={() => toggleFav(item.n)}>
@@ -211,6 +258,8 @@ const s = StyleSheet.create({
   detailTitle: { color: CREAM, fontSize: 24, fontWeight: '700', marginTop: 4 },
   detailSection: { color: '#9fb3c6', fontSize: 14, marginTop: 6, fontStyle: 'italic' },
   detailEdition: { color: '#7e93a8', fontSize: 12, marginTop: 2 },
+  playBtn: { backgroundColor: GOLD, alignSelf: 'flex-start', paddingHorizontal: 18, paddingVertical: 9, borderRadius: 22, marginTop: 14 },
+  playBtnText: { color: NAVY, fontWeight: '700', fontSize: 15 },
   rule: { height: 2, backgroundColor: GOLD, opacity: 0.6, marginVertical: 16, width: 90 },
   verse: { color: CREAM, fontSize: 16, lineHeight: 25, marginBottom: 18 },
   comingScreen: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 36 },
