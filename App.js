@@ -20,6 +20,7 @@ import cis1908 from './cis1908_hymns.json';
 import ch1941 from './ch1941_hymns.json';
 import ht1886 from './ht1886_hymns.json';
 import mh1854 from './mh1854_hymns.json';
+import burmese from './burmese_hymns.json';
 import HT1886_LYRICS from './ht1886_lyrics.json';
 import CH1941_LYRICS from './ch1941_lyrics.json';
 import FRENCH from './french_lyrics.json';
@@ -29,9 +30,10 @@ const CIS1908 = cis1908.hymns.map(h => ({ n: h.number, t: h.title }));
 const CH1941  = ch1941.map(h => ({ n: h.number, t: h.title }));
 const HT1886  = ht1886.map(h => ({ n: h.number, t: h.title }));
 const MH1854  = mh1854.map(h => ({ n: h.number, t: h.title }));
+const BURMESE = burmese.hymns.map(h => ({ n: h.n, t: h.t }));
 
 // Editions we actually have data for. Anything not here shows "being prepared".
-const HYMNS = { SDAH1985, CIS1908, CH1941, HT1886, MH1854 };
+const HYMNS = { SDAH1985, CIS1908, CH1941, HT1886, MH1854, BURMESE };
 
 // NOTE: this SDAH_TO_CIS table is retained for reference only and is no longer
 // used for audio. Tunes are now resolved by getAudio() in audio_manifest.js,
@@ -275,9 +277,10 @@ const PARCH = '#f2e8d2';        // title-page parchment
 const SHELF_META = {
   SDAH1985: { label: 'SDA Hymnal · 1985',     cover: '#b8932f', ink: '#1a1a1a', accent: '#8a6712' },
   CIS1908:  { label: 'Christ in Song · 1908', cover: '#3f7d3a', ink: '#f0a8c8', accent: '#2c5e28' },
-  CH1941:   { label: 'Church Hymnal · 1941',  cover: '#1f4e79', ink: '#f5f5f5', accent: '#163a5c' },
+  CH1941:   { label: 'Church Hymnal · 1941',  cover: '#1f4e79', ink: '#e8584f', accent: '#163a5c' },
   HT1886:   { label: 'Hymns & Tunes · 1886',  cover: '#1f4e79', ink: '#f5f5f5', accent: '#163a5c' },
   MH1854:   { label: 'Advent · 1854',         cover: '#6b4a8f', ink: '#1a1a1a', accent: '#4f3669' },
+  BURMESE:  { label: 'ဓမ္မသီချင်း · 1951/2009', cover: '#8b2e2e', ink: '#1f3a5f', accent: '#5e1f1f' },
   MISSION:  { label: 'Our Mission',           cover: '#111317', ink: '#a8842a', accent: '#0c0d10', mission: true },
 };
 // On-paper accent (readable headings/numbers inside each book).
@@ -286,7 +289,7 @@ const INK_ACCENT = {
   HT1886: '#1f4e79', MH1854: '#5d3b7c',
 };
 // Order on the shelf; auto-flows into rows of three as more are added.
-const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'MISSION'];
+const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'MISSION'];
 const B4L_LOGO = require('./assets/b4l_logo.png');
 const FAV_KEY = 'hymnals_favorites_v1';
 

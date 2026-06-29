@@ -735,8 +735,9 @@ export const SDAH1985 = [
 // Others show an honest "coming soon" state instead of wrong data.
 export const EDITIONS = [
   { id: "SDAH1985", name: "SDA Hymnal", year: 1985, count: 695, status: "active" },
-  { id: "CH1941",  name: "Church Hymnal", year: 1941, count: 703, status: "coming" },
-  { id: "CIS1908", name: "Christ in Song", year: 1908, count: 949, status: "coming" },
-  { id: "HT1886",  name: "Hymns and Tunes", year: 1886, count: 1413, status: "coming" },
-  { id: "MH1849",  name: "Millennial Harp", year: 1849, count: 0, status: "coming" },
+  { id: "CH1941",  name: "Church Hymnal", year: 1941, count: 703, status: "active" },
+  { id: "CIS1908", name: "Christ in Song", year: 1908, count: 949, status: "active" },
+  { id: "HT1886",  name: "Hymns and Tunes", year: 1886, count: 1412, status: "active" },
+  { id: "MH1854",  name: "Advent Hymn Book", year: 1854, count: 274, status: "active" },
+  { id: "BURMESE", name: "ဓမ္မသီချင်း", year: "1951/2009", count: 270, status: "active" },
 ];
