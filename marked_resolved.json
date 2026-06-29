@@ -1,0 +1,986 @@
+[
+  {
+    "n": 5,
+    "title": "Some one will enter the pearly gate",
+    "first_line": "Some one will enter the pearly gate",
+    "tune": "Some one will enter the pearly gate",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 12,
+    "title": "\"Whosoever heareth,\" shout, shout the sound!",
+    "first_line": "\"Whosoever heareth,\" shout, shout the sound!",
+    "tune": "\"Whosoever heareth,\" shout, shout the sound!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 17,
+    "title": "I've wandered far away from God",
+    "first_line": "I've wandered far away from God,",
+    "tune": "I've wandered far away from God",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 18,
+    "title": "Just one touch as He moves along",
+    "first_line": "Just one touch as He moves along,",
+    "tune": "Just one touch as He moves along",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 27,
+    "title": "Would you be free from your burden of sin?",
+    "first_line": "Would you be free from your burden of sin?",
+    "tune": "Would you be free from your burden of sin?",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 32,
+    "title": "We'll build on the Rock, the living Rock",
+    "first_line": "We'll build on the Rock, the living rock,",
+    "tune": "We'll build on the Rock, the living Rock",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 40,
+    "title": "Tell me the story of Jesus",
+    "first_line": "Tell me the story of Jesus,",
+    "tune": "Tell me the story of Jesus",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 51,
+    "title": "All to Jesus I surrender",
+    "first_line": "All to Jesus I surrender,",
+    "tune": "All to Jesus I surrender",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 57,
+    "title": "There's not a Friend like the lowly Jesus",
+    "first_line": "There's not a friend like the lowly Jesus,",
+    "tune": "There's not a friend like the lowly Jesus",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 64,
+    "title": "Lord Jesus, I long to be perfectly whole",
+    "first_line": "Lord Jesus, I long to be perfectly whole;",
+    "tune": "Lord Jesus, I long to be perfectly whole",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 71,
+    "title": "I will early seek the Saviour",
+    "first_line": "I will early seek the Saviour,",
+    "tune": "I will early seek the Saviour",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 74,
+    "title": "Sing them over again to me",
+    "first_line": "Sing them over again to me,",
+    "tune": "Sing them over again to me",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 76,
+    "title": "Softly and tenderly Jesus is calling",
+    "first_line": "Softy and tenderly Jesus is calling,",
+    "tune": "Softly and tenderly Jesus is calling",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 78,
+    "title": "We have heard a joyful sound",
+    "first_line": "We have heard a joyful sound,",
+    "tune": "We have heard a joyful sound",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 79,
+    "title": "Tho' your sins be as scarlet",
+    "first_line": "\"Tho' your sins be as scarlet,",
+    "tune": "Tho' your sins be as scarlet",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 87,
+    "title": "Pass me not, O gentle Saviour",
+    "first_line": "Pass me not, O gentle Saviour,",
+    "tune": "Pass me not, O gentle Saviour",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 93,
+    "title": "What can wash away my sin?",
+    "first_line": "What can wash away my sin?",
+    "tune": "What can wash away my sin?",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 94,
+    "title": "The great Physician now is near",
+    "first_line": "The great Physician now is near,",
+    "tune": "The great Physician now is near",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 96,
+    "title": "I gave my life for Thee",
+    "first_line": "I gave my life for Thee,",
+    "tune": "I gave my life for Thee",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 101,
+    "title": "I hear thy welcome voice",
+    "first_line": "I hear thy welcome voice,",
+    "tune": "I hear thy welcome voice",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 102,
+    "title": "I was once far away from the Saviour",
+    "first_line": "I was once far away from the Saviour,",
+    "tune": "I was once far away from the Saviour",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 107,
+    "title": "I hear the Saviour say",
+    "first_line": "I hear the Saviour say,",
+    "tune": "I hear the Saviour say",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 109,
+    "title": "I am coming to the cross",
+    "first_line": "I am coming to the cross,",
+    "tune": "I am coming to the cross",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 110,
+    "title": "O now I see the crimson wave",
+    "first_line": "O now I see the crimson wave,",
+    "tune": "O now I see the crimson wave",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 134,
+    "title": "Baptize us anew",
+    "first_line": "Baptize us anew",
+    "tune": "Baptize us anew",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 138,
+    "title": "The wonders of redeeming love",
+    "first_line": "The wonders of redeeming love",
+    "tune": "",
+    "kind": "none",
+    "have": ""
+  },
+  {
+    "n": 146,
+    "title": "There is a fountain fill'd with blood",
+    "first_line": "There is a fountain fill'd with blood,",
+    "tune": "FOUNTAIN",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 150,
+    "title": "Alas!  and did my Savior bleed?",
+    "first_line": "Alas!  and did my Saviour bleed?",
+    "tune": "Alas!  and did my Saviour bleed?",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 166,
+    "title": "O for that flame of living fire",
+    "first_line": "O for that flame of living fire",
+    "tune": "MENDON",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 191,
+    "title": "To God be the glory, great things He hath done",
+    "first_line": "To God be the glory, great things He hath done,",
+    "tune": "To God be the glory, great things He hath done",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 196,
+    "title": "Be silent, be silent",
+    "first_line": "Be silent, be silent,",
+    "tune": "Be silent, be silent",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 198,
+    "title": "There's sunshine in my soul to-day",
+    "first_line": "There's sunshine in my soul to-day,",
+    "tune": "There's sunshine in my soul to-day",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 199,
+    "title": "Redeemed!  how I love to proclaim it!",
+    "first_line": "Redeemed!  how I love to proclaim it!",
+    "tune": "Redeemed!  how I love to proclaim it!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 200,
+    "title": "I can hear my Saviour calling",
+    "first_line": "I can hear my Saviour calling,",
+    "tune": "I can hear my Saviour calling",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 202,
+    "title": "Nearer, still nearer, close to Thy heart",
+    "first_line": "Nearer, still nearer, close to Thy heart,",
+    "tune": "Nearer, still nearer, close to Thy heart",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 203,
+    "title": "I once was in the desert, all weary, sad and lone",
+    "first_line": "I once was in the desert, all weary, sad and lone,",
+    "tune": "I once was in the desert, all weary, sad and lone",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 204,
+    "title": "Christ has for sin atonement made",
+    "first_line": "Christ has for sin atonement made,",
+    "tune": "Christ has for sin atonement made",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 205,
+    "title": "Blessed assurance, Jesus is mine!",
+    "first_line": "Blessed assurance, Jesus is mine!",
+    "tune": "Blessed assurance, Jesus is mine!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 212,
+    "title": "Alas!  and did my Saviour bleed",
+    "first_line": "Alas!  and did my Saviour bleed,",
+    "tune": "Alas!  and did my Saviour bleed",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 216,
+    "title": "Take the name of Jesus with you",
+    "first_line": "Take the name of Jesus with you,",
+    "tune": "Take the name of Jesus with you",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 219,
+    "title": "Standing on the promises of Christ my King",
+    "first_line": "Standing on the promises of Christ my King,",
+    "tune": "Standing on the promises of Christ my King",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 227,
+    "title": "Wake the song of joy and gladness",
+    "first_line": "Wake the song of joy and gladness,",
+    "tune": "Wake the song of joy and gladness",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 230,
+    "title": "Not I but Christ, be honored, loved, exalted",
+    "first_line": "Not I but Christ, be honored, loved, exalted;",
+    "tune": "Not I but Christ, be honored, loved, exalted",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 282,
+    "title": "I am Thine, O Lord, I have heard Thy voice",
+    "first_line": "I am Thine, O Lord, I have heard Thy voice,",
+    "tune": "I am Thine, O Lord, I have heard Thy voice",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 283,
+    "title": "Jesus loves me!  this I know",
+    "first_line": "Jesus loves me!  this I know,",
+    "tune": "Jesus loves me!  this I know",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 288,
+    "title": "O for a thousand tongues to sing",
+    "first_line": "O for a thousand tongues to sing:",
+    "tune": "O for a thousand tongues to sing",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 289,
+    "title": "Jesus, keep me near the cross",
+    "first_line": "Jesus, keep me near the cross,",
+    "tune": "Jesus, keep me near the cross",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 294,
+    "title": "My hope is built on nothing less",
+    "first_line": "My hope is built on nothing less",
+    "tune": "My hope is built on nothing less",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 299,
+    "title": "My Jesus, I love thee, I know thou art mine",
+    "first_line": "My Jesus, I love thee, I know thou art mine,",
+    "tune": "My Jesus, I love thee",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 301,
+    "title": "I know I love thee better, Lord",
+    "first_line": "I know I love thee better, Lord,",
+    "tune": "I know I love thee better, Lord",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 308,
+    "title": "Hover o'er me, Holy Spirit",
+    "first_line": "Hover o'er me, Holy Spirit,",
+    "tune": "Hover o'er me, Holy Spirit",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 311,
+    "title": "Tell me the old, old story",
+    "first_line": "Tell me the old, old story,",
+    "tune": "Tell me the old, old story",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 312,
+    "title": "Fairest Lord Jesus",
+    "first_line": "Fairest Lord Jesus,",
+    "tune": "CRUSADER",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 315,
+    "title": "Take the world, but give me Jesus",
+    "first_line": "Take the world, but give me Jesus,",
+    "tune": "Take the world, but give me Jesus",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 332,
+    "title": "I've found a Friend; oh, such a Friend!",
+    "first_line": "I've found a Friend; oh, such a Friend!",
+    "tune": "FRIEND",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 385,
+    "title": "The dawn of God's dear Sabbath",
+    "first_line": "The dawn of God's dear Sabbath",
+    "tune": "ST. GEORGE'S, BOLTON",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 387,
+    "title": "Welcome, delightful morn",
+    "first_line": "Welcome, delightful morning,",
+    "tune": "LISCHER",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 395,
+    "title": "I would be, dear Saviour, wholly thine",
+    "first_line": "I would be, dear Saviour, wholly thine;",
+    "tune": "I would be, dear Saviour, wholly thine",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 399,
+    "title": "O happy day!  that fixed my choice",
+    "first_line": "O, happy day!  that fixed my choice",
+    "tune": "O happy day!  that fixed my choice",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 409,
+    "title": "I will follow thee, my Saviour",
+    "first_line": "I will follow thee, my Saviour,",
+    "tune": "I will follow thee, my Saviour",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 430,
+    "title": "Another six days' work is done",
+    "first_line": "Another six days' work is done,",
+    "tune": "HEBRON",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 431,
+    "title": "Welcome, welcome, day of rest",
+    "first_line": "Welcome, welcome, day of rest,",
+    "tune": "PLEYEL",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 503,
+    "title": "What a fellowship, what a joy divine",
+    "first_line": "What a fellowship, what a joy divine,",
+    "tune": "What a fellowship, what a joy divine",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 504,
+    "title": "God be with you till we meet again",
+    "first_line": "God be with you till we meet again;",
+    "tune": "God be with you till we meet again",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 505,
+    "title": "The Lord's our Rock, in him we hide",
+    "first_line": "The Lord's our Rock, in him we hide,",
+    "tune": "The Lord's our Rock, in him we hide",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 506,
+    "title": "O safe to the Rock that is higher than I",
+    "first_line": "O safe to the Rock that is higher than I,",
+    "tune": "O safe to the Rock that is higher than I",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 507,
+    "title": "Under His wings I am safely abiding",
+    "first_line": "Under His wings I am safely abiding;",
+    "tune": "Under His wings I am safely abiding",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 508,
+    "title": "O Christian, awake!  'tis the Master's command",
+    "first_line": "O Christian, awake!  'tis the Master's command;",
+    "tune": "O Christian, awake!  'tis the Master's command",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 510,
+    "title": "Sound the battle cry",
+    "first_line": "Sound the battle cry,",
+    "tune": "Sound the battle cry",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 516,
+    "title": "When peace, like a river attendeth my way",
+    "first_line": "When peace like a river attendeth my way,",
+    "tune": "When peace like a river attendeth my way",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 519,
+    "title": "'Tis so sweet to trust in Jesus",
+    "first_line": "'Tis so sweet to trust in Jesus,",
+    "tune": "'Tis so sweet to trust in Jesus",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 520,
+    "title": "Lift him up, 'tis he that bids you",
+    "first_line": "Lift him up, 'tis he that bids you,",
+    "tune": "Lift him up, 'tis he that bids you",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 524,
+    "title": "Are you heavy laden and with sorrow tried?",
+    "first_line": "Are you heavy laden and with sorrow tried?",
+    "tune": "Are you heavy laden and with sorrow tried?",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 525,
+    "title": "More about Jesus I would know",
+    "first_line": "More about Jesus I would know,",
+    "tune": "More about Jesus I would know",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 528,
+    "title": "The Lord is my light",
+    "first_line": "The Lord is my light; then why should I fear?",
+    "tune": "The Lord is my light",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 532,
+    "title": "Seeking the lost, yes, kindly entreating",
+    "first_line": "Seeking the lost, yes, kindly entreating",
+    "tune": "Seeking the lost, yes, kindly entreating",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 535,
+    "title": "Anywhere with Jesus I can safely go",
+    "first_line": "Anywhere with Jesus I can safely go,",
+    "tune": "Anywhere with Jesus I can safely go",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 538,
+    "title": "Life is not a cloudless journey",
+    "first_line": "Life is not a cloudless journey,",
+    "tune": "Life is not a cloudless journey",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 548,
+    "title": "O where are the reapers that garner in",
+    "first_line": "O where are the reapers that garner in",
+    "tune": "O where are the reapers that garner in",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 551,
+    "title": "The home where changes never come",
+    "first_line": "The home where changes never come,",
+    "tune": "The home where changes never come",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 552,
+    "title": "I am thinking today of that beautiful land",
+    "first_line": "I am thinking today of that beautiful land,",
+    "tune": "I am thinking today of that beautiful land",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 561,
+    "title": "Hark!  'tis the Shepherd's voice I hear",
+    "first_line": "Hark!  'tis the Shepherd's voice I hear,",
+    "tune": "Hark!  'tis the Shepherd's voice I hear",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 564,
+    "title": "Will your anchor hold in the storm of life",
+    "first_line": "Will your anchor hold in the storm of life,",
+    "tune": "Will your anchor hold in the storm of life",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 566,
+    "title": "It may not be on the mountain's height",
+    "first_line": "It may not be on the mountain's height,",
+    "tune": "It may not be on the mountain's height",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 567,
+    "title": "'Tis love that makes us happy",
+    "first_line": "'Tis love that makes us happy,",
+    "tune": "'Tis love that makes us happy",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 576,
+    "title": "To the work!  to the work!  we are servants of God",
+    "first_line": "To the work!  to the work!  we are servants of God,",
+    "tune": "To the work!  to the work!  we are servants of God",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 583,
+    "title": "Sowing in the morning, sowing seeds of kindness",
+    "first_line": "Sowing in the morning, sowing seeds of kindness,",
+    "tune": "Sowing in the morning, sowing seeds of kindness",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 586,
+    "title": "Look for the way-marks as you journey on",
+    "first_line": "Look for the way-marks as you journey on,",
+    "tune": "Look for the way-marks as you journey on",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 594,
+    "title": "Give of your best to the Master",
+    "first_line": "Give of your best to the Master,",
+    "tune": "Give of your best to the Master",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 611,
+    "title": "All the way my Saviour leads me",
+    "first_line": "All the way my Saviour leads me;",
+    "tune": "All the way my Saviour leads me",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 634,
+    "title": "Jesus, lover of my soul",
+    "first_line": "Jesus, lover of my soul,",
+    "tune": "REFUGE",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 647,
+    "title": "Saviour, breathe an evening blessing",
+    "first_line": "Saviour, breathe an evening blessing,",
+    "tune": "Saviour, breathe an evening blessing",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 654,
+    "title": "Rock of Ages, cleft for me!",
+    "first_line": "Rock of Ages, cleft for me!",
+    "tune": "Rock of Ages, cleft for me!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 677,
+    "title": "He leadeth me!  O blessed tho't!",
+    "first_line": "He leadeth me!  O blessed tho't!",
+    "tune": "He leadeth me!  O blessed tho't!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 683,
+    "title": "Watchman, blow the gospel trumpet",
+    "first_line": "Watchman, blow the gospel trumpet,",
+    "tune": "Watchman, blow the gospel trumpet",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 720,
+    "title": "Work, for the night is coming",
+    "first_line": "Work, for the night is coming,",
+    "tune": "WORK",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 722,
+    "title": "Carry the joyful tidings",
+    "first_line": "Carry the joyful tidings",
+    "tune": "WORK",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 729,
+    "title": "Saviour, like a shepherd lead us",
+    "first_line": ". Saviour, like a shepherd lead us;",
+    "tune": "SHEPHERD",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 734,
+    "title": "Watchman, tell me, does the morning",
+    "first_line": "Watchman, tell me, does the morning",
+    "tune": "DAWNING",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 741,
+    "title": "Sweet hour of pray'r, sweet hour of pray'r",
+    "first_line": "Sweet hour of pray'r, sweet hour of pray'r,",
+    "tune": "Sweet hour of pray'r, sweet hour of pray'r",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 845,
+    "title": "How far from home!  I asked, as on",
+    "first_line": ". How far from home?  I asked, as on",
+    "tune": "How far from home?  I asked, as on",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 847,
+    "title": "A thrilling cry--we hear the sound",
+    "first_line": ". A thrilling cry--we hear the sound;",
+    "tune": "",
+    "kind": "none",
+    "have": ""
+  },
+  {
+    "n": 852,
+    "title": "When He cometh, when he cometh",
+    "first_line": ". When He cometh, when he cometh",
+    "tune": "When He cometh, when he cometh",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 854,
+    "title": "There'll be no dark valley when Jesus comes",
+    "first_line": ". There'll be no dark valley when Jesus comes,",
+    "tune": "There'll be no dark valley when Jesus comes",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 855,
+    "title": "The Homeland!  O the Homeland!",
+    "first_line": ". The Homeland!  O the Homeland!",
+    "tune": "The Homeland!  O the Homeland!",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 861,
+    "title": "Face to face with Christ my Saviour",
+    "first_line": ". Face to face with Christ my Saviour,",
+    "tune": "Face to face with Christ my Saviour",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 862,
+    "title": "In the land of fadeless day",
+    "first_line": ". In the land of fadeless day,",
+    "tune": "In the land of fadeless day",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 863,
+    "title": "O there'll be joy when the work is done",
+    "first_line": ". O there'll be joy when the work is done,",
+    "tune": "O there'll be joy when the work is done",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 865,
+    "title": "When the trumpet of the Lord shall sound, and time shall be no more",
+    "first_line": ". When the trumpet of the Lord shall sound, and time shall b",
+    "tune": "When the trumpet of the Lord shall sound, and time shall be no more",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 867,
+    "title": "It maybe at morn, when the day is awaking",
+    "first_line": ". It may be at morn, when the day is awaking,",
+    "tune": "It may be at morn, when the day is awaking",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 870,
+    "title": "\"We would see Jesus;\" for the shadows lengthen",
+    "first_line": ". \"We would see Jesus;\" for the shadows lengthen",
+    "tune": "\"We would see Jesus;\" for the shadows lengthen",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 877,
+    "title": "Watch, ye saints, with eyelids waking",
+    "first_line": ". Watch, ye saints, with eyelids waking;",
+    "tune": "Watch, ye saints, with eyelids waking",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 878,
+    "title": "We know not the hour of the Master's appearing",
+    "first_line": ". We know not the hour of the Master's appearing,",
+    "tune": "We know not the hour of the Master's appearing",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 879,
+    "title": "There's a land that is fairer than day",
+    "first_line": ". There's a land that is fairer than day,",
+    "tune": "There's a land that is fairer than day",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 887,
+    "title": "Come, we that love the Lord",
+    "first_line": ". Come, we that love the Lord,",
+    "tune": "Come, we that love the Lord",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 892,
+    "title": "The golden morning is fast approaching",
+    "first_line": ". The golden morning is fast approaching;",
+    "tune": "The golden morning is fast approaching",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 894,
+    "title": "Sweet promise is giv'n to all who believe",
+    "first_line": ". Sweet promise is giv'n to all who believe,",
+    "tune": "Sweet promise is giv'n to all who believe",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 905,
+    "title": "On Jordan's stormy banks I stand",
+    "first_line": ". On Jordan's stormy banks I stand,",
+    "tune": "On Jordan's stormy banks I stand",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 907,
+    "title": "Shall we gather at the river",
+    "first_line": ". Shall we gather at the river",
+    "tune": "Shall we gather at the river",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 913,
+    "title": "\"This same Jesus!\"  O how sweetly",
+    "first_line": ". \"This same Jesus!\"  O how sweetly",
+    "tune": "DEERHURST",
+    "kind": "named",
+    "have": ""
+  },
+  {
+    "n": 914,
+    "title": "How sweet are the tidings that greet the pilgrim's ear",
+    "first_line": ". How sweet are the tidings that greet the pilgrim's ear,",
+    "tune": "How sweet are the tidings that greet the pilgrim's ear",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 929,
+    "title": "Lift up the trumpet, and loud let it ring",
+    "first_line": ". Lift up the trumpet, and loud let it ring;",
+    "tune": "Lift up the trumpet, and loud let it ring",
+    "kind": "bracket",
+    "have": ""
+  },
+  {
+    "n": 930,
+    "title": "The coming King is at the door",
+    "first_line": ". The coming King is at the door,",
+    "tune": "The coming King is at the door",
+    "kind": "bracket",
+    "have": ""
+  }
+]

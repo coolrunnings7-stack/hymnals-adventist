@@ -2,6 +2,7 @@
 // Database initialization and all query helpers
 
 import * as SQLite from 'expo-sqlite';
+import { seedChristInSong1908 } from './seedChristInSong1908';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -158,6 +159,7 @@ async function initializeDatabase(database: SQLite.SQLiteDatabase) {
   await seedEditions(database);
   await seedLanguages(database);
   await seedSampleHymns(database);
+  await seedChristInSong1908(database);
 }
 
 async function seedEditions(db: SQLite.SQLiteDatabase) {

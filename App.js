@@ -24,6 +24,7 @@ import burmese from './burmese_hymns.json';
 import HT1886_LYRICS from './ht1886_lyrics.json';
 import CH1941_LYRICS from './ch1941_lyrics.json';
 import FRENCH from './french_lyrics.json';
+import { getCrossRefs, EDITION_LABELS } from './cross_reference';
 
 // Build each hymnal list in the same {n, t} shape as SDAH1985.
 const CIS1908 = cis1908.hymns.map(h => ({ n: h.number, t: h.title }));
@@ -483,6 +484,19 @@ export default function App() {
     );
   }
 
+  // --- Cross-reference helpers (which other hymnals share this tune) ---
+  const XREF_TO_APP = { CIS1908: 'CIS1908', SDAH1985: 'SDAH1985', CH1941: 'CH1941' };
+  const jumpToCrossRef = (xrefEd, num) => {
+    const appEd = XREF_TO_APP[xrefEd];
+    if (!appEd || !HYMNS[appEd]) return;            // no in-app book (e.g. Thai) -> not tappable
+    const target = HYMNS[appEd].find(h => h.n === num);
+    if (!target) return;
+    stopSound();
+    setEdition(appEd);
+    setEntered(true);
+    openHymn(target);
+  };
+
   const detailOverlay = selected ? (() => {
     const isSDAH = edition === 'SDAH1985';
     const frenchAvail = isSDAH && !!FRENCH[selected.n];      // a French text exists for this hymn
@@ -537,6 +551,30 @@ export default function App() {
             <Text style={s.detailSection}>{sectionFor(selected.n)}</Text>
           )}
           <Text style={[s.detailEdition, { color: INK_ACCENT[edition] || GOLD }]}>{activeEdition.name} ({activeEdition.year})</Text>
+          {(() => {
+            const refs = getCrossRefs(edition, selected.n);
+            if (!refs || refs.length === 0) return null;
+            return (
+              <View style={s.xrefWrap}>
+                <Text style={s.xrefLabel}>Also found in</Text>
+                <View style={s.xrefRow}>
+                  {refs.map((r, i) => {
+                    const tappable = !!HYMNS[r.edition];
+                    const label = (EDITION_LABELS[r.edition] || r.edition) + ' #' + r.number;
+                    return tappable ? (
+                      <TouchableOpacity key={i} style={s.xrefChip} onPress={() => jumpToCrossRef(r.edition, r.number)}>
+                        <Text style={s.xrefChipTxt}>{label}</Text>
+                      </TouchableOpacity>
+                    ) : (
+                      <View key={i} style={[s.xrefChip, s.xrefChipFlat]}>
+                        <Text style={s.xrefChipInfo}>{label}</Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              </View>
+            );
+          })()}
           {frenchAvail && (
             <View style={s.langRow}>
               <TouchableOpacity style={[s.langBtn, lang === 'en' && s.langBtnOn]} onPress={() => setLang('en')}>
@@ -725,6 +763,13 @@ const s = StyleSheet.create({
   detailTitle: { color: INK, fontSize: 24, fontWeight: '700', marginTop: 4 },
   detailSection: { color: INK_SOFT, fontSize: 14, marginTop: 6, fontStyle: 'italic' },
   detailEdition: { color: INK_SOFT, fontSize: 13, fontWeight: '700', marginTop: 3 },
+  xrefWrap: { marginTop: 6, marginBottom: 4, alignItems: 'center' },
+  xrefLabel: { color: '#9a8757', fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 6 },
+  xrefRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8 },
+  xrefChip: { backgroundColor: 'rgba(168,132,42,0.16)', borderColor: 'rgba(168,132,42,0.5)', borderWidth: 1, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 5, marginBottom: 4 },
+  xrefChipTxt: { color: '#caa24a', fontSize: 12, fontWeight: '600' },
+  xrefChipFlat: { backgroundColor: 'transparent', borderStyle: 'dashed' },
+  xrefChipInfo: { color: '#8a7a55', fontSize: 12 },
   playBtn: { backgroundColor: GOLD, alignSelf: 'flex-start', paddingHorizontal: 18, paddingVertical: 9, borderRadius: 22, marginTop: 14 },
   playBtnText: { color: '#fff', fontWeight: '700', fontSize: 15 },
   rule: { height: 2, backgroundColor: RULE, marginVertical: 16, width: 90 },

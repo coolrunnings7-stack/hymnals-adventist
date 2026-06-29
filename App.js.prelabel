@@ -1,0 +1,785 @@
+// Hymnals of the Adventist Movement — v1.0.4
+// Changes: audio works in CIS 1908 (recordings are named by CIS number) and in
+// the SDA Hymnal via a small cross-reference (SDAH number -> CIS number).
+import React, { useState, useMemo, useEffect, useRef } from 'react';
+import Bookcase from './Bookcase';
+import {
+  SafeAreaView, View, Text, TextInput, FlatList, TouchableOpacity,
+  StyleSheet, StatusBar, ScrollView, Image,
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Audio } from 'expo-av';
+import SDAH_LYRICS from './sdah_lyrics.json';
+import CIS_LYRICS from './cis_lyrics.json';
+import STORIES from './stories.json';
+import { SDAH1985, EDITIONS, sectionFor } from './hymns_data';
+import { getAudio, ALL_TUNE_KEYS } from './audio_manifest';
+import { getPlayableUri, downloadAll, cachedCount } from './audio_cache';
+import cis1908 from './cis1908_hymns.json';
+import ch1941 from './ch1941_hymns.json';
+import ht1886 from './ht1886_hymns.json';
+import mh1854 from './mh1854_hymns.json';
+import HT1886_LYRICS from './ht1886_lyrics.json';
+import CH1941_LYRICS from './ch1941_lyrics.json';
+import FRENCH from './french_lyrics.json';
+
+// Build each hymnal list in the same {n, t} shape as SDAH1985.
+const CIS1908 = cis1908.hymns.map(h => ({ n: h.number, t: h.title }));
+const CH1941  = ch1941.map(h => ({ n: h.number, t: h.title }));
+const HT1886  = ht1886.map(h => ({ n: h.number, t: h.title }));
+const MH1854  = mh1854.map(h => ({ n: h.number, t: h.title }));
+
+// Editions we actually have data for. Anything not here shows "being prepared".
+const HYMNS = { SDAH1985, CIS1908, CH1941, HT1886, MH1854 };
+
+// NOTE: this SDAH_TO_CIS table is retained for reference only and is no longer
+// used for audio. Tunes are now resolved by getAudio() in audio_manifest.js,
+// which maps each hymn to a public-domain tune the developer rendered and owns.
+const SDAH_TO_CIS = {
+  7: 349,
+  15: 689,
+  34: 227,
+  40: 385,
+  49: 646,
+  50: 655,
+  51: 339,
+  65: 504,
+  71: 391,
+  73: 327,
+  76: 401,
+  82: 451,
+  83: 335,
+  88: 330,
+  103: 725,
+  108: 765,
+  122: 353,
+  123: 267,
+  125: 895,
+  135: 348,
+  146: 68,
+  152: 40,
+  154: 172,
+  157: 140,
+  163: 150,
+  179: 138,
+  181: 492,
+  183: 194,
+  184: 107,
+  186: 332,
+  190: 283,
+  191: 345,
+  195: 207,
+  196: 311,
+  205: 892,
+  206: 861,
+  207: 867,
+  208: 854,
+  213: 929,
+  216: 865,
+  218: 852,
+  223: 261,
+  229: 258,
+  238: 448,
+  240: 312,
+  245: 525,
+  249: 226,
+  253: 302,
+  254: 94,
+  258: 134,
+  260: 308,
+  264: 166,
+  271: 384,
+  272: 498,
+  279: 95,
+  280: 178,
+  281: 96,
+  282: 101,
+  286: 74,
+  287: 76,
+  294: 27,
+  295: 139,
+  296: 17,
+  300: 654,
+  301: 202,
+  302: 293,
+  303: 350,
+  304: 678,
+  306: 282,
+  307: 109,
+  308: 395,
+  309: 51,
+  312: 289,
+  314: 145,
+  316: 318,
+  318: 64,
+  321: 299,
+  329: 315,
+  330: 316,
+  332: 110,
+  334: 398,
+  335: 204,
+  336: 146,
+  337: 199,
+  340: 78,
+  341: 191,
+  350: 416,
+  359: 641,
+  361: 561,
+  366: 548,
+  367: 479,
+  368: 683,
+  369: 583,
+  371: 520,
+  373: 532,
+  375: 720,
+  382: 386,
+  383: 386,
+  384: 388,
+  388: 250,
+  391: 431,
+  412: 80,
+  422: 887,
+  427: 862,
+  428: 879,
+  429: 898,
+  430: 863,
+  432: 907,
+  433: 917,
+  434: 902,
+  436: 855,
+  439: 845,
+  440: 724,
+  442: 914,
+  449: 899,
+  456: 599,
+  457: 476,
+  462: 205,
+  468: 514,
+  469: 503,
+  470: 198,
+  473: 663,
+  474: 216,
+  478: 741,
+  479: 196,
+  483: 609,
+  489: 633,
+  490: 634,
+  494: 870,
+  499: 643,
+  500: 485,
+  506: 681,
+  507: 496,
+  508: 535,
+  511: 290,
+  515: 528,
+  516: 611,
+  517: 108,
+  518: 219,
+  522: 294,
+  524: 519,
+  525: 506,
+  528: 505,
+  529: 507,
+  530: 516,
+  531: 32,
+  534: 564,
+  537: 677,
+  538: 706,
+  539: 71,
+  545: 729,
+  546: 769,
+  551: 652,
+  552: 769,
+  569: 87,
+  570: 230,
+  572: 594,
+  573: 566,
+  579: 567,
+  590: 495,
+  594: 679,
+  596: 586,
+  598: 877,
+  600: 894,
+  601: 705,
+  604: 878,
+  608: 490,
+  610: 508,
+  612: 656,
+  614: 510,
+  618: 628,
+  620: 905,
+  623: 409,
+  625: 489,
+  652: 580,
+  653: 70,
+  655: 759,
+  670: 787,
+};
+
+// Church Hymnal (1941) borrows the same recordings via 1941 -> CIS number.
+const CH1941_TO_CIS = {
+  1: 451, 3: 391, 7: 349, 35: 504, 41: 870, 47: 655, 49: 646, 51: 339, 71: 689,
+  73: 327, 75: 335, 81: 725, 93: 330, 104: 348, 111: 353, 112: 291, 122: 140,
+  124: 212, 142: 345, 143: 138, 145: 401, 150: 448, 156: 258, 162: 261, 163: 146,
+  164: 628, 165: 312, 184: 705, 185: 679, 189: 895, 199: 902, 210: 166, 212: 308,
+  218: 384, 222: 145, 224: 101, 230: 96, 238: 139, 246: 108, 258: 609, 259: 611,
+  260: 769, 261: 681, 266: 409, 271: 230, 273: 316, 275: 293, 276: 299, 279: 318,
+  280: 350, 291: 398, 295: 765, 299: 899, 300: 898, 306: 917, 310: 399, 313: 516,
+  316: 741, 320: 643, 349: 678, 360: 656, 382: 663, 387: 724, 390: 202, 393: 677,
+  394: 729, 398: 652, 401: 633, 409: 706, 410: 70, 413: 759, 417: 71, 418: 852,
+  422: 68, 432: 416, 446: 722, 447: 641, 459: 431, 462: 388, 463: 386, 467: 385,
+  474: 654, 477: 787, 489: 846, 517: 302, 518: 476, 520: 520, 523: 216, 524: 311,
+  525: 134, 527: 107, 529: 194, 530: 94, 531: 332, 532: 599, 534: 40, 536: 867,
+  540: 878, 541: 929, 545: 861, 546: 937, 547: 892, 548: 894, 549: 877, 551: 879,
+  553: 905, 555: 907, 558: 862, 559: 87, 560: 17, 563: 76, 567: 95, 573: 51,
+  574: 74, 577: 528, 579: 32, 581: 294, 582: 495, 583: 496, 584: 564, 585: 505,
+  586: 506, 588: 519, 589: 535, 592: 64, 593: 80, 594: 282, 595: 289, 596: 315,
+  597: 395, 598: 110, 600: 109, 601: 196, 603: 485, 607: 198, 608: 205, 611: 503,
+  614: 514, 616: 551, 619: 683, 620: 548, 621: 583, 623: 479, 625: 561, 626: 552,
+  631: 489, 635: 199, 637: 78, 639: 855, 640: 887, 644: 204, 645: 226, 647: 191,
+  649: 227, 652: 207, 653: 250, 655: 498, 665: 847, 669: 914, 671: 586,
+};
+
+function audioFor(edition, n) {
+  return getAudio(edition, n);
+}
+
+const LYRICS = {};
+
+// Resolve a hymn's words (array of stanza strings) for any edition, or null.
+function storyFor(edition, n) {
+  return STORIES[edition + ':' + n] || null;
+}
+
+function lyricsFor(edition, n) {
+  if (edition === 'SDAH1985') return LYRICS[n] || SDAH_LYRICS[n] || null;
+  if (edition === 'CIS1908') return CIS_LYRICS[n] || null;
+  if (edition === 'HT1886') return HT1886_LYRICS[n] || null;
+  if (edition === 'CH1941') return CH1941_LYRICS[n] || null;  // {} for now; typed words land here later
+  return null;  // MH1854 ships as a first-line index
+}
+
+// ---- Paper theme palette (warm hymnal pages) ----
+const PAPER = '#f3e9d2';        // page background
+const PAPER2 = '#ece0c4';       // headers / section bands
+const INK = '#2e2517';          // dark-brown ink
+const INK_SOFT = '#6b5a3e';     // muted ink
+const RULE = '#d8c79f';         // ruled lines / borders
+const GOLD = '#a8842a';         // accent gold (readable on paper)
+const SHELF_BG = '#241a12';     // bookcase background (dark wood)
+const SHELF_WOOD = '#5b3f2b';   // wooden ledges
+const PARCH = '#f2e8d2';        // title-page parchment
+
+// Each book's spine cover + lettering on the shelf.
+const SHELF_META = {
+  SDAH1985: { label: 'SDA Hymnal · 1985',     cover: '#b8932f', ink: '#1a1a1a', accent: '#8a6712' },
+  CIS1908:  { label: 'Christ in Song · 1908', cover: '#111317', ink: '#e6b84c', accent: '#0c0d10' },
+  CH1941:   { label: 'Church Hymnal · 1941',  cover: '#3f7d3a', ink: '#f0a8c8', accent: '#2c5e28' },
+  HT1886:   { label: 'Hymns & Tunes · 1886',  cover: '#1f4e79', ink: '#f5f5f5', accent: '#163a5c' },
+  MH1854:   { label: 'Advent · 1854',         cover: '#6b4a8f', ink: '#1a1a1a', accent: '#4f3669' },
+  MISSION:  { label: 'Our Mission',           cover: '#1f4e79', ink: '#e8584f', accent: '#e6b84c', mission: true },
+};
+// On-paper accent (readable headings/numbers inside each book).
+const INK_ACCENT = {
+  SDAH1985: '#8a6712', CIS1908: '#1f1f1f', CH1941: '#2c5e28',
+  HT1886: '#1f4e79', MH1854: '#5d3b7c',
+};
+// Order on the shelf; auto-flows into rows of three as more are added.
+const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'MISSION'];
+const B4L_LOGO = require('./assets/b4l_logo.png');
+const FAV_KEY = 'hymnals_favorites_v1';
+
+export default function App() {
+  const [edition, setEdition] = useState(null);   // null = library shelf
+  const [entered, setEntered] = useState(false);  // past the title page?
+  const [showMission, setShowMission] = useState(true);
+  const [missionPage, setMissionPage] = useState(1);
+  const [query, setQuery] = useState('');
+  const [favorites, setFavorites] = useState({});
+  const [favsLoaded, setFavsLoaded] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const [tab, setTab] = useState('all');
+  const [lang, setLang] = useState('en');        // 'en' | 'fr' for hymns with a French text
+  const [projecting, setProjecting] = useState(false);
+  const [pIdx, setPIdx] = useState(0);            // current verse in projection mode
+  const soundRef = useRef(null);
+  const [loadingAudio, setLoadingAudio] = useState(false);
+  const [dlState, setDlState] = useState({ active: false, done: 0, total: 0, saved: 0 });
+  const [playing, setPlaying] = useState(false);
+  const [singing, setSinging] = useState(false);   // sing-along follow mode
+  const [singIdx, setSingIdx] = useState(0);        // current verse/refrain block
+  const scrollRef = useRef(null);
+  const verseY = useRef({});                         // y-offset of each lyric block
+
+  // ---- Persistent favorites ----
+  useEffect(() => {
+    AsyncStorage.getItem(FAV_KEY)
+      .then(v => { if (v) setFavorites(JSON.parse(v)); })
+      .catch(() => {})
+      .finally(() => setFavsLoaded(true));
+  }, []);
+
+  // Keep the highlighted verse in view as the singer advances.
+  useEffect(() => {
+    if (singing && scrollRef.current && verseY.current[singIdx] != null) {
+      scrollRef.current.scrollTo({ y: Math.max(0, verseY.current[singIdx] - 90), animated: true });
+    }
+  }, [singIdx, singing]);
+
+  // Favorites are namespaced by edition so CIS #73 and SDAH #73 stay separate.
+  const favKey = (n) => `${edition}:${n}`;
+
+  const toggleFav = (n) => {
+    const k = favKey(n);
+    setFavorites(f => {
+      const nf = { ...f, [k]: !f[k] };
+      AsyncStorage.setItem(FAV_KEY, JSON.stringify(nf)).catch(() => {});
+      return nf;
+    });
+  };
+  const isFav = (n) => !!favorites[favKey(n)];
+
+  // ---- Audio ----
+  const stopSound = async () => {
+    if (soundRef.current) {
+      try { await soundRef.current.unloadAsync(); } catch (e) {}
+      soundRef.current = null;
+    }
+    setPlaying(false);
+  };
+
+  const togglePlay = async (n) => {
+    if (soundRef.current) {
+      if (playing) { await soundRef.current.pauseAsync(); setPlaying(false); }
+      else { await soundRef.current.playAsync(); setPlaying(true); }
+      return;
+    }
+    try {
+      await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+      const key = audioFor(edition, n);
+      if (!key) { setPlaying(false); return; }
+      setLoadingAudio(true);
+      let uri;
+      try { uri = await getPlayableUri(key); }
+      catch (e) { setLoadingAudio(false); setPlaying(false); return; }
+      setLoadingAudio(false);
+      let playCount = 0;
+      const MAX_PLAYS = 8;
+      const { sound } = await Audio.Sound.createAsync({ uri });
+      soundRef.current = sound;
+      sound.setOnPlaybackStatusUpdate(st => {
+        if (st.didJustFinish) {
+          playCount += 1;
+          if (playCount < MAX_PLAYS) { sound.replayAsync(); }
+          else { stopSound(); }
+        }
+      });
+      setPlaying(true);
+      await sound.playAsync();
+    } catch (e) { setPlaying(false); }
+  };
+
+  const openHymn = (h) => { setLang('en'); setProjecting(false); setPIdx(0); setSinging(false); setSingIdx(0); verseY.current = {}; setSelected(h); };
+  const closeHymn = async () => { await stopSound(); setProjecting(false); setSinging(false); setSelected(null); };
+
+  // Each book opens fresh: clear search, tab, selection, language.
+  const openBook = (id) => {
+    if (id === 'MISSION') { setShowMission(true); return; }
+    stopSound(); setEdition(id); setEntered(false); setSelected(null);
+    setQuery(''); setTab('all'); setLang('en'); setProjecting(false);
+  };
+  const backToShelf = () => {
+    stopSound(); setEdition(null); setEntered(false); setSelected(null);
+    setQuery(''); setTab('all'); setShowMission(false);
+  };
+
+  const activeEdition = EDITIONS.find(e => e.id === edition);
+  const fullList = HYMNS[edition] || [];
+
+  const data = useMemo(() => {
+    let list = HYMNS[edition] || [];
+    if (tab === 'favorites') list = list.filter(h => favorites[`${edition}:${h.n}`]);
+    else if (tab === 'music') list = list.filter(h => audioFor(edition, h.n));
+    const q = query.trim().toLowerCase();
+    if (!q) return list;
+    if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
+    return list.filter(h => h.t.toLowerCase().includes(q));
+  }, [edition, query, favorites, tab]);
+
+  // ---- Mission page (the Our Mission book) ----
+  if (showMission) {
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={() => { if (missionPage === 2) { setMissionPage(1); } else { setMissionPage(1); backToShelf(); } }}>
+          <Text style={s.titleBack}>{missionPage === 2 ? '‹ Back' : '‹ Shelf'}</Text>
+        </TouchableOpacity>
+        {missionPage === 1 ? (
+          <ScrollView contentContainerStyle={s.titlePage}>
+            <Image source={B4L_LOGO} style={s.missionLogo} resizeMode="contain" />
+            <Text style={s.titleBook}>Our Mission</Text>
+            <Text style={s.missionSub}>Why we sing — and why we send</Text>
+            <View style={s.titleRule} />
+            <Text style={s.titleBody}>A hymn is never only a song. It is the memory of the church kept alive in melody — the prayer your grandmother sang at a kitchen sink, the comfort carried into prison cells and hospital wards, the tune that crossed oceans in the hearts of missionaries who had little else to give but this. When you open this book, you are not opening an app. You are joining a congregation that stretches across two centuries and every continent of the Advent movement, still singing.{'\n\n'}We built this so the hymns would never be lost. But we built it for a second reason, too: so they would never sit still. A hymn sung only on Sabbath morning has done just half its work. The other half begins when you carry it out the door — to the river crossing, the refugee camp, the village that has never once heard it. Worship and mission were never two separate things. The song that lifts your heart is the very same song meant to reach another’s.{'\n\n'}So we ask you to sing again — really sing. Not out of habit, but out of hunger. Let these hymns remind you that you were saved to be sent, that every verse is a small commission, and that the mission field is not somewhere far away and unreachable. It is wherever your voice can still find a soul.{'\n\n'}And when a hymn moves you, don’t keep it. Give it. Place this book in the hands of your children, your friends, the new believer, the one who is far from home and aching for something familiar. A hymnal shared is a flame passed from candle to candle — and the light never grows dimmer for the giving. It only fills more of the room.{'\n\n'}Every voice raised here carries the mission forward — to every corner of the earth, to the children who are learning to sing in the places the world chooses to forget. When you open these pages, you are not simply using an app. You have become part of the sending.</Text>
+            <Text style={s.missionCall}>Sing. Give. Go.</Text>
+            <TouchableOpacity style={s.singSendBtn} onPress={() => setMissionPage(2)}>
+              <Text style={s.singSendTxt}>Sing and Send</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        ) : (
+          <ScrollView contentContainerStyle={s.titlePage}>
+            <Text style={s.titleBook}>Sing and Send</Text>
+            <View style={s.titleRule} />
+            <Text style={s.titleBody}>The simplest way to send a hymn onward is to place this hymnal in someone’s hands.{'\n\n'}Share it. Tap to send this app to anyone you love — sometimes the invitation is all it takes.{'\n\n'}Gift it. On an iPhone, open the hymnal in the App Store, tap Share, and choose “Gift App” — you pay once, and it arrives in their inbox like a present, ready to open. On Android, send a Google Play gift card with a note pointing them here — the same gift, a different ribbon.{'\n\n'}Share a pew at home. With Apple’s Family Sharing or Google’s Family Library, your whole household can sing from one hymnal at no extra cost.{'\n\n'}However you send it, you’re doing the oldest work of the church — handing the song to the next voice. Every hymnal you place is a candle lit from your own.</Text>
+            <Text style={s.missionCall}>Thank you for singing — and for sending.</Text>
+            <TouchableOpacity style={s.singSendBtn} onPress={() => { setMissionPage(1); backToShelf(); }}>
+              <Text style={s.singSendTxt}>✕  Close</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        )}
+      </SafeAreaView>
+    );
+  }
+
+  // ---- Library: the bookcase ----
+  if (!edition) {
+    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || HYMNS[id]);
+    return (
+      <SafeAreaView style={s.shelfRoot}>
+        <StatusBar barStyle="light-content" />
+        <Text style={s.shelfTitle}>Hymnals of the{'\n'}Adventist Movement</Text>
+        <Text style={s.shelfHint}>choose a book from the shelf</Text>
+        <ScrollView contentContainerStyle={{ paddingBottom: 24 }}>
+          <Bookcase ids={ids} meta={SHELF_META} logo={B4L_LOGO} onOpen={openBook} />
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  // ---- Title page: opens every time a book is entered ----
+  if (!entered) {
+    const b = SHELF_META[edition] || {};
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={backToShelf}><Text style={s.titleBack}>‹ Shelf</Text></TouchableOpacity>
+        <ScrollView contentContainerStyle={s.titlePage}>
+          <Text style={s.titleBook}>{activeEdition ? `${activeEdition.name} · ${activeEdition.year}` : ''}</Text>
+          <Text style={s.titleVerse}>"I will keep a song{'\n'}in my heart"</Text>
+          <Text style={s.titleRef}>Ephesians 5:19</Text>
+          <Text style={s.titleTag}>The mission wears it. The app sings it.</Text>
+          <View style={s.titleRule} />
+          <Text style={s.titleBody}>For more than a century these hymns have carried the Adventist movement — through revival and long waiting, through joy and through grief — and in the singing of them, generation after generation has found God near.{'\n\n'}This book is an invitation to know them again: to sing them, to uncover the stories behind their writing, and to hear them rise in many tongues across the earth.{'\n\n'}May every page you turn draw you nearer to the One for whom the songs were made.</Text>
+          <TouchableOpacity style={[s.enterBtn, { backgroundColor: b.cover || GOLD }]} onPress={() => setEntered(true)}>
+            <Text style={[s.enterTxt, { color: b.ink || '#fff' }]}>Enter {activeEdition ? activeEdition.name : ''}</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  const detailOverlay = selected ? (() => {
+    const isSDAH = edition === 'SDAH1985';
+    const frenchAvail = isSDAH && !!FRENCH[selected.n];      // a French text exists for this hymn
+    const showFr = frenchAvail && lang === 'fr';
+    const displayLyr = showFr ? FRENCH[selected.n].verses : lyricsFor(edition, selected.n);
+    const displayTitle = showFr ? FRENCH[selected.n].title : selected.t;
+    const hasAudio = !!audioFor(edition, selected.n);
+
+    // ---- Projection mode: full screen, large text, tap to advance ----
+    if (projecting && displayLyr && displayLyr.length) {
+      const total = displayLyr.length;
+      const idx = Math.min(pIdx, total - 1);
+      return (
+        <SafeAreaView style={s.projRoot}>
+          <StatusBar barStyle="light-content" />
+          <TouchableOpacity style={s.projClose} onPress={() => setProjecting(false)}>
+            <Text style={s.projCloseText}>✕  Exit</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={s.projBody} activeOpacity={1}
+            onPress={() => setPIdx(i => (i + 1) % total)}>
+            <Text style={s.projTitle}>{displayTitle}</Text>
+            <Text style={s.projVerse}>{displayLyr[idx]}</Text>
+          </TouchableOpacity>
+          <View style={s.projFooter}>
+            <TouchableOpacity onPress={() => setPIdx(i => (i - 1 + total) % total)}>
+              <Text style={s.projNav}>‹ Prev</Text>
+            </TouchableOpacity>
+            <Text style={s.projCount}>{idx + 1} / {total}</Text>
+            <TouchableOpacity onPress={() => setPIdx(i => (i + 1) % total)}>
+              <Text style={s.projNav}>Next ›</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      );
+    }
+
+    return (
+      <SafeAreaView style={s.root}>
+        <StatusBar barStyle="dark-content" />
+        <View style={s.header}>
+          <TouchableOpacity onPress={closeHymn}>
+            <Text style={s.back}>‹ Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => toggleFav(selected.n)}>
+            <Text style={s.fav}>{isFav(selected.n) ? '♥' : '♡'}</Text>
+          </TouchableOpacity>
+        </View>
+        <ScrollView ref={scrollRef} contentContainerStyle={s.detail}>
+          <Text style={s.detailNum}>No. {selected.n}</Text>
+          <Text style={s.detailTitle}>{displayTitle}</Text>
+          {isSDAH && (
+            <Text style={s.detailSection}>{sectionFor(selected.n)}</Text>
+          )}
+          <Text style={[s.detailEdition, { color: INK_ACCENT[edition] || GOLD }]}>{activeEdition.name} ({activeEdition.year})</Text>
+          {frenchAvail && (
+            <View style={s.langRow}>
+              <TouchableOpacity style={[s.langBtn, lang === 'en' && s.langBtnOn]} onPress={() => setLang('en')}>
+                <Text style={[s.langTxt, lang === 'en' && s.langTxtOn]}>English</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[s.langBtn, lang === 'fr' && s.langBtnOn]} onPress={() => setLang('fr')}>
+                <Text style={[s.langTxt, lang === 'fr' && s.langTxtOn]}>Français</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          <View style={s.btnRow}>
+            {hasAudio && (
+              <TouchableOpacity style={s.playBtn} onPress={() => togglePlay(selected.n)}>
+                <Text style={s.playBtnText}>{loadingAudio ? '… Loading' : (playing ? '❚❚  Pause' : '▶  Play')}</Text>
+              </TouchableOpacity>
+            )}
+            {displayLyr && displayLyr.length > 0 && (
+              <TouchableOpacity style={s.projBtn} onPress={() => { setSingIdx(0); setSinging(true); }}>
+                <Text style={s.projBtnText}>♪  Sing Along</Text>
+              </TouchableOpacity>
+            )}
+            {displayLyr && displayLyr.length > 0 && (
+              <TouchableOpacity style={s.projBtn} onPress={() => { setPIdx(0); setProjecting(true); }}>
+                <Text style={s.projBtnText}>⛶  Project</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+          <View style={s.rule} />
+          {displayLyr && displayLyr.length > 0 ? (
+            displayLyr.map((v, i) => (
+              <TouchableOpacity key={i} activeOpacity={singing ? 0.7 : 1} disabled={!singing}
+                onPress={() => setSingIdx(i)}
+                onLayout={e => { verseY.current[i] = e.nativeEvent.layout.y; }}>
+                <Text style={[s.verse, singing && (i === singIdx ? s.singOn : s.singOff)]}>{v}</Text>
+              </TouchableOpacity>
+            ))
+          ) : (
+            <View style={s.comingBox}>
+              <Text style={s.comingTitle}>
+                {edition === 'CH1941' ? 'Words preserved as page images'
+                  : edition === 'MH1854' ? 'First-line index'
+                  : 'Full lyrics coming soon'}
+              </Text>
+              <Text style={s.comingText}>
+                {edition === 'CH1941'
+                  ? "The 1941 Church Hymnal is preserved as scanned pages. Its tune plays above; the printed words are being prepared in typed form for a future free update."
+                  : edition === 'MH1854'
+                  ? "The Advent Hymn Book (1854) is offered as a complete first-line index of this historic Advent collection. Full texts are being prepared for a future update."
+                  : "We're adding complete, carefully verified lyrics for every public-domain hymn in free updates — starting with the most loved hymns. Thank you for your patience and support!"}
+              </Text>
+            </View>
+          )}
+          {storyFor(edition, selected.n) ? (
+            <View>
+              <View style={s.rule} />
+              <Text style={s.storyHeading}>The Story Behind This Hymn</Text>
+              <Text style={s.storyText}>{storyFor(edition, selected.n)}</Text>
+            </View>
+          ) : null}
+        </ScrollView>
+        {singing && displayLyr && displayLyr.length > 0 && (
+          <View style={s.singBar}>
+            <TouchableOpacity onPress={() => setSingIdx(i => Math.max(0, i - 1))}>
+              <Text style={s.singNav}>‹ Prev</Text>
+            </TouchableOpacity>
+            <Text style={s.singCount}>{singIdx + 1} / {displayLyr.length}</Text>
+            <TouchableOpacity onPress={() => setSingIdx(i => Math.min(displayLyr.length - 1, i + 1))}>
+              <Text style={s.singNav}>Next ›</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSinging(false)}>
+              <Text style={s.singDone}>✕</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </SafeAreaView>
+    );
+  })() : null;
+
+  return (
+    <SafeAreaView style={s.root}>
+      <StatusBar barStyle="dark-content" />
+      <View style={s.hymnalHeader}>
+        <TouchableOpacity onPress={backToShelf}><Text style={s.back}>‹ Shelf</Text></TouchableOpacity>
+      </View>
+      <Text style={[s.hymnalName, { color: INK_ACCENT[edition] || GOLD }]}>{activeEdition.name}</Text>
+      <Text style={s.hymnalYear}>{activeEdition.year} · {fullList.length} hymns</Text>
+      {!HYMNS[edition] ? (
+        <View style={s.comingScreen}>
+          <Text style={s.comingBig}>♪</Text>
+          <Text style={s.comingTitle}>{activeEdition.name} ({activeEdition.year})</Text>
+          <Text style={s.comingText}>
+            The complete, verified index of this historic hymnal is being
+            prepared and will arrive in a free update. We refuse to show
+            inaccurate hymn lists — every number will be right.
+          </Text>
+        </View>
+      ) : (
+        <>
+          <TextInput
+            style={s.search}
+            placeholder="Search by number or title…"
+            placeholderTextColor="#7e93a8"
+            value={query}
+            onChangeText={setQuery}
+          />
+          <View style={s.tabRow}>
+            <TouchableOpacity onPress={() => setTab('all')}>
+              <Text style={[s.tab, tab === 'all' && s.tabActive]}>All {fullList.length} Hymns</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setTab('music')}>
+              <Text style={[s.tab, tab === 'music' && s.tabActive]}>♪ With Music</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setTab('favorites')}>
+              <Text style={[s.tab, tab === 'favorites' && s.tabActive]}>♥ Favorites</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={data}
+            keyExtractor={h => String(h.n)}
+            initialNumToRender={25}
+            renderItem={({ item, index }) => {
+              const sec = edition === 'SDAH1985' ? sectionFor(item.n) : null;
+              const prevSec = (edition === 'SDAH1985' && index > 0) ? sectionFor(data[index - 1].n) : null;
+              return (
+                <View>
+                  {sec && sec !== prevSec && !query && tab === 'all' && (
+                    <Text style={s.sectionHeader}>{sec}</Text>
+                  )}
+                  <TouchableOpacity style={s.row} onPress={() => openHymn(item)}>
+                    <Text style={s.rowNum}>{item.n}</Text>
+                    <Text style={s.rowTitle} numberOfLines={1}>{item.t}</Text>
+                    {lyricsFor(edition, item.n) ? <Text style={s.rowLyric}>¶</Text> : null}
+                    {audioFor(edition, item.n) ? <Text style={s.rowNote}>♪</Text> : null}
+                    {storyFor(edition, item.n) ? <Text style={s.rowStory}>📖</Text> : null}
+                    <TouchableOpacity onPress={() => toggleFav(item.n)}>
+                      <Text style={s.rowFav}>{isFav(item.n) ? '♥' : '♡'}</Text>
+                    </TouchableOpacity>
+                  </TouchableOpacity>
+                </View>
+              );
+            }}
+            ListEmptyComponent={
+              <Text style={s.empty}>
+                {tab === 'favorites'
+                  ? 'No favorites yet — tap ♡ on any hymn.'
+                  : tab === 'music'
+                  ? 'No hymns with music in this hymnal yet.'
+                  : 'No hymns match your search.'}
+              </Text>
+            }
+          />
+        </>
+      )}
+      {detailOverlay ? (
+        <View style={StyleSheet.absoluteFill}>{detailOverlay}</View>
+      ) : null}
+    </SafeAreaView>
+  );
+}
+
+const s = StyleSheet.create({
+  root: { flex: 1, backgroundColor: PAPER },
+  // hymnal index header
+  hymnalHeader: { flexDirection: 'row', paddingHorizontal: 16, paddingTop: 8 },
+  hymnalName: { fontSize: 26, fontWeight: '700', textAlign: 'center', marginTop: 2 },
+  hymnalYear: { color: INK_SOFT, fontSize: 13, textAlign: 'center', marginBottom: 10 },
+  search: { backgroundColor: PAPER2, color: INK, marginHorizontal: 14, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10, fontSize: 15, marginBottom: 6, borderWidth: 1, borderColor: RULE },
+  tabRow: { flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap', gap: 16, marginBottom: 6, paddingHorizontal: 8 },
+  tab: { color: INK_SOFT, fontSize: 14, paddingVertical: 4 },
+  tabActive: { color: GOLD, fontWeight: '700' },
+  sectionHeader: { color: GOLD, fontSize: 13, fontWeight: '700', paddingHorizontal: 16, paddingTop: 14, paddingBottom: 4, textTransform: 'uppercase', letterSpacing: 0.5, backgroundColor: PAPER2 },
+  row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 11, borderBottomWidth: 1, borderBottomColor: RULE },
+  rowNum: { color: GOLD, width: 44, fontSize: 15, fontWeight: '700' },
+  rowTitle: { color: INK, flex: 1, fontSize: 15 },
+  rowFav: { color: GOLD, fontSize: 18, paddingLeft: 10 },
+  rowNote: { color: GOLD, fontSize: 15, paddingLeft: 8 },
+  rowLyric: { color: INK_SOFT, fontSize: 14, paddingLeft: 8 },
+  rowStory: { fontSize: 13, paddingLeft: 8 },
+  empty: { color: INK_SOFT, textAlign: 'center', marginTop: 40, paddingHorizontal: 30 },
+  // detail
+  header: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 16, paddingVertical: 10 },
+  back: { color: GOLD, fontSize: 17, fontWeight: '600' },
+  fav: { color: GOLD, fontSize: 22 },
+  detail: { paddingHorizontal: 22, paddingBottom: 40 },
+  detailNum: { color: GOLD, fontSize: 15, fontWeight: '700', marginTop: 6 },
+  detailTitle: { color: INK, fontSize: 24, fontWeight: '700', marginTop: 4 },
+  detailSection: { color: INK_SOFT, fontSize: 14, marginTop: 6, fontStyle: 'italic' },
+  detailEdition: { color: INK_SOFT, fontSize: 13, fontWeight: '700', marginTop: 3 },
+  playBtn: { backgroundColor: GOLD, alignSelf: 'flex-start', paddingHorizontal: 18, paddingVertical: 9, borderRadius: 22, marginTop: 14 },
+  playBtnText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  rule: { height: 2, backgroundColor: RULE, marginVertical: 16, width: 90 },
+  verse: { color: INK, fontSize: 16, lineHeight: 25, marginBottom: 18 },
+  storyHeading: { color: GOLD, fontSize: 17, fontWeight: '700', marginBottom: 10 },
+  storyText: { color: INK, fontSize: 15, lineHeight: 24, marginBottom: 18 },
+  comingScreen: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 36 },
+  comingBig: { color: GOLD, fontSize: 52, marginBottom: 10 },
+  comingBox: { backgroundColor: PAPER2, borderRadius: 12, padding: 18, marginTop: 6, borderWidth: 1, borderColor: RULE },
+  comingTitle: { color: GOLD, fontSize: 17, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
+  comingText: { color: INK_SOFT, fontSize: 14, lineHeight: 21, textAlign: 'center' },
+  langRow: { flexDirection: 'row', gap: 8, marginTop: 12 },
+  langBtn: { paddingHorizontal: 14, paddingVertical: 6, borderRadius: 16, borderWidth: 1.5, borderColor: GOLD },
+  langBtnOn: { backgroundColor: GOLD },
+  langTxt: { color: GOLD, fontSize: 14, fontWeight: '600' },
+  langTxtOn: { color: '#fff', fontWeight: '700' },
+  btnRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 14, flexWrap: 'wrap' },
+  projBtn: { backgroundColor: PAPER2, borderWidth: 1.5, borderColor: GOLD, paddingHorizontal: 16, paddingVertical: 9, borderRadius: 22 },
+  projBtnText: { color: GOLD, fontWeight: '700', fontSize: 15 },
+  // projection (kept dark for screen/wall display)
+  projRoot: { flex: 1, backgroundColor: '#000' },
+  projClose: { paddingHorizontal: 18, paddingVertical: 12, alignSelf: 'flex-end' },
+  projCloseText: { color: '#888', fontSize: 16, fontWeight: '600' },
+  projBody: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 26 },
+  projTitle: { color: '#d4a84e', fontSize: 22, fontWeight: '700', textAlign: 'center', marginBottom: 26 },
+  projVerse: { color: '#fff', fontSize: 30, lineHeight: 44, fontWeight: '600', textAlign: 'center' },
+  projFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 26, paddingVertical: 18 },
+  projNav: { color: '#d4a84e', fontSize: 18, fontWeight: '700' },
+  projCount: { color: '#888', fontSize: 15 },
+  // ---- Library shelf ----
+  shelfRoot: { flex: 1, backgroundColor: SHELF_BG, paddingHorizontal: 14 },
+  shelfTitle: { color: '#e6b84c', fontSize: 20, fontWeight: '700', textAlign: 'center', marginTop: 14, lineHeight: 26 },
+  shelfHint: { color: '#b08d52', fontSize: 12, textAlign: 'center', marginTop: 4, marginBottom: 18, fontStyle: 'italic' },
+  shelfRowBooks: { flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-end', gap: 8, height: 158 },
+  spine: { width: 96, height: 150, borderRadius: 3, borderLeftWidth: 4, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
+  spineText: { fontSize: 13, fontWeight: '700', width: 150, textAlign: 'center', position: 'absolute', transform: [{ rotate: '-90deg' }] },
+  ledge: { height: 9, backgroundColor: SHELF_WOOD, borderRadius: 2, marginTop: 3, marginBottom: 16 },
+  trophyRow: { alignItems: 'center', justifyContent: 'flex-end', height: 120 },
+  trophy: { width: 120, height: 108 },
+  // ---- Title / mission page ----
+  titleRoot: { flex: 1, backgroundColor: PARCH },
+  titleBack: { color: GOLD, fontSize: 16, fontWeight: '600', padding: 16 },
+  titlePage: { paddingHorizontal: 28, paddingBottom: 48, alignItems: 'center' },
+  titleBook: { color: INK_SOFT, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 14, textAlign: 'center' },
+  titleVerse: { color: '#3a2f1c', fontSize: 22, lineHeight: 30, fontStyle: 'italic', textAlign: 'center' },
+  titleRef: { color: '#8a7338', fontSize: 12, textAlign: 'center', marginTop: 6 },
+  titleTag: { color: '#6b5a36', fontSize: 13, fontStyle: 'italic', textAlign: 'center', marginTop: 14 },
+  titleRule: { width: 44, height: 1, backgroundColor: '#bfa968', marginVertical: 18 },
+  titleBody: { color: '#463b25', fontSize: 15, lineHeight: 25, textAlign: 'left' },
+  missionSub: { color: '#8a6a2e', fontSize: 13, fontStyle: 'italic', textAlign: 'center', marginTop: 2 },
+  missionCall: { color: '#7a5616', fontSize: 16, fontWeight: '700', textAlign: 'center', marginTop: 18, letterSpacing: 1 },
+  singSendBtn: { backgroundColor: GOLD, alignSelf: 'center', paddingHorizontal: 30, paddingVertical: 13, borderRadius: 24, marginTop: 22, marginBottom: 12 },
+  singSendTxt: { color: '#2e2206', fontSize: 16, fontWeight: '700', letterSpacing: 0.5 },
+  enterBtn: { marginTop: 28, paddingHorizontal: 46, paddingVertical: 13, borderRadius: 9 },
+  enterTxt: { fontSize: 16, fontWeight: '700' },
+  missionLogo: { width: 120, height: 120, marginBottom: 10 },
+  singOn: { backgroundColor: '#fbf1d6', borderLeftWidth: 3, borderLeftColor: GOLD, paddingLeft: 12, borderRadius: 6 },
+  singOff: { opacity: 0.4, paddingLeft: 12 },
+  singBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 18, paddingVertical: 14, backgroundColor: PAPER2, borderTopWidth: 1, borderTopColor: RULE },
+  singNav: { color: GOLD, fontSize: 16, fontWeight: '700' },
+  singCount: { color: INK_SOFT, fontSize: 14, fontWeight: '600' },
+  singDone: { color: INK_SOFT, fontSize: 18, fontWeight: '700', paddingLeft: 6 },
+});

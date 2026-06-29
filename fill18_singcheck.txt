@@ -1,0 +1,22 @@
+18 INSTANT-FILL CANDIDATES — sing-check each, mark K(keep) or X(wrong)
+==================================================================
+[ x] CIS 198  There's Sunshine in My Soul To  tune SUNSHINE (SWENEY)   plays: IAmThinkingToday-Sweney
+[ x] CIS 202  Nearer Still Nearer             tune MORRIS              plays: IWillPrayTheFather-Morris
+[k ] CIS 205  Blessed Assurance Jesus Is Min  tune ASSURANCE           plays: Blessed_Assurance-Blessed_Assurance-Assurance
+[ k] CIS 283  Jesus Loves Me This I Know      tune JESUS LOVES ME (CH  plays: JesusLovesMe-China
+[x ] CIS 288  O for a Thousand Tongues to Si  tune AZMON               plays: O_For_A_Thousand_Tongues-Azmon
+[ x] CIS 299  My Jesus I Love Thee            tune GORDON              plays: InTenderness-Gordon
+[k ] CIS 311  Tell Me the Old Old Story       tune EVANGEL (STORY)     plays: TellMeTheOldOldStory-Evangel
+[x ] CIS 385  The Dawn of God's Dear Sabbath  tune ST. GEORGE'S BOLTO  plays: NotIButChrist-Bolton
+[ x] CIS 519  'Tis So Sweet to Trust in Jesu  tune TRUST IN JESUS (KI  plays: CallJehovah-Trust
+[ x] CIS 525  More About Jesus                tune SWENEY (MORE ABOUT  plays: IAmThinkingToday-Sweney
+[ x] CIS 535  Anywhere with Jesus             tune SERENITY (ANYWHERE  plays: ImmortalLove-Serenity
+[ x] CIS 583  Sowing in the Morning (Bringin  tune HARVEST (SHAW)      plays: FarAndNear-Harvest
+[ k] CIS 634  Jesus Lover of My Soul          tune REFUGE (MARTYN)     plays: JesusLoverOfMySoul-Martyn
+[ x] CIS 647  Saviour Breathe an Evening Ble  tune EVENING (STEBBINS)  plays: ARulerOnceCame-Stebbins
+[k ] CIS 654  Rock of Ages                    tune TOPLADY             plays: Rock_of_Ages-Toplady
+[ k] CIS 729  Saviour Like a Shepherd Lead U  tune BRADBURY            plays: Savior_Like_A_Shepherd_Lead_Us-Bradbury
+[ x] CIS 887  Come We That Love the Lord (Ma  tune MARCHING TO ZION    plays: PraiseMySoul-Zion
+[ x] CIS 914  How Sweet Are the Tidings       tune TIDINGS             plays: OZionHaste-Tidings
+
+After singing: tell Claude the X (wrong) numbers; he'll pull them.

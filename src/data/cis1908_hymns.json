@@ -1,0 +1,3806 @@
+{
+  "edition_code": "CHRIST1908",
+  "count": 950,
+  "hymns": [
+    {
+      "number": 1,
+      "title": "What shall I do with Jesus?"
+    },
+    {
+      "number": 2,
+      "title": "White pages before us, thank God this is so"
+    },
+    {
+      "number": 3,
+      "title": "In the land of strangers"
+    },
+    {
+      "number": 4,
+      "title": "Drifting away from the Saviour"
+    },
+    {
+      "number": 5,
+      "title": "Some one will enter the pearly gate"
+    },
+    {
+      "number": 6,
+      "title": "There was One who was willing to die in my stead"
+    },
+    {
+      "number": 7,
+      "title": "Come, sinners, to the Living One"
+    },
+    {
+      "number": 8,
+      "title": "Jesus is tenderly calling thee home"
+    },
+    {
+      "number": 9,
+      "title": "O tender and sweet was the Father's voice"
+    },
+    {
+      "number": 10,
+      "title": "Like wand'ring sheep o'er mountains cold"
+    },
+    {
+      "number": 11,
+      "title": "There are two ways for trav'lers, only two ways"
+    },
+    {
+      "number": 12,
+      "title": "\"Whosoever heareth,\" shout, shout the sound!"
+    },
+    {
+      "number": 13,
+      "title": "\"Yet there is room!\""
+    },
+    {
+      "number": 14,
+      "title": "Sound the alarm!  let the watchman cry"
+    },
+    {
+      "number": 15,
+      "title": "In darkness I lingered 'mid doubt and despair"
+    },
+    {
+      "number": 16,
+      "title": "O heart bowed down with sorrow!"
+    },
+    {
+      "number": 17,
+      "title": "I've wandered far away from God"
+    },
+    {
+      "number": 18,
+      "title": "Just one touch as He moves along"
+    },
+    {
+      "number": 19,
+      "title": "One thing I of the Lord desire"
+    },
+    {
+      "number": 20,
+      "title": "Christ is knocking at my sad heart"
+    },
+    {
+      "number": 21,
+      "title": "There's a Stranger at the door"
+    },
+    {
+      "number": 22,
+      "title": "If you could see Christ standing here tonight"
+    },
+    {
+      "number": 23,
+      "title": "I cannot drive the nails again"
+    },
+    {
+      "number": 24,
+      "title": "Sing it o'er and o'er again"
+    },
+    {
+      "number": 25,
+      "title": "If you are tired of the load of your sin"
+    },
+    {
+      "number": 26,
+      "title": "A ruler once came to Jesus by night"
+    },
+    {
+      "number": 27,
+      "title": "Would you be free from your burden of sin?"
+    },
+    {
+      "number": 28,
+      "title": "Blessed be the Fountain of blood"
+    },
+    {
+      "number": 29,
+      "title": "Ring the bells of heaven!  there is joy today"
+    },
+    {
+      "number": 30,
+      "title": "Able to deliver!  sound it far and near"
+    },
+    {
+      "number": 31,
+      "title": "O hear my cry, be gracious now to me"
+    },
+    {
+      "number": 32,
+      "title": "We'll build on the Rock, the living Rock"
+    },
+    {
+      "number": 33,
+      "title": "We are building in sorrow or joy"
+    },
+    {
+      "number": 34,
+      "title": "We tell it as we journey t'ward the mansions built above"
+    },
+    {
+      "number": 35,
+      "title": "Knocking, knocking, who is there?"
+    },
+    {
+      "number": 36,
+      "title": "'Twas in the days of careless youth, when life was fair and bright"
+    },
+    {
+      "number": 37,
+      "title": "\"Eternity!  where?\"  It floats in the air"
+    },
+    {
+      "number": 38,
+      "title": "The day is dead, and Egypt's night returning"
+    },
+    {
+      "number": 39,
+      "title": "In the silent midnight watches"
+    },
+    {
+      "number": 40,
+      "title": "Tell me the story of Jesus"
+    },
+    {
+      "number": 41,
+      "title": "O who is this that cometh"
+    },
+    {
+      "number": 42,
+      "title": "When Jesus shall gather the nations"
+    },
+    {
+      "number": 43,
+      "title": "Called to the feast by the King are we"
+    },
+    {
+      "number": 44,
+      "title": "There's room for you to anchor"
+    },
+    {
+      "number": 45,
+      "title": "While Jesus whispers to you"
+    },
+    {
+      "number": 46,
+      "title": "Jesus, the loving Shepherd"
+    },
+    {
+      "number": 47,
+      "title": "Not in the hour of death"
+    },
+    {
+      "number": 48,
+      "title": "At the feast of Belshazzar and a thousand of his lords"
+    },
+    {
+      "number": 49,
+      "title": "When the Judge shall weigh our motives"
+    },
+    {
+      "number": 50,
+      "title": "Oh, the best friend to have is Jesus"
+    },
+    {
+      "number": 51,
+      "title": "All to Jesus I surrender"
+    },
+    {
+      "number": 52,
+      "title": "What means this eager, anxious throng"
+    },
+    {
+      "number": 53,
+      "title": "I have a Savior, he's pleading in glory"
+    },
+    {
+      "number": 54,
+      "title": "Are you tenting on the lowlands"
+    },
+    {
+      "number": 55,
+      "title": "Hear the words our Saviour hath spoken"
+    },
+    {
+      "number": 56,
+      "title": "Sowing the seed by the daylight fair"
+    },
+    {
+      "number": 57,
+      "title": "There's not a Friend like the lowly Jesus"
+    },
+    {
+      "number": 58,
+      "title": "Would you live for Jesus, and be always pure and good?"
+    },
+    {
+      "number": 59,
+      "title": "Who is on the Lord's side?"
+    },
+    {
+      "number": 60,
+      "title": "Only a step to Jesus!"
+    },
+    {
+      "number": 61,
+      "title": "There were ninety and nine that safely lay"
+    },
+    {
+      "number": 62,
+      "title": "What will you do with the King called Jesus?"
+    },
+    {
+      "number": 63,
+      "title": "My blessed Lord was crucified"
+    },
+    {
+      "number": 64,
+      "title": "Lord Jesus, I long to be perfectly whole"
+    },
+    {
+      "number": 65,
+      "title": "There's life in a look at the sacred cross"
+    },
+    {
+      "number": 66,
+      "title": "Yield not to temptation"
+    },
+    {
+      "number": 67,
+      "title": "Dare to do right, dare to be true!"
+    },
+    {
+      "number": 68,
+      "title": "I think when I read that sweet story of old"
+    },
+    {
+      "number": 69,
+      "title": "Why labor for treasures that rust and decay"
+    },
+    {
+      "number": 70,
+      "title": "Lead them, my God, to Thee"
+    },
+    {
+      "number": 71,
+      "title": "I will early seek the Saviour"
+    },
+    {
+      "number": 72,
+      "title": "Who'll be the next to follow Jesus?"
+    },
+    {
+      "number": 73,
+      "title": "Now just a word for Jesus"
+    },
+    {
+      "number": 74,
+      "title": "Sing them over again to me"
+    },
+    {
+      "number": 75,
+      "title": "Jesus, my Saviour, to Bethlehem came"
+    },
+    {
+      "number": 76,
+      "title": "Softly and tenderly Jesus is calling"
+    },
+    {
+      "number": 77,
+      "title": "Like as a father, pities his child"
+    },
+    {
+      "number": 78,
+      "title": "We have heard a joyful sound"
+    },
+    {
+      "number": 79,
+      "title": "Tho' your sins be as scarlet"
+    },
+    {
+      "number": 80,
+      "title": "Look upon Jesus, sinless is He"
+    },
+    {
+      "number": 81,
+      "title": "While we pray and while we plead"
+    },
+    {
+      "number": 82,
+      "title": "Behold, behold the Lamb of God"
+    },
+    {
+      "number": 83,
+      "title": "By faith I view my Saviour dying"
+    },
+    {
+      "number": 84,
+      "title": "The mistakes of my life are many"
+    },
+    {
+      "number": 85,
+      "title": "There is no love like the love of Jesus"
+    },
+    {
+      "number": 86,
+      "title": "There's a great day coming"
+    },
+    {
+      "number": 87,
+      "title": "Pass me not, O gentle Saviour"
+    },
+    {
+      "number": 88,
+      "title": "Have you been to Jesus for the cleansing power?"
+    },
+    {
+      "number": 89,
+      "title": "Almost persuaded now to believe"
+    },
+    {
+      "number": 90,
+      "title": "I stood outside the gate"
+    },
+    {
+      "number": 91,
+      "title": "There is a gate that stands ajar"
+    },
+    {
+      "number": 92,
+      "title": "Weeping will not save me"
+    },
+    {
+      "number": 93,
+      "title": "What can wash away my sin?"
+    },
+    {
+      "number": 94,
+      "title": "The great Physician now is near"
+    },
+    {
+      "number": 95,
+      "title": "Come, ev'ry soul by sin oppressed"
+    },
+    {
+      "number": 96,
+      "title": "I gave my life for Thee"
+    },
+    {
+      "number": 97,
+      "title": "Not saved are we by trying"
+    },
+    {
+      "number": 98,
+      "title": "Where is my wand'ring boy tonight"
+    },
+    {
+      "number": 99,
+      "title": "Refining fire, go thro' my heart"
+    },
+    {
+      "number": 100,
+      "title": "Crowded is your heart with cares"
+    },
+    {
+      "number": 101,
+      "title": "I hear thy welcome voice"
+    },
+    {
+      "number": 102,
+      "title": "I was once far away from the Saviour"
+    },
+    {
+      "number": 103,
+      "title": "Jesus, my Lord, to thee I cry"
+    },
+    {
+      "number": 104,
+      "title": "Art thou weary, art thou languid"
+    },
+    {
+      "number": 105,
+      "title": "I am trusting Thee, Lord Jesus"
+    },
+    {
+      "number": 106,
+      "title": "Sins of years are washed away"
+    },
+    {
+      "number": 107,
+      "title": "I hear the Saviour say"
+    },
+    {
+      "number": 108,
+      "title": "My faith looks up to thee"
+    },
+    {
+      "number": 109,
+      "title": "I am coming to the cross"
+    },
+    {
+      "number": 110,
+      "title": "O now I see the crimson wave"
+    },
+    {
+      "number": 111,
+      "title": "Jesus, and shall it ever be"
+    },
+    {
+      "number": 112,
+      "title": "Behold the Saviour at the door!"
+    },
+    {
+      "number": 113,
+      "title": "God calling yet!  shall I not hear?"
+    },
+    {
+      "number": 114,
+      "title": "We all, O Lord, have gone astray"
+    },
+    {
+      "number": 115,
+      "title": "The gospel trump is sounding"
+    },
+    {
+      "number": 116,
+      "title": "The sprinkled blood is speaking"
+    },
+    {
+      "number": 117,
+      "title": "O, Comfort to the dreary!"
+    },
+    {
+      "number": 118,
+      "title": "O Jesus!  thou art standing"
+    },
+    {
+      "number": 119,
+      "title": "Forgive, O Lord, the doubts that break"
+    },
+    {
+      "number": 120,
+      "title": "Go not, my soul, in search of Him"
+    },
+    {
+      "number": 121,
+      "title": "Weary of earth and laden with my sin"
+    },
+    {
+      "number": 122,
+      "title": "The Lord first empties whom he fills"
+    },
+    {
+      "number": 123,
+      "title": "Arise, my soul, arise"
+    },
+    {
+      "number": 124,
+      "title": "Come, ye disconsolate, where'er ye languish"
+    },
+    {
+      "number": 125,
+      "title": "Come unto me when shadows darkly gather"
+    },
+    {
+      "number": 126,
+      "title": "Jesus, let thy pitying eye"
+    },
+    {
+      "number": 127,
+      "title": "The great decisive day is at hand"
+    },
+    {
+      "number": 128,
+      "title": "There's a wideness in God's mercy"
+    },
+    {
+      "number": 129,
+      "title": "God is love; His mercy brightens"
+    },
+    {
+      "number": 130,
+      "title": "Sweet the moments, rich in blessing"
+    },
+    {
+      "number": 131,
+      "title": "Nothing but leaves!  The Spirit grieves"
+    },
+    {
+      "number": 132,
+      "title": "Heaven is not far away"
+    },
+    {
+      "number": 133,
+      "title": "Thou art the Way, to thee alone"
+    },
+    {
+      "number": 134,
+      "title": "Baptize us anew"
+    },
+    {
+      "number": 135,
+      "title": "O that the Lord would guide my ways"
+    },
+    {
+      "number": 136,
+      "title": "The last call of mercy now lingers for thee"
+    },
+    {
+      "number": 137,
+      "title": "There is a line by us unseen"
+    },
+    {
+      "number": 138,
+      "title": "The wonders of redeeming love"
+    },
+    {
+      "number": 139,
+      "title": "Chief of sinners tho' I be"
+    },
+    {
+      "number": 140,
+      "title": "Go to dark Gethsemane"
+    },
+    {
+      "number": 141,
+      "title": "Not what these hands have done"
+    },
+    {
+      "number": 142,
+      "title": "Cast out the buyers, Lord"
+    },
+    {
+      "number": 143,
+      "title": "How solemn are the words"
+    },
+    {
+      "number": 144,
+      "title": "He's coming once again"
+    },
+    {
+      "number": 145,
+      "title": "Just as I am, without one plea"
+    },
+    {
+      "number": 146,
+      "title": "There is a fountain fill'd with blood"
+    },
+    {
+      "number": 147,
+      "title": "Flee as a bird to your mountain"
+    },
+    {
+      "number": 148,
+      "title": "I bring my sins to Thee"
+    },
+    {
+      "number": 149,
+      "title": "O spotless Lamb!  I come to thee"
+    },
+    {
+      "number": 150,
+      "title": "Alas!  and did my Savior bleed?"
+    },
+    {
+      "number": 151,
+      "title": "The waters are troubled"
+    },
+    {
+      "number": 152,
+      "title": "Not all the blood of beasts"
+    },
+    {
+      "number": 153,
+      "title": "O where shall rest be found"
+    },
+    {
+      "number": 154,
+      "title": "Depth of mercy! can there be"
+    },
+    {
+      "number": 155,
+      "title": "Come, my soul, thy suit prepare!"
+    },
+    {
+      "number": 156,
+      "title": "'Tis midnight; and on Olives' brow"
+    },
+    {
+      "number": 157,
+      "title": "The day of wrath, that dreadful day"
+    },
+    {
+      "number": 158,
+      "title": "I saw One hanging on the tree"
+    },
+    {
+      "number": 159,
+      "title": "Did Christ o'er sinners weep?"
+    },
+    {
+      "number": 160,
+      "title": "O, for a closer walk with God!"
+    },
+    {
+      "number": 161,
+      "title": "Come, Holy Spirit, come"
+    },
+    {
+      "number": 162,
+      "title": "O, could I find, from day to day"
+    },
+    {
+      "number": 163,
+      "title": "Holy Spirit, light divine"
+    },
+    {
+      "number": 164,
+      "title": "Come, gracious Spirit, heavenly Dove"
+    },
+    {
+      "number": 165,
+      "title": "Come to the living waters, come!"
+    },
+    {
+      "number": 166,
+      "title": "O for that flame of living fire"
+    },
+    {
+      "number": 167,
+      "title": "Return, O wanderer, return"
+    },
+    {
+      "number": 168,
+      "title": "Jesus calls us, o'er the tumult"
+    },
+    {
+      "number": 169,
+      "title": "And must I part with all of self"
+    },
+    {
+      "number": 170,
+      "title": "Take my heart, O Father, take it!"
+    },
+    {
+      "number": 171,
+      "title": "One there is above all others"
+    },
+    {
+      "number": 172,
+      "title": "When I survey the wondrous cross"
+    },
+    {
+      "number": 173,
+      "title": "To-day the Saviour calls"
+    },
+    {
+      "number": 174,
+      "title": "Lord, I hear of show'rs of blessing"
+    },
+    {
+      "number": 175,
+      "title": "There are angels hov'ring round"
+    },
+    {
+      "number": 176,
+      "title": "Come, O thou Traveler unknown"
+    },
+    {
+      "number": 177,
+      "title": "Broad is the road that leads to death"
+    },
+    {
+      "number": 178,
+      "title": "Come, ye sinners, poor and needy"
+    },
+    {
+      "number": 179,
+      "title": "Come to Jesus, Come to Jesus"
+    },
+    {
+      "number": 180,
+      "title": "With tearful eyes I look around"
+    },
+    {
+      "number": 181,
+      "title": "Give, thou, thy youth to God"
+    },
+    {
+      "number": 182,
+      "title": "See, Israel's gentle shepherd stands"
+    },
+    {
+      "number": 183,
+      "title": "Oh, for a heart to praise my God!"
+    },
+    {
+      "number": 184,
+      "title": "Why do we waste on trifling cares"
+    },
+    {
+      "number": 185,
+      "title": "Must Jesus bear the cross alone"
+    },
+    {
+      "number": 186,
+      "title": "Father, I stretch my hands to thee"
+    },
+    {
+      "number": 187,
+      "title": "When, my Savior, shall I be"
+    },
+    {
+      "number": 188,
+      "title": "God shall be first in ev'rything"
+    },
+    {
+      "number": 189,
+      "title": "They bro't their gifts to Jesus"
+    },
+    {
+      "number": 190,
+      "title": "Hallelujahs to Jesus!"
+    },
+    {
+      "number": 191,
+      "title": "To God be the glory, great things He hath done"
+    },
+    {
+      "number": 192,
+      "title": "My heart was distress'd 'neath Jehovah's dread frown"
+    },
+    {
+      "number": 193,
+      "title": "O, spread the tidings round"
+    },
+    {
+      "number": 194,
+      "title": "I will sing of Jesus' love"
+    },
+    {
+      "number": 195,
+      "title": "Would we be joyful in the Lord?"
+    },
+    {
+      "number": 196,
+      "title": "Be silent, be silent"
+    },
+    {
+      "number": 197,
+      "title": "Come out in the sunshine!"
+    },
+    {
+      "number": 198,
+      "title": "There's sunshine in my soul to-day"
+    },
+    {
+      "number": 199,
+      "title": "Redeemed!  how I love to proclaim it!"
+    },
+    {
+      "number": 200,
+      "title": "I can hear my Saviour calling"
+    },
+    {
+      "number": 201,
+      "title": "He will mention them no more forever"
+    },
+    {
+      "number": 202,
+      "title": "Nearer, still nearer, close to Thy heart"
+    },
+    {
+      "number": 203,
+      "title": "I once was in the desert, all weary, sad and lone"
+    },
+    {
+      "number": 204,
+      "title": "Christ has for sin atonement made"
+    },
+    {
+      "number": 205,
+      "title": "Blessed assurance, Jesus is mine!"
+    },
+    {
+      "number": 206,
+      "title": "We'll tarry by the living waters"
+    },
+    {
+      "number": 207,
+      "title": "\"There shall be showers of blessing:\""
+    },
+    {
+      "number": 208,
+      "title": "There comes to my heart one sweet strain"
+    },
+    {
+      "number": 209,
+      "title": "The dove of peace sings in my heart"
+    },
+    {
+      "number": 210,
+      "title": "Far away in the depths of my spirit tonight"
+    },
+    {
+      "number": 211,
+      "title": "My soul in sad exile was out on life's sea"
+    },
+    {
+      "number": 212,
+      "title": "Alas!  and did my Saviour bleed"
+    },
+    {
+      "number": 213,
+      "title": "The cross!  it standeth fast"
+    },
+    {
+      "number": 214,
+      "title": "Awake, my soul, and greet the dawn"
+    },
+    {
+      "number": 215,
+      "title": "The name of Jesus is so sweet"
+    },
+    {
+      "number": 216,
+      "title": "Take the name of Jesus with you"
+    },
+    {
+      "number": 217,
+      "title": "Dearest name in earth or heaven"
+    },
+    {
+      "number": 218,
+      "title": "O, the bitter pain and sorrow"
+    },
+    {
+      "number": 219,
+      "title": "Standing on the promises of Christ my King"
+    },
+    {
+      "number": 220,
+      "title": "O worship the Lord in the beauty of holiness"
+    },
+    {
+      "number": 221,
+      "title": "Saved to the uttermost:  I am the Lord's"
+    },
+    {
+      "number": 222,
+      "title": "Safe in the arms of Jesus"
+    },
+    {
+      "number": 223,
+      "title": "Nor silver nor gold hath obtained my redemption"
+    },
+    {
+      "number": 224,
+      "title": "Since Christ my soul from sin set free"
+    },
+    {
+      "number": 225,
+      "title": "Tho' my sins were once like crimson red"
+    },
+    {
+      "number": 226,
+      "title": "Praise Him!  praise Him!  Jesus, our blessed Redeemer!"
+    },
+    {
+      "number": 227,
+      "title": "Wake the song of joy and gladness"
+    },
+    {
+      "number": 228,
+      "title": "O come, let us sing unto the Lord"
+    },
+    {
+      "number": 229,
+      "title": "There is sunlight on the hilltop"
+    },
+    {
+      "number": 230,
+      "title": "Not I but Christ, be honored, loved, exalted"
+    },
+    {
+      "number": 231,
+      "title": "My heart's a tuneful harp when Christ abides within"
+    },
+    {
+      "number": 232,
+      "title": "I feel like singing all the time"
+    },
+    {
+      "number": 233,
+      "title": "Jesus comes with pow'r to gladden"
+    },
+    {
+      "number": 234,
+      "title": "O Jesus my Redeemer"
+    },
+    {
+      "number": 235,
+      "title": "O sing unto the Lord a new song"
+    },
+    {
+      "number": 236,
+      "title": "I have a song I love to sing"
+    },
+    {
+      "number": 237,
+      "title": "I sing the love of God, my Father"
+    },
+    {
+      "number": 238,
+      "title": "One there is above all others"
+    },
+    {
+      "number": 239,
+      "title": "Hear the words of Scripture from the ages past"
+    },
+    {
+      "number": 240,
+      "title": "Oh, bliss of the purified!  bliss of the free!"
+    },
+    {
+      "number": 241,
+      "title": "\"Called unto holiness,\" Church of our God"
+    },
+    {
+      "number": 242,
+      "title": "A beautiful star arose one night"
+    },
+    {
+      "number": 243,
+      "title": "There's a dark and a troubled side of life"
+    },
+    {
+      "number": 244,
+      "title": "\"Peace upon earth!\" the angels sang"
+    },
+    {
+      "number": 245,
+      "title": "In joyful high and holy lays"
+    },
+    {
+      "number": 246,
+      "title": "I've found a friend in Jesus, He's ev'rything to me"
+    },
+    {
+      "number": 247,
+      "title": "Each cooing dove and sighing bough"
+    },
+    {
+      "number": 248,
+      "title": "Long ago the children sang a song"
+    },
+    {
+      "number": 249,
+      "title": "Do you know what the dewdrops say"
+    },
+    {
+      "number": 250,
+      "title": "Don't forget the Sabbath"
+    },
+    {
+      "number": 251,
+      "title": "I've two little hands to work for Jesus"
+    },
+    {
+      "number": 252,
+      "title": "God sees the little sparrow fall"
+    },
+    {
+      "number": 253,
+      "title": "Little stars that twinkle in the heaven's blue"
+    },
+    {
+      "number": 254,
+      "title": "Jesus, I will follow thee"
+    },
+    {
+      "number": 255,
+      "title": "Sweetly sing, sweetly sing"
+    },
+    {
+      "number": 256,
+      "title": "Our sweetest songs of gladness"
+    },
+    {
+      "number": 257,
+      "title": "All hail the power of Jesus' name"
+    },
+    {
+      "number": 258,
+      "title": "All hail the power of Jesus' name!"
+    },
+    {
+      "number": 259,
+      "title": "All hail the pow'r of Jesus' name!"
+    },
+    {
+      "number": 260,
+      "title": "Praise ye Jehovah's name"
+    },
+    {
+      "number": 261,
+      "title": "Crown him with many crowns"
+    },
+    {
+      "number": 262,
+      "title": "O could I speak the matchless worth"
+    },
+    {
+      "number": 263,
+      "title": "Come, children, hail the Prince of Peace"
+    },
+    {
+      "number": 264,
+      "title": "We are children of a King"
+    },
+    {
+      "number": 265,
+      "title": "Look, ye saints, the sight is glorious"
+    },
+    {
+      "number": 266,
+      "title": "Angels, from the realms of glory"
+    },
+    {
+      "number": 267,
+      "title": "As with gladness men of old"
+    },
+    {
+      "number": 268,
+      "title": "Praise, my soul, the King of Heaven"
+    },
+    {
+      "number": 269,
+      "title": "Angel voices, ever singing"
+    },
+    {
+      "number": 270,
+      "title": "'Tis the blessed hour of prayer, when our hearts lowly bend"
+    },
+    {
+      "number": 271,
+      "title": "Peace!  perfect peace!  in this dark world of sin"
+    },
+    {
+      "number": 272,
+      "title": "List to the chime, 'tis meeting time"
+    },
+    {
+      "number": 273,
+      "title": "Children singing, sweet bells ringing!"
+    },
+    {
+      "number": 274,
+      "title": "Strains of music often greet me"
+    },
+    {
+      "number": 275,
+      "title": "Valley lilies, meek and lowly"
+    },
+    {
+      "number": 276,
+      "title": "I wandered in the shades of night"
+    },
+    {
+      "number": 277,
+      "title": "Brightest and best of the sons of the morning"
+    },
+    {
+      "number": 278,
+      "title": "Jesus, Thou hast promised"
+    },
+    {
+      "number": 279,
+      "title": "God of life and God of light"
+    },
+    {
+      "number": 280,
+      "title": "Welcome!  thrice welcome!"
+    },
+    {
+      "number": 281,
+      "title": "When morning gilds the skies"
+    },
+    {
+      "number": 282,
+      "title": "I am Thine, O Lord, I have heard Thy voice"
+    },
+    {
+      "number": 283,
+      "title": "Jesus loves me!  this I know"
+    },
+    {
+      "number": 284,
+      "title": "Let our hearts be always cheerful"
+    },
+    {
+      "number": 285,
+      "title": "For all the saints who from their labors rest"
+    },
+    {
+      "number": 286,
+      "title": "More like Jesus would I be"
+    },
+    {
+      "number": 287,
+      "title": "Saviour, keep me pure in heart"
+    },
+    {
+      "number": 288,
+      "title": "O for a thousand tongues to sing"
+    },
+    {
+      "number": 289,
+      "title": "Jesus, keep me near the cross"
+    },
+    {
+      "number": 290,
+      "title": "Since on my Saviour I believed"
+    },
+    {
+      "number": 291,
+      "title": "\"I know that my Redeemer lives\""
+    },
+    {
+      "number": 292,
+      "title": "I have entered the valley of blessing so sweet"
+    },
+    {
+      "number": 293,
+      "title": "In the blood from the cross"
+    },
+    {
+      "number": 294,
+      "title": "My hope is built on nothing less"
+    },
+    {
+      "number": 295,
+      "title": "O let me walk with thee, my God"
+    },
+    {
+      "number": 296,
+      "title": "Walking with thee, my God"
+    },
+    {
+      "number": 297,
+      "title": "More love to thee, O Christ!"
+    },
+    {
+      "number": 298,
+      "title": "O bliss of the pure ones!"
+    },
+    {
+      "number": 299,
+      "title": "My Jesus, I love thee, I know thou art mine"
+    },
+    {
+      "number": 300,
+      "title": "Down at the cross where my Saviour died"
+    },
+    {
+      "number": 301,
+      "title": "I know I love thee better, Lord"
+    },
+    {
+      "number": 302,
+      "title": "There's no other name like Jesus"
+    },
+    {
+      "number": 303,
+      "title": "Have I need of aught, O Saviour!"
+    },
+    {
+      "number": 304,
+      "title": "God loved the world of sinners lost"
+    },
+    {
+      "number": 305,
+      "title": "Where He may lead me I will go"
+    },
+    {
+      "number": 306,
+      "title": "Fade, fade each earthly joy"
+    },
+    {
+      "number": 307,
+      "title": "When softly falls the twilight hour"
+    },
+    {
+      "number": 308,
+      "title": "Hover o'er me, Holy Spirit"
+    },
+    {
+      "number": 309,
+      "title": "Let the whole Creation cry"
+    },
+    {
+      "number": 310,
+      "title": "All for Jesus, all for Jesus!"
+    },
+    {
+      "number": 311,
+      "title": "Tell me the old, old story"
+    },
+    {
+      "number": 312,
+      "title": "Fairest Lord Jesus"
+    },
+    {
+      "number": 313,
+      "title": "Hark!  the herald angels sing"
+    },
+    {
+      "number": 314,
+      "title": "Thou didst leave Thy throne and Thy kingly crown"
+    },
+    {
+      "number": 315,
+      "title": "Take the world, but give me Jesus"
+    },
+    {
+      "number": 316,
+      "title": "Take my life, and let it be"
+    },
+    {
+      "number": 317,
+      "title": "I lay my sins on Jesus"
+    },
+    {
+      "number": 318,
+      "title": "Live out Thy life within me"
+    },
+    {
+      "number": 319,
+      "title": "O Jesus, I have promised"
+    },
+    {
+      "number": 320,
+      "title": "How dearly God doth love us"
+    },
+    {
+      "number": 321,
+      "title": "O Saviour, precious Saviour"
+    },
+    {
+      "number": 322,
+      "title": "O Word of God incarnate"
+    },
+    {
+      "number": 323,
+      "title": "When, His salvation bringing"
+    },
+    {
+      "number": 324,
+      "title": "Come, praise your Lord and Saviour"
+    },
+    {
+      "number": 325,
+      "title": "There lives a voice within me"
+    },
+    {
+      "number": 326,
+      "title": "To Thee, O dear, dear Saviour!"
+    },
+    {
+      "number": 327,
+      "title": "Holy, holy, holy!  Lord God Almighty!"
+    },
+    {
+      "number": 328,
+      "title": "Worthy, worthy, is the Lamb"
+    },
+    {
+      "number": 329,
+      "title": "The spacious firmament on high"
+    },
+    {
+      "number": 330,
+      "title": "I sing the mighty pow'r of God"
+    },
+    {
+      "number": 331,
+      "title": "My life flows on in endless song"
+    },
+    {
+      "number": 332,
+      "title": "I've found a Friend; oh, such a Friend!"
+    },
+    {
+      "number": 333,
+      "title": "Lord of all being, throned afar"
+    },
+    {
+      "number": 334,
+      "title": "O Love!  how deep, how broad, how high!"
+    },
+    {
+      "number": 335,
+      "title": "O worship the King, all glorious above"
+    },
+    {
+      "number": 336,
+      "title": "O Thou in whose presence my soul takes delight"
+    },
+    {
+      "number": 337,
+      "title": "God's free mercy streameth"
+    },
+    {
+      "number": 338,
+      "title": "Purer yet and purer"
+    },
+    {
+      "number": 339,
+      "title": "Day is dying in the west"
+    },
+    {
+      "number": 340,
+      "title": "Rest of the weary"
+    },
+    {
+      "number": 341,
+      "title": "Lord, thy glory fills the heaven"
+    },
+    {
+      "number": 342,
+      "title": "Hark!  ten thousand harps and voices"
+    },
+    {
+      "number": 343,
+      "title": "Jesus, I my cross have taken"
+    },
+    {
+      "number": 344,
+      "title": "How tedious and tasteless the hours"
+    },
+    {
+      "number": 345,
+      "title": "Love divine, all love excelling"
+    },
+    {
+      "number": 346,
+      "title": "Heav'nly Father, send Thy blessing"
+    },
+    {
+      "number": 347,
+      "title": "Fresh from the throne of glory"
+    },
+    {
+      "number": 348,
+      "title": "O little town of Bethlehem"
+    },
+    {
+      "number": 349,
+      "title": "The Lord in Zion reigneth!"
+    },
+    {
+      "number": 350,
+      "title": "Beneath the cross of Jesus"
+    },
+    {
+      "number": 351,
+      "title": "Praise the Lord, His glories show"
+    },
+    {
+      "number": 352,
+      "title": "Conq'ring kings their titles take"
+    },
+    {
+      "number": 353,
+      "title": "Hark! the herald angels sing"
+    },
+    {
+      "number": 354,
+      "title": "Songs of praise the angels sang"
+    },
+    {
+      "number": 355,
+      "title": "O God, we praise thee, and confess"
+    },
+    {
+      "number": 356,
+      "title": "O Love divine, of all that is"
+    },
+    {
+      "number": 357,
+      "title": "O Thou who art of all that is"
+    },
+    {
+      "number": 358,
+      "title": "I heard a voice, the sweetest voice"
+    },
+    {
+      "number": 359,
+      "title": "I heard the voice of Jesus say"
+    },
+    {
+      "number": 360,
+      "title": "I heard the voice of Jesus say"
+    },
+    {
+      "number": 361,
+      "title": "Majestic sweetness sits enthron'd"
+    },
+    {
+      "number": 362,
+      "title": "A glory in the word we find"
+    },
+    {
+      "number": 363,
+      "title": "A glory gilds the sacred page"
+    },
+    {
+      "number": 364,
+      "title": "How shall the young secure their hearts"
+    },
+    {
+      "number": 365,
+      "title": "Let all the heathen writers join"
+    },
+    {
+      "number": 366,
+      "title": "Joys are flowing like a river"
+    },
+    {
+      "number": 367,
+      "title": "Awake, my soul, to joyful lays"
+    },
+    {
+      "number": 368,
+      "title": "Jesus, my all, to heav'n has gone"
+    },
+    {
+      "number": 369,
+      "title": "Who is on the Lord's side?"
+    },
+    {
+      "number": 370,
+      "title": "Fling out the banner!"
+    },
+    {
+      "number": 371,
+      "title": "God, in the gospel of His Son"
+    },
+    {
+      "number": 372,
+      "title": "Salvation!  O the joyful sound"
+    },
+    {
+      "number": 373,
+      "title": "The heav'ns declare Thy glory, Lord"
+    },
+    {
+      "number": 374,
+      "title": "Again the day awakes in wondrous beauty"
+    },
+    {
+      "number": 375,
+      "title": "For the beauty of the earth"
+    },
+    {
+      "number": 376,
+      "title": "Grant thy blessing, now, O Lord"
+    },
+    {
+      "number": 377,
+      "title": "Praise ye the Father for his loving kindness"
+    },
+    {
+      "number": 378,
+      "title": "Praise ye the Lord; for it is good"
+    },
+    {
+      "number": 379,
+      "title": "Come, ye that love the Lord"
+    },
+    {
+      "number": 380,
+      "title": "Again the day returns of holy rest"
+    },
+    {
+      "number": 381,
+      "title": "Father, again in Jesus' name we meet"
+    },
+    {
+      "number": 382,
+      "title": "Saviour, again to thy dear name we raise"
+    },
+    {
+      "number": 383,
+      "title": "My life, my love, I give to thee"
+    },
+    {
+      "number": 384,
+      "title": "Break Thou the bread of life"
+    },
+    {
+      "number": 385,
+      "title": "The dawn of God's dear Sabbath"
+    },
+    {
+      "number": 386,
+      "title": "O day of rest and gladness"
+    },
+    {
+      "number": 387,
+      "title": "Welcome, delightful morn"
+    },
+    {
+      "number": 388,
+      "title": "Safely thro' another week"
+    },
+    {
+      "number": 390,
+      "title": "It came upon the midnight clear"
+    },
+    {
+      "number": 391,
+      "title": "Come, thou almighty King"
+    },
+    {
+      "number": 392,
+      "title": "Sound, sound the truth abroad!"
+    },
+    {
+      "number": 393,
+      "title": "When all thy mercies, O my God!"
+    },
+    {
+      "number": 394,
+      "title": "O, how happy are they"
+    },
+    {
+      "number": 395,
+      "title": "I would be, dear Saviour, wholly thine"
+    },
+    {
+      "number": 396,
+      "title": "We praise thee, O God, for the Son of thy love"
+    },
+    {
+      "number": 397,
+      "title": "Rejoice and be glad, the Redeemer has come"
+    },
+    {
+      "number": 398,
+      "title": "Come, thou Fount of ev'ry blessing"
+    },
+    {
+      "number": 399,
+      "title": "O happy day!  that fixed my choice"
+    },
+    {
+      "number": 400,
+      "title": "There is no name so sweet on earth"
+    },
+    {
+      "number": 401,
+      "title": "O Love that will not let me go"
+    },
+    {
+      "number": 402,
+      "title": "Thy Word is like a garden, Lord"
+    },
+    {
+      "number": 403,
+      "title": "The King of love my Shepherd is"
+    },
+    {
+      "number": 404,
+      "title": "Stand up, and bless the Lord"
+    },
+    {
+      "number": 405,
+      "title": "By cool Siloam's shady rill"
+    },
+    {
+      "number": 406,
+      "title": "The Lord be with us as we bend"
+    },
+    {
+      "number": 407,
+      "title": "Our Saviour's voice is soft and sweet"
+    },
+    {
+      "number": 408,
+      "title": "O holy Book of truth divine!"
+    },
+    {
+      "number": 409,
+      "title": "I will follow thee, my Saviour"
+    },
+    {
+      "number": 410,
+      "title": "Jesus, thy love can we forget"
+    },
+    {
+      "number": 411,
+      "title": "O Father, I have nought to plead"
+    },
+    {
+      "number": 412,
+      "title": "O Lord, who hidest all our shame"
+    },
+    {
+      "number": 413,
+      "title": "Buried beneath the yielding wave"
+    },
+    {
+      "number": 414,
+      "title": "With willing hearts we tread"
+    },
+    {
+      "number": 415,
+      "title": "Baptized into our Saviour's death"
+    },
+    {
+      "number": 416,
+      "title": "Blest be the tie that binds"
+    },
+    {
+      "number": 417,
+      "title": "Forbid them not, the Saviour cried"
+    },
+    {
+      "number": 418,
+      "title": "Come, O my soul, in sacred lays"
+    },
+    {
+      "number": 419,
+      "title": "Jesus, these eyes have never seen"
+    },
+    {
+      "number": 420,
+      "title": "My God!  how endless is thy love!"
+    },
+    {
+      "number": 421,
+      "title": "This is the day of rest"
+    },
+    {
+      "number": 422,
+      "title": "All things are thine: no gift have we"
+    },
+    {
+      "number": 423,
+      "title": "God of the universe, to thee"
+    },
+    {
+      "number": 424,
+      "title": "Maker of land and rolling sea"
+    },
+    {
+      "number": 425,
+      "title": "Coming Saviour, now in faith"
+    },
+    {
+      "number": 426,
+      "title": "Each little flow'r that opens"
+    },
+    {
+      "number": 427,
+      "title": "Praise, O praise our God and King!"
+    },
+    {
+      "number": 428,
+      "title": "The spring-tide hour brings leaf and flow'r"
+    },
+    {
+      "number": 429,
+      "title": "Father, we thank thee for the night"
+    },
+    {
+      "number": 430,
+      "title": "Another six days' work is done"
+    },
+    {
+      "number": 431,
+      "title": "Welcome, welcome, day of rest"
+    },
+    {
+      "number": 432,
+      "title": "How sweet upon this sacred day"
+    },
+    {
+      "number": 433,
+      "title": "Come, dearest Lord, and feed thy sheep"
+    },
+    {
+      "number": 434,
+      "title": "One thot' I have, my ample creed"
+    },
+    {
+      "number": 435,
+      "title": "Come, Holy Spirit, calm my mind"
+    },
+    {
+      "number": 436,
+      "title": "I've found the Pearl of greatest price!"
+    },
+    {
+      "number": 437,
+      "title": "Pray'r is the soul's sincere desire"
+    },
+    {
+      "number": 438,
+      "title": "Lord, dismiss us with Thy blessing"
+    },
+    {
+      "number": 439,
+      "title": "Come, let us join our cheerful songs"
+    },
+    {
+      "number": 440,
+      "title": "Praise to Him by whose kind favor"
+    },
+    {
+      "number": 441,
+      "title": "Let thy Spirit, blessed Saviour"
+    },
+    {
+      "number": 442,
+      "title": "God of light and matchless splendor"
+    },
+    {
+      "number": 443,
+      "title": "Christ is ris'n, our Lord and King"
+    },
+    {
+      "number": 444,
+      "title": "High in the heav'ns, eternal God"
+    },
+    {
+      "number": 445,
+      "title": "He reigns!  the Lord, the Saviour reigns!"
+    },
+    {
+      "number": 446,
+      "title": "In the cross of Christ I glory"
+    },
+    {
+      "number": 447,
+      "title": "Once more, my soul, the rising day"
+    },
+    {
+      "number": 448,
+      "title": "How sweet the name of Jesus sounds"
+    },
+    {
+      "number": 449,
+      "title": "Jesus, the very thought of thee"
+    },
+    {
+      "number": 450,
+      "title": "O for a thousand tongues to sing"
+    },
+    {
+      "number": 451,
+      "title": "Before Jehovah's awful throne"
+    },
+    {
+      "number": 452,
+      "title": "Jesus, thou joy of loving hearts!"
+    },
+    {
+      "number": 453,
+      "title": "Sing of Jesus, sing forever"
+    },
+    {
+      "number": 454,
+      "title": "Come, let us sing the song of songs"
+    },
+    {
+      "number": 455,
+      "title": "With rev'rence let the saints appear"
+    },
+    {
+      "number": 456,
+      "title": "How pleasant, how divinely fair"
+    },
+    {
+      "number": 457,
+      "title": "O thou to whom, in ancient time"
+    },
+    {
+      "number": 458,
+      "title": "We may not climb the heav'nly steeps"
+    },
+    {
+      "number": 459,
+      "title": "Our blest Redeemer, ere He breathed"
+    },
+    {
+      "number": 460,
+      "title": "Sweetly the holy hymn"
+    },
+    {
+      "number": 461,
+      "title": "This rite our blest Redeemer gave"
+    },
+    {
+      "number": 462,
+      "title": "While in sweet communion feeding"
+    },
+    {
+      "number": 463,
+      "title": "Thou who on the cross didst make"
+    },
+    {
+      "number": 464,
+      "title": "O give thanks unto the Lord, for He is good"
+    },
+    {
+      "number": 465,
+      "title": "Glory be to the Father"
+    },
+    {
+      "number": 466,
+      "title": "Glory be to the Father"
+    },
+    {
+      "number": 467,
+      "title": "Glory be to the Father"
+    },
+    {
+      "number": 468,
+      "title": "Blessed are the poor in spirit"
+    },
+    {
+      "number": 469,
+      "title": "Our Father, which art in heaven"
+    },
+    {
+      "number": 470,
+      "title": "Praise God, from whom all blessings flow"
+    },
+    {
+      "number": 471,
+      "title": "Be present at our table, Lord"
+    },
+    {
+      "number": 472,
+      "title": "All things come of Thee, O Lord"
+    },
+    {
+      "number": 473,
+      "title": "Around the world the chorus rings"
+    },
+    {
+      "number": 474,
+      "title": "Saved to serve in any station"
+    },
+    {
+      "number": 475,
+      "title": "A year of precious blessings"
+    },
+    {
+      "number": 476,
+      "title": "I love to tell the story"
+    },
+    {
+      "number": 477,
+      "title": "Working O Christ, with thee"
+    },
+    {
+      "number": 478,
+      "title": "Just to trust in the Lord, just to lean on His word"
+    },
+    {
+      "number": 479,
+      "title": "Rescue the perishing"
+    },
+    {
+      "number": 480,
+      "title": "Brightly beams our Father's mercy"
+    },
+    {
+      "number": 481,
+      "title": "Are you Christ's light bearer?"
+    },
+    {
+      "number": 482,
+      "title": "An open Bible for the world!"
+    },
+    {
+      "number": 483,
+      "title": "God bids his people on the earth"
+    },
+    {
+      "number": 484,
+      "title": "Loyalty to the Master, loyalty to the King"
+    },
+    {
+      "number": 485,
+      "title": "Take time to be holy"
+    },
+    {
+      "number": 486,
+      "title": "There are lonely hearts to cherish"
+    },
+    {
+      "number": 487,
+      "title": "I cease to sing of sweet tomorrow"
+    },
+    {
+      "number": 488,
+      "title": "Conquering now and still to conquer"
+    },
+    {
+      "number": 489,
+      "title": "I'm pressing on the upward way"
+    },
+    {
+      "number": 490,
+      "title": "Encamped along the hills of light"
+    },
+    {
+      "number": 491,
+      "title": "Saviour, more than life to me"
+    },
+    {
+      "number": 492,
+      "title": "Does Jesus care when my heart is pain'd"
+    },
+    {
+      "number": 493,
+      "title": "O blessed rest, when we recline"
+    },
+    {
+      "number": 494,
+      "title": "The cross that he gave may be heavy"
+    },
+    {
+      "number": 495,
+      "title": "When we walk with the Lord"
+    },
+    {
+      "number": 496,
+      "title": "Dying with Jesus, by death reckoned mine"
+    },
+    {
+      "number": 497,
+      "title": "Moment by moment, hour by hour"
+    },
+    {
+      "number": 498,
+      "title": "Give me the Bible, star of gladness gleaming"
+    },
+    {
+      "number": 499,
+      "title": "Not a wasted moment in the morning fair"
+    },
+    {
+      "number": 500,
+      "title": "O softly the Spirit is whisp'ring to me"
+    },
+    {
+      "number": 501,
+      "title": "Jesus bids us shine with a pure, clear light"
+    },
+    {
+      "number": 502,
+      "title": "Just lean upon the arms of Jesus"
+    },
+    {
+      "number": 503,
+      "title": "What a fellowship, what a joy divine"
+    },
+    {
+      "number": 504,
+      "title": "God be with you till we meet again"
+    },
+    {
+      "number": 505,
+      "title": "The Lord's our Rock, in him we hide"
+    },
+    {
+      "number": 506,
+      "title": "O safe to the Rock that is higher than I"
+    },
+    {
+      "number": 507,
+      "title": "Under His wings I am safely abiding"
+    },
+    {
+      "number": 508,
+      "title": "O Christian, awake!  'tis the Master's command"
+    },
+    {
+      "number": 509,
+      "title": "Firmly stand for God, in the world's mad strife"
+    },
+    {
+      "number": 510,
+      "title": "Sound the battle cry"
+    },
+    {
+      "number": 511,
+      "title": "Strike!  O strike for vict'ry"
+    },
+    {
+      "number": 512,
+      "title": "Who will volunteer?"
+    },
+    {
+      "number": 513,
+      "title": "Ask not to be excused"
+    },
+    {
+      "number": 514,
+      "title": "My Father is rich in houses and lands"
+    },
+    {
+      "number": 515,
+      "title": "Are you weary, are you heavy hearted?"
+    },
+    {
+      "number": 516,
+      "title": "When peace, like a river attendeth my way"
+    },
+    {
+      "number": 517,
+      "title": "In heav'nly love abiding"
+    },
+    {
+      "number": 518,
+      "title": "As of old when the hosts of Israel"
+    },
+    {
+      "number": 519,
+      "title": "'Tis so sweet to trust in Jesus"
+    },
+    {
+      "number": 520,
+      "title": "Lift him up, 'tis he that bids you"
+    },
+    {
+      "number": 521,
+      "title": "Look upon the golden image"
+    },
+    {
+      "number": 522,
+      "title": "Is there anyone can help us, one who understands our hearts"
+    },
+    {
+      "number": 523,
+      "title": "Look for the beautiful, look for the true"
+    },
+    {
+      "number": 524,
+      "title": "Are you heavy laden and with sorrow tried?"
+    },
+    {
+      "number": 525,
+      "title": "More about Jesus I would know"
+    },
+    {
+      "number": 526,
+      "title": "Father, we come to thee"
+    },
+    {
+      "number": 527,
+      "title": "Saviour, lead me lest I stray"
+    },
+    {
+      "number": 528,
+      "title": "The Lord is my light"
+    },
+    {
+      "number": 529,
+      "title": "The angel of the Lord encampeth"
+    },
+    {
+      "number": 530,
+      "title": "Christ, our mighty Captain, leads against the foe"
+    },
+    {
+      "number": 531,
+      "title": "In the highways and hedges go seek for the lost"
+    },
+    {
+      "number": 532,
+      "title": "Seeking the lost, yes, kindly entreating"
+    },
+    {
+      "number": 533,
+      "title": "Would you win a Saviour's blessing?"
+    },
+    {
+      "number": 534,
+      "title": "Closer to thee, my Father, draw me"
+    },
+    {
+      "number": 535,
+      "title": "Anywhere with Jesus I can safely go"
+    },
+    {
+      "number": 536,
+      "title": "Be with us, Lord, as forth we go"
+    },
+    {
+      "number": 537,
+      "title": "Go ye into all the world"
+    },
+    {
+      "number": 538,
+      "title": "Life is not a cloudless journey"
+    },
+    {
+      "number": 539,
+      "title": "Just a ray of sunshine"
+    },
+    {
+      "number": 540,
+      "title": "Walk in the light the Lord has given"
+    },
+    {
+      "number": 541,
+      "title": "I must have the Saviour with me"
+    },
+    {
+      "number": 542,
+      "title": "What are you doing for Jesus"
+    },
+    {
+      "number": 543,
+      "title": "When the cross seems hard to carry"
+    },
+    {
+      "number": 544,
+      "title": "Throw out the Life-Line across the dark wave"
+    },
+    {
+      "number": 545,
+      "title": "Out upon an angry ocean"
+    },
+    {
+      "number": 546,
+      "title": "On the shore beyond the sea"
+    },
+    {
+      "number": 547,
+      "title": "Far and near the fields are teeming"
+    },
+    {
+      "number": 548,
+      "title": "O where are the reapers that garner in"
+    },
+    {
+      "number": 549,
+      "title": "One more day's work for Jesus"
+    },
+    {
+      "number": 550,
+      "title": "Pray for the erring ones, faith shall reclaim them"
+    },
+    {
+      "number": 551,
+      "title": "The home where changes never come"
+    },
+    {
+      "number": 552,
+      "title": "I am thinking today of that beautiful land"
+    },
+    {
+      "number": 553,
+      "title": "All my class!  not one forgotten"
+    },
+    {
+      "number": 554,
+      "title": "Speak to my soul, dear Jesus"
+    },
+    {
+      "number": 555,
+      "title": "Watch, for the time is short"
+    },
+    {
+      "number": 556,
+      "title": "When softly fades the dying day"
+    },
+    {
+      "number": 557,
+      "title": "Lonely?  no, not lonely"
+    },
+    {
+      "number": 558,
+      "title": "Lifetime is working time, spend no idle days"
+    },
+    {
+      "number": 559,
+      "title": "If any little word of mine"
+    },
+    {
+      "number": 560,
+      "title": "Never be sad or desponding"
+    },
+    {
+      "number": 561,
+      "title": "Hark!  'tis the Shepherd's voice I hear"
+    },
+    {
+      "number": 562,
+      "title": "I have learn'd the wondrous secret"
+    },
+    {
+      "number": 563,
+      "title": "Lord, for tomorrow and its needs"
+    },
+    {
+      "number": 564,
+      "title": "Will your anchor hold in the storm of life"
+    },
+    {
+      "number": 565,
+      "title": "Christian, onward!  Christ is coming"
+    },
+    {
+      "number": 566,
+      "title": "It may not be on the mountain's height"
+    },
+    {
+      "number": 567,
+      "title": "'Tis love that makes us happy"
+    },
+    {
+      "number": 568,
+      "title": "Let us gather up the sunbeams"
+    },
+    {
+      "number": 569,
+      "title": "I wash'd my hands this morning"
+    },
+    {
+      "number": 570,
+      "title": "If your hand's on the plow, hold on, hold on"
+    },
+    {
+      "number": 571,
+      "title": "Master, hast thou work for me?"
+    },
+    {
+      "number": 572,
+      "title": "In the struggle of life there's a conquest to win"
+    },
+    {
+      "number": 573,
+      "title": "Hear the pennies dropping!"
+    },
+    {
+      "number": 574,
+      "title": "Gladly, gladly, toiling for the Master"
+    },
+    {
+      "number": 575,
+      "title": "Give!  said the golden sun"
+    },
+    {
+      "number": 576,
+      "title": "To the work!  to the work!  we are servants of God"
+    },
+    {
+      "number": 577,
+      "title": "Beautiful the little hands"
+    },
+    {
+      "number": 578,
+      "title": "We should be like gardens"
+    },
+    {
+      "number": 579,
+      "title": "If I were a sunbeam"
+    },
+    {
+      "number": 580,
+      "title": "There is beauty all around"
+    },
+    {
+      "number": 581,
+      "title": "Angry words!  oh, let them never"
+    },
+    {
+      "number": 582,
+      "title": "Into the tent where a gypsy boy lay"
+    },
+    {
+      "number": 583,
+      "title": "Sowing in the morning, sowing seeds of kindness"
+    },
+    {
+      "number": 584,
+      "title": "Master, the tempest is raging!"
+    },
+    {
+      "number": 585,
+      "title": "Cold water is the cup that cheers"
+    },
+    {
+      "number": 586,
+      "title": "Look for the way-marks as you journey on"
+    },
+    {
+      "number": 587,
+      "title": "Hear the temp'rance call"
+    },
+    {
+      "number": 588,
+      "title": "He that goeth forth with weeping"
+    },
+    {
+      "number": 589,
+      "title": "The world's glorious harvest is fast drawing on"
+    },
+    {
+      "number": 590,
+      "title": "Man the life-boat!  Man the life-boat!"
+    },
+    {
+      "number": 591,
+      "title": "Father, hear the prayer we offer!"
+    },
+    {
+      "number": 592,
+      "title": "Out from the campfire's red glowing"
+    },
+    {
+      "number": 593,
+      "title": "Now to heav'n our pray'r ascending"
+    },
+    {
+      "number": 594,
+      "title": "Give of your best to the Master"
+    },
+    {
+      "number": 595,
+      "title": "My God, is any hour so sweet"
+    },
+    {
+      "number": 596,
+      "title": "Buy up the opportunity"
+    },
+    {
+      "number": 597,
+      "title": "Blessed Lord, how much I need thee!"
+    },
+    {
+      "number": 598,
+      "title": "Oh, to be \"Kept for Jesus!\""
+    },
+    {
+      "number": 599,
+      "title": "I have a Friend so precious"
+    },
+    {
+      "number": 600,
+      "title": "Ready to suffer grief or pain"
+    },
+    {
+      "number": 601,
+      "title": "Precious promise God hath given"
+    },
+    {
+      "number": 602,
+      "title": "Forward, brothers, forward!"
+    },
+    {
+      "number": 603,
+      "title": "God bless our Sabbath school!  Christ superintend it"
+    },
+    {
+      "number": 604,
+      "title": "More diligence give me"
+    },
+    {
+      "number": 605,
+      "title": "Chide mildly the erring"
+    },
+    {
+      "number": 606,
+      "title": "Not now, my child, a little more rough tossing"
+    },
+    {
+      "number": 607,
+      "title": "Let us work for the school with our hearts and our hands"
+    },
+    {
+      "number": 608,
+      "title": "Sweet Sabbath School!  more dear to me"
+    },
+    {
+      "number": 609,
+      "title": "I need Thee every hour"
+    },
+    {
+      "number": 610,
+      "title": "I am passing down the valley that they say is so lone"
+    },
+    {
+      "number": 611,
+      "title": "All the way my Saviour leads me"
+    },
+    {
+      "number": 612,
+      "title": "When morning lights the eastern skies"
+    },
+    {
+      "number": 613,
+      "title": "O sometimes the shadows are deep"
+    },
+    {
+      "number": 614,
+      "title": "Saviour!  Thy dying love"
+    },
+    {
+      "number": 615,
+      "title": "What tho' clouds are hov'ring o'er me"
+    },
+    {
+      "number": 616,
+      "title": "\"Call them in,\" the poor, the wretched"
+    },
+    {
+      "number": 617,
+      "title": "There's a cry from Macedonia  Come and help us"
+    },
+    {
+      "number": 618,
+      "title": "Jesus, tender Shepherd, hear me"
+    },
+    {
+      "number": 619,
+      "title": "The Church has one foundation"
+    },
+    {
+      "number": 620,
+      "title": "I need Thee, precious Jesus"
+    },
+    {
+      "number": 621,
+      "title": "The whole wide world is pleading"
+    },
+    {
+      "number": 622,
+      "title": "Ho!   reapers of life's harvest"
+    },
+    {
+      "number": 623,
+      "title": "For Christ is our endeavor"
+    },
+    {
+      "number": 624,
+      "title": "From Greenland's icy mountains"
+    },
+    {
+      "number": 625,
+      "title": "I could not do without Thee"
+    },
+    {
+      "number": 626,
+      "title": "O Lamb of God! still keep me"
+    },
+    {
+      "number": 627,
+      "title": "Soldiers of the cross, arise!"
+    },
+    {
+      "number": 628,
+      "title": "Stand up! stand up for Jesus!"
+    },
+    {
+      "number": 629,
+      "title": "We plough the fields and scatter"
+    },
+    {
+      "number": 630,
+      "title": "The fields are all white"
+    },
+    {
+      "number": 631,
+      "title": "Lead, kindly Light, amid the encircling gloom"
+    },
+    {
+      "number": 632,
+      "title": "Holy Spirit, faithful Guide"
+    },
+    {
+      "number": 633,
+      "title": "Jesus, lover of my soul"
+    },
+    {
+      "number": 634,
+      "title": "Jesus, lover of my soul"
+    },
+    {
+      "number": 635,
+      "title": "Jesus, lover of my soul"
+    },
+    {
+      "number": 636,
+      "title": "Lord, her watch Thy Church is keeping"
+    },
+    {
+      "number": 637,
+      "title": "We are living, we are dwelling"
+    },
+    {
+      "number": 638,
+      "title": "Lord, thou callest for the workers"
+    },
+    {
+      "number": 639,
+      "title": "\"Cast thy bread upon the waters\""
+    },
+    {
+      "number": 640,
+      "title": "Blessed Jesus, meek and lowly"
+    },
+    {
+      "number": 641,
+      "title": "Hark!  the voice of Jesus calling"
+    },
+    {
+      "number": 642,
+      "title": "Pilgrims on!  the day is dawning"
+    },
+    {
+      "number": 643,
+      "title": "What a friend we have in Jesus"
+    },
+    {
+      "number": 644,
+      "title": "Courage, brother!  do not stumble"
+    },
+    {
+      "number": 645,
+      "title": "God the all-terrible!  King who ordainest"
+    },
+    {
+      "number": 646,
+      "title": "Saviour, breathe an evening blessing"
+    },
+    {
+      "number": 647,
+      "title": "Saviour, breathe an evening blessing"
+    },
+    {
+      "number": 648,
+      "title": "Sitting at the feet of Jesus"
+    },
+    {
+      "number": 649,
+      "title": "There is never a day so dreary"
+    },
+    {
+      "number": 650,
+      "title": "I love thee, I love thee"
+    },
+    {
+      "number": 651,
+      "title": "Come, let us anew our journey pursue"
+    },
+    {
+      "number": 652,
+      "title": "Jesus, Saviour, pilot me"
+    },
+    {
+      "number": 653,
+      "title": "\"Till He come!\"  O let the words"
+    },
+    {
+      "number": 654,
+      "title": "Rock of Ages, cleft for me!"
+    },
+    {
+      "number": 655,
+      "title": "Abide with me!  Fast falls the eventide"
+    },
+    {
+      "number": 656,
+      "title": "Onward, Christian soldiers!"
+    },
+    {
+      "number": 657,
+      "title": "Brightly gleams our banner"
+    },
+    {
+      "number": 658,
+      "title": "Forward!  be our watchword"
+    },
+    {
+      "number": 659,
+      "title": "On our way rejoicing"
+    },
+    {
+      "number": 660,
+      "title": "My Jesus, as thou wilt"
+    },
+    {
+      "number": 661,
+      "title": "Thy way, not mine, O Lord"
+    },
+    {
+      "number": 662,
+      "title": "Saviour!  I follow on"
+    },
+    {
+      "number": 663,
+      "title": "Nearer, my God, to thee"
+    },
+    {
+      "number": 664,
+      "title": "How firm a foundation, ye saints of the Lord"
+    },
+    {
+      "number": 665,
+      "title": "The Lord is my Shepherd, no want shall I know"
+    },
+    {
+      "number": 666,
+      "title": "The Lord is my Shepherd, no want shall I know"
+    },
+    {
+      "number": 667,
+      "title": "Tho' faint, yet pursuing, we go on our way"
+    },
+    {
+      "number": 668,
+      "title": "Still, still with Thee, when purple morning breaketh"
+    },
+    {
+      "number": 669,
+      "title": "Lead Thou me on, and then my feet tho' weary"
+    },
+    {
+      "number": 670,
+      "title": "Christ for the world we sing"
+    },
+    {
+      "number": 671,
+      "title": "O Holy Saviour, Friend unseen"
+    },
+    {
+      "number": 672,
+      "title": "Master, no offering"
+    },
+    {
+      "number": 673,
+      "title": "Answer the call, ye brave men"
+    },
+    {
+      "number": 674,
+      "title": "When storms of life are sweeping"
+    },
+    {
+      "number": 675,
+      "title": "The Lord my pasture shall prepare"
+    },
+    {
+      "number": 676,
+      "title": "Eternal Father!  strong to save"
+    },
+    {
+      "number": 677,
+      "title": "He leadeth me!  O blessed tho't!"
+    },
+    {
+      "number": 678,
+      "title": "Faith of our fathers!  living still"
+    },
+    {
+      "number": 679,
+      "title": "Heir of the kingdom, O why dost thou slumber?"
+    },
+    {
+      "number": 680,
+      "title": "Christian, the morn breaks sweetly o'er thee"
+    },
+    {
+      "number": 681,
+      "title": "A mighty fortress is our God"
+    },
+    {
+      "number": 682,
+      "title": "Rise, my soul, and stretch thy wings"
+    },
+    {
+      "number": 683,
+      "title": "Watchman, blow the gospel trumpet"
+    },
+    {
+      "number": 684,
+      "title": "Words of cheer from the battlefield of life"
+    },
+    {
+      "number": 685,
+      "title": "Cast thy burden on the Lord"
+    },
+    {
+      "number": 686,
+      "title": "We lay us calmly down to sleep"
+    },
+    {
+      "number": 687,
+      "title": "Eternal depth of love divine"
+    },
+    {
+      "number": 688,
+      "title": "God is our refuge and defense"
+    },
+    {
+      "number": 689,
+      "title": "My Maker and my King"
+    },
+    {
+      "number": 690,
+      "title": "O Lord, our heavenly King"
+    },
+    {
+      "number": 691,
+      "title": "I've reach'd the land of corn and wine"
+    },
+    {
+      "number": 692,
+      "title": "I am dwelling on the mountain"
+    },
+    {
+      "number": 693,
+      "title": "The Son of God goes forth to war"
+    },
+    {
+      "number": 694,
+      "title": "O Christian, if the needy poor"
+    },
+    {
+      "number": 695,
+      "title": "Speed on Thy truth, Eternal One"
+    },
+    {
+      "number": 696,
+      "title": "Go forth on wings of faith and pray'r"
+    },
+    {
+      "number": 697,
+      "title": "I will never, never leave thee"
+    },
+    {
+      "number": 698,
+      "title": "Speed thy servants, Saviour, speed them"
+    },
+    {
+      "number": 699,
+      "title": "In the vineyard of our Father"
+    },
+    {
+      "number": 700,
+      "title": "Saints of God, the dawn is bright'ning"
+    },
+    {
+      "number": 701,
+      "title": "Anywhere, dear Saviour"
+    },
+    {
+      "number": 702,
+      "title": "In some way or other, the Lord will provide"
+    },
+    {
+      "number": 703,
+      "title": "Speed away!  speed away, over mountains and sea"
+    },
+    {
+      "number": 704,
+      "title": "Could you wait, could you wait if a brother were lost"
+    },
+    {
+      "number": 705,
+      "title": "Watchman on the walls of Zion"
+    },
+    {
+      "number": 706,
+      "title": "Guide me, O Thou great Jehovah!"
+    },
+    {
+      "number": 707,
+      "title": "Zion stands with walls surrounded"
+    },
+    {
+      "number": 708,
+      "title": "Lo!  He comes, with clouds descending"
+    },
+    {
+      "number": 709,
+      "title": "In the hour of trial"
+    },
+    {
+      "number": 710,
+      "title": "As pants the wearied hart for cooling springs"
+    },
+    {
+      "number": 711,
+      "title": "Revive Thy work, O Lord, Thy mighty arm make bare"
+    },
+    {
+      "number": 712,
+      "title": "If, through unruffled seas"
+    },
+    {
+      "number": 713,
+      "title": "\"My times are in thy hand:\""
+    },
+    {
+      "number": 714,
+      "title": "Ye servants of the Lord"
+    },
+    {
+      "number": 715,
+      "title": "Sow in the morn thy seed"
+    },
+    {
+      "number": 716,
+      "title": "How long, O Lord our Saviour"
+    },
+    {
+      "number": 717,
+      "title": "Speak often to each other"
+    },
+    {
+      "number": 718,
+      "title": "The world is very evil"
+    },
+    {
+      "number": 719,
+      "title": "The morning light is breaking"
+    },
+    {
+      "number": 720,
+      "title": "Work, for the night is coming"
+    },
+    {
+      "number": 721,
+      "title": "There is no work too humble"
+    },
+    {
+      "number": 722,
+      "title": "Carry the joyful tidings"
+    },
+    {
+      "number": 723,
+      "title": "O for a faith that will not shrink"
+    },
+    {
+      "number": 724,
+      "title": "How cheering is the Christian's hope"
+    },
+    {
+      "number": 725,
+      "title": "O God our help in ages past"
+    },
+    {
+      "number": 726,
+      "title": "God moves in a mysterious way"
+    },
+    {
+      "number": 727,
+      "title": "Oh, where are the kings and empires now"
+    },
+    {
+      "number": 728,
+      "title": "We bless Thee for Thy peace, O God"
+    },
+    {
+      "number": 729,
+      "title": "Saviour, like a shepherd lead us"
+    },
+    {
+      "number": 730,
+      "title": "God has said, Forever blessed"
+    },
+    {
+      "number": 731,
+      "title": "Always with us, always with us"
+    },
+    {
+      "number": 732,
+      "title": "Meek and lowly, pure and holy"
+    },
+    {
+      "number": 733,
+      "title": "Tossed upon life's raging billow"
+    },
+    {
+      "number": 734,
+      "title": "Watchman, tell me, does the morning"
+    },
+    {
+      "number": 735,
+      "title": "Gracious Father, guard thy children"
+    },
+    {
+      "number": 736,
+      "title": "Long upon the mountains, weary"
+    },
+    {
+      "number": 737,
+      "title": "Mid scenes of confusion and creature complaints"
+    },
+    {
+      "number": 738,
+      "title": "Mid pleasures and palaces though we may roam"
+    },
+    {
+      "number": 739,
+      "title": "Kind words can never die"
+    },
+    {
+      "number": 740,
+      "title": "Out on an ocean all boundless we ride"
+    },
+    {
+      "number": 741,
+      "title": "Sweet hour of pray'r, sweet hour of pray'r"
+    },
+    {
+      "number": 742,
+      "title": "My days are gliding swiftly by"
+    },
+    {
+      "number": 743,
+      "title": "There is a blessed hope"
+    },
+    {
+      "number": 744,
+      "title": "Thus far the Lord has led me on"
+    },
+    {
+      "number": 745,
+      "title": "My spirit on thy care"
+    },
+    {
+      "number": 746,
+      "title": "I ask not, Lord, for less to bear"
+    },
+    {
+      "number": 747,
+      "title": "Children of the heav'nly King"
+    },
+    {
+      "number": 748,
+      "title": "O blest is he who can divine"
+    },
+    {
+      "number": 749,
+      "title": "Sweet the time, exceeding sweet!"
+    },
+    {
+      "number": 750,
+      "title": "Mourn for the thousands slain"
+    },
+    {
+      "number": 751,
+      "title": "Ye Christian heralds!  go, proclaim"
+    },
+    {
+      "number": 752,
+      "title": "Soldiers of Christ, arise"
+    },
+    {
+      "number": 753,
+      "title": "The tempter to my soul hath said"
+    },
+    {
+      "number": 754,
+      "title": "Imposture shrinks from light"
+    },
+    {
+      "number": 755,
+      "title": "This is the day of toil"
+    },
+    {
+      "number": 756,
+      "title": "How blest the sacred tie that binds"
+    },
+    {
+      "number": 757,
+      "title": "Lamp of our feet, Whereby we trace"
+    },
+    {
+      "number": 758,
+      "title": "When waves of trouble round me swell"
+    },
+    {
+      "number": 759,
+      "title": "Happy the home when God is there"
+    },
+    {
+      "number": 760,
+      "title": "So let our lips and lives express"
+    },
+    {
+      "number": 761,
+      "title": "God make my life a little light"
+    },
+    {
+      "number": 762,
+      "title": "Eternal Father, God of love"
+    },
+    {
+      "number": 763,
+      "title": "Come, Holy Spirit, heav'nly Dove"
+    },
+    {
+      "number": 764,
+      "title": "I love the sacred book of God"
+    },
+    {
+      "number": 765,
+      "title": "Amazing grace!  how sweet the sound"
+    },
+    {
+      "number": 766,
+      "title": "How precious is the book divine"
+    },
+    {
+      "number": 767,
+      "title": "I know that my Redeemer lives"
+    },
+    {
+      "number": 768,
+      "title": "Holy Bible!  book divine!"
+    },
+    {
+      "number": 769,
+      "title": "The Lord's my Shepherd, I'll not want"
+    },
+    {
+      "number": 770,
+      "title": "God of love that hearest prayer"
+    },
+    {
+      "number": 771,
+      "title": "Zion, awake!  thy slumber break"
+    },
+    {
+      "number": 772,
+      "title": "How sweet, how heav'nly is the sight"
+    },
+    {
+      "number": 773,
+      "title": "\"Go, preach my gospel,\" saith the Lord"
+    },
+    {
+      "number": 774,
+      "title": "The day is past and gone"
+    },
+    {
+      "number": 775,
+      "title": "Sun of my soul, O Saviour dear!"
+    },
+    {
+      "number": 776,
+      "title": "Lord, in the morning thou shalt hear"
+    },
+    {
+      "number": 777,
+      "title": "My blest Redeemer and my Lord"
+    },
+    {
+      "number": 778,
+      "title": "How sweet the light of Sabbath eve!"
+    },
+    {
+      "number": 779,
+      "title": "Truth, crush'd to earth, shall rise again"
+    },
+    {
+      "number": 780,
+      "title": "Jesus, engrave it on my heart"
+    },
+    {
+      "number": 781,
+      "title": "When pow'r divine, in mortal form"
+    },
+    {
+      "number": 782,
+      "title": "God is the refuge of his saints"
+    },
+    {
+      "number": 783,
+      "title": "He who seeks the truth, and trembles"
+    },
+    {
+      "number": 784,
+      "title": "God of our salvation, hear us"
+    },
+    {
+      "number": 785,
+      "title": "Prince of Peace, control my will"
+    },
+    {
+      "number": 786,
+      "title": "Blest are the pure in heart"
+    },
+    {
+      "number": 787,
+      "title": "We give Thee but thine own"
+    },
+    {
+      "number": 788,
+      "title": "My soul, be on thy guard!"
+    },
+    {
+      "number": 789,
+      "title": "Unshaken as the sacred hills"
+    },
+    {
+      "number": 790,
+      "title": "God's law demands one living faith"
+    },
+    {
+      "number": 791,
+      "title": "Am I a soldier of the cross"
+    },
+    {
+      "number": 792,
+      "title": "O Christ, with each returning morn"
+    },
+    {
+      "number": 793,
+      "title": "Awake my soul!  stretch ev'ry nerve"
+    },
+    {
+      "number": 794,
+      "title": "New ev'ry morning is Thy love"
+    },
+    {
+      "number": 795,
+      "title": "Go, labor on; spend and be spent"
+    },
+    {
+      "number": 796,
+      "title": "Gently think, and gently speak"
+    },
+    {
+      "number": 797,
+      "title": "O Master, let me walk with thee"
+    },
+    {
+      "number": 798,
+      "title": "Lovely this child, asleep in death"
+    },
+    {
+      "number": 799,
+      "title": "One precious boon, O Lord, I seek"
+    },
+    {
+      "number": 800,
+      "title": "Softly fades the twilight ray"
+    },
+    {
+      "number": 801,
+      "title": "From every stormy wind that blows"
+    },
+    {
+      "number": 802,
+      "title": "Softly now the light of day"
+    },
+    {
+      "number": 803,
+      "title": "Blessed Bible, how I love it!"
+    },
+    {
+      "number": 804,
+      "title": "Sister, thou wast mild and lovely"
+    },
+    {
+      "number": 805,
+      "title": "Guide and guard us, O our Father"
+    },
+    {
+      "number": 806,
+      "title": "Jesus, while our hearts are bleeding"
+    },
+    {
+      "number": 807,
+      "title": "Day by day the manna fell"
+    },
+    {
+      "number": 808,
+      "title": "In grief and fear, to thee, O Lord"
+    },
+    {
+      "number": 809,
+      "title": "What is the chaff, the word of man"
+    },
+    {
+      "number": 810,
+      "title": "I love to steal awhile away"
+    },
+    {
+      "number": 811,
+      "title": "Walk in the light!"
+    },
+    {
+      "number": 812,
+      "title": "Father, whate'er of earthly bliss"
+    },
+    {
+      "number": 813,
+      "title": "O could our thoughts and wishes fly"
+    },
+    {
+      "number": 814,
+      "title": "'Tis by the faith of joys to come"
+    },
+    {
+      "number": 815,
+      "title": "Gentle Peace, from heav'n descended"
+    },
+    {
+      "number": 816,
+      "title": "My country, 'tis of thee"
+    },
+    {
+      "number": 817,
+      "title": "O God, beneath thy guiding hand"
+    },
+    {
+      "number": 818,
+      "title": "God bless our native land!"
+    },
+    {
+      "number": 819,
+      "title": "The Lord worketh, let us work too"
+    },
+    {
+      "number": 820,
+      "title": "Shepherd divine, thou leadest me"
+    },
+    {
+      "number": 821,
+      "title": "For Jesus, all my morning hours"
+    },
+    {
+      "number": 822,
+      "title": "Another year is dawning!"
+    },
+    {
+      "number": 823,
+      "title": "Calm me, my God, and keep me calm"
+    },
+    {
+      "number": 824,
+      "title": "Call Jehovah thy salvation"
+    },
+    {
+      "number": 825,
+      "title": "O blessed hour, when ev'ning comes,"
+    },
+    {
+      "number": 826,
+      "title": "O love divine, that stooped to share"
+    },
+    {
+      "number": 827,
+      "title": "O blest are they who oft have said"
+    },
+    {
+      "number": 828,
+      "title": "God of my life, whose gracious pow'r"
+    },
+    {
+      "number": 829,
+      "title": "Still with thee, O my God!"
+    },
+    {
+      "number": 830,
+      "title": "At first I prayed for light"
+    },
+    {
+      "number": 831,
+      "title": "Come, thou long-expected Jesus"
+    },
+    {
+      "number": 832,
+      "title": "Words are things of little cost"
+    },
+    {
+      "number": 833,
+      "title": "How shall I follow Him I serve?"
+    },
+    {
+      "number": 834,
+      "title": "Lord, speak to me, that I may speak"
+    },
+    {
+      "number": 835,
+      "title": "Sleep not, soldier of the cross"
+    },
+    {
+      "number": 836,
+      "title": "O teach me, Lord, that I may teach"
+    },
+    {
+      "number": 837,
+      "title": "How gentle God's commands!"
+    },
+    {
+      "number": 838,
+      "title": "Spirit of truth and might"
+    },
+    {
+      "number": 839,
+      "title": "The Lord bless us and keep us"
+    },
+    {
+      "number": 840,
+      "title": "Now the day is over"
+    },
+    {
+      "number": 841,
+      "title": "Lord, keep us safe this night"
+    },
+    {
+      "number": 842,
+      "title": "I'm but a stranger here"
+    },
+    {
+      "number": 843,
+      "title": "O land of rest, for thee I sigh"
+    },
+    {
+      "number": 844,
+      "title": "Thou Coming One, our wants relieve"
+    },
+    {
+      "number": 845,
+      "title": "How far from home!  I asked, as on"
+    },
+    {
+      "number": 846,
+      "title": "Asleep in Jesus!  blessed sleep"
+    },
+    {
+      "number": 847,
+      "title": "A thrilling cry--we hear the sound"
+    },
+    {
+      "number": 848,
+      "title": "We shall meet beyond the river"
+    },
+    {
+      "number": 849,
+      "title": "When my life work is ended, and I cross the swelling tide"
+    },
+    {
+      "number": 850,
+      "title": "Beautiful valley of Eden"
+    },
+    {
+      "number": 851,
+      "title": "Above the clouds that veil the blue"
+    },
+    {
+      "number": 852,
+      "title": "When He cometh, when he cometh"
+    },
+    {
+      "number": 853,
+      "title": "Down life's dark vale we wander"
+    },
+    {
+      "number": 854,
+      "title": "There'll be no dark valley when Jesus comes"
+    },
+    {
+      "number": 855,
+      "title": "The Homeland!  O the Homeland!"
+    },
+    {
+      "number": 856,
+      "title": "We shall reach the summer land"
+    },
+    {
+      "number": 857,
+      "title": "Our Lord is now rejected"
+    },
+    {
+      "number": 858,
+      "title": "Light after darkness"
+    },
+    {
+      "number": 859,
+      "title": "When we lay our burdens down"
+    },
+    {
+      "number": 860,
+      "title": "Lord, I care not for riches"
+    },
+    {
+      "number": 861,
+      "title": "Face to face with Christ my Saviour"
+    },
+    {
+      "number": 862,
+      "title": "In the land of fadeless day"
+    },
+    {
+      "number": 863,
+      "title": "O there'll be joy when the work is done"
+    },
+    {
+      "number": 864,
+      "title": "In the glad time of the harvest"
+    },
+    {
+      "number": 865,
+      "title": "When the trumpet of the Lord shall sound, and time shall be no more"
+    },
+    {
+      "number": 866,
+      "title": "With friends on earth we meet in gladness"
+    },
+    {
+      "number": 867,
+      "title": "It maybe at morn, when the day is awaking"
+    },
+    {
+      "number": 868,
+      "title": "Are you ready for the Bridegroom"
+    },
+    {
+      "number": 869,
+      "title": "We shall walk with him in white"
+    },
+    {
+      "number": 870,
+      "title": "\"We would see Jesus;\" for the shadows lengthen"
+    },
+    {
+      "number": 871,
+      "title": "Who are these whose songs are sounding"
+    },
+    {
+      "number": 872,
+      "title": "We shall meet beyond the skies"
+    },
+    {
+      "number": 873,
+      "title": "Breaking thro' the clouds that gather"
+    },
+    {
+      "number": 874,
+      "title": "Sorrow and care may meet"
+    },
+    {
+      "number": 875,
+      "title": "Soul amid earth sorrows dwelling"
+    },
+    {
+      "number": 876,
+      "title": "When I shall awake in that fair morn of morns"
+    },
+    {
+      "number": 877,
+      "title": "Watch, ye saints, with eyelids waking"
+    },
+    {
+      "number": 878,
+      "title": "We know not the hour of the Master's appearing"
+    },
+    {
+      "number": 879,
+      "title": "There's a land that is fairer than day"
+    },
+    {
+      "number": 880,
+      "title": "Oh, glory to God!  it is coming again"
+    },
+    {
+      "number": 881,
+      "title": "I am waiting for the morning"
+    },
+    {
+      "number": 882,
+      "title": "One sweetly solemn tho't"
+    },
+    {
+      "number": 883,
+      "title": "There is a land mine eyes hath seen"
+    },
+    {
+      "number": 884,
+      "title": "Some day the silver cord will break"
+    },
+    {
+      "number": 885,
+      "title": "We know not the time when He cometh"
+    },
+    {
+      "number": 886,
+      "title": "When thou comest in Thy kingdom"
+    },
+    {
+      "number": 887,
+      "title": "Come, we that love the Lord"
+    },
+    {
+      "number": 888,
+      "title": "Beautiful city, haven of peace"
+    },
+    {
+      "number": 889,
+      "title": "Angel voices sweetly singing"
+    },
+    {
+      "number": 890,
+      "title": "Who, who are these beyond the chilly wave"
+    },
+    {
+      "number": 891,
+      "title": "When we hear the music ringing"
+    },
+    {
+      "number": 892,
+      "title": "The golden morning is fast approaching"
+    },
+    {
+      "number": 893,
+      "title": "When the mists have rolled in splendor"
+    },
+    {
+      "number": 894,
+      "title": "Sweet promise is giv'n to all who believe"
+    },
+    {
+      "number": 895,
+      "title": "Joy to the world, the Lord will come!"
+    },
+    {
+      "number": 896,
+      "title": "Awake, ye saints, and raise your eyes"
+    },
+    {
+      "number": 897,
+      "title": "O Paradise!  O Paradise!"
+    },
+    {
+      "number": 898,
+      "title": "Jerusalem the golden"
+    },
+    {
+      "number": 899,
+      "title": "There is a land of pure delight"
+    },
+    {
+      "number": 900,
+      "title": "There is a place of sacred rest"
+    },
+    {
+      "number": 901,
+      "title": "Hark!  the song of Jubilee"
+    },
+    {
+      "number": 902,
+      "title": "We speak of the realms of the blest"
+    },
+    {
+      "number": 903,
+      "title": "Hail to the brightness of Zion's glad morning!"
+    },
+    {
+      "number": 904,
+      "title": "Daughter of Zion, awake from thy sadness"
+    },
+    {
+      "number": 905,
+      "title": "On Jordan's stormy banks I stand"
+    },
+    {
+      "number": 906,
+      "title": "A few more years shall roll"
+    },
+    {
+      "number": 907,
+      "title": "Shall we gather at the river"
+    },
+    {
+      "number": 908,
+      "title": "\"Forever with the Lord!\""
+    },
+    {
+      "number": 909,
+      "title": "We are joyously voyaging over the main"
+    },
+    {
+      "number": 910,
+      "title": "\"Land ahead!\"  its fruits are waving"
+    },
+    {
+      "number": 911,
+      "title": "Glorious things of thee are spoken"
+    },
+    {
+      "number": 912,
+      "title": "Who are these like stars appearing"
+    },
+    {
+      "number": 913,
+      "title": "\"This same Jesus!\"  O how sweetly"
+    },
+    {
+      "number": 914,
+      "title": "How sweet are the tidings that greet the pilgrim's ear"
+    },
+    {
+      "number": 915,
+      "title": "Hark! hark, my soul! Angelic songs are swelling"
+    },
+    {
+      "number": 916,
+      "title": "Hark! hark! my soul, angelic songs are swelling"
+    },
+    {
+      "number": 917,
+      "title": "Ten thousand times ten thousand"
+    },
+    {
+      "number": 918,
+      "title": "O golden day, so long desired"
+    },
+    {
+      "number": 919,
+      "title": "I will sing you a song of that beautiful land"
+    },
+    {
+      "number": 920,
+      "title": "There is sweet rest for feet now weary"
+    },
+    {
+      "number": 921,
+      "title": "Shall we meet beyond the river"
+    },
+    {
+      "number": 922,
+      "title": "When Jesus calls His jewels"
+    },
+    {
+      "number": 923,
+      "title": "The time is near when Zion's sons"
+    },
+    {
+      "number": 924,
+      "title": "When God descends with men to dwell"
+    },
+    {
+      "number": 925,
+      "title": "We've no abiding city here"
+    },
+    {
+      "number": 926,
+      "title": "Thy kingdom come.  Thus day by day"
+    },
+    {
+      "number": 927,
+      "title": "When I can read my title clear"
+    },
+    {
+      "number": 928,
+      "title": "In the Christian's home in glory"
+    },
+    {
+      "number": 929,
+      "title": "Lift up the trumpet, and loud let it ring"
+    },
+    {
+      "number": 930,
+      "title": "The coming King is at the door"
+    },
+    {
+      "number": 931,
+      "title": "Sweet be thy rest"
+    },
+    {
+      "number": 932,
+      "title": "Soon shall we meet again"
+    },
+    {
+      "number": 933,
+      "title": "Break, break, eternal day"
+    },
+    {
+      "number": 934,
+      "title": "On the mountain top appearing"
+    },
+    {
+      "number": 935,
+      "title": "O'er the distant mountain breaking"
+    },
+    {
+      "number": 936,
+      "title": "Christ is coming!  let creation"
+    },
+    {
+      "number": 937,
+      "title": "Hark, that shout of rapture high"
+    },
+    {
+      "number": 938,
+      "title": "The glories of that heav'nly land"
+    },
+    {
+      "number": 939,
+      "title": "In the sun, and moon, and stars"
+    },
+    {
+      "number": 940,
+      "title": "Rest for the toiling hand"
+    },
+    {
+      "number": 941,
+      "title": "Dear as thou wert, and justly dear"
+    },
+    {
+      "number": 942,
+      "title": "She hath passed death's chilling billow"
+    },
+    {
+      "number": 943,
+      "title": "There'll be no grief in heav'n"
+    },
+    {
+      "number": 944,
+      "title": "Meet again when time is o'er"
+    },
+    {
+      "number": 945,
+      "title": "When thou, my righteous Judge, shalt come"
+    },
+    {
+      "number": 946,
+      "title": "O how I long to see that day"
+    },
+    {
+      "number": 947,
+      "title": "My rest is in heaven, my rest is not here"
+    },
+    {
+      "number": 948,
+      "title": "I'm weary.  I'm fainting; my day's work is done"
+    },
+    {
+      "number": 949,
+      "title": "No tears in yonder home"
+    },
+    {
+      "number": 950,
+      "title": "God spake all these words"
+    },
+    {
+      "number": 951,
+      "title": "Lord, have mercy, have mercy upon us"
+    }
+  ]
+}

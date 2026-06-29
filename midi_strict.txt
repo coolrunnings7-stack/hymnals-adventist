@@ -1,0 +1,193 @@
+STRONG matches — tune name found in filename (TRUST, sing-check quality only): 70
+========================================================================
+CIS  12  Whosoever Heareth (Whosoever W [WHOSOEVER]
+      -> WhosoeverAnywhere-OpenDoor-BMidi-CAM.mid
+CIS  18  Just One Touch                 [JUST ONE TOUCH]
+      -> JustOneTouch-Entwistle-BMidi-CAM.mid
+CIS  32  We'll Build on the Rock        [THE ROCK]
+      -> Built_On_The_Rock-Kirken_Den_Er_Et_Gammelt_Hus.mid
+CIS  40  Tell Me the Story of Jesus     [STORY OF JESUS (]
+      -> GodHasGiven-TheStoryOfJesus-BMidi-CAM.mid
+CIS  51  All to Jesus I Surrender (I Su [SURRENDER]
+      -> AllToJesusISurrender-Weeden-BMidi-CAM.mid
+CIS  57  There's Not a Friend Like the  [NO NOT ONE]
+      -> No_Not_One-No_Not_One.mid
+CIS  64  Lord Jesus I Long to Be Perfec [FISCHER]
+      -> OSometimesTheShadows-Fischer-BMidi-CAM.mid
+CIS  76  Softly and Tenderly Jesus Is C [THOMPSON]
+      -> LoveIsALifeGiving-Thompson-BMidi-CAM.mid
+CIS  87  Pass Me Not O Gentle Saviour   [PASS ME NOT]
+      -> Pass_Me_Not_O_Gentle_Savior-Pass_Me_Not_O_Gentle_Savior.mid
+CIS  94  The Great Physician Now Is Nea [GREAT PHYSICIAN ]
+      -> DownAtTheCross-Stockton-BMidi-CAM.mid
+CIS  96  I Gave My Life for Thee        [KENOSIS]
+      -> IGaveMyLife-Kenosis-BMidi-CAM.mid
+CIS 134  Baptize Us Anew                [BAPTIZE US]
+      -> BaptizeUsAnew-Ogden-BMidi-CAM.mid
+CIS 146  There Is a Fountain Filled wit [FOUNTAIN (CLEANS]
+      -> Blessed_Be_The_Fountain-melody-piano.mid
+CIS 166  O for That Flame of Living Fir [MENDON]
+      -> ThirstyMenDont-Horton-BMidi-CAM.mid
+CIS 191  To God Be the Glory            [TO GOD BE THE GL]
+      -> To_God_Be_the_Glory-To_God_Be_the_Glory.mid
+CIS 198  There's Sunshine in My Soul To [SUNSHINE (SWENEY]
+      -> OYoungOnes-Sweney-BMidi-CAM.mid
+CIS 199  Redeemed How I Love to Proclai [REDEEMED (ADA)]
+      -> RedeemedHowILove-Kirkpatrick-BMidi-CAM.mid
+CIS 200  I Can Hear My Saviour Calling  [NORRIS]
+      -> ICanHearMySaviour-Norris-BMidi-CAM.mid
+CIS 202  Nearer Still Nearer            [MORRIS]
+      -> NearerStillNearer-Morris-BMidi-CAM.mid
+CIS 204  Christ Has for Sin Atonement M [WONDERFUL SAVIOU]
+      -> AWonderfulSaviour-Kirkpatrick-BMidi-CAM.mid
+CIS 212  Alas and Did My Saviour Bleed  [HUDSON]
+      -> OForAThousand-Hudson-BMidi-CAM.mid
+CIS 219  Standing on the Promises       [PROMISES (CARTER]
+      -> OhHaveWeGrieved-Carter-BMidi-CAM.mid
+CIS 227  Wake the Song of Joy and Gladn [WAKE THE SONG]
+      -> WakeTheSongOfJoy-AnniversarySong-BMidi-CAM.mid
+CIS 230  Not I But Christ               [NOT I BUT CHRIST]
+      -> NotIButChrist-Simpson-BMidi-CAM.mid
+CIS 282  I Am Thine O Lord (Draw Me Nea [I AM THINE]
+      -> IAmThineOLord-Doanne-BMidi-CAM.mid
+CIS 288  O for a Thousand Tongues to Si [AZMON]
+      -> The_Cloud_Received_Christ_From_Their_Sight-Azmon.mid
+CIS 299  My Jesus I Love Thee           [GORDON]
+      -> MyJesusILoveThee-Gordon-BMidi-CAM.MID
+CIS 312  Fairest Lord Jesus             [CRUSADER'S HYMN ]
+      -> Beautiful_Savior-Crusaders_Hymn.mid
+CIS 315  Take the World But Give Me Jes [GIVE ME JESUS]
+      -> TakeTheWorld-GiveMeJesus-BMidi-CAM.mid
+CIS 332  I've Found a Friend            [FRIEND (BLAENWER]
+      -> What_A_Friend_We_Have_In_Jesus-untitled.mid
+CIS 399  O Happy Day That Fixed My Choi [HAPPY DAY]
+      -> OHappyDay-Rimbault-BMidi-CAM.mid
+CIS 409  I Will Follow Thee My Saviour  [FOLLOW THEE]
+      -> IWillFollowThee-Lawson-BMidi-CAM.mid
+CIS 431  Welcome Welcome Day of Rest    [PLEYEL'S HYMN]
+      -> ChildrenOfTheHeavenly-PleyelsHymn-BMidi-CAM.mid
+CIS 503  What a Fellowship (Leaning on  [SHOWALTER]
+      -> WhatAFellowship-Showalter-BMidi-CAM.mid
+CIS 504  God Be with You Till We Meet A [GOD BE WITH YOU ]
+      -> GodBeWithYou-Randolph-BMidi-CAM.mid
+CIS 505  The Lord's Our Rock (How Firm  [FOUNDATION]
+      -> How_Firm_A_Foundation-Foundation-Protection.mid
+CIS 507  Under His Wings                [HINGHAM (UNDER H]
+      -> Under_His_Wings-Under_His_Wings.mid
+CIS 508  O Christian Awake              [AWAKE]
+      -> Wake_Awake_For_Night_Is_Flying-Wachet_Auf.mid
+CIS 510  Sound the Battle Cry           [BATTLE CRY]
+      -> SoundTheBattleCry-Sherwin-BMidi-CAM.mid
+CIS 516  When Peace Like a River (It Is [VILLE DU HAVRE]
+      -> It_Is_Well_With_My_Soul-It_Is_Well-Ville_Du_Havre.mid
+CIS 519  'Tis So Sweet to Trust in Jesu [TRUST IN JESUS (]
+      -> DearToTheHeart-Kirkpatrick-BMidi-CAM.mid
+CIS 520  Lift Him Up                    [LIFT HIM UP]
+      -> LiftHimUp-Hakes-BMidi-CAM.mid
+CIS 524  Are You Heavy Laden (Come Unto [COME UNTO ME]
+      -> HearTheBlessed-ComeUntoMe-BMidi-CAM.mid
+CIS 525  More About Jesus               [SWENEY (MORE ABO]
+      -> OYoungOnes-Sweney-BMidi-CAM.mid
+CIS 528  The Lord Is My Light           [MY LIGHT]
+      -> TheLordIsMyLight-Bischoff-BMidi-CAM.mid
+CIS 535  Anywhere with Jesus            [SERENITY (ANYWHE]
+      -> ImmortalLove-Serenity-BMidi-CAM.mid
+CIS 548  O Where Are the Reapers        [REAPERS]
+      -> OWhereAreTheReapers-Root-BMidi-CAM.mid
+CIS 564  Will Your Anchor Hold          [WILL YOUR ANCHOR]
+      -> WillYourAnchorHold-Kirkpatrick-BMidi-CAM.mid
+CIS 566  It May Not Be on the Mountain  [I'LL GO]
+      -> OPeopleWhoWillGo-Hartmann-BMidi-CAM.mid
+CIS 576  To the Work                    [TO THE WORK]
+      -> ToTheWork-Doane-BMidi-CAM.mid
+CIS 583  Sowing in the Morning (Bringin [HARVEST (SHAW)]
+      -> LordOfTheHarvest-Avon-BMidi-CAM.mid
+CIS 586  Look for the Way-Marks         [WAY-MARKS]
+      -> LookForTheWaymarks-Belden-BMidi-CAM.mid
+CIS 594  Give of Your Best to the Maste [BARNARD]
+      -> GiveOfYourBest-Barnard-BMidi-CAM.mid
+CIS 611  All the Way My Saviour Leads M [ALL THE WAY]
+      -> AllTheWay-Lowry-BMidi-CAM.MID
+CIS 647  Saviour Breathe an Evening Ble [EVENING (STEBBIN]
+      -> Jesus_Tender_Shepard_Hear_Me-Evening_Prayer.mid
+CIS 677  He Leadeth Me                  [HE LEADETH ME (A]
+      -> He_Leadeth_Me-He_Leadeth_Me.mid
+CIS 734  Watchman Tell Me Does the Morn [DAWNING]
+      -> AnotherYearIsDawning-AnotherYear-BMidi-CAM.mid
+CIS 741  Sweet Hour of Prayer           [SWEET HOUR]
+      -> SweetHour-Bradbury-BMidi-CAM.mid
+CIS 845  How Far from Home              [FAR FROM HOME]
+      -> HowFarFromHome-TisMidnightHour-BMidi-CAM.mid
+CIS 854  There'll Be No Dark Valley     [NO DARK VALLEY]
+      -> TherellBeNoDarkValley-Sankey-BMidi-CAM.mid
+CIS 855  The Homeland                   [HOMELAND]
+      -> TheHomeLand-Homeland-BMidi-CAM.mid
+CIS 861  Face to Face with Christ My Sa [FACE TO FACE]
+      -> FaceToFace-Tullar-BMidi-CAM.mid
+CIS 865  When the Trumpet of the Lord ( [ROLL CALL (BLACK]
+      -> OFullOfMercy-Blackbird-BMidi-CAM.mid
+CIS 867  It May Be at Morn (Christ Retu [CHRIST RETURNETH]
+      -> Christ_Returneth-Christ_Returneth.mid
+CIS 870  We Would See Jesus             [SEE JESUS]
+      -> WeWouldSeeJesus-Belden-BMidi-CAM.mid
+CIS 877  Watch Ye Saints                [WATCH]
+      -> To_Shepherds_as_They_Watched_By_Night-Vom_Himmel_Hoch.mid
+CIS 878  We Know Not the Hour           [KNOW NOT THE HOU]
+      -> WeKnowNotTheHour-Belden-BMidi-CAM.mid
+CIS 887  Come We That Love the Lord (Ma [MARCHING TO ZION]
+      -> ComeWeThatLove-MarchingToZion-BMidi-CAM.mid
+CIS 892  The Golden Morning Is Fast App [GOLDEN MORNING]
+      -> TheGoldenMorning-Graham-BMidi-CAM.mid
+CIS 914  How Sweet Are the Tidings      [TIDINGS]
+      -> OSpreadTheTidings-Comforter-BMidi-CAM.mid
+
+WEAK (title-only, VERIFY): 3
+CIS 551  The Home Where Changes Never C -> TheHomeWhereChanges-Kirkpatrick-BMidi-CAM.mid
+CIS 561  Hark 'Tis the Shepherd's Voice -> HarkTisTheShepherd-Ogden-BMidi-CAM.mid
+CIS 905  On Jordan's Stormy Banks (Prom -> OnJordansStormyBanks-BMidi-CAM.mid
+
+NO MATCH (need to find the MIDI): 44
+CIS   5  Some One Will Enter the Pearly G tune PEARLY GATE (Sankey)
+CIS  17  I've Wandered Far Away from God  tune COMING HOME (Kirkpatrick)
+CIS  27  Would You Be Free (There Is Powe tune POWER IN THE BLOOD (Jones)
+CIS  71  I Will Early Seek the Saviour    tune EARLY SEEK (Case)
+CIS  74  Sing Them Over Again to Me (Wond tune WORDS OF LIFE (Bliss)
+CIS  78  We Have Heard a Joyful Sound (Je tune JESUS SAVES (LIMPUS) (Kirkpatrick)
+CIS  79  Tho' Your Sins Be as Scarlet     tune SCARLET (Doane)
+CIS  93  What Can Wash Away My Sin (Nothi tune PLAINFIELD (Lowry)
+CIS 101  I Hear Thy Welcome Voice         tune WELCOME VOICE (Hartsough)
+CIS 102  I Was Once Far Away (Yet There I tune YET THERE IS ROOM (Sankey)
+CIS 107  I Hear the Saviour Say (Jesus Pa tune ALL TO CHRIST (Grape)
+CIS 109  I Am Coming to the Cross         tune I AM COMING (Fischer)
+CIS 110  O Now I See the Crimson Wave (Th tune CLEANSING WAVE (Mrs. Knapp)
+CIS 138  The Wonders of Redeeming Love    tune REDEEMING LOVE (Sankey)
+CIS 150  Alas and Did My Saviour Bleed    tune MARTYRDOM (Hugh Wilson)
+CIS 196  Be Silent Be Silent              tune BE SILENT (Sankey)
+CIS 203  I Once Was in the Desert (Singin tune ALL THE DAY (Sankey)
+CIS 216  Take the Name of Jesus with You  tune PRECIOUS NAME (Doane)
+CIS 289  Jesus Keep Me Near the Cross (Ne tune NEAR THE CROSS (Doane)
+CIS 294  My Hope Is Built on Nothing Less tune SOLID ROCK (Bradbury)
+CIS 301  I Know I Love Thee Better Lord   tune BETTER LORD (Sankey)
+CIS 308  Hover O'er Me Holy Spirit (Fill  tune FILL ME NOW (Stockton)
+CIS 385  The Dawn of God's Dear Sabbath   tune ST. GEORGE'S BOLTON (Hiles)
+CIS 387  Welcome Delightful Morn          tune LISCHER (German)
+CIS 395  I Would Be Dear Saviour Wholly T tune WHOLLY THINE (Sankey)
+CIS 430  Another Six Days' Work Is Done   tune HEBRON (Mason)
+CIS 506  O Safe to the Rock (Hiding in Th tune HIDING IN THEE (Sankey)
+CIS 532  Seeking the Lost                 tune SEEKING THE LOST (Sankey)
+CIS 538  Life Is Not a Cloudless Journey  tune CLOUDLESS (Sankey)
+CIS 552  I Am Thinking Today of That Beau tune BEAUTIFUL LAND (Sankey)
+CIS 567  'Tis Love That Makes Us Happy    tune LOVE (Sankey)
+CIS 683  Watchman Blow the Gospel Trumpet tune GOSPEL TRUMPET (Sankey)
+CIS 720  Work for the Night Is Coming     tune WORK SONG (WORK) (Mason)
+CIS 722  Carry the Joyful Tidings         tune WORK (Mason)
+CIS 847  A Thrilling Cry                  tune THRILLING CRY (Sankey)
+CIS 852  When He Cometh (Jewels)          tune JEWELS (Root)
+CIS 862  In the Land of Fadeless Day (No  tune NO NIGHT THERE (Danks)
+CIS 863  O There'll Be Joy (When the Roll tune ROLL CALL (Black)
+CIS 879  There's a Land That Is Fairer (I tune SWEET BY AND BY (Webster)
+CIS 894  Sweet Promise Is Given           tune SWEET PROMISE (Sankey)
+CIS 907  Shall We Gather at the River     tune HANSON PLACE (Lowry)
+CIS 913  This Same Jesus                  tune DEERHURST (Smart)
+CIS 929  Lift Up the Trumpet (The Eastern tune EASTERN GATE (Mrs. Knapp)
+CIS 930  The Coming King Is at the Door   tune COMING KING (Sankey)

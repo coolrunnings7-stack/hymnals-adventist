@@ -1,0 +1,126 @@
+MARKED CIS HYMNS — identity & match status (123)
+num | title | first line | tune(name/bracket) | already-have?
+==========================================================================================
+   5 | Some one will enter the pear | Some one will enter the pearly | Some one will ente(bracket) | --
+  12 | "Whosoever heareth," shout,  | "Whosoever heareth," shout, sh | "Whosoever heareth(bracket) | --
+  17 | I've wandered far away from  | I've wandered far away from Go | I've wandered far (bracket) | --
+  18 | Just one touch as He moves a | Just one touch as He moves alo | Just one touch as (bracket) | --
+  27 | Would you be free from your  | Would you be free from your bu | Would you be free (bracket) | --
+  32 | We'll build on the Rock, the | We'll build on the Rock, the l | We'll build on the(bracket) | --
+  40 | Tell me the story of Jesus   | Tell me the story of Jesus,    | Tell me the story (bracket) | --
+  51 | All to Jesus I surrender     | All to Jesus I surrender,      | All to Jesus I sur(bracket) | --
+  57 | There's not a Friend like th | There's not a friend like the  | There's not a frie(bracket) | --
+  64 | Lord Jesus, I long to be per | Lord Jesus, I long to be perfe | Lord Jesus, I long(bracket) | --
+  71 | I will early seek the Saviou | I will early seek the Saviour, | I will early seek (bracket) | --
+  74 | Sing them over again to me   | Sing them over again to me,    | Sing them over aga(bracket) | --
+  76 | Softly and tenderly Jesus is | Softy and tenderly Jesus is ca | Softly and tenderl(bracket) | --
+  78 | We have heard a joyful sound | We have heard a joyful sound,  | We have heard a jo(bracket) | --
+  79 | Tho' your sins be as scarlet | "Tho' your sins be as scarlet, | Tho' your sins be (bracket) | --
+  87 | Pass me not, O gentle Saviou | Pass me not, O gentle Saviour, | Pass me not, O gen(bracket) | --
+  93 | What can wash away my sin?   | What can wash away my sin?     | What can wash away(bracket) | --
+  94 | The great Physician now is n | The great Physician now is nea | The great Physicia(bracket) | --
+  96 | I gave my life for Thee      | I gave my life for Thee,       | I gave my life for(bracket) | --
+ 101 | I hear thy welcome voice     | I hear thy welcome voice,      | I hear thy welcome(bracket) | --
+ 102 | I was once far away from the | I was once far away from the S | I was once far awa(bracket) | --
+ 107 | I hear the Saviour say       | I hear the Saviour say,        | I hear the Saviour(bracket) | --
+ 109 | I am coming to the cross     | I am coming to the cross,      | I am coming to the(bracket) | --
+ 110 | O now I see the crimson wave | O now I see the crimson wave,  | O now I see the cr(bracket) | --
+ 134 | Baptize us anew              | Baptize us anew                | Baptize us anew   (bracket) | --
+ 138 | The wonders of redeeming lov | The wonders of redeeming love  |                   (none) | --
+ 146 | There is a fountain fill'd w | There is a fountain fill'd wit | FOUNTAIN          (named) | --
+ 150 | Alas!  and did my Savior ble | Alas!  and did my Saviour blee | Alas!  and did my (bracket) | --
+ 166 | O for that flame of living f | O for that flame of living fir | MENDON            (named) | --
+ 191 | To God be the glory, great t | To God be the glory, great thi | To God be the glor(bracket) | --
+ 196 | Be silent, be silent         | Be silent, be silent,          | Be silent, be sile(bracket) | --
+ 198 | There's sunshine in my soul  | There's sunshine in my soul to | There's sunshine i(bracket) | --
+ 199 | Redeemed!  how I love to pro | Redeemed!  how I love to procl | Redeemed!  how I l(bracket) | --
+ 200 | I can hear my Saviour callin | I can hear my Saviour calling, | I can hear my Savi(bracket) | --
+ 202 | Nearer, still nearer, close  | Nearer, still nearer, close to | Nearer, still near(bracket) | --
+ 203 | I once was in the desert, al | I once was in the desert, all  | I once was in the (bracket) | --
+ 204 | Christ has for sin atonement | Christ has for sin atonement m | Christ has for sin(bracket) | --
+ 205 | Blessed assurance, Jesus is  | Blessed assurance, Jesus is mi | Blessed assurance,(bracket) | --
+ 212 | Alas!  and did my Saviour bl | Alas!  and did my Saviour blee | Alas!  and did my (bracket) | --
+ 216 | Take the name of Jesus with  | Take the name of Jesus with yo | Take the name of J(bracket) | --
+ 219 | Standing on the promises of  | Standing on the promises of Ch | Standing on the pr(bracket) | --
+ 227 | Wake the song of joy and gla | Wake the song of joy and gladn | Wake the song of j(bracket) | --
+ 230 | Not I but Christ, be honored | Not I but Christ, be honored,  | Not I but Christ, (bracket) | --
+ 282 | I am Thine, O Lord, I have h | I am Thine, O Lord, I have hea | I am Thine, O Lord(bracket) | --
+ 283 | Jesus loves me!  this I know | Jesus loves me!  this I know,  | Jesus loves me!  t(bracket) | --
+ 288 | O for a thousand tongues to  | O for a thousand tongues to si | O for a thousand t(bracket) | --
+ 289 | Jesus, keep me near the cros | Jesus, keep me near the cross, | Jesus, keep me nea(bracket) | --
+ 294 | My hope is built on nothing  | My hope is built on nothing le | My hope is built o(bracket) | --
+ 299 | My Jesus, I love thee, I kno | My Jesus, I love thee, I know  | My Jesus, I love t(bracket) | --
+ 301 | I know I love thee better, L | I know I love thee better, Lor | I know I love thee(bracket) | --
+ 308 | Hover o'er me, Holy Spirit   | Hover o'er me, Holy Spirit,    | Hover o'er me, Hol(bracket) | --
+ 311 | Tell me the old, old story   | Tell me the old, old story,    | Tell me the old, o(bracket) | --
+ 312 | Fairest Lord Jesus           | Fairest Lord Jesus,            | CRUSADER          (named) | --
+ 315 | Take the world, but give me  | Take the world, but give me Je | Take the world, bu(bracket) | --
+ 332 | I've found a Friend; oh, suc | I've found a Friend; oh, such  | FRIEND            (named) | --
+ 385 | The dawn of God's dear Sabba | The dawn of God's dear Sabbath | ST. GEORGE'S, BOLT(named) | --
+ 387 | Welcome, delightful morn     | Welcome, delightful morning,   | LISCHER           (named) | --
+ 395 | I would be, dear Saviour, wh | I would be, dear Saviour, whol | I would be, dear S(bracket) | --
+ 399 | O happy day!  that fixed my  | O, happy day!  that fixed my c | O happy day!  that(bracket) | --
+ 409 | I will follow thee, my Savio | I will follow thee, my Saviour | I will follow thee(bracket) | --
+ 430 | Another six days' work is do | Another six days' work is done | HEBRON            (named) | --
+ 431 | Welcome, welcome, day of res | Welcome, welcome, day of rest, | PLEYEL            (named) | --
+ 503 | What a fellowship, what a jo | What a fellowship, what a joy  | What a fellowship,(bracket) | --
+ 504 | God be with you till we meet | God be with you till we meet a | God be with you ti(bracket) | --
+ 505 | The Lord's our Rock, in him  | The Lord's our Rock, in him we | The Lord's our Roc(bracket) | --
+ 506 | O safe to the Rock that is h | O safe to the Rock that is hig | O safe to the Rock(bracket) | --
+ 507 | Under His wings I am safely  | Under His wings I am safely ab | Under His wings I (bracket) | --
+ 508 | O Christian, awake!  'tis th | O Christian, awake!  'tis the  | O Christian, awake(bracket) | --
+ 510 | Sound the battle cry         | Sound the battle cry,          | Sound the battle c(bracket) | --
+ 516 | When peace, like a river att | When peace like a river attend | When peace like a (bracket) | --
+ 519 | 'Tis so sweet to trust in Je | 'Tis so sweet to trust in Jesu | 'Tis so sweet to t(bracket) | --
+ 520 | Lift him up, 'tis he that bi | Lift him up, 'tis he that bids | Lift him up, 'tis (bracket) | --
+ 524 | Are you heavy laden and with | Are you heavy laden and with s | Are you heavy lade(bracket) | --
+ 525 | More about Jesus I would kno | More about Jesus I would know, | More about Jesus I(bracket) | --
+ 528 | The Lord is my light         | The Lord is my light; then why | The Lord is my lig(bracket) | --
+ 532 | Seeking the lost, yes, kindl | Seeking the lost, yes, kindly  | Seeking the lost, (bracket) | --
+ 535 | Anywhere with Jesus I can sa | Anywhere with Jesus I can safe | Anywhere with Jesu(bracket) | --
+ 538 | Life is not a cloudless jour | Life is not a cloudless journe | Life is not a clou(bracket) | --
+ 548 | O where are the reapers that | O where are the reapers that g | O where are the re(bracket) | --
+ 551 | The home where changes never | The home where changes never c | The home where cha(bracket) | --
+ 552 | I am thinking today of that  | I am thinking today of that be | I am thinking toda(bracket) | --
+ 561 | Hark!  'tis the Shepherd's v | Hark!  'tis the Shepherd's voi | Hark!  'tis the Sh(bracket) | --
+ 564 | Will your anchor hold in the | Will your anchor hold in the s | Will your anchor h(bracket) | --
+ 566 | It may not be on the mountai | It may not be on the mountain' | It may not be on t(bracket) | --
+ 567 | 'Tis love that makes us happ | 'Tis love that makes us happy, | 'Tis love that mak(bracket) | --
+ 576 | To the work!  to the work!   | To the work!  to the work!  we | To the work!  to t(bracket) | --
+ 583 | Sowing in the morning, sowin | Sowing in the morning, sowing  | Sowing in the morn(bracket) | --
+ 586 | Look for the way-marks as yo | Look for the way-marks as you  | Look for the way-m(bracket) | --
+ 594 | Give of your best to the Mas | Give of your best to the Maste | Give of your best (bracket) | --
+ 611 | All the way my Saviour leads | All the way my Saviour leads m | All the way my Sav(bracket) | --
+ 634 | Jesus, lover of my soul      | Jesus, lover of my soul,       | REFUGE            (named) | --
+ 647 | Saviour, breathe an evening  | Saviour, breathe an evening bl | Saviour, breathe a(named) | --
+ 654 | Rock of Ages, cleft for me!  | Rock of Ages, cleft for me!    | Rock of Ages, clef(bracket) | --
+ 677 | He leadeth me!  O blessed th | He leadeth me!  O blessed tho' | He leadeth me!  O (bracket) | --
+ 683 | Watchman, blow the gospel tr | Watchman, blow the gospel trum | Watchman, blow the(bracket) | --
+ 720 | Work, for the night is comin | Work, for the night is coming, | WORK              (named) | --
+ 722 | Carry the joyful tidings     | Carry the joyful tidings       | WORK              (named) | --
+ 729 | Saviour, like a shepherd lea | . Saviour, like a shepherd lea | SHEPHERD          (named) | --
+ 734 | Watchman, tell me, does the  | Watchman, tell me, does the mo | DAWNING           (named) | --
+ 741 | Sweet hour of pray'r, sweet  | Sweet hour of pray'r, sweet ho | Sweet hour of pray(bracket) | --
+ 845 | How far from home!  I asked, | . How far from home?  I asked, | How far from home?(bracket) | --
+ 847 | A thrilling cry--we hear the | . A thrilling cry--we hear the |                   (none) | --
+ 852 | When He cometh, when he come | . When He cometh, when he come | When He cometh, wh(bracket) | --
+ 854 | There'll be no dark valley w | . There'll be no dark valley w | There'll be no dar(bracket) | --
+ 855 | The Homeland!  O the Homelan | . The Homeland!  O the Homelan | The Homeland!  O t(bracket) | --
+ 861 | Face to face with Christ my  | . Face to face with Christ my  | Face to face with (bracket) | --
+ 862 | In the land of fadeless day  | . In the land of fadeless day, | In the land of fad(bracket) | --
+ 863 | O there'll be joy when the w | . O there'll be joy when the w | O there'll be joy (bracket) | --
+ 865 | When the trumpet of the Lord | . When the trumpet of the Lord | When the trumpet o(bracket) | --
+ 867 | It maybe at morn, when the d | . It may be at morn, when the  | It may be at morn,(bracket) | --
+ 870 | "We would see Jesus;" for th | . "We would see Jesus;" for th | "We would see Jesu(bracket) | --
+ 877 | Watch, ye saints, with eyeli | . Watch, ye saints, with eyeli | Watch, ye saints, (bracket) | --
+ 878 | We know not the hour of the  | . We know not the hour of the  | We know not the ho(bracket) | --
+ 879 | There's a land that is faire | . There's a land that is faire | There's a land tha(bracket) | --
+ 887 | Come, we that love the Lord  | . Come, we that love the Lord, | Come, we that love(bracket) | --
+ 892 | The golden morning is fast a | . The golden morning is fast a | The golden morning(bracket) | --
+ 894 | Sweet promise is giv'n to al | . Sweet promise is giv'n to al | Sweet promise is g(bracket) | --
+ 905 | On Jordan's stormy banks I s | . On Jordan's stormy banks I s | On Jordan's stormy(bracket) | --
+ 907 | Shall we gather at the river | . Shall we gather at the river | Shall we gather at(bracket) | --
+ 913 | "This same Jesus!"  O how sw | . "This same Jesus!"  O how sw | DEERHURST         (named) | --
+ 914 | How sweet are the tidings th | . How sweet are the tidings th | How sweet are the (bracket) | --
+ 929 | Lift up the trumpet, and lou | . Lift up the trumpet, and lou | Lift up the trumpe(bracket) | --
+ 930 | The coming King is at the do | . The coming King is at the do | The coming King is(bracket) | --

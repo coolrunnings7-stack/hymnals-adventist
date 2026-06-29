@@ -1,0 +1,167 @@
+CIS NAMED TUNES STILL NEEDED  (164 distinct tunes, 189 hymns)
+Sorted by leverage (how many CIS hymns each tune unlocks)
+========================================================
+AMERICA                     3 hymn(s)  CIS 260, 816, 933
+PERSEVERANCE                3 hymn(s)  CIS 120, 122, 844
+ZEPHYR                      3 hymn(s)  CIS 435, 753, 792
+BERTHOLD                    2 hymn(s)  CIS 325, 649
+CHENIES                     2 hymn(s)  CIS 626, 721
+CHOPIN                      2 hymn(s)  CIS 811, 938
+DAWNING                     2 hymn(s)  CIS 692, 734
+DEERHURST                   2 hymn(s)  CIS 636, 913
+DORRNANCE                   2 hymn(s)  CIS 130, 171
+GREENWOOD                   2 hymn(s)  CIS 460, 829
+HARVEY'S CHANT              2 hymn(s)  CIS 165, 455
+HEBRON                      2 hymn(s)  CIS 430, 744
+HERBERT                     2 hymn(s)  CIS 433, 746
+HOLLEY                      2 hymn(s)  CIS 187, 425
+LAUREL HILL                 2 hymn(s)  CIS 766, 941
+PLEYEL                      2 hymn(s)  CIS 431, 939
+RUSSIAN HYMN                2 hymn(s)  CIS 603, 645
+SHINING SHORE               2 hymn(s)  CIS 461, 742
+STOCKWELL                   2 hymn(s)  CIS 441, 591
+WARE                        2 hymn(s)  CIS 164, 422
+WELTON                      2 hymn(s)  CIS 113, 184
+WORK                        2 hymn(s)  CIS 720, 722
+ALETTA                      1 hymn(s)  CIS 154
+AMBOY                       1 hymn(s)  CIS 354
+AMES                        1 hymn(s)  CIS 444
+AMSTERDAM                   1 hymn(s)  CIS 682
+ANDRE                       1 hymn(s)  CIS 925
+ANEW                        1 hymn(s)  CIS 651
+ANGEL'S STORY               1 hymn(s)  CIS 319
+ANGELS                      1 hymn(s)  CIS 424
+ANVERN                      1 hymn(s)  CIS 923
+ARLINGTON                   1 hymn(s)  CIS 793
+BADEA                       1 hymn(s)  CIS 414
+BALERMA                     1 hymn(s)  CIS 167
+BARNES                      1 hymn(s)  CIS 668
+BELMONT                     1 hymn(s)  CIS 769
+BELOVED                     1 hymn(s)  CIS 336
+BERA                        1 hymn(s)  CIS 797
+BYRON                       1 hymn(s)  CIS 931
+CADDO                       1 hymn(s)  CIS 827
+CALEDONIA                   1 hymn(s)  CIS 627
+CAPTIVITY                   1 hymn(s)  CIS 756
+CHAUTAUQUA                  1 hymn(s)  CIS 339
+COATHAM                     1 hymn(s)  CIS 406
+COMMUNION                   1 hymn(s)  CIS 800
+CONSUMMATION                1 hymn(s)  CIS 695
+CONTRITION                  1 hymn(s)  CIS 159
+CONVERT                     1 hymn(s)  CIS 394
+COVENTRY                    1 hymn(s)  CIS 813
+CRUSADER                    1 hymn(s)  CIS 312
+CUTLER                      1 hymn(s)  CIS 693
+DAY                         1 hymn(s)  CIS 745
+DENFIELD                    1 hymn(s)  CIS 413
+DENTON                      1 hymn(s)  CIS 812
+DOMINUS REGIT ME            1 hymn(s)  CIS 403
+DORT                        1 hymn(s)  CIS 818
+DOVE                        1 hymn(s)  CIS 837
+DOWNS                       1 hymn(s)  CIS 808
+EDEN                        1 hymn(s)  CIS 426
+ELIZABETHTOWN               1 hymn(s)  CIS 432
+ELLA                        1 hymn(s)  CIS 942
+ELLESIDE                    1 hymn(s)  CIS 343
+ENDEAVOR                    1 hymn(s)  CIS 623
+ERNAN                       1 hymn(s)  CIS 825
+EXHORTATION                 1 hymn(s)  CIS 724
+FABEN                       1 hymn(s)  CIS 341
+FERN DELL                   1 hymn(s)  CIS 806
+FLOWER                      1 hymn(s)  CIS 785
+FOUNTAIN                    1 hymn(s)  CIS 146
+FRIEND                      1 hymn(s)  CIS 332
+GENEVA                      1 hymn(s)  CIS 393
+GOLDEN                      1 hymn(s)  CIS 772
+GOSHEN                      1 hymn(s)  CIS 665
+GRANNIS                     1 hymn(s)  CIS 803
+GUIDANCE                    1 hymn(s)  CIS 840
+GUIDE                       1 hymn(s)  CIS 632
+HART                        1 hymn(s)  CIS 747
+HARTEL                      1 hymn(s)  CIS 112
+HATTIE                      1 hymn(s)  CIS 287
+HEBER                       1 hymn(s)  CIS 771
+HENLEY                      1 hymn(s)  CIS 125
+HOLY CROSS                  1 hymn(s)  CIS 761
+HOWARD                      1 hymn(s)  CIS 448
+HUBERT                      1 hymn(s)  CIS 141
+I BRING MY SINS TO THEE     1 hymn(s)  CIS 148
+I LOVE THEE                 1 hymn(s)  CIS 650
+ITALY                       1 hymn(s)  CIS 391
+JUNIOR ENDEAVOR             1 hymn(s)  CIS 630
+LAMBETH                     1 hymn(s)  CIS 823
+LANGRAN                     1 hymn(s)  CIS 121
+LATHBURY                    1 hymn(s)  CIS 384
+LAUDES DOMINI               1 hymn(s)  CIS 281
+LELA                        1 hymn(s)  CIS 277
+LENOX                       1 hymn(s)  CIS 123
+LIFE'S HARVEST              1 hymn(s)  CIS 622
+LINNIE                      1 hymn(s)  CIS 323
+LISCHER                     1 hymn(s)  CIS 387
+LITCHFIELD                  1 hymn(s)  CIS 447
+LORD, KEEP US SAFE THIS NIGHT  1 hymn(s)  CIS 841
+LOUVAN                      1 hymn(s)  CIS 814
+LOVE DIVINE                 1 hymn(s)  CIS 346
+MARY MAGDALENE              1 hymn(s)  CIS 338
+MEAR                        1 hymn(s)  CIS 776
+MENDON                      1 hymn(s)  CIS 166
+MERIBAH                     1 hymn(s)  CIS 945
+MIGDOL                      1 hymn(s)  CIS 452
+MIRIAM                      1 hymn(s)  CIS 621
+MISSIONARY HYMN             1 hymn(s)  CIS 624
+MONSELL                     1 hymn(s)  CIS 340
+MORNING LIGHT               1 hymn(s)  CIS 680
+MORNINGTON                  1 hymn(s)  CIS 755
+MORTON                      1 hymn(s)  CIS 295
+MOUNT OLIVE                 1 hymn(s)  CIS 468
+MOUNT VERNON                1 hymn(s)  CIS 170
+MT. VERNON                  1 hymn(s)  CIS 804
+NEWELL                      1 hymn(s)  CIS 415
+NO SORROW                   1 hymn(s)  CIS 379
+NOCTURN                     1 hymn(s)  CIS 836
+NORTH                       1 hymn(s)  CIS 638
+NORVAL                      1 hymn(s)  CIS 317
+NOTTING HILL                1 hymn(s)  CIS 758
+OAKLAND                     1 hymn(s)  CIS 751
+OAKLEY                      1 hymn(s)  CIS 900
+OLD HUNDRED                 1 hymn(s)  CIS 790
+OLDEN                       1 hymn(s)  CIS 157
+OLIVE'S BROW                1 hymn(s)  CIS 156
+ONWARD                      1 hymn(s)  CIS 642
+OSCAR                       1 hymn(s)  CIS 115
+PEORIA                      1 hymn(s)  CIS 417
+PORTUGUESE HYMN             1 hymn(s)  CIS 664
+PROMISE                     1 hymn(s)  CIS 697
+RANKIN                      1 hymn(s)  CIS 151
+RAPHAEL                     1 hymn(s)  CIS 428
+REFUGE                      1 hymn(s)  CIS 634
+RIPLEY                      1 hymn(s)  CIS 731
+ROSE                        1 hymn(s)  CIS 439
+ROTHMANN                    1 hymn(s)  CIS 661
+ROTHWELL                    1 hymn(s)  CIS 687
+SELENA                      1 hymn(s)  CIS 176
+SELVIN                      1 hymn(s)  CIS 712
+SESSIONS                    1 hymn(s)  CIS 445
+SHAWMUT                     1 hymn(s)  CIS 153
+SHEPHERD                    1 hymn(s)  CIS 729
+SHIRLEY                     1 hymn(s)  CIS 783
+SILOAM                      1 hymn(s)  CIS 405
+SILVER STREET               1 hymn(s)  CIS 752
+SILVERTON                   1 hymn(s)  CIS 786
+ST. GEORGE'S, BOLTON        1 hymn(s)  CIS 385
+ST. HILDA                   1 hymn(s)  CIS 118
+ST. JOHN'S                  1 hymn(s)  CIS 434
+ST. MARTIN'S                1 hymn(s)  CIS 763
+TAMWORTH                    1 hymn(s)  CIS 934
+TO-DAY                      1 hymn(s)  CIS 173
+UNION SQUARE                1 hymn(s)  CIS 625
+UNITY                       1 hymn(s)  CIS 932
+VESPER                      1 hymn(s)  CIS 774
+WARREN                      1 hymn(s)  CIS 457
+WAUGH                       1 hymn(s)  CIS 404
+WILLINGHAM                  1 hymn(s)  CIS 669
+WINCHESTER                  1 hymn(s)  CIS 809
+WINTERBOURNE                1 hymn(s)  CIS 820
+WOODLAND                    1 hymn(s)  CIS 137
+YORK                        1 hymn(s)  CIS 826
+ZERAH                       1 hymn(s)  CIS 896

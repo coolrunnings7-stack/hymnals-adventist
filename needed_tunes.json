@@ -1,0 +1,519 @@
+{
+  "AMERICA": [
+    260,
+    816,
+    933
+  ],
+  "PERSEVERANCE": [
+    120,
+    122,
+    844
+  ],
+  "ZEPHYR": [
+    435,
+    753,
+    792
+  ],
+  "BERTHOLD": [
+    325,
+    649
+  ],
+  "CHENIES": [
+    626,
+    721
+  ],
+  "CHOPIN": [
+    811,
+    938
+  ],
+  "DAWNING": [
+    692,
+    734
+  ],
+  "DEERHURST": [
+    636,
+    913
+  ],
+  "DORRNANCE": [
+    130,
+    171
+  ],
+  "GREENWOOD": [
+    460,
+    829
+  ],
+  "HARVEY'S CHANT": [
+    165,
+    455
+  ],
+  "HEBRON": [
+    430,
+    744
+  ],
+  "HERBERT": [
+    433,
+    746
+  ],
+  "HOLLEY": [
+    187,
+    425
+  ],
+  "LAUREL HILL": [
+    766,
+    941
+  ],
+  "PLEYEL": [
+    431,
+    939
+  ],
+  "RUSSIAN HYMN": [
+    603,
+    645
+  ],
+  "SHINING SHORE": [
+    461,
+    742
+  ],
+  "STOCKWELL": [
+    441,
+    591
+  ],
+  "WARE": [
+    164,
+    422
+  ],
+  "WELTON": [
+    113,
+    184
+  ],
+  "WORK": [
+    720,
+    722
+  ],
+  "ALETTA": [
+    154
+  ],
+  "AMBOY": [
+    354
+  ],
+  "AMES": [
+    444
+  ],
+  "AMSTERDAM": [
+    682
+  ],
+  "ANDRE": [
+    925
+  ],
+  "ANEW": [
+    651
+  ],
+  "ANGEL'S STORY": [
+    319
+  ],
+  "ANGELS": [
+    424
+  ],
+  "ANVERN": [
+    923
+  ],
+  "ARLINGTON": [
+    793
+  ],
+  "BADEA": [
+    414
+  ],
+  "BALERMA": [
+    167
+  ],
+  "BARNES": [
+    668
+  ],
+  "BELMONT": [
+    769
+  ],
+  "BELOVED": [
+    336
+  ],
+  "BERA": [
+    797
+  ],
+  "BYRON": [
+    931
+  ],
+  "CADDO": [
+    827
+  ],
+  "CALEDONIA": [
+    627
+  ],
+  "CAPTIVITY": [
+    756
+  ],
+  "CHAUTAUQUA": [
+    339
+  ],
+  "COATHAM": [
+    406
+  ],
+  "COMMUNION": [
+    800
+  ],
+  "CONSUMMATION": [
+    695
+  ],
+  "CONTRITION": [
+    159
+  ],
+  "CONVERT": [
+    394
+  ],
+  "COVENTRY": [
+    813
+  ],
+  "CRUSADER": [
+    312
+  ],
+  "CUTLER": [
+    693
+  ],
+  "DAY": [
+    745
+  ],
+  "DENFIELD": [
+    413
+  ],
+  "DENTON": [
+    812
+  ],
+  "DOMINUS REGIT ME": [
+    403
+  ],
+  "DORT": [
+    818
+  ],
+  "DOVE": [
+    837
+  ],
+  "DOWNS": [
+    808
+  ],
+  "EDEN": [
+    426
+  ],
+  "ELIZABETHTOWN": [
+    432
+  ],
+  "ELLA": [
+    942
+  ],
+  "ELLESIDE": [
+    343
+  ],
+  "ENDEAVOR": [
+    623
+  ],
+  "ERNAN": [
+    825
+  ],
+  "EXHORTATION": [
+    724
+  ],
+  "FABEN": [
+    341
+  ],
+  "FERN DELL": [
+    806
+  ],
+  "FLOWER": [
+    785
+  ],
+  "FOUNTAIN": [
+    146
+  ],
+  "FRIEND": [
+    332
+  ],
+  "GENEVA": [
+    393
+  ],
+  "GOLDEN": [
+    772
+  ],
+  "GOSHEN": [
+    665
+  ],
+  "GRANNIS": [
+    803
+  ],
+  "GUIDANCE": [
+    840
+  ],
+  "GUIDE": [
+    632
+  ],
+  "HART": [
+    747
+  ],
+  "HARTEL": [
+    112
+  ],
+  "HATTIE": [
+    287
+  ],
+  "HEBER": [
+    771
+  ],
+  "HENLEY": [
+    125
+  ],
+  "HOLY CROSS": [
+    761
+  ],
+  "HOWARD": [
+    448
+  ],
+  "HUBERT": [
+    141
+  ],
+  "I BRING MY SINS TO THEE": [
+    148
+  ],
+  "I LOVE THEE": [
+    650
+  ],
+  "ITALY": [
+    391
+  ],
+  "JUNIOR ENDEAVOR": [
+    630
+  ],
+  "LAMBETH": [
+    823
+  ],
+  "LANGRAN": [
+    121
+  ],
+  "LATHBURY": [
+    384
+  ],
+  "LAUDES DOMINI": [
+    281
+  ],
+  "LELA": [
+    277
+  ],
+  "LENOX": [
+    123
+  ],
+  "LIFE'S HARVEST": [
+    622
+  ],
+  "LINNIE": [
+    323
+  ],
+  "LISCHER": [
+    387
+  ],
+  "LITCHFIELD": [
+    447
+  ],
+  "LORD, KEEP US SAFE THIS NIGHT": [
+    841
+  ],
+  "LOUVAN": [
+    814
+  ],
+  "LOVE DIVINE": [
+    346
+  ],
+  "MARY MAGDALENE": [
+    338
+  ],
+  "MEAR": [
+    776
+  ],
+  "MENDON": [
+    166
+  ],
+  "MERIBAH": [
+    945
+  ],
+  "MIGDOL": [
+    452
+  ],
+  "MIRIAM": [
+    621
+  ],
+  "MISSIONARY HYMN": [
+    624
+  ],
+  "MONSELL": [
+    340
+  ],
+  "MORNING LIGHT": [
+    680
+  ],
+  "MORNINGTON": [
+    755
+  ],
+  "MORTON": [
+    295
+  ],
+  "MOUNT OLIVE": [
+    468
+  ],
+  "MOUNT VERNON": [
+    170
+  ],
+  "MT. VERNON": [
+    804
+  ],
+  "NEWELL": [
+    415
+  ],
+  "NO SORROW": [
+    379
+  ],
+  "NOCTURN": [
+    836
+  ],
+  "NORTH": [
+    638
+  ],
+  "NORVAL": [
+    317
+  ],
+  "NOTTING HILL": [
+    758
+  ],
+  "OAKLAND": [
+    751
+  ],
+  "OAKLEY": [
+    900
+  ],
+  "OLD HUNDRED": [
+    790
+  ],
+  "OLDEN": [
+    157
+  ],
+  "OLIVE'S BROW": [
+    156
+  ],
+  "ONWARD": [
+    642
+  ],
+  "OSCAR": [
+    115
+  ],
+  "PEORIA": [
+    417
+  ],
+  "PORTUGUESE HYMN": [
+    664
+  ],
+  "PROMISE": [
+    697
+  ],
+  "RANKIN": [
+    151
+  ],
+  "RAPHAEL": [
+    428
+  ],
+  "REFUGE": [
+    634
+  ],
+  "RIPLEY": [
+    731
+  ],
+  "ROSE": [
+    439
+  ],
+  "ROTHMANN": [
+    661
+  ],
+  "ROTHWELL": [
+    687
+  ],
+  "SELENA": [
+    176
+  ],
+  "SELVIN": [
+    712
+  ],
+  "SESSIONS": [
+    445
+  ],
+  "SHAWMUT": [
+    153
+  ],
+  "SHEPHERD": [
+    729
+  ],
+  "SHIRLEY": [
+    783
+  ],
+  "SILOAM": [
+    405
+  ],
+  "SILVER STREET": [
+    752
+  ],
+  "SILVERTON": [
+    786
+  ],
+  "ST. GEORGE'S, BOLTON": [
+    385
+  ],
+  "ST. HILDA": [
+    118
+  ],
+  "ST. JOHN'S": [
+    434
+  ],
+  "ST. MARTIN'S": [
+    763
+  ],
+  "TAMWORTH": [
+    934
+  ],
+  "TO-DAY": [
+    173
+  ],
+  "UNION SQUARE": [
+    625
+  ],
+  "UNITY": [
+    932
+  ],
+  "VESPER": [
+    774
+  ],
+  "WARREN": [
+    457
+  ],
+  "WAUGH": [
+    404
+  ],
+  "WILLINGHAM": [
+    669
+  ],
+  "WINCHESTER": [
+    809
+  ],
+  "WINTERBOURNE": [
+    820
+  ],
+  "WOODLAND": [
+    137
+  ],
+  "YORK": [
+    826
+  ],
+  "ZERAH": [
+    896
+  ]
+}

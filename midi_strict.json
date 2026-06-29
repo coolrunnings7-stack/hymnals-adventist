@@ -1,0 +1,354 @@
+{
+  "strong": {
+    "12": {
+      "title": "Whosoever Heareth (Whosoever Will)",
+      "tune": "WHOSOEVER",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WhosoeverAnywhere-OpenDoor-BMidi-CAM.mid"
+    },
+    "18": {
+      "title": "Just One Touch",
+      "tune": "JUST ONE TOUCH",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-J/JustOneTouch-Entwistle-BMidi-CAM.mid"
+    },
+    "32": {
+      "title": "We'll Build on the Rock",
+      "tune": "THE ROCK",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Built_On_The_Rock-Kirken_Den_Er_Et_Gammelt_Hus.mid"
+    },
+    "40": {
+      "title": "Tell Me the Story of Jesus",
+      "tune": "STORY OF JESUS (JOHNSTON)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-G/GodHasGiven-TheStoryOfJesus-BMidi-CAM.mid"
+    },
+    "51": {
+      "title": "All to Jesus I Surrender (I Surrender All)",
+      "tune": "SURRENDER",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-F/BandMidi-A/AllToJesusISurrender-Weeden-BMidi-CAM.mid"
+    },
+    "57": {
+      "title": "There's Not a Friend Like the Lowly Jesus (No Not One)",
+      "tune": "NO NOT ONE",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/No_Not_One-No_Not_One.mid"
+    },
+    "64": {
+      "title": "Lord Jesus I Long to Be Perfectly Whole (Whiter Than Snow)",
+      "tune": "FISCHER",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OSometimesTheShadows-Fischer-BMidi-CAM.mid"
+    },
+    "76": {
+      "title": "Softly and Tenderly Jesus Is Calling",
+      "tune": "THOMPSON",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-L/LoveIsALifeGiving-Thompson-BMidi-CAM.mid"
+    },
+    "87": {
+      "title": "Pass Me Not O Gentle Saviour",
+      "tune": "PASS ME NOT",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Pass_Me_Not_O_Gentle_Savior-Pass_Me_Not_O_Gentle_Savior.mid"
+    },
+    "94": {
+      "title": "The Great Physician Now Is Near",
+      "tune": "GREAT PHYSICIAN (STOCKTON)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-D/DownAtTheCross-Stockton-BMidi-CAM.mid"
+    },
+    "96": {
+      "title": "I Gave My Life for Thee",
+      "tune": "KENOSIS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-I/IGaveMyLife-Kenosis-BMidi-CAM.mid"
+    },
+    "134": {
+      "title": "Baptize Us Anew",
+      "tune": "BAPTIZE US",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-B/BaptizeUsAnew-Ogden-BMidi-CAM.mid"
+    },
+    "146": {
+      "title": "There Is a Fountain Filled with Blood",
+      "tune": "FOUNTAIN (CLEANSING FOUNTAIN)",
+      "midi": "/Users/fedlybonneau/Downloads/Blessed_Be_The_Fountain-melody-piano.mid"
+    },
+    "166": {
+      "title": "O for That Flame of Living Fire",
+      "tune": "MENDON",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/ThirstyMenDont-Horton-BMidi-CAM.mid"
+    },
+    "191": {
+      "title": "To God Be the Glory",
+      "tune": "TO GOD BE THE GLORY",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/To_God_Be_the_Glory-To_God_Be_the_Glory.mid"
+    },
+    "198": {
+      "title": "There's Sunshine in My Soul Today",
+      "tune": "SUNSHINE (SWENEY)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OYoungOnes-Sweney-BMidi-CAM.mid"
+    },
+    "199": {
+      "title": "Redeemed How I Love to Proclaim It",
+      "tune": "REDEEMED (ADA)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-R/RedeemedHowILove-Kirkpatrick-BMidi-CAM.mid"
+    },
+    "200": {
+      "title": "I Can Hear My Saviour Calling (Where He Leads Me)",
+      "tune": "NORRIS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-I/ICanHearMySaviour-Norris-BMidi-CAM.mid"
+    },
+    "202": {
+      "title": "Nearer Still Nearer",
+      "tune": "MORRIS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-N/NearerStillNearer-Morris-BMidi-CAM.mid"
+    },
+    "204": {
+      "title": "Christ Has for Sin Atonement Made (What a Wonderful Saviour)",
+      "tune": "WONDERFUL SAVIOUR",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-F/BandMidi-A/AWonderfulSaviour-Kirkpatrick-BMidi-CAM.mid"
+    },
+    "212": {
+      "title": "Alas and Did My Saviour Bleed (At the Cross)",
+      "tune": "HUDSON",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OForAThousand-Hudson-BMidi-CAM.mid"
+    },
+    "219": {
+      "title": "Standing on the Promises",
+      "tune": "PROMISES (CARTER)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OhHaveWeGrieved-Carter-BMidi-CAM.mid"
+    },
+    "227": {
+      "title": "Wake the Song of Joy and Gladness",
+      "tune": "WAKE THE SONG",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WakeTheSongOfJoy-AnniversarySong-BMidi-CAM.mid"
+    },
+    "230": {
+      "title": "Not I But Christ",
+      "tune": "NOT I BUT CHRIST",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-N/NotIButChrist-Simpson-BMidi-CAM.mid"
+    },
+    "282": {
+      "title": "I Am Thine O Lord (Draw Me Nearer)",
+      "tune": "I AM THINE",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-I/IAmThineOLord-Doanne-BMidi-CAM.mid"
+    },
+    "288": {
+      "title": "O for a Thousand Tongues to Sing",
+      "tune": "AZMON",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/The_Cloud_Received_Christ_From_Their_Sight-Azmon.mid"
+    },
+    "299": {
+      "title": "My Jesus I Love Thee",
+      "tune": "GORDON",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-M/MyJesusILoveThee-Gordon-BMidi-CAM.MID"
+    },
+    "312": {
+      "title": "Fairest Lord Jesus",
+      "tune": "CRUSADER'S HYMN (ST. ELIZABETH)",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Beautiful_Savior-Crusaders_Hymn.mid"
+    },
+    "315": {
+      "title": "Take the World But Give Me Jesus",
+      "tune": "GIVE ME JESUS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/TakeTheWorld-GiveMeJesus-BMidi-CAM.mid"
+    },
+    "332": {
+      "title": "I've Found a Friend",
+      "tune": "FRIEND (BLAENWERN/FRIEND)",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/What_A_Friend_We_Have_In_Jesus-untitled.mid"
+    },
+    "399": {
+      "title": "O Happy Day That Fixed My Choice",
+      "tune": "HAPPY DAY",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OHappyDay-Rimbault-BMidi-CAM.mid"
+    },
+    "409": {
+      "title": "I Will Follow Thee My Saviour",
+      "tune": "FOLLOW THEE",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-I/IWillFollowThee-Lawson-BMidi-CAM.mid"
+    },
+    "431": {
+      "title": "Welcome Welcome Day of Rest",
+      "tune": "PLEYEL'S HYMN",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-C/ChildrenOfTheHeavenly-PleyelsHymn-BMidi-CAM.mid"
+    },
+    "503": {
+      "title": "What a Fellowship (Leaning on the Everlasting Arms)",
+      "tune": "SHOWALTER",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WhatAFellowship-Showalter-BMidi-CAM.mid"
+    },
+    "504": {
+      "title": "God Be with You Till We Meet Again",
+      "tune": "GOD BE WITH YOU (TOMER)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-G/GodBeWithYou-Randolph-BMidi-CAM.mid"
+    },
+    "505": {
+      "title": "The Lord's Our Rock (How Firm a Foundation)",
+      "tune": "FOUNDATION",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/How_Firm_A_Foundation-Foundation-Protection.mid"
+    },
+    "507": {
+      "title": "Under His Wings",
+      "tune": "HINGHAM (UNDER HIS WINGS)",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Under_His_Wings-Under_His_Wings.mid"
+    },
+    "508": {
+      "title": "O Christian Awake",
+      "tune": "AWAKE",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Wake_Awake_For_Night_Is_Flying-Wachet_Auf.mid"
+    },
+    "510": {
+      "title": "Sound the Battle Cry",
+      "tune": "BATTLE CRY",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-S/SoundTheBattleCry-Sherwin-BMidi-CAM.mid"
+    },
+    "516": {
+      "title": "When Peace Like a River (It Is Well)",
+      "tune": "VILLE DU HAVRE",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/It_Is_Well_With_My_Soul-It_Is_Well-Ville_Du_Havre.mid"
+    },
+    "519": {
+      "title": "'Tis So Sweet to Trust in Jesus",
+      "tune": "TRUST IN JESUS (KIRKPATRICK)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-R/DearToTheHeart-Kirkpatrick-BMidi-CAM.mid"
+    },
+    "520": {
+      "title": "Lift Him Up",
+      "tune": "LIFT HIM UP",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-L/LiftHimUp-Hakes-BMidi-CAM.mid"
+    },
+    "524": {
+      "title": "Are You Heavy Laden (Come Unto Me)",
+      "tune": "COME UNTO ME",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-H/HearTheBlessed-ComeUntoMe-BMidi-CAM.mid"
+    },
+    "525": {
+      "title": "More About Jesus",
+      "tune": "SWENEY (MORE ABOUT JESUS)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OYoungOnes-Sweney-BMidi-CAM.mid"
+    },
+    "528": {
+      "title": "The Lord Is My Light",
+      "tune": "MY LIGHT",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/TheLordIsMyLight-Bischoff-BMidi-CAM.mid"
+    },
+    "535": {
+      "title": "Anywhere with Jesus",
+      "tune": "SERENITY (ANYWHERE)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-I/ImmortalLove-Serenity-BMidi-CAM.mid"
+    },
+    "548": {
+      "title": "O Where Are the Reapers",
+      "tune": "REAPERS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OWhereAreTheReapers-Root-BMidi-CAM.mid"
+    },
+    "564": {
+      "title": "Will Your Anchor Hold",
+      "tune": "WILL YOUR ANCHOR HOLD",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WillYourAnchorHold-Kirkpatrick-BMidi-CAM.mid"
+    },
+    "566": {
+      "title": "It May Not Be on the Mountain (I'll Go Where You Want)",
+      "tune": "I'LL GO",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OPeopleWhoWillGo-Hartmann-BMidi-CAM.mid"
+    },
+    "576": {
+      "title": "To the Work",
+      "tune": "TO THE WORK",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/ToTheWork-Doane-BMidi-CAM.mid"
+    },
+    "583": {
+      "title": "Sowing in the Morning (Bringing in the Sheaves)",
+      "tune": "HARVEST (SHAW)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-L/LordOfTheHarvest-Avon-BMidi-CAM.mid"
+    },
+    "586": {
+      "title": "Look for the Way-Marks",
+      "tune": "WAY-MARKS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-L/LookForTheWaymarks-Belden-BMidi-CAM.mid"
+    },
+    "594": {
+      "title": "Give of Your Best to the Master",
+      "tune": "BARNARD",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-G/GiveOfYourBest-Barnard-BMidi-CAM.mid"
+    },
+    "611": {
+      "title": "All the Way My Saviour Leads Me",
+      "tune": "ALL THE WAY",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-F/BandMidi-A/AllTheWay-Lowry-BMidi-CAM.MID"
+    },
+    "647": {
+      "title": "Saviour Breathe an Evening Blessing",
+      "tune": "EVENING (STEBBINS)",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Jesus_Tender_Shepard_Hear_Me-Evening_Prayer.mid"
+    },
+    "677": {
+      "title": "He Leadeth Me",
+      "tune": "HE LEADETH ME (AUGHTON)",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/He_Leadeth_Me-He_Leadeth_Me.mid"
+    },
+    "734": {
+      "title": "Watchman Tell Me Does the Morning",
+      "tune": "DAWNING",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-F/BandMidi-A/AnotherYearIsDawning-AnotherYear-BMidi-CAM.mid"
+    },
+    "741": {
+      "title": "Sweet Hour of Prayer",
+      "tune": "SWEET HOUR",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-S/SweetHour-Bradbury-BMidi-CAM.mid"
+    },
+    "845": {
+      "title": "How Far from Home",
+      "tune": "FAR FROM HOME",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-G-J/BandMidi-H/HowFarFromHome-TisMidnightHour-BMidi-CAM.mid"
+    },
+    "854": {
+      "title": "There'll Be No Dark Valley",
+      "tune": "NO DARK VALLEY",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/TherellBeNoDarkValley-Sankey-BMidi-CAM.mid"
+    },
+    "855": {
+      "title": "The Homeland",
+      "tune": "HOMELAND",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/TheHomeLand-Homeland-BMidi-CAM.mid"
+    },
+    "861": {
+      "title": "Face to Face with Christ My Saviour",
+      "tune": "FACE TO FACE",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-F/FaceToFace-Tullar-BMidi-CAM.mid"
+    },
+    "865": {
+      "title": "When the Trumpet of the Lord (When the Roll Is Called Up Yonder)",
+      "tune": "ROLL CALL (BLACK)",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OFullOfMercy-Blackbird-BMidi-CAM.mid"
+    },
+    "867": {
+      "title": "It May Be at Morn (Christ Returneth)",
+      "tune": "CHRIST RETURNETH",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/Christ_Returneth-Christ_Returneth.mid"
+    },
+    "870": {
+      "title": "We Would See Jesus",
+      "tune": "SEE JESUS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WeWouldSeeJesus-Belden-BMidi-CAM.mid"
+    },
+    "877": {
+      "title": "Watch Ye Saints",
+      "tune": "WATCH",
+      "midi": "/Users/fedlybonneau/Downloads/OpenHymnal2014/To_Shepherds_as_They_Watched_By_Night-Vom_Himmel_Hoch.mid"
+    },
+    "878": {
+      "title": "We Know Not the Hour",
+      "tune": "KNOW NOT THE HOUR",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-W/WeKnowNotTheHour-Belden-BMidi-CAM.mid"
+    },
+    "887": {
+      "title": "Come We That Love the Lord (Marching to Zion)",
+      "tune": "MARCHING TO ZION",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-A-F/BandMidi-C/ComeWeThatLove-MarchingToZion-BMidi-CAM.mid"
+    },
+    "892": {
+      "title": "The Golden Morning Is Fast Approaching",
+      "tune": "GOLDEN MORNING",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-S-Z/BandMidi-T/TheGoldenMorning-Graham-BMidi-CAM.mid"
+    },
+    "914": {
+      "title": "How Sweet Are the Tidings",
+      "tune": "TIDINGS",
+      "midi": "/Users/fedlybonneau/Downloads/BandMidi-K-R/BandMidi-O/OSpreadTheTidings-Comforter-BMidi-CAM.mid"
+    }
+  }
+}

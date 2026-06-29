@@ -2,7 +2,7 @@
   "expo": {
     "name": "Hymnals of the Adventist Movement",
     "slug": "hymnals-adventist",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
@@ -15,7 +15,6 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.therunningpreacher.hymnals",
       "infoPlist": {
-        "UIBackgroundModes": ["audio"],
         "ITSAppUsesNonExemptEncryption": false
       }
     },
@@ -32,6 +31,12 @@
         "projectId": "171e33d9-16d6-40ca-84f7-2307bcd6d1af"
       }
     },
-    "owner": "therunningpreacher"
+    "owner": "therunningpreacher",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/171e33d9-16d6-40ca-84f7-2307bcd6d1af"
+    }
   }
 }

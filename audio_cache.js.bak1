@@ -1,0 +1,77 @@
+// audio_cache.js
+// Downloads hymn tunes on demand from the app's GitHub release and caches them
+// on the device, so each tune is fetched once and then plays offline forever.
+import * as FileSystem from 'expo-file-system/legacy';
+
+export const AUDIO_BASE =
+  'https://github.com/coolrunnings7-stack/hymnals-adventist/releases/download/audio-v1/';
+
+const DIR = FileSystem.documentDirectory + 'tunes/';
+
+async function ensureDir() {
+  const info = await FileSystem.getInfoAsync(DIR);
+  if (!info.exists) await FileSystem.makeDirectoryAsync(DIR, { intermediates: true });
+}
+
+function safeName(key) {
+  return String(key).replace(/[^A-Za-z0-9_-]/g, '_');
+}
+function localUri(key) {
+  return DIR + safeName(key) + '.mp3';
+}
+function remoteUrl(key) {
+  return AUDIO_BASE + encodeURIComponent(key) + '.mp3';
+}
+
+// True if this tune is already saved on the device.
+export async function isCached(key) {
+  if (!key) return false;
+  try {
+    const info = await FileSystem.getInfoAsync(localUri(key));
+    return !!(info.exists && info.size > 0);
+  } catch (e) { return false; }
+}
+
+// Returns a playable local file URI, downloading + caching the tune if needed.
+export async function getPlayableUri(key) {
+  if (!key) return null;
+  await ensureDir();
+  const local = localUri(key);
+  try {
+    const info = await FileSystem.getInfoAsync(local);
+    if (info.exists && info.size > 0) return local;
+  } catch (e) {}
+  const res = await FileSystem.downloadAsync(remoteUrl(key), local);
+  if (!res || res.status !== 200) {
+    try { await FileSystem.deleteAsync(local, { idempotent: true }); } catch (e) {}
+    throw new Error('Could not download tune (' + (res ? res.status : 'no response') + ')');
+  }
+  return local;
+}
+
+// Download every tune in `keys` for offline use. Calls onProgress(done, total, failed).
+export async function downloadAll(keys, onProgress) {
+  await ensureDir();
+  let done = 0, failed = 0;
+  for (const key of keys) {
+    try {
+      const local = localUri(key);
+      let have = false;
+      try { const i = await FileSystem.getInfoAsync(local); have = !!(i.exists && i.size > 0); } catch (e) {}
+      if (!have) {
+        const res = await FileSystem.downloadAsync(remoteUrl(key), local);
+        if (!res || res.status !== 200) { failed += 1; try { await FileSystem.deleteAsync(local, { idempotent: true }); } catch (e) {} }
+      }
+    } catch (e) { failed += 1; }
+    done += 1;
+    if (onProgress) onProgress(done, keys.length, failed);
+  }
+  return { done, failed };
+}
+
+// How many of the given tunes are already cached (for a "120 / 410 saved" readout).
+export async function cachedCount(keys) {
+  let n = 0;
+  for (const key of keys) { if (await isCached(key)) n += 1; }
+  return n;
+}

@@ -1,0 +1,723 @@
+<!doctype html><meta charset=utf-8>
+<title>CIS Silent Hymns — mark the ones you want</title>
+<style>
+ body{font-family:Georgia,serif;max-width:760px;margin:24px auto;padding:0 16px;color:#241a10;background:#f7f1e6}
+ h1{font-size:20px} .bar{position:sticky;top:0;background:#f7f1e6;padding:10px 0;border-bottom:2px solid #b9974a}
+ .row{display:flex;gap:10px;align-items:baseline;padding:5px 6px;border-bottom:1px solid #e3d8c2;cursor:pointer}
+ .row:hover{background:#efe6d3} .num{width:46px;text-align:right;font-weight:bold;color:#6b531c}
+ input{transform:scale(1.4);margin-right:4px} button{font-size:15px;padding:8px 14px;background:#6b531c;color:#fff;border:none;border-radius:6px;cursor:pointer}
+ #out{width:100%;height:120px;margin-top:10px;font-family:monospace}
+</style>
+<h1>Christ in Song (1908) — 699 hymns still need music</h1>
+<div class=bar><b>Marked: <span id=c>0</span></b> &nbsp;
+ <button onclick="cp()">Copy marked numbers</button>
+ <span style="font-size:13px;color:#555">tap a row to mark it</span></div>
+<div id=list><label class="row"><input type="checkbox" data-n="1"> <span class="num">1</span> <span class="ttl">What shall I do with Jesus?</span></label>
+<label class="row"><input type="checkbox" data-n="2"> <span class="num">2</span> <span class="ttl">White pages before us, thank God this is so</span></label>
+<label class="row"><input type="checkbox" data-n="3"> <span class="num">3</span> <span class="ttl">In the land of strangers</span></label>
+<label class="row"><input type="checkbox" data-n="4"> <span class="num">4</span> <span class="ttl">Drifting away from the Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="5"> <span class="num">5</span> <span class="ttl">Some one will enter the pearly gate</span></label>
+<label class="row"><input type="checkbox" data-n="6"> <span class="num">6</span> <span class="ttl">There was One who was willing to die in my stead</span></label>
+<label class="row"><input type="checkbox" data-n="7"> <span class="num">7</span> <span class="ttl">Come, sinners, to the Living One</span></label>
+<label class="row"><input type="checkbox" data-n="8"> <span class="num">8</span> <span class="ttl">Jesus is tenderly calling thee home</span></label>
+<label class="row"><input type="checkbox" data-n="9"> <span class="num">9</span> <span class="ttl">O tender and sweet was the Father's voice</span></label>
+<label class="row"><input type="checkbox" data-n="10"> <span class="num">10</span> <span class="ttl">Like wand'ring sheep o'er mountains cold</span></label>
+<label class="row"><input type="checkbox" data-n="11"> <span class="num">11</span> <span class="ttl">There are two ways for trav'lers, only two ways</span></label>
+<label class="row"><input type="checkbox" data-n="12"> <span class="num">12</span> <span class="ttl">"Whosoever heareth," shout, shout the sound!</span></label>
+<label class="row"><input type="checkbox" data-n="13"> <span class="num">13</span> <span class="ttl">"Yet there is room!"</span></label>
+<label class="row"><input type="checkbox" data-n="14"> <span class="num">14</span> <span class="ttl">Sound the alarm!  let the watchman cry</span></label>
+<label class="row"><input type="checkbox" data-n="15"> <span class="num">15</span> <span class="ttl">In darkness I lingered 'mid doubt and despair</span></label>
+<label class="row"><input type="checkbox" data-n="16"> <span class="num">16</span> <span class="ttl">O heart bowed down with sorrow!</span></label>
+<label class="row"><input type="checkbox" data-n="17"> <span class="num">17</span> <span class="ttl">I've wandered far away from God</span></label>
+<label class="row"><input type="checkbox" data-n="18"> <span class="num">18</span> <span class="ttl">Just one touch as He moves along</span></label>
+<label class="row"><input type="checkbox" data-n="19"> <span class="num">19</span> <span class="ttl">One thing I of the Lord desire</span></label>
+<label class="row"><input type="checkbox" data-n="20"> <span class="num">20</span> <span class="ttl">Christ is knocking at my sad heart</span></label>
+<label class="row"><input type="checkbox" data-n="21"> <span class="num">21</span> <span class="ttl">There's a Stranger at the door</span></label>
+<label class="row"><input type="checkbox" data-n="22"> <span class="num">22</span> <span class="ttl">If you could see Christ standing here tonight</span></label>
+<label class="row"><input type="checkbox" data-n="23"> <span class="num">23</span> <span class="ttl">I cannot drive the nails again</span></label>
+<label class="row"><input type="checkbox" data-n="24"> <span class="num">24</span> <span class="ttl">Sing it o'er and o'er again</span></label>
+<label class="row"><input type="checkbox" data-n="25"> <span class="num">25</span> <span class="ttl">If you are tired of the load of your sin</span></label>
+<label class="row"><input type="checkbox" data-n="26"> <span class="num">26</span> <span class="ttl">A ruler once came to Jesus by night</span></label>
+<label class="row"><input type="checkbox" data-n="27"> <span class="num">27</span> <span class="ttl">Would you be free from your burden of sin?</span></label>
+<label class="row"><input type="checkbox" data-n="29"> <span class="num">29</span> <span class="ttl">Ring the bells of heaven!  there is joy today</span></label>
+<label class="row"><input type="checkbox" data-n="30"> <span class="num">30</span> <span class="ttl">Able to deliver!  sound it far and near</span></label>
+<label class="row"><input type="checkbox" data-n="31"> <span class="num">31</span> <span class="ttl">O hear my cry, be gracious now to me</span></label>
+<label class="row"><input type="checkbox" data-n="32"> <span class="num">32</span> <span class="ttl">We'll build on the Rock, the living Rock</span></label>
+<label class="row"><input type="checkbox" data-n="33"> <span class="num">33</span> <span class="ttl">We are building in sorrow or joy</span></label>
+<label class="row"><input type="checkbox" data-n="34"> <span class="num">34</span> <span class="ttl">We tell it as we journey t'ward the mansions built above</span></label>
+<label class="row"><input type="checkbox" data-n="35"> <span class="num">35</span> <span class="ttl">Knocking, knocking, who is there?</span></label>
+<label class="row"><input type="checkbox" data-n="36"> <span class="num">36</span> <span class="ttl">'Twas in the days of careless youth, when life was fair and bright</span></label>
+<label class="row"><input type="checkbox" data-n="37"> <span class="num">37</span> <span class="ttl">"Eternity!  where?"  It floats in the air</span></label>
+<label class="row"><input type="checkbox" data-n="38"> <span class="num">38</span> <span class="ttl">The day is dead, and Egypt's night returning</span></label>
+<label class="row"><input type="checkbox" data-n="39"> <span class="num">39</span> <span class="ttl">In the silent midnight watches</span></label>
+<label class="row"><input type="checkbox" data-n="40"> <span class="num">40</span> <span class="ttl">Tell me the story of Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="41"> <span class="num">41</span> <span class="ttl">O who is this that cometh</span></label>
+<label class="row"><input type="checkbox" data-n="42"> <span class="num">42</span> <span class="ttl">When Jesus shall gather the nations</span></label>
+<label class="row"><input type="checkbox" data-n="43"> <span class="num">43</span> <span class="ttl">Called to the feast by the King are we</span></label>
+<label class="row"><input type="checkbox" data-n="44"> <span class="num">44</span> <span class="ttl">There's room for you to anchor</span></label>
+<label class="row"><input type="checkbox" data-n="45"> <span class="num">45</span> <span class="ttl">While Jesus whispers to you</span></label>
+<label class="row"><input type="checkbox" data-n="46"> <span class="num">46</span> <span class="ttl">Jesus, the loving Shepherd</span></label>
+<label class="row"><input type="checkbox" data-n="47"> <span class="num">47</span> <span class="ttl">Not in the hour of death</span></label>
+<label class="row"><input type="checkbox" data-n="48"> <span class="num">48</span> <span class="ttl">At the feast of Belshazzar and a thousand of his lords</span></label>
+<label class="row"><input type="checkbox" data-n="49"> <span class="num">49</span> <span class="ttl">When the Judge shall weigh our motives</span></label>
+<label class="row"><input type="checkbox" data-n="50"> <span class="num">50</span> <span class="ttl">Oh, the best friend to have is Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="51"> <span class="num">51</span> <span class="ttl">All to Jesus I surrender</span></label>
+<label class="row"><input type="checkbox" data-n="52"> <span class="num">52</span> <span class="ttl">What means this eager, anxious throng</span></label>
+<label class="row"><input type="checkbox" data-n="53"> <span class="num">53</span> <span class="ttl">I have a Savior, he's pleading in glory</span></label>
+<label class="row"><input type="checkbox" data-n="54"> <span class="num">54</span> <span class="ttl">Are you tenting on the lowlands</span></label>
+<label class="row"><input type="checkbox" data-n="55"> <span class="num">55</span> <span class="ttl">Hear the words our Saviour hath spoken</span></label>
+<label class="row"><input type="checkbox" data-n="56"> <span class="num">56</span> <span class="ttl">Sowing the seed by the daylight fair</span></label>
+<label class="row"><input type="checkbox" data-n="57"> <span class="num">57</span> <span class="ttl">There's not a Friend like the lowly Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="58"> <span class="num">58</span> <span class="ttl">Would you live for Jesus, and be always pure and good?</span></label>
+<label class="row"><input type="checkbox" data-n="59"> <span class="num">59</span> <span class="ttl">Who is on the Lord's side?</span></label>
+<label class="row"><input type="checkbox" data-n="60"> <span class="num">60</span> <span class="ttl">Only a step to Jesus!</span></label>
+<label class="row"><input type="checkbox" data-n="61"> <span class="num">61</span> <span class="ttl">There were ninety and nine that safely lay</span></label>
+<label class="row"><input type="checkbox" data-n="62"> <span class="num">62</span> <span class="ttl">What will you do with the King called Jesus?</span></label>
+<label class="row"><input type="checkbox" data-n="63"> <span class="num">63</span> <span class="ttl">My blessed Lord was crucified</span></label>
+<label class="row"><input type="checkbox" data-n="64"> <span class="num">64</span> <span class="ttl">Lord Jesus, I long to be perfectly whole</span></label>
+<label class="row"><input type="checkbox" data-n="65"> <span class="num">65</span> <span class="ttl">There's life in a look at the sacred cross</span></label>
+<label class="row"><input type="checkbox" data-n="66"> <span class="num">66</span> <span class="ttl">Yield not to temptation</span></label>
+<label class="row"><input type="checkbox" data-n="67"> <span class="num">67</span> <span class="ttl">Dare to do right, dare to be true!</span></label>
+<label class="row"><input type="checkbox" data-n="68"> <span class="num">68</span> <span class="ttl">I think when I read that sweet story of old</span></label>
+<label class="row"><input type="checkbox" data-n="69"> <span class="num">69</span> <span class="ttl">Why labor for treasures that rust and decay</span></label>
+<label class="row"><input type="checkbox" data-n="71"> <span class="num">71</span> <span class="ttl">I will early seek the Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="72"> <span class="num">72</span> <span class="ttl">Who'll be the next to follow Jesus?</span></label>
+<label class="row"><input type="checkbox" data-n="73"> <span class="num">73</span> <span class="ttl">Now just a word for Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="74"> <span class="num">74</span> <span class="ttl">Sing them over again to me</span></label>
+<label class="row"><input type="checkbox" data-n="75"> <span class="num">75</span> <span class="ttl">Jesus, my Saviour, to Bethlehem came</span></label>
+<label class="row"><input type="checkbox" data-n="76"> <span class="num">76</span> <span class="ttl">Softly and tenderly Jesus is calling</span></label>
+<label class="row"><input type="checkbox" data-n="77"> <span class="num">77</span> <span class="ttl">Like as a father, pities his child</span></label>
+<label class="row"><input type="checkbox" data-n="78"> <span class="num">78</span> <span class="ttl">We have heard a joyful sound</span></label>
+<label class="row"><input type="checkbox" data-n="79"> <span class="num">79</span> <span class="ttl">Tho' your sins be as scarlet</span></label>
+<label class="row"><input type="checkbox" data-n="80"> <span class="num">80</span> <span class="ttl">Look upon Jesus, sinless is He</span></label>
+<label class="row"><input type="checkbox" data-n="81"> <span class="num">81</span> <span class="ttl">While we pray and while we plead</span></label>
+<label class="row"><input type="checkbox" data-n="82"> <span class="num">82</span> <span class="ttl">Behold, behold the Lamb of God</span></label>
+<label class="row"><input type="checkbox" data-n="83"> <span class="num">83</span> <span class="ttl">By faith I view my Saviour dying</span></label>
+<label class="row"><input type="checkbox" data-n="84"> <span class="num">84</span> <span class="ttl">The mistakes of my life are many</span></label>
+<label class="row"><input type="checkbox" data-n="85"> <span class="num">85</span> <span class="ttl">There is no love like the love of Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="87"> <span class="num">87</span> <span class="ttl">Pass me not, O gentle Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="88"> <span class="num">88</span> <span class="ttl">Have you been to Jesus for the cleansing power?</span></label>
+<label class="row"><input type="checkbox" data-n="89"> <span class="num">89</span> <span class="ttl">Almost persuaded now to believe</span></label>
+<label class="row"><input type="checkbox" data-n="90"> <span class="num">90</span> <span class="ttl">I stood outside the gate</span></label>
+<label class="row"><input type="checkbox" data-n="91"> <span class="num">91</span> <span class="ttl">There is a gate that stands ajar</span></label>
+<label class="row"><input type="checkbox" data-n="92"> <span class="num">92</span> <span class="ttl">Weeping will not save me</span></label>
+<label class="row"><input type="checkbox" data-n="93"> <span class="num">93</span> <span class="ttl">What can wash away my sin?</span></label>
+<label class="row"><input type="checkbox" data-n="94"> <span class="num">94</span> <span class="ttl">The great Physician now is near</span></label>
+<label class="row"><input type="checkbox" data-n="95"> <span class="num">95</span> <span class="ttl">Come, ev'ry soul by sin oppressed</span></label>
+<label class="row"><input type="checkbox" data-n="96"> <span class="num">96</span> <span class="ttl">I gave my life for Thee</span></label>
+<label class="row"><input type="checkbox" data-n="97"> <span class="num">97</span> <span class="ttl">Not saved are we by trying</span></label>
+<label class="row"><input type="checkbox" data-n="98"> <span class="num">98</span> <span class="ttl">Where is my wand'ring boy tonight</span></label>
+<label class="row"><input type="checkbox" data-n="99"> <span class="num">99</span> <span class="ttl">Refining fire, go thro' my heart</span></label>
+<label class="row"><input type="checkbox" data-n="100"> <span class="num">100</span> <span class="ttl">Crowded is your heart with cares</span></label>
+<label class="row"><input type="checkbox" data-n="101"> <span class="num">101</span> <span class="ttl">I hear thy welcome voice</span></label>
+<label class="row"><input type="checkbox" data-n="102"> <span class="num">102</span> <span class="ttl">I was once far away from the Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="103"> <span class="num">103</span> <span class="ttl">Jesus, my Lord, to thee I cry</span></label>
+<label class="row"><input type="checkbox" data-n="107"> <span class="num">107</span> <span class="ttl">I hear the Saviour say</span></label>
+<label class="row"><input type="checkbox" data-n="109"> <span class="num">109</span> <span class="ttl">I am coming to the cross</span></label>
+<label class="row"><input type="checkbox" data-n="110"> <span class="num">110</span> <span class="ttl">O now I see the crimson wave</span></label>
+<label class="row"><input type="checkbox" data-n="112"> <span class="num">112</span> <span class="ttl">Behold the Saviour at the door!</span></label>
+<label class="row"><input type="checkbox" data-n="113"> <span class="num">113</span> <span class="ttl">God calling yet!  shall I not hear?</span></label>
+<label class="row"><input type="checkbox" data-n="115"> <span class="num">115</span> <span class="ttl">The gospel trump is sounding</span></label>
+<label class="row"><input type="checkbox" data-n="118"> <span class="num">118</span> <span class="ttl">O Jesus!  thou art standing</span></label>
+<label class="row"><input type="checkbox" data-n="120"> <span class="num">120</span> <span class="ttl">Go not, my soul, in search of Him</span></label>
+<label class="row"><input type="checkbox" data-n="121"> <span class="num">121</span> <span class="ttl">Weary of earth and laden with my sin</span></label>
+<label class="row"><input type="checkbox" data-n="122"> <span class="num">122</span> <span class="ttl">The Lord first empties whom he fills</span></label>
+<label class="row"><input type="checkbox" data-n="123"> <span class="num">123</span> <span class="ttl">Arise, my soul, arise</span></label>
+<label class="row"><input type="checkbox" data-n="125"> <span class="num">125</span> <span class="ttl">Come unto me when shadows darkly gather</span></label>
+<label class="row"><input type="checkbox" data-n="127"> <span class="num">127</span> <span class="ttl">The great decisive day is at hand</span></label>
+<label class="row"><input type="checkbox" data-n="128"> <span class="num">128</span> <span class="ttl">There's a wideness in God's mercy</span></label>
+<label class="row"><input type="checkbox" data-n="130"> <span class="num">130</span> <span class="ttl">Sweet the moments, rich in blessing</span></label>
+<label class="row"><input type="checkbox" data-n="131"> <span class="num">131</span> <span class="ttl">Nothing but leaves!  The Spirit grieves</span></label>
+<label class="row"><input type="checkbox" data-n="132"> <span class="num">132</span> <span class="ttl">Heaven is not far away</span></label>
+<label class="row"><input type="checkbox" data-n="134"> <span class="num">134</span> <span class="ttl">Baptize us anew</span></label>
+<label class="row"><input type="checkbox" data-n="136"> <span class="num">136</span> <span class="ttl">The last call of mercy now lingers for thee</span></label>
+<label class="row"><input type="checkbox" data-n="137"> <span class="num">137</span> <span class="ttl">There is a line by us unseen</span></label>
+<label class="row"><input type="checkbox" data-n="138"> <span class="num">138</span> <span class="ttl">The wonders of redeeming love</span></label>
+<label class="row"><input type="checkbox" data-n="141"> <span class="num">141</span> <span class="ttl">Not what these hands have done</span></label>
+<label class="row"><input type="checkbox" data-n="142"> <span class="num">142</span> <span class="ttl">Cast out the buyers, Lord</span></label>
+<label class="row"><input type="checkbox" data-n="143"> <span class="num">143</span> <span class="ttl">How solemn are the words</span></label>
+<label class="row"><input type="checkbox" data-n="144"> <span class="num">144</span> <span class="ttl">He's coming once again</span></label>
+<label class="row"><input type="checkbox" data-n="146"> <span class="num">146</span> <span class="ttl">There is a fountain fill'd with blood</span></label>
+<label class="row"><input type="checkbox" data-n="147"> <span class="num">147</span> <span class="ttl">Flee as a bird to your mountain</span></label>
+<label class="row"><input type="checkbox" data-n="148"> <span class="num">148</span> <span class="ttl">I bring my sins to Thee</span></label>
+<label class="row"><input type="checkbox" data-n="149"> <span class="num">149</span> <span class="ttl">O spotless Lamb!  I come to thee</span></label>
+<label class="row"><input type="checkbox" data-n="150"> <span class="num">150</span> <span class="ttl">Alas!  and did my Savior bleed?</span></label>
+<label class="row"><input type="checkbox" data-n="151"> <span class="num">151</span> <span class="ttl">The waters are troubled</span></label>
+<label class="row"><input type="checkbox" data-n="153"> <span class="num">153</span> <span class="ttl">O where shall rest be found</span></label>
+<label class="row"><input type="checkbox" data-n="154"> <span class="num">154</span> <span class="ttl">Depth of mercy! can there be</span></label>
+<label class="row"><input type="checkbox" data-n="156"> <span class="num">156</span> <span class="ttl">'Tis midnight; and on Olives' brow</span></label>
+<label class="row"><input type="checkbox" data-n="157"> <span class="num">157</span> <span class="ttl">The day of wrath, that dreadful day</span></label>
+<label class="row"><input type="checkbox" data-n="159"> <span class="num">159</span> <span class="ttl">Did Christ o'er sinners weep?</span></label>
+<label class="row"><input type="checkbox" data-n="164"> <span class="num">164</span> <span class="ttl">Come, gracious Spirit, heavenly Dove</span></label>
+<label class="row"><input type="checkbox" data-n="165"> <span class="num">165</span> <span class="ttl">Come to the living waters, come!</span></label>
+<label class="row"><input type="checkbox" data-n="166"> <span class="num">166</span> <span class="ttl">O for that flame of living fire</span></label>
+<label class="row"><input type="checkbox" data-n="167"> <span class="num">167</span> <span class="ttl">Return, O wanderer, return</span></label>
+<label class="row"><input type="checkbox" data-n="170"> <span class="num">170</span> <span class="ttl">Take my heart, O Father, take it!</span></label>
+<label class="row"><input type="checkbox" data-n="171"> <span class="num">171</span> <span class="ttl">One there is above all others</span></label>
+<label class="row"><input type="checkbox" data-n="173"> <span class="num">173</span> <span class="ttl">To-day the Saviour calls</span></label>
+<label class="row"><input type="checkbox" data-n="174"> <span class="num">174</span> <span class="ttl">Lord, I hear of show'rs of blessing</span></label>
+<label class="row"><input type="checkbox" data-n="175"> <span class="num">175</span> <span class="ttl">There are angels hov'ring round</span></label>
+<label class="row"><input type="checkbox" data-n="176"> <span class="num">176</span> <span class="ttl">Come, O thou Traveler unknown</span></label>
+<label class="row"><input type="checkbox" data-n="179"> <span class="num">179</span> <span class="ttl">Come to Jesus, Come to Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="184"> <span class="num">184</span> <span class="ttl">Why do we waste on trifling cares</span></label>
+<label class="row"><input type="checkbox" data-n="186"> <span class="num">186</span> <span class="ttl">Father, I stretch my hands to thee</span></label>
+<label class="row"><input type="checkbox" data-n="187"> <span class="num">187</span> <span class="ttl">When, my Savior, shall I be</span></label>
+<label class="row"><input type="checkbox" data-n="189"> <span class="num">189</span> <span class="ttl">They bro't their gifts to Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="190"> <span class="num">190</span> <span class="ttl">Hallelujahs to Jesus!</span></label>
+<label class="row"><input type="checkbox" data-n="191"> <span class="num">191</span> <span class="ttl">To God be the glory, great things He hath done</span></label>
+<label class="row"><input type="checkbox" data-n="192"> <span class="num">192</span> <span class="ttl">My heart was distress'd 'neath Jehovah's dread frown</span></label>
+<label class="row"><input type="checkbox" data-n="193"> <span class="num">193</span> <span class="ttl">O, spread the tidings round</span></label>
+<label class="row"><input type="checkbox" data-n="194"> <span class="num">194</span> <span class="ttl">I will sing of Jesus' love</span></label>
+<label class="row"><input type="checkbox" data-n="195"> <span class="num">195</span> <span class="ttl">Would we be joyful in the Lord?</span></label>
+<label class="row"><input type="checkbox" data-n="196"> <span class="num">196</span> <span class="ttl">Be silent, be silent</span></label>
+<label class="row"><input type="checkbox" data-n="197"> <span class="num">197</span> <span class="ttl">Come out in the sunshine!</span></label>
+<label class="row"><input type="checkbox" data-n="198"> <span class="num">198</span> <span class="ttl">There's sunshine in my soul to-day</span></label>
+<label class="row"><input type="checkbox" data-n="199"> <span class="num">199</span> <span class="ttl">Redeemed!  how I love to proclaim it!</span></label>
+<label class="row"><input type="checkbox" data-n="200"> <span class="num">200</span> <span class="ttl">I can hear my Saviour calling</span></label>
+<label class="row"><input type="checkbox" data-n="201"> <span class="num">201</span> <span class="ttl">He will mention them no more forever</span></label>
+<label class="row"><input type="checkbox" data-n="202"> <span class="num">202</span> <span class="ttl">Nearer, still nearer, close to Thy heart</span></label>
+<label class="row"><input type="checkbox" data-n="203"> <span class="num">203</span> <span class="ttl">I once was in the desert, all weary, sad and lone</span></label>
+<label class="row"><input type="checkbox" data-n="204"> <span class="num">204</span> <span class="ttl">Christ has for sin atonement made</span></label>
+<label class="row"><input type="checkbox" data-n="205"> <span class="num">205</span> <span class="ttl">Blessed assurance, Jesus is mine!</span></label>
+<label class="row"><input type="checkbox" data-n="206"> <span class="num">206</span> <span class="ttl">We'll tarry by the living waters</span></label>
+<label class="row"><input type="checkbox" data-n="207"> <span class="num">207</span> <span class="ttl">"There shall be showers of blessing:"</span></label>
+<label class="row"><input type="checkbox" data-n="208"> <span class="num">208</span> <span class="ttl">There comes to my heart one sweet strain</span></label>
+<label class="row"><input type="checkbox" data-n="209"> <span class="num">209</span> <span class="ttl">The dove of peace sings in my heart</span></label>
+<label class="row"><input type="checkbox" data-n="210"> <span class="num">210</span> <span class="ttl">Far away in the depths of my spirit tonight</span></label>
+<label class="row"><input type="checkbox" data-n="211"> <span class="num">211</span> <span class="ttl">My soul in sad exile was out on life's sea</span></label>
+<label class="row"><input type="checkbox" data-n="212"> <span class="num">212</span> <span class="ttl">Alas!  and did my Saviour bleed</span></label>
+<label class="row"><input type="checkbox" data-n="213"> <span class="num">213</span> <span class="ttl">The cross!  it standeth fast</span></label>
+<label class="row"><input type="checkbox" data-n="214"> <span class="num">214</span> <span class="ttl">Awake, my soul, and greet the dawn</span></label>
+<label class="row"><input type="checkbox" data-n="215"> <span class="num">215</span> <span class="ttl">The name of Jesus is so sweet</span></label>
+<label class="row"><input type="checkbox" data-n="216"> <span class="num">216</span> <span class="ttl">Take the name of Jesus with you</span></label>
+<label class="row"><input type="checkbox" data-n="217"> <span class="num">217</span> <span class="ttl">Dearest name in earth or heaven</span></label>
+<label class="row"><input type="checkbox" data-n="218"> <span class="num">218</span> <span class="ttl">O, the bitter pain and sorrow</span></label>
+<label class="row"><input type="checkbox" data-n="219"> <span class="num">219</span> <span class="ttl">Standing on the promises of Christ my King</span></label>
+<label class="row"><input type="checkbox" data-n="220"> <span class="num">220</span> <span class="ttl">O worship the Lord in the beauty of holiness</span></label>
+<label class="row"><input type="checkbox" data-n="221"> <span class="num">221</span> <span class="ttl">Saved to the uttermost:  I am the Lord's</span></label>
+<label class="row"><input type="checkbox" data-n="222"> <span class="num">222</span> <span class="ttl">Safe in the arms of Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="223"> <span class="num">223</span> <span class="ttl">Nor silver nor gold hath obtained my redemption</span></label>
+<label class="row"><input type="checkbox" data-n="224"> <span class="num">224</span> <span class="ttl">Since Christ my soul from sin set free</span></label>
+<label class="row"><input type="checkbox" data-n="225"> <span class="num">225</span> <span class="ttl">Tho' my sins were once like crimson red</span></label>
+<label class="row"><input type="checkbox" data-n="226"> <span class="num">226</span> <span class="ttl">Praise Him!  praise Him!  Jesus, our blessed Redeemer!</span></label>
+<label class="row"><input type="checkbox" data-n="227"> <span class="num">227</span> <span class="ttl">Wake the song of joy and gladness</span></label>
+<label class="row"><input type="checkbox" data-n="228"> <span class="num">228</span> <span class="ttl">O come, let us sing unto the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="229"> <span class="num">229</span> <span class="ttl">There is sunlight on the hilltop</span></label>
+<label class="row"><input type="checkbox" data-n="230"> <span class="num">230</span> <span class="ttl">Not I but Christ, be honored, loved, exalted</span></label>
+<label class="row"><input type="checkbox" data-n="231"> <span class="num">231</span> <span class="ttl">My heart's a tuneful harp when Christ abides within</span></label>
+<label class="row"><input type="checkbox" data-n="232"> <span class="num">232</span> <span class="ttl">I feel like singing all the time</span></label>
+<label class="row"><input type="checkbox" data-n="233"> <span class="num">233</span> <span class="ttl">Jesus comes with pow'r to gladden</span></label>
+<label class="row"><input type="checkbox" data-n="234"> <span class="num">234</span> <span class="ttl">O Jesus my Redeemer</span></label>
+<label class="row"><input type="checkbox" data-n="235"> <span class="num">235</span> <span class="ttl">O sing unto the Lord a new song</span></label>
+<label class="row"><input type="checkbox" data-n="236"> <span class="num">236</span> <span class="ttl">I have a song I love to sing</span></label>
+<label class="row"><input type="checkbox" data-n="237"> <span class="num">237</span> <span class="ttl">I sing the love of God, my Father</span></label>
+<label class="row"><input type="checkbox" data-n="238"> <span class="num">238</span> <span class="ttl">One there is above all others</span></label>
+<label class="row"><input type="checkbox" data-n="239"> <span class="num">239</span> <span class="ttl">Hear the words of Scripture from the ages past</span></label>
+<label class="row"><input type="checkbox" data-n="240"> <span class="num">240</span> <span class="ttl">Oh, bliss of the purified!  bliss of the free!</span></label>
+<label class="row"><input type="checkbox" data-n="241"> <span class="num">241</span> <span class="ttl">"Called unto holiness," Church of our God</span></label>
+<label class="row"><input type="checkbox" data-n="242"> <span class="num">242</span> <span class="ttl">A beautiful star arose one night</span></label>
+<label class="row"><input type="checkbox" data-n="243"> <span class="num">243</span> <span class="ttl">There's a dark and a troubled side of life</span></label>
+<label class="row"><input type="checkbox" data-n="244"> <span class="num">244</span> <span class="ttl">"Peace upon earth!" the angels sang</span></label>
+<label class="row"><input type="checkbox" data-n="245"> <span class="num">245</span> <span class="ttl">In joyful high and holy lays</span></label>
+<label class="row"><input type="checkbox" data-n="246"> <span class="num">246</span> <span class="ttl">I've found a friend in Jesus, He's ev'rything to me</span></label>
+<label class="row"><input type="checkbox" data-n="247"> <span class="num">247</span> <span class="ttl">Each cooing dove and sighing bough</span></label>
+<label class="row"><input type="checkbox" data-n="248"> <span class="num">248</span> <span class="ttl">Long ago the children sang a song</span></label>
+<label class="row"><input type="checkbox" data-n="249"> <span class="num">249</span> <span class="ttl">Do you know what the dewdrops say</span></label>
+<label class="row"><input type="checkbox" data-n="250"> <span class="num">250</span> <span class="ttl">Don't forget the Sabbath</span></label>
+<label class="row"><input type="checkbox" data-n="251"> <span class="num">251</span> <span class="ttl">I've two little hands to work for Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="252"> <span class="num">252</span> <span class="ttl">God sees the little sparrow fall</span></label>
+<label class="row"><input type="checkbox" data-n="253"> <span class="num">253</span> <span class="ttl">Little stars that twinkle in the heaven's blue</span></label>
+<label class="row"><input type="checkbox" data-n="254"> <span class="num">254</span> <span class="ttl">Jesus, I will follow thee</span></label>
+<label class="row"><input type="checkbox" data-n="255"> <span class="num">255</span> <span class="ttl">Sweetly sing, sweetly sing</span></label>
+<label class="row"><input type="checkbox" data-n="256"> <span class="num">256</span> <span class="ttl">Our sweetest songs of gladness</span></label>
+<label class="row"><input type="checkbox" data-n="260"> <span class="num">260</span> <span class="ttl">Praise ye Jehovah's name</span></label>
+<label class="row"><input type="checkbox" data-n="263"> <span class="num">263</span> <span class="ttl">Come, children, hail the Prince of Peace</span></label>
+<label class="row"><input type="checkbox" data-n="264"> <span class="num">264</span> <span class="ttl">We are children of a King</span></label>
+<label class="row"><input type="checkbox" data-n="272"> <span class="num">272</span> <span class="ttl">List to the chime, 'tis meeting time</span></label>
+<label class="row"><input type="checkbox" data-n="273"> <span class="num">273</span> <span class="ttl">Children singing, sweet bells ringing!</span></label>
+<label class="row"><input type="checkbox" data-n="274"> <span class="num">274</span> <span class="ttl">Strains of music often greet me</span></label>
+<label class="row"><input type="checkbox" data-n="275"> <span class="num">275</span> <span class="ttl">Valley lilies, meek and lowly</span></label>
+<label class="row"><input type="checkbox" data-n="276"> <span class="num">276</span> <span class="ttl">I wandered in the shades of night</span></label>
+<label class="row"><input type="checkbox" data-n="277"> <span class="num">277</span> <span class="ttl">Brightest and best of the sons of the morning</span></label>
+<label class="row"><input type="checkbox" data-n="278"> <span class="num">278</span> <span class="ttl">Jesus, Thou hast promised</span></label>
+<label class="row"><input type="checkbox" data-n="280"> <span class="num">280</span> <span class="ttl">Welcome!  thrice welcome!</span></label>
+<label class="row"><input type="checkbox" data-n="281"> <span class="num">281</span> <span class="ttl">When morning gilds the skies</span></label>
+<label class="row"><input type="checkbox" data-n="282"> <span class="num">282</span> <span class="ttl">I am Thine, O Lord, I have heard Thy voice</span></label>
+<label class="row"><input type="checkbox" data-n="283"> <span class="num">283</span> <span class="ttl">Jesus loves me!  this I know</span></label>
+<label class="row"><input type="checkbox" data-n="284"> <span class="num">284</span> <span class="ttl">Let our hearts be always cheerful</span></label>
+<label class="row"><input type="checkbox" data-n="286"> <span class="num">286</span> <span class="ttl">More like Jesus would I be</span></label>
+<label class="row"><input type="checkbox" data-n="287"> <span class="num">287</span> <span class="ttl">Saviour, keep me pure in heart</span></label>
+<label class="row"><input type="checkbox" data-n="288"> <span class="num">288</span> <span class="ttl">O for a thousand tongues to sing</span></label>
+<label class="row"><input type="checkbox" data-n="289"> <span class="num">289</span> <span class="ttl">Jesus, keep me near the cross</span></label>
+<label class="row"><input type="checkbox" data-n="290"> <span class="num">290</span> <span class="ttl">Since on my Saviour I believed</span></label>
+<label class="row"><input type="checkbox" data-n="292"> <span class="num">292</span> <span class="ttl">I have entered the valley of blessing so sweet</span></label>
+<label class="row"><input type="checkbox" data-n="293"> <span class="num">293</span> <span class="ttl">In the blood from the cross</span></label>
+<label class="row"><input type="checkbox" data-n="294"> <span class="num">294</span> <span class="ttl">My hope is built on nothing less</span></label>
+<label class="row"><input type="checkbox" data-n="295"> <span class="num">295</span> <span class="ttl">O let me walk with thee, my God</span></label>
+<label class="row"><input type="checkbox" data-n="296"> <span class="num">296</span> <span class="ttl">Walking with thee, my God</span></label>
+<label class="row"><input type="checkbox" data-n="297"> <span class="num">297</span> <span class="ttl">More love to thee, O Christ!</span></label>
+<label class="row"><input type="checkbox" data-n="298"> <span class="num">298</span> <span class="ttl">O bliss of the pure ones!</span></label>
+<label class="row"><input type="checkbox" data-n="299"> <span class="num">299</span> <span class="ttl">My Jesus, I love thee, I know thou art mine</span></label>
+<label class="row"><input type="checkbox" data-n="300"> <span class="num">300</span> <span class="ttl">Down at the cross where my Saviour died</span></label>
+<label class="row"><input type="checkbox" data-n="301"> <span class="num">301</span> <span class="ttl">I know I love thee better, Lord</span></label>
+<label class="row"><input type="checkbox" data-n="302"> <span class="num">302</span> <span class="ttl">There's no other name like Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="303"> <span class="num">303</span> <span class="ttl">Have I need of aught, O Saviour!</span></label>
+<label class="row"><input type="checkbox" data-n="304"> <span class="num">304</span> <span class="ttl">God loved the world of sinners lost</span></label>
+<label class="row"><input type="checkbox" data-n="305"> <span class="num">305</span> <span class="ttl">Where He may lead me I will go</span></label>
+<label class="row"><input type="checkbox" data-n="306"> <span class="num">306</span> <span class="ttl">Fade, fade each earthly joy</span></label>
+<label class="row"><input type="checkbox" data-n="308"> <span class="num">308</span> <span class="ttl">Hover o'er me, Holy Spirit</span></label>
+<label class="row"><input type="checkbox" data-n="310"> <span class="num">310</span> <span class="ttl">All for Jesus, all for Jesus!</span></label>
+<label class="row"><input type="checkbox" data-n="311"> <span class="num">311</span> <span class="ttl">Tell me the old, old story</span></label>
+<label class="row"><input type="checkbox" data-n="312"> <span class="num">312</span> <span class="ttl">Fairest Lord Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="315"> <span class="num">315</span> <span class="ttl">Take the world, but give me Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="317"> <span class="num">317</span> <span class="ttl">I lay my sins on Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="319"> <span class="num">319</span> <span class="ttl">O Jesus, I have promised</span></label>
+<label class="row"><input type="checkbox" data-n="323"> <span class="num">323</span> <span class="ttl">When, His salvation bringing</span></label>
+<label class="row"><input type="checkbox" data-n="325"> <span class="num">325</span> <span class="ttl">There lives a voice within me</span></label>
+<label class="row"><input type="checkbox" data-n="332"> <span class="num">332</span> <span class="ttl">I've found a Friend; oh, such a Friend!</span></label>
+<label class="row"><input type="checkbox" data-n="336"> <span class="num">336</span> <span class="ttl">O Thou in whose presence my soul takes delight</span></label>
+<label class="row"><input type="checkbox" data-n="338"> <span class="num">338</span> <span class="ttl">Purer yet and purer</span></label>
+<label class="row"><input type="checkbox" data-n="339"> <span class="num">339</span> <span class="ttl">Day is dying in the west</span></label>
+<label class="row"><input type="checkbox" data-n="340"> <span class="num">340</span> <span class="ttl">Rest of the weary</span></label>
+<label class="row"><input type="checkbox" data-n="341"> <span class="num">341</span> <span class="ttl">Lord, thy glory fills the heaven</span></label>
+<label class="row"><input type="checkbox" data-n="343"> <span class="num">343</span> <span class="ttl">Jesus, I my cross have taken</span></label>
+<label class="row"><input type="checkbox" data-n="346"> <span class="num">346</span> <span class="ttl">Heav'nly Father, send Thy blessing</span></label>
+<label class="row"><input type="checkbox" data-n="347"> <span class="num">347</span> <span class="ttl">Fresh from the throne of glory</span></label>
+<label class="row"><input type="checkbox" data-n="354"> <span class="num">354</span> <span class="ttl">Songs of praise the angels sang</span></label>
+<label class="row"><input type="checkbox" data-n="356"> <span class="num">356</span> <span class="ttl">O Love divine, of all that is</span></label>
+<label class="row"><input type="checkbox" data-n="357"> <span class="num">357</span> <span class="ttl">O Thou who art of all that is</span></label>
+<label class="row"><input type="checkbox" data-n="358"> <span class="num">358</span> <span class="ttl">I heard a voice, the sweetest voice</span></label>
+<label class="row"><input type="checkbox" data-n="362"> <span class="num">362</span> <span class="ttl">A glory in the word we find</span></label>
+<label class="row"><input type="checkbox" data-n="363"> <span class="num">363</span> <span class="ttl">A glory gilds the sacred page</span></label>
+<label class="row"><input type="checkbox" data-n="364"> <span class="num">364</span> <span class="ttl">How shall the young secure their hearts</span></label>
+<label class="row"><input type="checkbox" data-n="365"> <span class="num">365</span> <span class="ttl">Let all the heathen writers join</span></label>
+<label class="row"><input type="checkbox" data-n="366"> <span class="num">366</span> <span class="ttl">Joys are flowing like a river</span></label>
+<label class="row"><input type="checkbox" data-n="367"> <span class="num">367</span> <span class="ttl">Awake, my soul, to joyful lays</span></label>
+<label class="row"><input type="checkbox" data-n="368"> <span class="num">368</span> <span class="ttl">Jesus, my all, to heav'n has gone</span></label>
+<label class="row"><input type="checkbox" data-n="378"> <span class="num">378</span> <span class="ttl">Praise ye the Lord; for it is good</span></label>
+<label class="row"><input type="checkbox" data-n="379"> <span class="num">379</span> <span class="ttl">Come, ye that love the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="383"> <span class="num">383</span> <span class="ttl">My life, my love, I give to thee</span></label>
+<label class="row"><input type="checkbox" data-n="384"> <span class="num">384</span> <span class="ttl">Break Thou the bread of life</span></label>
+<label class="row"><input type="checkbox" data-n="385"> <span class="num">385</span> <span class="ttl">The dawn of God's dear Sabbath</span></label>
+<label class="row"><input type="checkbox" data-n="387"> <span class="num">387</span> <span class="ttl">Welcome, delightful morn</span></label>
+<label class="row"><input type="checkbox" data-n="391"> <span class="num">391</span> <span class="ttl">Come, thou almighty King</span></label>
+<label class="row"><input type="checkbox" data-n="392"> <span class="num">392</span> <span class="ttl">Sound, sound the truth abroad!</span></label>
+<label class="row"><input type="checkbox" data-n="393"> <span class="num">393</span> <span class="ttl">When all thy mercies, O my God!</span></label>
+<label class="row"><input type="checkbox" data-n="394"> <span class="num">394</span> <span class="ttl">O, how happy are they</span></label>
+<label class="row"><input type="checkbox" data-n="395"> <span class="num">395</span> <span class="ttl">I would be, dear Saviour, wholly thine</span></label>
+<label class="row"><input type="checkbox" data-n="396"> <span class="num">396</span> <span class="ttl">We praise thee, O God, for the Son of thy love</span></label>
+<label class="row"><input type="checkbox" data-n="397"> <span class="num">397</span> <span class="ttl">Rejoice and be glad, the Redeemer has come</span></label>
+<label class="row"><input type="checkbox" data-n="399"> <span class="num">399</span> <span class="ttl">O happy day!  that fixed my choice</span></label>
+<label class="row"><input type="checkbox" data-n="400"> <span class="num">400</span> <span class="ttl">There is no name so sweet on earth</span></label>
+<label class="row"><input type="checkbox" data-n="403"> <span class="num">403</span> <span class="ttl">The King of love my Shepherd is</span></label>
+<label class="row"><input type="checkbox" data-n="404"> <span class="num">404</span> <span class="ttl">Stand up, and bless the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="405"> <span class="num">405</span> <span class="ttl">By cool Siloam's shady rill</span></label>
+<label class="row"><input type="checkbox" data-n="406"> <span class="num">406</span> <span class="ttl">The Lord be with us as we bend</span></label>
+<label class="row"><input type="checkbox" data-n="407"> <span class="num">407</span> <span class="ttl">Our Saviour's voice is soft and sweet</span></label>
+<label class="row"><input type="checkbox" data-n="409"> <span class="num">409</span> <span class="ttl">I will follow thee, my Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="413"> <span class="num">413</span> <span class="ttl">Buried beneath the yielding wave</span></label>
+<label class="row"><input type="checkbox" data-n="414"> <span class="num">414</span> <span class="ttl">With willing hearts we tread</span></label>
+<label class="row"><input type="checkbox" data-n="415"> <span class="num">415</span> <span class="ttl">Baptized into our Saviour's death</span></label>
+<label class="row"><input type="checkbox" data-n="417"> <span class="num">417</span> <span class="ttl">Forbid them not, the Saviour cried</span></label>
+<label class="row"><input type="checkbox" data-n="422"> <span class="num">422</span> <span class="ttl">All things are thine: no gift have we</span></label>
+<label class="row"><input type="checkbox" data-n="424"> <span class="num">424</span> <span class="ttl">Maker of land and rolling sea</span></label>
+<label class="row"><input type="checkbox" data-n="425"> <span class="num">425</span> <span class="ttl">Coming Saviour, now in faith</span></label>
+<label class="row"><input type="checkbox" data-n="426"> <span class="num">426</span> <span class="ttl">Each little flow'r that opens</span></label>
+<label class="row"><input type="checkbox" data-n="428"> <span class="num">428</span> <span class="ttl">The spring-tide hour brings leaf and flow'r</span></label>
+<label class="row"><input type="checkbox" data-n="430"> <span class="num">430</span> <span class="ttl">Another six days' work is done</span></label>
+<label class="row"><input type="checkbox" data-n="431"> <span class="num">431</span> <span class="ttl">Welcome, welcome, day of rest</span></label>
+<label class="row"><input type="checkbox" data-n="432"> <span class="num">432</span> <span class="ttl">How sweet upon this sacred day</span></label>
+<label class="row"><input type="checkbox" data-n="433"> <span class="num">433</span> <span class="ttl">Come, dearest Lord, and feed thy sheep</span></label>
+<label class="row"><input type="checkbox" data-n="434"> <span class="num">434</span> <span class="ttl">One thot' I have, my ample creed</span></label>
+<label class="row"><input type="checkbox" data-n="435"> <span class="num">435</span> <span class="ttl">Come, Holy Spirit, calm my mind</span></label>
+<label class="row"><input type="checkbox" data-n="439"> <span class="num">439</span> <span class="ttl">Come, let us join our cheerful songs</span></label>
+<label class="row"><input type="checkbox" data-n="441"> <span class="num">441</span> <span class="ttl">Let thy Spirit, blessed Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="444"> <span class="num">444</span> <span class="ttl">High in the heav'ns, eternal God</span></label>
+<label class="row"><input type="checkbox" data-n="445"> <span class="num">445</span> <span class="ttl">He reigns!  the Lord, the Saviour reigns!</span></label>
+<label class="row"><input type="checkbox" data-n="447"> <span class="num">447</span> <span class="ttl">Once more, my soul, the rising day</span></label>
+<label class="row"><input type="checkbox" data-n="448"> <span class="num">448</span> <span class="ttl">How sweet the name of Jesus sounds</span></label>
+<label class="row"><input type="checkbox" data-n="452"> <span class="num">452</span> <span class="ttl">Jesus, thou joy of loving hearts!</span></label>
+<label class="row"><input type="checkbox" data-n="453"> <span class="num">453</span> <span class="ttl">Sing of Jesus, sing forever</span></label>
+<label class="row"><input type="checkbox" data-n="455"> <span class="num">455</span> <span class="ttl">With rev'rence let the saints appear</span></label>
+<label class="row"><input type="checkbox" data-n="457"> <span class="num">457</span> <span class="ttl">O thou to whom, in ancient time</span></label>
+<label class="row"><input type="checkbox" data-n="460"> <span class="num">460</span> <span class="ttl">Sweetly the holy hymn</span></label>
+<label class="row"><input type="checkbox" data-n="461"> <span class="num">461</span> <span class="ttl">This rite our blest Redeemer gave</span></label>
+<label class="row"><input type="checkbox" data-n="464"> <span class="num">464</span> <span class="ttl">O give thanks unto the Lord, for He is good</span></label>
+<label class="row"><input type="checkbox" data-n="465"> <span class="num">465</span> <span class="ttl">Glory be to the Father</span></label>
+<label class="row"><input type="checkbox" data-n="466"> <span class="num">466</span> <span class="ttl">Glory be to the Father</span></label>
+<label class="row"><input type="checkbox" data-n="467"> <span class="num">467</span> <span class="ttl">Glory be to the Father</span></label>
+<label class="row"><input type="checkbox" data-n="468"> <span class="num">468</span> <span class="ttl">Blessed are the poor in spirit</span></label>
+<label class="row"><input type="checkbox" data-n="469"> <span class="num">469</span> <span class="ttl">Our Father, which art in heaven</span></label>
+<label class="row"><input type="checkbox" data-n="472"> <span class="num">472</span> <span class="ttl">All things come of Thee, O Lord</span></label>
+<label class="row"><input type="checkbox" data-n="473"> <span class="num">473</span> <span class="ttl">Around the world the chorus rings</span></label>
+<label class="row"><input type="checkbox" data-n="474"> <span class="num">474</span> <span class="ttl">Saved to serve in any station</span></label>
+<label class="row"><input type="checkbox" data-n="475"> <span class="num">475</span> <span class="ttl">A year of precious blessings</span></label>
+<label class="row"><input type="checkbox" data-n="476"> <span class="num">476</span> <span class="ttl">I love to tell the story</span></label>
+<label class="row"><input type="checkbox" data-n="477"> <span class="num">477</span> <span class="ttl">Working O Christ, with thee</span></label>
+<label class="row"><input type="checkbox" data-n="478"> <span class="num">478</span> <span class="ttl">Just to trust in the Lord, just to lean on His word</span></label>
+<label class="row"><input type="checkbox" data-n="480"> <span class="num">480</span> <span class="ttl">Brightly beams our Father's mercy</span></label>
+<label class="row"><input type="checkbox" data-n="481"> <span class="num">481</span> <span class="ttl">Are you Christ's light bearer?</span></label>
+<label class="row"><input type="checkbox" data-n="482"> <span class="num">482</span> <span class="ttl">An open Bible for the world!</span></label>
+<label class="row"><input type="checkbox" data-n="483"> <span class="num">483</span> <span class="ttl">God bids his people on the earth</span></label>
+<label class="row"><input type="checkbox" data-n="484"> <span class="num">484</span> <span class="ttl">Loyalty to the Master, loyalty to the King</span></label>
+<label class="row"><input type="checkbox" data-n="485"> <span class="num">485</span> <span class="ttl">Take time to be holy</span></label>
+<label class="row"><input type="checkbox" data-n="486"> <span class="num">486</span> <span class="ttl">There are lonely hearts to cherish</span></label>
+<label class="row"><input type="checkbox" data-n="487"> <span class="num">487</span> <span class="ttl">I cease to sing of sweet tomorrow</span></label>
+<label class="row"><input type="checkbox" data-n="488"> <span class="num">488</span> <span class="ttl">Conquering now and still to conquer</span></label>
+<label class="row"><input type="checkbox" data-n="489"> <span class="num">489</span> <span class="ttl">I'm pressing on the upward way</span></label>
+<label class="row"><input type="checkbox" data-n="490"> <span class="num">490</span> <span class="ttl">Encamped along the hills of light</span></label>
+<label class="row"><input type="checkbox" data-n="491"> <span class="num">491</span> <span class="ttl">Saviour, more than life to me</span></label>
+<label class="row"><input type="checkbox" data-n="492"> <span class="num">492</span> <span class="ttl">Does Jesus care when my heart is pain'd</span></label>
+<label class="row"><input type="checkbox" data-n="493"> <span class="num">493</span> <span class="ttl">O blessed rest, when we recline</span></label>
+<label class="row"><input type="checkbox" data-n="494"> <span class="num">494</span> <span class="ttl">The cross that he gave may be heavy</span></label>
+<label class="row"><input type="checkbox" data-n="495"> <span class="num">495</span> <span class="ttl">When we walk with the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="496"> <span class="num">496</span> <span class="ttl">Dying with Jesus, by death reckoned mine</span></label>
+<label class="row"><input type="checkbox" data-n="497"> <span class="num">497</span> <span class="ttl">Moment by moment, hour by hour</span></label>
+<label class="row"><input type="checkbox" data-n="498"> <span class="num">498</span> <span class="ttl">Give me the Bible, star of gladness gleaming</span></label>
+<label class="row"><input type="checkbox" data-n="499"> <span class="num">499</span> <span class="ttl">Not a wasted moment in the morning fair</span></label>
+<label class="row"><input type="checkbox" data-n="500"> <span class="num">500</span> <span class="ttl">O softly the Spirit is whisp'ring to me</span></label>
+<label class="row"><input type="checkbox" data-n="501"> <span class="num">501</span> <span class="ttl">Jesus bids us shine with a pure, clear light</span></label>
+<label class="row"><input type="checkbox" data-n="502"> <span class="num">502</span> <span class="ttl">Just lean upon the arms of Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="503"> <span class="num">503</span> <span class="ttl">What a fellowship, what a joy divine</span></label>
+<label class="row"><input type="checkbox" data-n="504"> <span class="num">504</span> <span class="ttl">God be with you till we meet again</span></label>
+<label class="row"><input type="checkbox" data-n="505"> <span class="num">505</span> <span class="ttl">The Lord's our Rock, in him we hide</span></label>
+<label class="row"><input type="checkbox" data-n="506"> <span class="num">506</span> <span class="ttl">O safe to the Rock that is higher than I</span></label>
+<label class="row"><input type="checkbox" data-n="507"> <span class="num">507</span> <span class="ttl">Under His wings I am safely abiding</span></label>
+<label class="row"><input type="checkbox" data-n="508"> <span class="num">508</span> <span class="ttl">O Christian, awake!  'tis the Master's command</span></label>
+<label class="row"><input type="checkbox" data-n="509"> <span class="num">509</span> <span class="ttl">Firmly stand for God, in the world's mad strife</span></label>
+<label class="row"><input type="checkbox" data-n="510"> <span class="num">510</span> <span class="ttl">Sound the battle cry</span></label>
+<label class="row"><input type="checkbox" data-n="511"> <span class="num">511</span> <span class="ttl">Strike!  O strike for vict'ry</span></label>
+<label class="row"><input type="checkbox" data-n="512"> <span class="num">512</span> <span class="ttl">Who will volunteer?</span></label>
+<label class="row"><input type="checkbox" data-n="513"> <span class="num">513</span> <span class="ttl">Ask not to be excused</span></label>
+<label class="row"><input type="checkbox" data-n="514"> <span class="num">514</span> <span class="ttl">My Father is rich in houses and lands</span></label>
+<label class="row"><input type="checkbox" data-n="515"> <span class="num">515</span> <span class="ttl">Are you weary, are you heavy hearted?</span></label>
+<label class="row"><input type="checkbox" data-n="516"> <span class="num">516</span> <span class="ttl">When peace, like a river attendeth my way</span></label>
+<label class="row"><input type="checkbox" data-n="517"> <span class="num">517</span> <span class="ttl">In heav'nly love abiding</span></label>
+<label class="row"><input type="checkbox" data-n="518"> <span class="num">518</span> <span class="ttl">As of old when the hosts of Israel</span></label>
+<label class="row"><input type="checkbox" data-n="519"> <span class="num">519</span> <span class="ttl">'Tis so sweet to trust in Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="520"> <span class="num">520</span> <span class="ttl">Lift him up, 'tis he that bids you</span></label>
+<label class="row"><input type="checkbox" data-n="521"> <span class="num">521</span> <span class="ttl">Look upon the golden image</span></label>
+<label class="row"><input type="checkbox" data-n="522"> <span class="num">522</span> <span class="ttl">Is there anyone can help us, one who understands our hearts</span></label>
+<label class="row"><input type="checkbox" data-n="523"> <span class="num">523</span> <span class="ttl">Look for the beautiful, look for the true</span></label>
+<label class="row"><input type="checkbox" data-n="524"> <span class="num">524</span> <span class="ttl">Are you heavy laden and with sorrow tried?</span></label>
+<label class="row"><input type="checkbox" data-n="525"> <span class="num">525</span> <span class="ttl">More about Jesus I would know</span></label>
+<label class="row"><input type="checkbox" data-n="526"> <span class="num">526</span> <span class="ttl">Father, we come to thee</span></label>
+<label class="row"><input type="checkbox" data-n="527"> <span class="num">527</span> <span class="ttl">Saviour, lead me lest I stray</span></label>
+<label class="row"><input type="checkbox" data-n="528"> <span class="num">528</span> <span class="ttl">The Lord is my light</span></label>
+<label class="row"><input type="checkbox" data-n="529"> <span class="num">529</span> <span class="ttl">The angel of the Lord encampeth</span></label>
+<label class="row"><input type="checkbox" data-n="530"> <span class="num">530</span> <span class="ttl">Christ, our mighty Captain, leads against the foe</span></label>
+<label class="row"><input type="checkbox" data-n="531"> <span class="num">531</span> <span class="ttl">In the highways and hedges go seek for the lost</span></label>
+<label class="row"><input type="checkbox" data-n="532"> <span class="num">532</span> <span class="ttl">Seeking the lost, yes, kindly entreating</span></label>
+<label class="row"><input type="checkbox" data-n="533"> <span class="num">533</span> <span class="ttl">Would you win a Saviour's blessing?</span></label>
+<label class="row"><input type="checkbox" data-n="534"> <span class="num">534</span> <span class="ttl">Closer to thee, my Father, draw me</span></label>
+<label class="row"><input type="checkbox" data-n="535"> <span class="num">535</span> <span class="ttl">Anywhere with Jesus I can safely go</span></label>
+<label class="row"><input type="checkbox" data-n="536"> <span class="num">536</span> <span class="ttl">Be with us, Lord, as forth we go</span></label>
+<label class="row"><input type="checkbox" data-n="537"> <span class="num">537</span> <span class="ttl">Go ye into all the world</span></label>
+<label class="row"><input type="checkbox" data-n="538"> <span class="num">538</span> <span class="ttl">Life is not a cloudless journey</span></label>
+<label class="row"><input type="checkbox" data-n="539"> <span class="num">539</span> <span class="ttl">Just a ray of sunshine</span></label>
+<label class="row"><input type="checkbox" data-n="540"> <span class="num">540</span> <span class="ttl">Walk in the light the Lord has given</span></label>
+<label class="row"><input type="checkbox" data-n="541"> <span class="num">541</span> <span class="ttl">I must have the Saviour with me</span></label>
+<label class="row"><input type="checkbox" data-n="542"> <span class="num">542</span> <span class="ttl">What are you doing for Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="543"> <span class="num">543</span> <span class="ttl">When the cross seems hard to carry</span></label>
+<label class="row"><input type="checkbox" data-n="544"> <span class="num">544</span> <span class="ttl">Throw out the Life-Line across the dark wave</span></label>
+<label class="row"><input type="checkbox" data-n="545"> <span class="num">545</span> <span class="ttl">Out upon an angry ocean</span></label>
+<label class="row"><input type="checkbox" data-n="546"> <span class="num">546</span> <span class="ttl">On the shore beyond the sea</span></label>
+<label class="row"><input type="checkbox" data-n="547"> <span class="num">547</span> <span class="ttl">Far and near the fields are teeming</span></label>
+<label class="row"><input type="checkbox" data-n="548"> <span class="num">548</span> <span class="ttl">O where are the reapers that garner in</span></label>
+<label class="row"><input type="checkbox" data-n="549"> <span class="num">549</span> <span class="ttl">One more day's work for Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="550"> <span class="num">550</span> <span class="ttl">Pray for the erring ones, faith shall reclaim them</span></label>
+<label class="row"><input type="checkbox" data-n="551"> <span class="num">551</span> <span class="ttl">The home where changes never come</span></label>
+<label class="row"><input type="checkbox" data-n="552"> <span class="num">552</span> <span class="ttl">I am thinking today of that beautiful land</span></label>
+<label class="row"><input type="checkbox" data-n="553"> <span class="num">553</span> <span class="ttl">All my class!  not one forgotten</span></label>
+<label class="row"><input type="checkbox" data-n="554"> <span class="num">554</span> <span class="ttl">Speak to my soul, dear Jesus</span></label>
+<label class="row"><input type="checkbox" data-n="555"> <span class="num">555</span> <span class="ttl">Watch, for the time is short</span></label>
+<label class="row"><input type="checkbox" data-n="556"> <span class="num">556</span> <span class="ttl">When softly fades the dying day</span></label>
+<label class="row"><input type="checkbox" data-n="557"> <span class="num">557</span> <span class="ttl">Lonely?  no, not lonely</span></label>
+<label class="row"><input type="checkbox" data-n="558"> <span class="num">558</span> <span class="ttl">Lifetime is working time, spend no idle days</span></label>
+<label class="row"><input type="checkbox" data-n="559"> <span class="num">559</span> <span class="ttl">If any little word of mine</span></label>
+<label class="row"><input type="checkbox" data-n="560"> <span class="num">560</span> <span class="ttl">Never be sad or desponding</span></label>
+<label class="row"><input type="checkbox" data-n="561"> <span class="num">561</span> <span class="ttl">Hark!  'tis the Shepherd's voice I hear</span></label>
+<label class="row"><input type="checkbox" data-n="562"> <span class="num">562</span> <span class="ttl">I have learn'd the wondrous secret</span></label>
+<label class="row"><input type="checkbox" data-n="563"> <span class="num">563</span> <span class="ttl">Lord, for tomorrow and its needs</span></label>
+<label class="row"><input type="checkbox" data-n="564"> <span class="num">564</span> <span class="ttl">Will your anchor hold in the storm of life</span></label>
+<label class="row"><input type="checkbox" data-n="565"> <span class="num">565</span> <span class="ttl">Christian, onward!  Christ is coming</span></label>
+<label class="row"><input type="checkbox" data-n="566"> <span class="num">566</span> <span class="ttl">It may not be on the mountain's height</span></label>
+<label class="row"><input type="checkbox" data-n="567"> <span class="num">567</span> <span class="ttl">'Tis love that makes us happy</span></label>
+<label class="row"><input type="checkbox" data-n="568"> <span class="num">568</span> <span class="ttl">Let us gather up the sunbeams</span></label>
+<label class="row"><input type="checkbox" data-n="569"> <span class="num">569</span> <span class="ttl">I wash'd my hands this morning</span></label>
+<label class="row"><input type="checkbox" data-n="570"> <span class="num">570</span> <span class="ttl">If your hand's on the plow, hold on, hold on</span></label>
+<label class="row"><input type="checkbox" data-n="571"> <span class="num">571</span> <span class="ttl">Master, hast thou work for me?</span></label>
+<label class="row"><input type="checkbox" data-n="572"> <span class="num">572</span> <span class="ttl">In the struggle of life there's a conquest to win</span></label>
+<label class="row"><input type="checkbox" data-n="573"> <span class="num">573</span> <span class="ttl">Hear the pennies dropping!</span></label>
+<label class="row"><input type="checkbox" data-n="574"> <span class="num">574</span> <span class="ttl">Gladly, gladly, toiling for the Master</span></label>
+<label class="row"><input type="checkbox" data-n="575"> <span class="num">575</span> <span class="ttl">Give!  said the golden sun</span></label>
+<label class="row"><input type="checkbox" data-n="576"> <span class="num">576</span> <span class="ttl">To the work!  to the work!  we are servants of God</span></label>
+<label class="row"><input type="checkbox" data-n="577"> <span class="num">577</span> <span class="ttl">Beautiful the little hands</span></label>
+<label class="row"><input type="checkbox" data-n="578"> <span class="num">578</span> <span class="ttl">We should be like gardens</span></label>
+<label class="row"><input type="checkbox" data-n="579"> <span class="num">579</span> <span class="ttl">If I were a sunbeam</span></label>
+<label class="row"><input type="checkbox" data-n="580"> <span class="num">580</span> <span class="ttl">There is beauty all around</span></label>
+<label class="row"><input type="checkbox" data-n="581"> <span class="num">581</span> <span class="ttl">Angry words!  oh, let them never</span></label>
+<label class="row"><input type="checkbox" data-n="582"> <span class="num">582</span> <span class="ttl">Into the tent where a gypsy boy lay</span></label>
+<label class="row"><input type="checkbox" data-n="583"> <span class="num">583</span> <span class="ttl">Sowing in the morning, sowing seeds of kindness</span></label>
+<label class="row"><input type="checkbox" data-n="584"> <span class="num">584</span> <span class="ttl">Master, the tempest is raging!</span></label>
+<label class="row"><input type="checkbox" data-n="585"> <span class="num">585</span> <span class="ttl">Cold water is the cup that cheers</span></label>
+<label class="row"><input type="checkbox" data-n="586"> <span class="num">586</span> <span class="ttl">Look for the way-marks as you journey on</span></label>
+<label class="row"><input type="checkbox" data-n="587"> <span class="num">587</span> <span class="ttl">Hear the temp'rance call</span></label>
+<label class="row"><input type="checkbox" data-n="588"> <span class="num">588</span> <span class="ttl">He that goeth forth with weeping</span></label>
+<label class="row"><input type="checkbox" data-n="589"> <span class="num">589</span> <span class="ttl">The world's glorious harvest is fast drawing on</span></label>
+<label class="row"><input type="checkbox" data-n="590"> <span class="num">590</span> <span class="ttl">Man the life-boat!  Man the life-boat!</span></label>
+<label class="row"><input type="checkbox" data-n="591"> <span class="num">591</span> <span class="ttl">Father, hear the prayer we offer!</span></label>
+<label class="row"><input type="checkbox" data-n="592"> <span class="num">592</span> <span class="ttl">Out from the campfire's red glowing</span></label>
+<label class="row"><input type="checkbox" data-n="593"> <span class="num">593</span> <span class="ttl">Now to heav'n our pray'r ascending</span></label>
+<label class="row"><input type="checkbox" data-n="594"> <span class="num">594</span> <span class="ttl">Give of your best to the Master</span></label>
+<label class="row"><input type="checkbox" data-n="596"> <span class="num">596</span> <span class="ttl">Buy up the opportunity</span></label>
+<label class="row"><input type="checkbox" data-n="597"> <span class="num">597</span> <span class="ttl">Blessed Lord, how much I need thee!</span></label>
+<label class="row"><input type="checkbox" data-n="598"> <span class="num">598</span> <span class="ttl">Oh, to be "Kept for Jesus!"</span></label>
+<label class="row"><input type="checkbox" data-n="599"> <span class="num">599</span> <span class="ttl">I have a Friend so precious</span></label>
+<label class="row"><input type="checkbox" data-n="600"> <span class="num">600</span> <span class="ttl">Ready to suffer grief or pain</span></label>
+<label class="row"><input type="checkbox" data-n="601"> <span class="num">601</span> <span class="ttl">Precious promise God hath given</span></label>
+<label class="row"><input type="checkbox" data-n="602"> <span class="num">602</span> <span class="ttl">Forward, brothers, forward!</span></label>
+<label class="row"><input type="checkbox" data-n="603"> <span class="num">603</span> <span class="ttl">God bless our Sabbath school!  Christ superintend it</span></label>
+<label class="row"><input type="checkbox" data-n="604"> <span class="num">604</span> <span class="ttl">More diligence give me</span></label>
+<label class="row"><input type="checkbox" data-n="605"> <span class="num">605</span> <span class="ttl">Chide mildly the erring</span></label>
+<label class="row"><input type="checkbox" data-n="606"> <span class="num">606</span> <span class="ttl">Not now, my child, a little more rough tossing</span></label>
+<label class="row"><input type="checkbox" data-n="607"> <span class="num">607</span> <span class="ttl">Let us work for the school with our hearts and our hands</span></label>
+<label class="row"><input type="checkbox" data-n="608"> <span class="num">608</span> <span class="ttl">Sweet Sabbath School!  more dear to me</span></label>
+<label class="row"><input type="checkbox" data-n="610"> <span class="num">610</span> <span class="ttl">I am passing down the valley that they say is so lone</span></label>
+<label class="row"><input type="checkbox" data-n="611"> <span class="num">611</span> <span class="ttl">All the way my Saviour leads me</span></label>
+<label class="row"><input type="checkbox" data-n="612"> <span class="num">612</span> <span class="ttl">When morning lights the eastern skies</span></label>
+<label class="row"><input type="checkbox" data-n="613"> <span class="num">613</span> <span class="ttl">O sometimes the shadows are deep</span></label>
+<label class="row"><input type="checkbox" data-n="614"> <span class="num">614</span> <span class="ttl">Saviour!  Thy dying love</span></label>
+<label class="row"><input type="checkbox" data-n="615"> <span class="num">615</span> <span class="ttl">What tho' clouds are hov'ring o'er me</span></label>
+<label class="row"><input type="checkbox" data-n="616"> <span class="num">616</span> <span class="ttl">"Call them in," the poor, the wretched</span></label>
+<label class="row"><input type="checkbox" data-n="617"> <span class="num">617</span> <span class="ttl">There's a cry from Macedonia  Come and help us</span></label>
+<label class="row"><input type="checkbox" data-n="621"> <span class="num">621</span> <span class="ttl">The whole wide world is pleading</span></label>
+<label class="row"><input type="checkbox" data-n="622"> <span class="num">622</span> <span class="ttl">Ho!   reapers of life's harvest</span></label>
+<label class="row"><input type="checkbox" data-n="623"> <span class="num">623</span> <span class="ttl">For Christ is our endeavor</span></label>
+<label class="row"><input type="checkbox" data-n="624"> <span class="num">624</span> <span class="ttl">From Greenland's icy mountains</span></label>
+<label class="row"><input type="checkbox" data-n="625"> <span class="num">625</span> <span class="ttl">I could not do without Thee</span></label>
+<label class="row"><input type="checkbox" data-n="626"> <span class="num">626</span> <span class="ttl">O Lamb of God! still keep me</span></label>
+<label class="row"><input type="checkbox" data-n="627"> <span class="num">627</span> <span class="ttl">Soldiers of the cross, arise!</span></label>
+<label class="row"><input type="checkbox" data-n="630"> <span class="num">630</span> <span class="ttl">The fields are all white</span></label>
+<label class="row"><input type="checkbox" data-n="632"> <span class="num">632</span> <span class="ttl">Holy Spirit, faithful Guide</span></label>
+<label class="row"><input type="checkbox" data-n="634"> <span class="num">634</span> <span class="ttl">Jesus, lover of my soul</span></label>
+<label class="row"><input type="checkbox" data-n="636"> <span class="num">636</span> <span class="ttl">Lord, her watch Thy Church is keeping</span></label>
+<label class="row"><input type="checkbox" data-n="638"> <span class="num">638</span> <span class="ttl">Lord, thou callest for the workers</span></label>
+<label class="row"><input type="checkbox" data-n="642"> <span class="num">642</span> <span class="ttl">Pilgrims on!  the day is dawning</span></label>
+<label class="row"><input type="checkbox" data-n="645"> <span class="num">645</span> <span class="ttl">God the all-terrible!  King who ordainest</span></label>
+<label class="row"><input type="checkbox" data-n="647"> <span class="num">647</span> <span class="ttl">Saviour, breathe an evening blessing</span></label>
+<label class="row"><input type="checkbox" data-n="649"> <span class="num">649</span> <span class="ttl">There is never a day so dreary</span></label>
+<label class="row"><input type="checkbox" data-n="650"> <span class="num">650</span> <span class="ttl">I love thee, I love thee</span></label>
+<label class="row"><input type="checkbox" data-n="651"> <span class="num">651</span> <span class="ttl">Come, let us anew our journey pursue</span></label>
+<label class="row"><input type="checkbox" data-n="654"> <span class="num">654</span> <span class="ttl">Rock of Ages, cleft for me!</span></label>
+<label class="row"><input type="checkbox" data-n="661"> <span class="num">661</span> <span class="ttl">Thy way, not mine, O Lord</span></label>
+<label class="row"><input type="checkbox" data-n="664"> <span class="num">664</span> <span class="ttl">How firm a foundation, ye saints of the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="665"> <span class="num">665</span> <span class="ttl">The Lord is my Shepherd, no want shall I know</span></label>
+<label class="row"><input type="checkbox" data-n="666"> <span class="num">666</span> <span class="ttl">The Lord is my Shepherd, no want shall I know</span></label>
+<label class="row"><input type="checkbox" data-n="667"> <span class="num">667</span> <span class="ttl">Tho' faint, yet pursuing, we go on our way</span></label>
+<label class="row"><input type="checkbox" data-n="668"> <span class="num">668</span> <span class="ttl">Still, still with Thee, when purple morning breaketh</span></label>
+<label class="row"><input type="checkbox" data-n="669"> <span class="num">669</span> <span class="ttl">Lead Thou me on, and then my feet tho' weary</span></label>
+<label class="row"><input type="checkbox" data-n="672"> <span class="num">672</span> <span class="ttl">Master, no offering</span></label>
+<label class="row"><input type="checkbox" data-n="673"> <span class="num">673</span> <span class="ttl">Answer the call, ye brave men</span></label>
+<label class="row"><input type="checkbox" data-n="674"> <span class="num">674</span> <span class="ttl">When storms of life are sweeping</span></label>
+<label class="row"><input type="checkbox" data-n="676"> <span class="num">676</span> <span class="ttl">Eternal Father!  strong to save</span></label>
+<label class="row"><input type="checkbox" data-n="677"> <span class="num">677</span> <span class="ttl">He leadeth me!  O blessed tho't!</span></label>
+<label class="row"><input type="checkbox" data-n="680"> <span class="num">680</span> <span class="ttl">Christian, the morn breaks sweetly o'er thee</span></label>
+<label class="row"><input type="checkbox" data-n="682"> <span class="num">682</span> <span class="ttl">Rise, my soul, and stretch thy wings</span></label>
+<label class="row"><input type="checkbox" data-n="683"> <span class="num">683</span> <span class="ttl">Watchman, blow the gospel trumpet</span></label>
+<label class="row"><input type="checkbox" data-n="684"> <span class="num">684</span> <span class="ttl">Words of cheer from the battlefield of life</span></label>
+<label class="row"><input type="checkbox" data-n="685"> <span class="num">685</span> <span class="ttl">Cast thy burden on the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="686"> <span class="num">686</span> <span class="ttl">We lay us calmly down to sleep</span></label>
+<label class="row"><input type="checkbox" data-n="687"> <span class="num">687</span> <span class="ttl">Eternal depth of love divine</span></label>
+<label class="row"><input type="checkbox" data-n="688"> <span class="num">688</span> <span class="ttl">God is our refuge and defense</span></label>
+<label class="row"><input type="checkbox" data-n="690"> <span class="num">690</span> <span class="ttl">O Lord, our heavenly King</span></label>
+<label class="row"><input type="checkbox" data-n="691"> <span class="num">691</span> <span class="ttl">I've reach'd the land of corn and wine</span></label>
+<label class="row"><input type="checkbox" data-n="692"> <span class="num">692</span> <span class="ttl">I am dwelling on the mountain</span></label>
+<label class="row"><input type="checkbox" data-n="693"> <span class="num">693</span> <span class="ttl">The Son of God goes forth to war</span></label>
+<label class="row"><input type="checkbox" data-n="695"> <span class="num">695</span> <span class="ttl">Speed on Thy truth, Eternal One</span></label>
+<label class="row"><input type="checkbox" data-n="696"> <span class="num">696</span> <span class="ttl">Go forth on wings of faith and pray'r</span></label>
+<label class="row"><input type="checkbox" data-n="697"> <span class="num">697</span> <span class="ttl">I will never, never leave thee</span></label>
+<label class="row"><input type="checkbox" data-n="699"> <span class="num">699</span> <span class="ttl">In the vineyard of our Father</span></label>
+<label class="row"><input type="checkbox" data-n="701"> <span class="num">701</span> <span class="ttl">Anywhere, dear Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="702"> <span class="num">702</span> <span class="ttl">In some way or other, the Lord will provide</span></label>
+<label class="row"><input type="checkbox" data-n="703"> <span class="num">703</span> <span class="ttl">Speed away!  speed away, over mountains and sea</span></label>
+<label class="row"><input type="checkbox" data-n="704"> <span class="num">704</span> <span class="ttl">Could you wait, could you wait if a brother were lost</span></label>
+<label class="row"><input type="checkbox" data-n="707"> <span class="num">707</span> <span class="ttl">Zion stands with walls surrounded</span></label>
+<label class="row"><input type="checkbox" data-n="711"> <span class="num">711</span> <span class="ttl">Revive Thy work, O Lord, Thy mighty arm make bare</span></label>
+<label class="row"><input type="checkbox" data-n="712"> <span class="num">712</span> <span class="ttl">If, through unruffled seas</span></label>
+<label class="row"><input type="checkbox" data-n="713"> <span class="num">713</span> <span class="ttl">"My times are in thy hand:"</span></label>
+<label class="row"><input type="checkbox" data-n="715"> <span class="num">715</span> <span class="ttl">Sow in the morn thy seed</span></label>
+<label class="row"><input type="checkbox" data-n="717"> <span class="num">717</span> <span class="ttl">Speak often to each other</span></label>
+<label class="row"><input type="checkbox" data-n="718"> <span class="num">718</span> <span class="ttl">The world is very evil</span></label>
+<label class="row"><input type="checkbox" data-n="719"> <span class="num">719</span> <span class="ttl">The morning light is breaking</span></label>
+<label class="row"><input type="checkbox" data-n="720"> <span class="num">720</span> <span class="ttl">Work, for the night is coming</span></label>
+<label class="row"><input type="checkbox" data-n="721"> <span class="num">721</span> <span class="ttl">There is no work too humble</span></label>
+<label class="row"><input type="checkbox" data-n="722"> <span class="num">722</span> <span class="ttl">Carry the joyful tidings</span></label>
+<label class="row"><input type="checkbox" data-n="724"> <span class="num">724</span> <span class="ttl">How cheering is the Christian's hope</span></label>
+<label class="row"><input type="checkbox" data-n="726"> <span class="num">726</span> <span class="ttl">God moves in a mysterious way</span></label>
+<label class="row"><input type="checkbox" data-n="728"> <span class="num">728</span> <span class="ttl">We bless Thee for Thy peace, O God</span></label>
+<label class="row"><input type="checkbox" data-n="729"> <span class="num">729</span> <span class="ttl">Saviour, like a shepherd lead us</span></label>
+<label class="row"><input type="checkbox" data-n="730"> <span class="num">730</span> <span class="ttl">God has said, Forever blessed</span></label>
+<label class="row"><input type="checkbox" data-n="731"> <span class="num">731</span> <span class="ttl">Always with us, always with us</span></label>
+<label class="row"><input type="checkbox" data-n="732"> <span class="num">732</span> <span class="ttl">Meek and lowly, pure and holy</span></label>
+<label class="row"><input type="checkbox" data-n="733"> <span class="num">733</span> <span class="ttl">Tossed upon life's raging billow</span></label>
+<label class="row"><input type="checkbox" data-n="734"> <span class="num">734</span> <span class="ttl">Watchman, tell me, does the morning</span></label>
+<label class="row"><input type="checkbox" data-n="736"> <span class="num">736</span> <span class="ttl">Long upon the mountains, weary</span></label>
+<label class="row"><input type="checkbox" data-n="737"> <span class="num">737</span> <span class="ttl">Mid scenes of confusion and creature complaints</span></label>
+<label class="row"><input type="checkbox" data-n="738"> <span class="num">738</span> <span class="ttl">Mid pleasures and palaces though we may roam</span></label>
+<label class="row"><input type="checkbox" data-n="739"> <span class="num">739</span> <span class="ttl">Kind words can never die</span></label>
+<label class="row"><input type="checkbox" data-n="740"> <span class="num">740</span> <span class="ttl">Out on an ocean all boundless we ride</span></label>
+<label class="row"><input type="checkbox" data-n="741"> <span class="num">741</span> <span class="ttl">Sweet hour of pray'r, sweet hour of pray'r</span></label>
+<label class="row"><input type="checkbox" data-n="742"> <span class="num">742</span> <span class="ttl">My days are gliding swiftly by</span></label>
+<label class="row"><input type="checkbox" data-n="744"> <span class="num">744</span> <span class="ttl">Thus far the Lord has led me on</span></label>
+<label class="row"><input type="checkbox" data-n="745"> <span class="num">745</span> <span class="ttl">My spirit on thy care</span></label>
+<label class="row"><input type="checkbox" data-n="746"> <span class="num">746</span> <span class="ttl">I ask not, Lord, for less to bear</span></label>
+<label class="row"><input type="checkbox" data-n="747"> <span class="num">747</span> <span class="ttl">Children of the heav'nly King</span></label>
+<label class="row"><input type="checkbox" data-n="751"> <span class="num">751</span> <span class="ttl">Ye Christian heralds!  go, proclaim</span></label>
+<label class="row"><input type="checkbox" data-n="752"> <span class="num">752</span> <span class="ttl">Soldiers of Christ, arise</span></label>
+<label class="row"><input type="checkbox" data-n="753"> <span class="num">753</span> <span class="ttl">The tempter to my soul hath said</span></label>
+<label class="row"><input type="checkbox" data-n="755"> <span class="num">755</span> <span class="ttl">This is the day of toil</span></label>
+<label class="row"><input type="checkbox" data-n="756"> <span class="num">756</span> <span class="ttl">How blest the sacred tie that binds</span></label>
+<label class="row"><input type="checkbox" data-n="758"> <span class="num">758</span> <span class="ttl">When waves of trouble round me swell</span></label>
+<label class="row"><input type="checkbox" data-n="761"> <span class="num">761</span> <span class="ttl">God make my life a little light</span></label>
+<label class="row"><input type="checkbox" data-n="763"> <span class="num">763</span> <span class="ttl">Come, Holy Spirit, heav'nly Dove</span></label>
+<label class="row"><input type="checkbox" data-n="766"> <span class="num">766</span> <span class="ttl">How precious is the book divine</span></label>
+<label class="row"><input type="checkbox" data-n="769"> <span class="num">769</span> <span class="ttl">The Lord's my Shepherd, I'll not want</span></label>
+<label class="row"><input type="checkbox" data-n="771"> <span class="num">771</span> <span class="ttl">Zion, awake!  thy slumber break</span></label>
+<label class="row"><input type="checkbox" data-n="772"> <span class="num">772</span> <span class="ttl">How sweet, how heav'nly is the sight</span></label>
+<label class="row"><input type="checkbox" data-n="774"> <span class="num">774</span> <span class="ttl">The day is past and gone</span></label>
+<label class="row"><input type="checkbox" data-n="776"> <span class="num">776</span> <span class="ttl">Lord, in the morning thou shalt hear</span></label>
+<label class="row"><input type="checkbox" data-n="783"> <span class="num">783</span> <span class="ttl">He who seeks the truth, and trembles</span></label>
+<label class="row"><input type="checkbox" data-n="785"> <span class="num">785</span> <span class="ttl">Prince of Peace, control my will</span></label>
+<label class="row"><input type="checkbox" data-n="786"> <span class="num">786</span> <span class="ttl">Blest are the pure in heart</span></label>
+<label class="row"><input type="checkbox" data-n="790"> <span class="num">790</span> <span class="ttl">God's law demands one living faith</span></label>
+<label class="row"><input type="checkbox" data-n="792"> <span class="num">792</span> <span class="ttl">O Christ, with each returning morn</span></label>
+<label class="row"><input type="checkbox" data-n="793"> <span class="num">793</span> <span class="ttl">Awake my soul!  stretch ev'ry nerve</span></label>
+<label class="row"><input type="checkbox" data-n="797"> <span class="num">797</span> <span class="ttl">O Master, let me walk with thee</span></label>
+<label class="row"><input type="checkbox" data-n="800"> <span class="num">800</span> <span class="ttl">Softly fades the twilight ray</span></label>
+<label class="row"><input type="checkbox" data-n="803"> <span class="num">803</span> <span class="ttl">Blessed Bible, how I love it!</span></label>
+<label class="row"><input type="checkbox" data-n="804"> <span class="num">804</span> <span class="ttl">Sister, thou wast mild and lovely</span></label>
+<label class="row"><input type="checkbox" data-n="806"> <span class="num">806</span> <span class="ttl">Jesus, while our hearts are bleeding</span></label>
+<label class="row"><input type="checkbox" data-n="808"> <span class="num">808</span> <span class="ttl">In grief and fear, to thee, O Lord</span></label>
+<label class="row"><input type="checkbox" data-n="809"> <span class="num">809</span> <span class="ttl">What is the chaff, the word of man</span></label>
+<label class="row"><input type="checkbox" data-n="811"> <span class="num">811</span> <span class="ttl">Walk in the light!</span></label>
+<label class="row"><input type="checkbox" data-n="812"> <span class="num">812</span> <span class="ttl">Father, whate'er of earthly bliss</span></label>
+<label class="row"><input type="checkbox" data-n="813"> <span class="num">813</span> <span class="ttl">O could our thoughts and wishes fly</span></label>
+<label class="row"><input type="checkbox" data-n="814"> <span class="num">814</span> <span class="ttl">'Tis by the faith of joys to come</span></label>
+<label class="row"><input type="checkbox" data-n="816"> <span class="num">816</span> <span class="ttl">My country, 'tis of thee</span></label>
+<label class="row"><input type="checkbox" data-n="818"> <span class="num">818</span> <span class="ttl">God bless our native land!</span></label>
+<label class="row"><input type="checkbox" data-n="819"> <span class="num">819</span> <span class="ttl">The Lord worketh, let us work too</span></label>
+<label class="row"><input type="checkbox" data-n="820"> <span class="num">820</span> <span class="ttl">Shepherd divine, thou leadest me</span></label>
+<label class="row"><input type="checkbox" data-n="821"> <span class="num">821</span> <span class="ttl">For Jesus, all my morning hours</span></label>
+<label class="row"><input type="checkbox" data-n="823"> <span class="num">823</span> <span class="ttl">Calm me, my God, and keep me calm</span></label>
+<label class="row"><input type="checkbox" data-n="825"> <span class="num">825</span> <span class="ttl">O blessed hour, when ev'ning comes,</span></label>
+<label class="row"><input type="checkbox" data-n="826"> <span class="num">826</span> <span class="ttl">O love divine, that stooped to share</span></label>
+<label class="row"><input type="checkbox" data-n="827"> <span class="num">827</span> <span class="ttl">O blest are they who oft have said</span></label>
+<label class="row"><input type="checkbox" data-n="829"> <span class="num">829</span> <span class="ttl">Still with thee, O my God!</span></label>
+<label class="row"><input type="checkbox" data-n="836"> <span class="num">836</span> <span class="ttl">O teach me, Lord, that I may teach</span></label>
+<label class="row"><input type="checkbox" data-n="837"> <span class="num">837</span> <span class="ttl">How gentle God's commands!</span></label>
+<label class="row"><input type="checkbox" data-n="838"> <span class="num">838</span> <span class="ttl">Spirit of truth and might</span></label>
+<label class="row"><input type="checkbox" data-n="839"> <span class="num">839</span> <span class="ttl">The Lord bless us and keep us</span></label>
+<label class="row"><input type="checkbox" data-n="840"> <span class="num">840</span> <span class="ttl">Now the day is over</span></label>
+<label class="row"><input type="checkbox" data-n="841"> <span class="num">841</span> <span class="ttl">Lord, keep us safe this night</span></label>
+<label class="row"><input type="checkbox" data-n="844"> <span class="num">844</span> <span class="ttl">Thou Coming One, our wants relieve</span></label>
+<label class="row"><input type="checkbox" data-n="845"> <span class="num">845</span> <span class="ttl">How far from home!  I asked, as on</span></label>
+<label class="row"><input type="checkbox" data-n="847"> <span class="num">847</span> <span class="ttl">A thrilling cry--we hear the sound</span></label>
+<label class="row"><input type="checkbox" data-n="848"> <span class="num">848</span> <span class="ttl">We shall meet beyond the river</span></label>
+<label class="row"><input type="checkbox" data-n="849"> <span class="num">849</span> <span class="ttl">When my life work is ended, and I cross the swelling tide</span></label>
+<label class="row"><input type="checkbox" data-n="850"> <span class="num">850</span> <span class="ttl">Beautiful valley of Eden</span></label>
+<label class="row"><input type="checkbox" data-n="851"> <span class="num">851</span> <span class="ttl">Above the clouds that veil the blue</span></label>
+<label class="row"><input type="checkbox" data-n="852"> <span class="num">852</span> <span class="ttl">When He cometh, when he cometh</span></label>
+<label class="row"><input type="checkbox" data-n="853"> <span class="num">853</span> <span class="ttl">Down life's dark vale we wander</span></label>
+<label class="row"><input type="checkbox" data-n="854"> <span class="num">854</span> <span class="ttl">There'll be no dark valley when Jesus comes</span></label>
+<label class="row"><input type="checkbox" data-n="855"> <span class="num">855</span> <span class="ttl">The Homeland!  O the Homeland!</span></label>
+<label class="row"><input type="checkbox" data-n="856"> <span class="num">856</span> <span class="ttl">We shall reach the summer land</span></label>
+<label class="row"><input type="checkbox" data-n="857"> <span class="num">857</span> <span class="ttl">Our Lord is now rejected</span></label>
+<label class="row"><input type="checkbox" data-n="858"> <span class="num">858</span> <span class="ttl">Light after darkness</span></label>
+<label class="row"><input type="checkbox" data-n="859"> <span class="num">859</span> <span class="ttl">When we lay our burdens down</span></label>
+<label class="row"><input type="checkbox" data-n="860"> <span class="num">860</span> <span class="ttl">Lord, I care not for riches</span></label>
+<label class="row"><input type="checkbox" data-n="861"> <span class="num">861</span> <span class="ttl">Face to face with Christ my Saviour</span></label>
+<label class="row"><input type="checkbox" data-n="862"> <span class="num">862</span> <span class="ttl">In the land of fadeless day</span></label>
+<label class="row"><input type="checkbox" data-n="863"> <span class="num">863</span> <span class="ttl">O there'll be joy when the work is done</span></label>
+<label class="row"><input type="checkbox" data-n="864"> <span class="num">864</span> <span class="ttl">In the glad time of the harvest</span></label>
+<label class="row"><input type="checkbox" data-n="865"> <span class="num">865</span> <span class="ttl">When the trumpet of the Lord shall sound, and time shall be no more</span></label>
+<label class="row"><input type="checkbox" data-n="866"> <span class="num">866</span> <span class="ttl">With friends on earth we meet in gladness</span></label>
+<label class="row"><input type="checkbox" data-n="867"> <span class="num">867</span> <span class="ttl">It maybe at morn, when the day is awaking</span></label>
+<label class="row"><input type="checkbox" data-n="868"> <span class="num">868</span> <span class="ttl">Are you ready for the Bridegroom</span></label>
+<label class="row"><input type="checkbox" data-n="869"> <span class="num">869</span> <span class="ttl">We shall walk with him in white</span></label>
+<label class="row"><input type="checkbox" data-n="870"> <span class="num">870</span> <span class="ttl">"We would see Jesus;" for the shadows lengthen</span></label>
+<label class="row"><input type="checkbox" data-n="871"> <span class="num">871</span> <span class="ttl">Who are these whose songs are sounding</span></label>
+<label class="row"><input type="checkbox" data-n="872"> <span class="num">872</span> <span class="ttl">We shall meet beyond the skies</span></label>
+<label class="row"><input type="checkbox" data-n="873"> <span class="num">873</span> <span class="ttl">Breaking thro' the clouds that gather</span></label>
+<label class="row"><input type="checkbox" data-n="874"> <span class="num">874</span> <span class="ttl">Sorrow and care may meet</span></label>
+<label class="row"><input type="checkbox" data-n="875"> <span class="num">875</span> <span class="ttl">Soul amid earth sorrows dwelling</span></label>
+<label class="row"><input type="checkbox" data-n="876"> <span class="num">876</span> <span class="ttl">When I shall awake in that fair morn of morns</span></label>
+<label class="row"><input type="checkbox" data-n="877"> <span class="num">877</span> <span class="ttl">Watch, ye saints, with eyelids waking</span></label>
+<label class="row"><input type="checkbox" data-n="878"> <span class="num">878</span> <span class="ttl">We know not the hour of the Master's appearing</span></label>
+<label class="row"><input type="checkbox" data-n="879"> <span class="num">879</span> <span class="ttl">There's a land that is fairer than day</span></label>
+<label class="row"><input type="checkbox" data-n="880"> <span class="num">880</span> <span class="ttl">Oh, glory to God!  it is coming again</span></label>
+<label class="row"><input type="checkbox" data-n="881"> <span class="num">881</span> <span class="ttl">I am waiting for the morning</span></label>
+<label class="row"><input type="checkbox" data-n="882"> <span class="num">882</span> <span class="ttl">One sweetly solemn tho't</span></label>
+<label class="row"><input type="checkbox" data-n="883"> <span class="num">883</span> <span class="ttl">There is a land mine eyes hath seen</span></label>
+<label class="row"><input type="checkbox" data-n="884"> <span class="num">884</span> <span class="ttl">Some day the silver cord will break</span></label>
+<label class="row"><input type="checkbox" data-n="885"> <span class="num">885</span> <span class="ttl">We know not the time when He cometh</span></label>
+<label class="row"><input type="checkbox" data-n="886"> <span class="num">886</span> <span class="ttl">When thou comest in Thy kingdom</span></label>
+<label class="row"><input type="checkbox" data-n="887"> <span class="num">887</span> <span class="ttl">Come, we that love the Lord</span></label>
+<label class="row"><input type="checkbox" data-n="888"> <span class="num">888</span> <span class="ttl">Beautiful city, haven of peace</span></label>
+<label class="row"><input type="checkbox" data-n="889"> <span class="num">889</span> <span class="ttl">Angel voices sweetly singing</span></label>
+<label class="row"><input type="checkbox" data-n="890"> <span class="num">890</span> <span class="ttl">Who, who are these beyond the chilly wave</span></label>
+<label class="row"><input type="checkbox" data-n="891"> <span class="num">891</span> <span class="ttl">When we hear the music ringing</span></label>
+<label class="row"><input type="checkbox" data-n="892"> <span class="num">892</span> <span class="ttl">The golden morning is fast approaching</span></label>
+<label class="row"><input type="checkbox" data-n="893"> <span class="num">893</span> <span class="ttl">When the mists have rolled in splendor</span></label>
+<label class="row"><input type="checkbox" data-n="894"> <span class="num">894</span> <span class="ttl">Sweet promise is giv'n to all who believe</span></label>
+<label class="row"><input type="checkbox" data-n="896"> <span class="num">896</span> <span class="ttl">Awake, ye saints, and raise your eyes</span></label>
+<label class="row"><input type="checkbox" data-n="900"> <span class="num">900</span> <span class="ttl">There is a place of sacred rest</span></label>
+<label class="row"><input type="checkbox" data-n="903"> <span class="num">903</span> <span class="ttl">Hail to the brightness of Zion's glad morning!</span></label>
+<label class="row"><input type="checkbox" data-n="904"> <span class="num">904</span> <span class="ttl">Daughter of Zion, awake from thy sadness</span></label>
+<label class="row"><input type="checkbox" data-n="905"> <span class="num">905</span> <span class="ttl">On Jordan's stormy banks I stand</span></label>
+<label class="row"><input type="checkbox" data-n="907"> <span class="num">907</span> <span class="ttl">Shall we gather at the river</span></label>
+<label class="row"><input type="checkbox" data-n="908"> <span class="num">908</span> <span class="ttl">"Forever with the Lord!"</span></label>
+<label class="row"><input type="checkbox" data-n="909"> <span class="num">909</span> <span class="ttl">We are joyously voyaging over the main</span></label>
+<label class="row"><input type="checkbox" data-n="910"> <span class="num">910</span> <span class="ttl">"Land ahead!"  its fruits are waving</span></label>
+<label class="row"><input type="checkbox" data-n="913"> <span class="num">913</span> <span class="ttl">"This same Jesus!"  O how sweetly</span></label>
+<label class="row"><input type="checkbox" data-n="914"> <span class="num">914</span> <span class="ttl">How sweet are the tidings that greet the pilgrim's ear</span></label>
+<label class="row"><input type="checkbox" data-n="919"> <span class="num">919</span> <span class="ttl">I will sing you a song of that beautiful land</span></label>
+<label class="row"><input type="checkbox" data-n="921"> <span class="num">921</span> <span class="ttl">Shall we meet beyond the river</span></label>
+<label class="row"><input type="checkbox" data-n="922"> <span class="num">922</span> <span class="ttl">When Jesus calls His jewels</span></label>
+<label class="row"><input type="checkbox" data-n="923"> <span class="num">923</span> <span class="ttl">The time is near when Zion's sons</span></label>
+<label class="row"><input type="checkbox" data-n="924"> <span class="num">924</span> <span class="ttl">When God descends with men to dwell</span></label>
+<label class="row"><input type="checkbox" data-n="925"> <span class="num">925</span> <span class="ttl">We've no abiding city here</span></label>
+<label class="row"><input type="checkbox" data-n="926"> <span class="num">926</span> <span class="ttl">Thy kingdom come.  Thus day by day</span></label>
+<label class="row"><input type="checkbox" data-n="927"> <span class="num">927</span> <span class="ttl">When I can read my title clear</span></label>
+<label class="row"><input type="checkbox" data-n="928"> <span class="num">928</span> <span class="ttl">In the Christian's home in glory</span></label>
+<label class="row"><input type="checkbox" data-n="929"> <span class="num">929</span> <span class="ttl">Lift up the trumpet, and loud let it ring</span></label>
+<label class="row"><input type="checkbox" data-n="930"> <span class="num">930</span> <span class="ttl">The coming King is at the door</span></label>
+<label class="row"><input type="checkbox" data-n="931"> <span class="num">931</span> <span class="ttl">Sweet be thy rest</span></label>
+<label class="row"><input type="checkbox" data-n="932"> <span class="num">932</span> <span class="ttl">Soon shall we meet again</span></label>
+<label class="row"><input type="checkbox" data-n="933"> <span class="num">933</span> <span class="ttl">Break, break, eternal day</span></label>
+<label class="row"><input type="checkbox" data-n="934"> <span class="num">934</span> <span class="ttl">On the mountain top appearing</span></label>
+<label class="row"><input type="checkbox" data-n="935"> <span class="num">935</span> <span class="ttl">O'er the distant mountain breaking</span></label>
+<label class="row"><input type="checkbox" data-n="936"> <span class="num">936</span> <span class="ttl">Christ is coming!  let creation</span></label>
+<label class="row"><input type="checkbox" data-n="938"> <span class="num">938</span> <span class="ttl">The glories of that heav'nly land</span></label>
+<label class="row"><input type="checkbox" data-n="939"> <span class="num">939</span> <span class="ttl">In the sun, and moon, and stars</span></label>
+<label class="row"><input type="checkbox" data-n="941"> <span class="num">941</span> <span class="ttl">Dear as thou wert, and justly dear</span></label>
+<label class="row"><input type="checkbox" data-n="942"> <span class="num">942</span> <span class="ttl">She hath passed death's chilling billow</span></label>
+<label class="row"><input type="checkbox" data-n="943"> <span class="num">943</span> <span class="ttl">There'll be no grief in heav'n</span></label>
+<label class="row"><input type="checkbox" data-n="944"> <span class="num">944</span> <span class="ttl">Meet again when time is o'er</span></label>
+<label class="row"><input type="checkbox" data-n="945"> <span class="num">945</span> <span class="ttl">When thou, my righteous Judge, shalt come</span></label>
+<label class="row"><input type="checkbox" data-n="946"> <span class="num">946</span> <span class="ttl">O how I long to see that day</span></label>
+<label class="row"><input type="checkbox" data-n="947"> <span class="num">947</span> <span class="ttl">My rest is in heaven, my rest is not here</span></label>
+<label class="row"><input type="checkbox" data-n="948"> <span class="num">948</span> <span class="ttl">I'm weary.  I'm fainting; my day's work is done</span></label>
+<label class="row"><input type="checkbox" data-n="949"> <span class="num">949</span> <span class="ttl">No tears in yonder home</span></label>
+<label class="row"><input type="checkbox" data-n="950"> <span class="num">950</span> <span class="ttl">God spake all these words</span></label>
+<label class="row"><input type="checkbox" data-n="951"> <span class="num">951</span> <span class="ttl">Lord, have mercy, have mercy upon us</span></label>
+</div>
+<textarea id=out placeholder="Your marked hymn numbers appear here after you click Copy"></textarea>
+<script>
+ const boxes=[...document.querySelectorAll('input')];
+ function upd(){document.getElementById('c').textContent=boxes.filter(b=>b.checked).length}
+ boxes.forEach(b=>b.addEventListener('change',upd));
+ function cp(){const m=boxes.filter(b=>b.checked).map(b=>b.dataset.n);
+  document.getElementById('out').value=m.join(', ');
+  navigator.clipboard&&navigator.clipboard.writeText(m.join(', '));}
+</script>
