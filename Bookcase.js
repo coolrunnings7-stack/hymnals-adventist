@@ -10,6 +10,7 @@ const CONFIG = {
   MH1854:   { w: 50, h: 252 },
   MISSION:  { w: 46, h: 224 },
   BURMESE:  { w: 54, h: 250 },
+  CONCORDANCE: { w: 48, h: 236 },
 };
 
 const PER_SHELF = 3;   // books per shelf

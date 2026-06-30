@@ -5,7 +5,7 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Bookcase from './Bookcase';
 import {
   View, Text, TextInput, FlatList, TouchableOpacity,
-  StyleSheet, StatusBar, ScrollView, Image,
+  StyleSheet, StatusBar, ScrollView, Image, Linking,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -283,6 +283,7 @@ const SHELF_META = {
   MH1854:   { label: 'Advent · 1854',         cover: '#6b4a8f', ink: '#1a1a1a', accent: '#4f3669' },
   BURMESE:  { label: 'ဓမ္မသီချင်း · 1951/2009', cover: '#8b2e2e', ink: '#1f3a5f', accent: '#5e1f1f' },
   MISSION:  { label: 'Our Mission',           cover: '#111317', ink: '#a8842a', accent: '#0c0d10', mission: true },
+  CONCORDANCE: { label: 'Find a Hymn',         cover: '#1f6f6f', ink: '#eafaf7', accent: '#155252' },
 };
 // On-paper accent (readable headings/numbers inside each book).
 const INK_ACCENT = {
@@ -290,14 +291,28 @@ const INK_ACCENT = {
   HT1886: '#1f4e79', MH1854: '#5d3b7c',
 };
 // Order on the shelf; auto-flows into rows of three as more are added.
-const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'MISSION'];
+const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'CONCORDANCE', 'MISSION'];
 const B4L_LOGO = require('./assets/b4l_logo.png');
 const FAV_KEY = 'hymnals_favorites_v1';
+const REF_KEY = 'hymnals_ref_editions_v1';
+const DEFAULT_REFS = ['SDAH1985', 'CIS1908', 'CH1941'];
+const REF_PICK_ORDER = ['SDAH1985', 'CIS1908', 'CH1941', 'BURMESE', 'HT1886', 'MH1854', 'ThaiSDA'];
+const CONTACTS = {
+  email: 'hymnal@bottles4life.org',
+  facebook: 'https://www.facebook.com/bottles4life',
+  instagram: 'https://www.instagram.com/bottles4l',
+};
 
 export default function App() {
   const [edition, setEdition] = useState(null);   // null = library shelf
   const [entered, setEntered] = useState(false);  // past the title page?
   const [showMission, setShowMission] = useState(true);
+  const [showConcordance, setShowConcordance] = useState(false);
+  const [showRefPicker, setShowRefPicker] = useState(false);
+  const [concEd, setConcEd] = useState('SDAH1985');
+  const [concNum, setConcNum] = useState('');
+  const [refEditions, setRefEditions] = useState(DEFAULT_REFS);
+  const [refsLoaded, setRefsLoaded] = useState(false);
   const [missionPage, setMissionPage] = useState(1);
   const [query, setQuery] = useState('');
   const [favorites, setFavorites] = useState({});
@@ -323,6 +338,21 @@ export default function App() {
       .catch(() => {})
       .finally(() => setFavsLoaded(true));
   }, []);
+
+  // ---- Persistent reference-hymnal preference ----
+  useEffect(() => {
+    AsyncStorage.getItem(REF_KEY)
+      .then(v => { if (v) { const a = JSON.parse(v); if (Array.isArray(a) && a.length) setRefEditions(a); } })
+      .catch(() => {})
+      .finally(() => setRefsLoaded(true));
+  }, []);
+  const toggleRefEdition = (id) => {
+    setRefEditions(prev => {
+      const next = prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id];
+      AsyncStorage.setItem(REF_KEY, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  };
 
   // Keep the highlighted verse in view as the singer advances.
   useEffect(() => {
@@ -391,12 +421,13 @@ export default function App() {
   // Each book opens fresh: clear search, tab, selection, language.
   const openBook = (id) => {
     if (id === 'MISSION') { setShowMission(true); return; }
+    if (id === 'CONCORDANCE') { stopSound(); setShowConcordance(true); return; }
     stopSound(); setEdition(id); setEntered(false); setSelected(null);
     setQuery(''); setTab('all'); setLang('en'); setProjecting(false);
   };
   const backToShelf = () => {
     stopSound(); setEdition(null); setEntered(false); setSelected(null);
-    setQuery(''); setTab('all'); setShowMission(false);
+    setQuery(''); setTab('all'); setShowMission(false); setShowConcordance(false); setShowRefPicker(false);
   };
 
   const activeEdition = EDITIONS.find(e => e.id === edition);
@@ -411,6 +442,113 @@ export default function App() {
     if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
     return list.filter(h => h.t.toLowerCase().includes(q));
   }, [edition, query, favorites, tab]);
+
+  // ---- FIND A HYMN (concordance) book ----
+  if (showConcordance) {
+    const num = parseInt(concNum, 10);
+    const results = (!isNaN(num)) ? getCrossRefs(concEd, num) : [];
+    const concEdLabel = (EDITION_LABELS[concEd] || concEd);
+    const pickable = REF_PICK_ORDER.filter(e => EDITION_LABELS[e]);
+    const suggestBody = `Hymn cross-reference suggestion:%0D%0A%0D%0A${concEdLabel} #${concNum || '___'} also appears in:%0D%0A- [hymnal] #[number]%0D%0A%0D%0A(Notes: )`;
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={backToShelf}><Text style={s.titleBack}>‹ Shelf</Text></TouchableOpacity>
+        <ScrollView contentContainerStyle={s.concPage}>
+          <Text style={s.titleBook}>Find a Hymn</Text>
+          <Text style={s.concSub}>A concordance across the hymnals</Text>
+          <View style={s.titleRule} />
+
+          <Text style={s.concStepLabel}>1 · Choose a hymnal</Text>
+          <View style={s.concEdRow}>
+            {pickable.map(e => (
+              <TouchableOpacity key={e} style={[s.concEdChip, concEd === e && s.concEdChipOn]} onPress={() => setConcEd(e)}>
+                <Text style={[s.concEdChipTxt, concEd === e && s.concEdChipTxtOn]}>{EDITION_LABELS[e]}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          <Text style={s.concStepLabel}>2 · Enter the hymn number</Text>
+          <TextInput
+            style={s.concInput}
+            value={concNum}
+            onChangeText={t => setConcNum(t.replace(/[^0-9]/g, ''))}
+            keyboardType="number-pad"
+            placeholder="e.g. 199"
+            placeholderTextColor="#b0a07a"
+          />
+
+          <Text style={s.concStepLabel}>3 · Also found in</Text>
+          {(!concNum) ? (
+            <Text style={s.concHint}>Enter a number above to see where this hymn appears across the editions.</Text>
+          ) : results.length === 0 ? (
+            <Text style={s.concHint}>No cross-references on record for {concEdLabel} #{concNum} yet. If you know one, help us below.</Text>
+          ) : (
+            <View style={s.concResults}>
+              {results.map((r, i) => {
+                const tappable = !!HYMNS[r.edition];
+                const label = (EDITION_LABELS[r.edition] || r.edition) + ' #' + r.number;
+                return tappable ? (
+                  <TouchableOpacity key={i} style={s.concResultChip} onPress={() => { setShowConcordance(false); setEdition(r.edition); setEntered(true); openHymn((HYMNS[r.edition] || []).find(h => h.n === r.number) || { n: r.number, t: '' }); }}>
+                    <Text style={s.concResultTxt}>{label}  ›</Text>
+                  </TouchableOpacity>
+                ) : (
+                  <View key={i} style={[s.concResultChip, s.concResultFlat]}>
+                    <Text style={s.concResultInfo}>{label}</Text>
+                  </View>
+                );
+              })}
+            </View>
+          )}
+
+          <View style={s.concNote}>
+            <Text style={s.concNoteTxt}>Cross-references are identified by tune and text, drawing on multiple editions. They show where a hymn is found across the tradition and may differ from references printed in any single book.</Text>
+          </View>
+
+          <View style={s.titleRule} />
+          <Text style={s.concStepLabel}>Help us get it right</Text>
+          <Text style={s.concHint}>Found a match we’re missing, or one that’s wrong? Send it to us — our team verifies every suggestion before it’s published.</Text>
+          <TouchableOpacity style={s.suggestBtn} onPress={() => Linking.openURL(`mailto:${CONTACTS.email}?subject=Cross-reference%20suggestion&body=${suggestBody}`)}>
+            <Text style={s.suggestBtnTxt}>✉  Email a suggestion</Text>
+          </TouchableOpacity>
+          <View style={s.suggestSocialRow}>
+            <TouchableOpacity style={s.suggestSocial} onPress={() => Linking.openURL(CONTACTS.facebook)}>
+              <Text style={s.suggestSocialTxt}>Facebook</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={s.suggestSocial} onPress={() => Linking.openURL(CONTACTS.instagram)}>
+              <Text style={s.suggestSocialTxt}>Instagram</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={s.titleRule} />
+          <TouchableOpacity style={s.refPickerLink} onPress={() => setShowRefPicker(true)}>
+            <Text style={s.refPickerLinkTxt}>⚙  Choose which hymnals show on the song page  ›</Text>
+          </TouchableOpacity>
+        </ScrollView>
+
+        {showRefPicker && (
+          <View style={s.refPickerOverlay}>
+            <View style={s.refPickerCard}>
+              <Text style={s.refPickerTitle}>My Reference Hymnals</Text>
+              <Text style={s.refPickerSub}>Pick which hymnals appear as quick chips on each song page. The full list is always here in Find a Hymn.</Text>
+              {REF_PICK_ORDER.filter(e => EDITION_LABELS[e]).map(e => {
+                const on = refEditions.includes(e);
+                return (
+                  <TouchableOpacity key={e} style={s.refPickRow} onPress={() => toggleRefEdition(e)}>
+                    <Text style={[s.refPickBox, on && s.refPickBoxOn]}>{on ? '☑' : '☐'}</Text>
+                    <Text style={s.refPickName}>{EDITION_LABELS[e]}</Text>
+                  </TouchableOpacity>
+                );
+              })}
+              <TouchableOpacity style={s.refPickDone} onPress={() => setShowRefPicker(false)}>
+                <Text style={s.refPickDoneTxt}>Done</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
+      </SafeAreaView>
+    );
+  }
 
   // ---- Mission page (the Our Mission book) ----
   if (showMission) {
@@ -449,7 +587,7 @@ export default function App() {
 
   // ---- Library: the bookcase ----
   if (!edition) {
-    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || HYMNS[id]);
+    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || id === 'CONCORDANCE' || HYMNS[id]);
     return (
       <SafeAreaView style={s.shelfRoot}>
         <StatusBar barStyle="light-content" />
@@ -485,7 +623,7 @@ export default function App() {
   }
 
   // --- Cross-reference helpers (which other hymnals share this tune) ---
-  const XREF_TO_APP = { CIS1908: 'CIS1908', SDAH1985: 'SDAH1985', CH1941: 'CH1941' };
+  const XREF_TO_APP = { CIS1908: 'CIS1908', SDAH1985: 'SDAH1985', CH1941: 'CH1941', BURMESE: 'BURMESE' };
   const jumpToCrossRef = (xrefEd, num) => {
     const appEd = XREF_TO_APP[xrefEd];
     if (!appEd || !HYMNS[appEd]) return;            // no in-app book (e.g. Thai) -> not tappable
@@ -552,8 +690,16 @@ export default function App() {
           )}
           <Text style={[s.detailEdition, { color: INK_ACCENT[edition] || GOLD }]}>{activeEdition.name} ({activeEdition.year})</Text>
           {(() => {
-            const refs = getCrossRefs(edition, selected.n);
-            if (!refs || refs.length === 0) return null;
+            const allRefs = getCrossRefs(edition, selected.n);
+            if (!allRefs || allRefs.length === 0) return null;
+            // Show only the user's chosen reference hymnals, in their picked priority order.
+            const prioritized = REF_PICK_ORDER.filter(e => refEditions.includes(e));
+            const shown = allRefs
+              .filter(r => refEditions.includes(r.edition))
+              .sort((a, b) => prioritized.indexOf(a.edition) - prioritized.indexOf(b.edition));
+            const hasMore = allRefs.length > shown.length;
+            if (shown.length === 0 && !hasMore) return null;
+            const refs = shown;
             return (
               <View style={s.xrefWrap}>
                 <Text style={s.xrefLabel}>Also found in</Text>
@@ -572,6 +718,9 @@ export default function App() {
                     );
                   })}
                 </View>
+                <TouchableOpacity onPress={() => { setConcEd(edition); setConcNum(String(selected.n)); setShowConcordance(true); }}>
+                  <Text style={s.xrefSeeAll}>see all hymnals  ›</Text>
+                </TouchableOpacity>
               </View>
             );
           })()}
@@ -764,6 +913,41 @@ const s = StyleSheet.create({
   detailSection: { color: INK_SOFT, fontSize: 14, marginTop: 6, fontStyle: 'italic' },
   detailEdition: { color: INK_SOFT, fontSize: 13, fontWeight: '700', marginTop: 3 },
   xrefWrap: { marginTop: 6, marginBottom: 4, alignItems: 'center' },
+  xrefSeeAll: { color: '#a8842a', fontSize: 12, fontWeight: '600', marginTop: 8, textAlign: 'center' },
+  concPage: { paddingHorizontal: 22, paddingBottom: 60 },
+  concSub: { color: '#7a6a45', fontSize: 13, fontStyle: 'italic', textAlign: 'center', marginTop: 2 },
+  concStepLabel: { color: '#9a8757', fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', marginTop: 18, marginBottom: 8 },
+  concEdRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  concEdChip: { borderColor: 'rgba(168,132,42,0.5)', borderWidth: 1, borderRadius: 16, paddingHorizontal: 12, paddingVertical: 6, marginBottom: 4 },
+  concEdChipOn: { backgroundColor: '#1f6f6f', borderColor: '#1f6f6f' },
+  concEdChipTxt: { color: '#7a6a45', fontSize: 12, fontWeight: '600' },
+  concEdChipTxtOn: { color: '#fff' },
+  concInput: { borderColor: 'rgba(168,132,42,0.5)', borderWidth: 1, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 12, fontSize: 18, color: '#1a1a1a', backgroundColor: 'rgba(255,255,255,0.5)' },
+  concHint: { color: '#7a6a45', fontSize: 13, lineHeight: 19 },
+  concResults: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  concResultChip: { backgroundColor: 'rgba(31,111,111,0.14)', borderColor: 'rgba(31,111,111,0.5)', borderWidth: 1, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 7, marginBottom: 4 },
+  concResultTxt: { color: '#1f6f6f', fontSize: 13, fontWeight: '600' },
+  concResultFlat: { backgroundColor: 'transparent', borderStyle: 'dashed' },
+  concResultInfo: { color: '#8a7a55', fontSize: 13 },
+  concNote: { marginTop: 16, backgroundColor: 'rgba(168,132,42,0.08)', borderRadius: 10, padding: 12 },
+  concNoteTxt: { color: '#6a5c3d', fontSize: 11.5, lineHeight: 17, fontStyle: 'italic' },
+  suggestBtn: { backgroundColor: '#a8842a', borderRadius: 22, paddingVertical: 12, alignItems: 'center', marginTop: 6 },
+  suggestBtnTxt: { color: '#fff', fontSize: 15, fontWeight: '700' },
+  suggestSocialRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
+  suggestSocial: { flex: 1, borderColor: 'rgba(168,132,42,0.5)', borderWidth: 1, borderRadius: 18, paddingVertical: 10, alignItems: 'center' },
+  suggestSocialTxt: { color: '#a8842a', fontSize: 13, fontWeight: '600' },
+  refPickerLink: { paddingVertical: 6 },
+  refPickerLinkTxt: { color: '#1f6f6f', fontSize: 13, fontWeight: '600', textAlign: 'center' },
+  refPickerOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'center', alignItems: 'center', padding: 24 },
+  refPickerCard: { backgroundColor: '#f4ecd8', borderRadius: 16, padding: 22, width: '100%', maxWidth: 380 },
+  refPickerTitle: { color: '#1a1a1a', fontSize: 18, fontWeight: '700' },
+  refPickerSub: { color: '#7a6a45', fontSize: 12.5, lineHeight: 18, marginTop: 4, marginBottom: 12 },
+  refPickRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10 },
+  refPickBox: { fontSize: 20, color: '#b0a07a', width: 30 },
+  refPickBoxOn: { color: '#1f6f6f' },
+  refPickName: { fontSize: 15, color: '#1a1a1a' },
+  refPickDone: { backgroundColor: '#1f6f6f', borderRadius: 20, paddingVertical: 11, alignItems: 'center', marginTop: 14 },
+  refPickDoneTxt: { color: '#fff', fontSize: 15, fontWeight: '700' },
   xrefLabel: { color: '#9a8757', fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 6 },
   xrefRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8 },
   xrefChip: { backgroundColor: 'rgba(168,132,42,0.16)', borderColor: 'rgba(168,132,42,0.5)', borderWidth: 1, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 5, marginBottom: 4 },
