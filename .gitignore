@@ -2,3 +2,13 @@
 .expo/
 node_modules/
 google-play-key.json
+*.preConc_*
+*.preBurmese
+*.preshelf
+*.precolors
+*.preVertical
+*.preShelves
+*.preXref_*
+*.preYearfit_*
+*.oldbox_*
+*.preFINAL
