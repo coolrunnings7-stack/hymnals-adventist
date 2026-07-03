@@ -284,6 +284,7 @@ const SHELF_META = {
   BURMESE:  { label: 'ဓမ္မသီချင်း · 1951/2009', cover: '#8b2e2e', ink: '#1f3a5f', accent: '#5e1f1f' },
   MISSION:  { label: 'Our Mission',           cover: '#111317', ink: '#a8842a', accent: '#0c0d10', mission: true },
   CONCORDANCE: { label: 'Find a Hymn',         cover: '#1f6f6f', ink: '#eafaf7', accent: '#155252' },
+  SBH:      { label: 'Hymn Stories',           cover: '#4B9CD3', ink: '#ffffff', accent: '#3578a8' },
 };
 // On-paper accent (readable headings/numbers inside each book).
 const INK_ACCENT = {
@@ -291,7 +292,7 @@ const INK_ACCENT = {
   HT1886: '#1f4e79', MH1854: '#5d3b7c',
 };
 // Order on the shelf; auto-flows into rows of three as more are added.
-const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'CONCORDANCE', 'MISSION'];
+const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'SBH', 'CONCORDANCE', 'MISSION'];
 const B4L_LOGO = require('./assets/b4l_logo.png');
 const FAV_KEY = 'hymnals_favorites_v1';
 const REF_KEY = 'hymnals_ref_editions_v1';
@@ -309,6 +310,9 @@ export default function App() {
   const [showMission, setShowMission] = useState(true);
   const [showConcordance, setShowConcordance] = useState(false);
   const [showRefPicker, setShowRefPicker] = useState(false);
+  const [showSBH, setShowSBH] = useState(false);
+  const [sbhQuery, setSbhQuery] = useState('');
+  const [showStory, setShowStory] = useState(false);
   const [concEd, setConcEd] = useState('SDAH1985');
   const [concNum, setConcNum] = useState('');
   const [refEditions, setRefEditions] = useState(DEFAULT_REFS);
@@ -415,19 +419,20 @@ export default function App() {
     } catch (e) { setPlaying(false); }
   };
 
-  const openHymn = (h) => { setLang('en'); setProjecting(false); setPIdx(0); setSinging(false); setSingIdx(0); verseY.current = {}; setSelected(h); };
+  const openHymn = (h) => { setLang('en'); setProjecting(false); setPIdx(0); setSinging(false); setSingIdx(0); verseY.current = {}; setShowStory(false); setSelected(h); };
   const closeHymn = async () => { await stopSound(); setProjecting(false); setSinging(false); setSelected(null); };
 
   // Each book opens fresh: clear search, tab, selection, language.
   const openBook = (id) => {
     if (id === 'MISSION') { setShowMission(true); return; }
     if (id === 'CONCORDANCE') { stopSound(); setShowConcordance(true); return; }
+    if (id === 'SBH') { stopSound(); setShowSBH(true); return; }
     stopSound(); setEdition(id); setEntered(false); setSelected(null);
     setQuery(''); setTab('all'); setLang('en'); setProjecting(false);
   };
   const backToShelf = () => {
     stopSound(); setEdition(null); setEntered(false); setSelected(null);
-    setQuery(''); setTab('all'); setShowMission(false); setShowConcordance(false); setShowRefPicker(false);
+    setQuery(''); setTab('all'); setShowMission(false); setShowConcordance(false); setShowRefPicker(false); setShowSBH(false); setSbhQuery('');
   };
 
   const activeEdition = EDITIONS.find(e => e.id === edition);
@@ -442,6 +447,55 @@ export default function App() {
     if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
     return list.filter(h => h.t.toLowerCase().includes(q));
   }, [edition, query, favorites, tab]);
+
+  // ---- HYMN STORIES (Stories Behind the Hymns) book ----
+  if (showSBH) {
+    const q = sbhQuery.trim().toLowerCase();
+    const EDP = ['SDAH1985', 'CIS1908', 'CH1941', 'BURMESE'];
+    const seen = new Map();
+    Object.keys(STORIES).forEach(k => {
+      const ci = k.indexOf(':');
+      const ed = k.slice(0, ci); const n = parseInt(k.slice(ci + 1), 10);
+      const txt = STORIES[k];
+      const hymn = (HYMNS[ed] || []).find(h => h.n === n);
+      const t = hymn ? hymn.t : '';
+      const rank = EDP.indexOf(ed) === -1 ? 99 : EDP.indexOf(ed);
+      const prev = seen.get(txt);
+      if ((!prev || rank < prev.rank) && t) seen.set(txt, { ed, n, t, txt, rank });
+    });
+    let items = Array.from(seen.values()).sort((a, b) => a.t.localeCompare(b.t));
+    if (q) items = items.filter(it => it.t.toLowerCase().includes(q) || it.txt.toLowerCase().includes(q));
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={backToShelf}><Text style={s.titleBack}>‹ Shelf</Text></TouchableOpacity>
+        <ScrollView contentContainerStyle={s.concPage} keyboardShouldPersistTaps="handled">
+          <Text style={s.titleBook}>Stories Behind the Hymns</Text>
+          <Text style={s.concSub}>The lives and moments inside the songs</Text>
+          <View style={s.titleRule} />
+          <TextInput
+            style={s.sbhSearch}
+            value={sbhQuery}
+            onChangeText={setSbhQuery}
+            placeholder="Search a hymn title or a line…"
+            placeholderTextColor="#b0a07a"
+          />
+          {items.length === 0 ? (
+            <Text style={s.concHint}>No story found for that search yet. New stories arrive in free updates — and if there is a hymn whose story you long to read, tell us through the Find a Hymn book.</Text>
+          ) : items.map((it, i) => (
+            <TouchableOpacity key={i} style={s.sbhRow}
+              onPress={() => { setShowSBH(false); setEdition(it.ed); setEntered(true); openHymn((HYMNS[it.ed] || []).find(h => h.n === it.n)); setShowStory(true); }}>
+              <Text style={s.sbhRowTitle}>{it.t}</Text>
+              <Text style={s.sbhRowMeta}>{(EDITION_LABELS[it.ed] || it.ed)} · No. {it.n}  ›</Text>
+            </TouchableOpacity>
+          ))}
+          <View style={s.concNote}>
+            <Text style={s.concNoteTxt}>Where a story is documented history, we tell it as fact. Where it is beloved tradition, we say so — the honesty is part of the story.</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
 
   // ---- FIND A HYMN (concordance) book ----
   if (showConcordance) {
@@ -587,7 +641,7 @@ export default function App() {
 
   // ---- Library: the bookcase ----
   if (!edition) {
-    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || id === 'CONCORDANCE' || HYMNS[id]);
+    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || id === 'CONCORDANCE' || id === 'SBH' || HYMNS[id]);
     return (
       <SafeAreaView style={s.shelfRoot}>
         <StatusBar barStyle="light-content" />
@@ -779,8 +833,10 @@ export default function App() {
           {storyFor(edition, selected.n) ? (
             <View>
               <View style={s.rule} />
-              <Text style={s.storyHeading}>The Story Behind This Hymn</Text>
-              <Text style={s.storyText}>{storyFor(edition, selected.n)}</Text>
+              <TouchableOpacity style={s.storyBtn} onPress={() => setShowStory(v => !v)}>
+                <Text style={s.storyBtnTxt}>{showStory ? '▾  The Story Behind This Hymn' : '📖  The Story Behind This Hymn'}</Text>
+              </TouchableOpacity>
+              {showStory ? <Text style={s.storyText}>{storyFor(edition, selected.n)}</Text> : null}
             </View>
           ) : null}
         </ScrollView>
@@ -959,6 +1015,12 @@ const s = StyleSheet.create({
   rule: { height: 2, backgroundColor: RULE, marginVertical: 16, width: 90 },
   verse: { color: INK, fontSize: 16, lineHeight: 25, marginBottom: 18 },
   storyHeading: { color: GOLD, fontSize: 17, fontWeight: '700', marginBottom: 10 },
+  storyBtn: { backgroundColor: 'rgba(75,156,211,0.12)', borderColor: 'rgba(75,156,211,0.5)', borderWidth: 1, borderRadius: 20, paddingVertical: 10, paddingHorizontal: 16, alignItems: 'center', marginBottom: 12 },
+  storyBtnTxt: { color: '#2f6f9f', fontSize: 14, fontWeight: '700' },
+  sbhSearch: { borderColor: 'rgba(75,156,211,0.55)', borderWidth: 1, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 11, fontSize: 16, color: '#1a1a1a', backgroundColor: 'rgba(255,255,255,0.55)', marginBottom: 14 },
+  sbhRow: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: 'rgba(168,132,42,0.18)' },
+  sbhRowTitle: { color: '#1a1a1a', fontSize: 16, fontWeight: '600' },
+  sbhRowMeta: { color: '#7a6a45', fontSize: 12.5, marginTop: 2 },
   storyText: { color: INK, fontSize: 15, lineHeight: 24, marginBottom: 18 },
   comingScreen: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 36 },
   comingBig: { color: GOLD, fontSize: 52, marginBottom: 10 },
