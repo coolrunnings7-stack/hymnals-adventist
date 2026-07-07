@@ -12,6 +12,8 @@ const CONFIG = {
   BURMESE:  { w: 54, h: 250 },
   CONCORDANCE: { w: 48, h: 236 },
   SBH:      { w: 52, h: 246 },
+  TG:       { w: 54, h: 250 },
+  RPMBIBLE: { w: 50, h: 240 },
 };
 
 const PER_SHELF = 3;   // books per shelf

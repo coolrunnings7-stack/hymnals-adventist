@@ -13,6 +13,7 @@ import { Audio } from 'expo-av';
 import SDAH_LYRICS from './sdah_lyrics.json';
 import CIS_LYRICS from './cis_lyrics.json';
 import STORIES from './stories.json';
+import TG from './thematic_guide.json';
 import { SDAH1985, EDITIONS, sectionFor } from './hymns_data';
 import { getAudio, ALL_TUNE_KEYS } from './audio_manifest';
 import { getPlayableUri, getPlayable, isCached, downloadAll, cachedCount } from './audio_cache';
@@ -285,6 +286,8 @@ const SHELF_META = {
   MISSION:  { label: 'Our Mission',           cover: '#111317', ink: '#a8842a', accent: '#0c0d10', mission: true },
   CONCORDANCE: { label: 'Find a Hymn',         cover: '#1f6f6f', ink: '#eafaf7', accent: '#155252' },
   SBH:      { label: 'Hymn Stories',           cover: '#4B9CD3', ink: '#ffffff', accent: '#3578a8' },
+  TG:       { label: 'Thematic Guide',         cover: '#4a2c6f', ink: '#c9a227', accent: '#37204f' },
+  RPMBIBLE: { label: 'RPM Bible',              cover: '#16276e', ink: '#c9a227', accent: '#0f1b4d' },
 };
 // On-paper accent (readable headings/numbers inside each book).
 const INK_ACCENT = {
@@ -292,7 +295,7 @@ const INK_ACCENT = {
   HT1886: '#1f4e79', MH1854: '#5d3b7c',
 };
 // Order on the shelf; auto-flows into rows of three as more are added.
-const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'SBH', 'CONCORDANCE', 'MISSION'];
+const BOOK_ORDER = ['SDAH1985', 'CH1941', 'CIS1908', 'HT1886', 'MH1854', 'BURMESE', 'SBH', 'TG', 'CONCORDANCE', 'RPMBIBLE', 'MISSION'];
 const B4L_LOGO = require('./assets/b4l_logo.png');
 const FAV_KEY = 'hymnals_favorites_v1';
 const REF_KEY = 'hymnals_ref_editions_v1';
@@ -313,6 +316,11 @@ export default function App() {
   const [showSBH, setShowSBH] = useState(false);
   const [sbhQuery, setSbhQuery] = useState('');
   const [showStory, setShowStory] = useState(false);
+  const [showRPM, setShowRPM] = useState(false);
+  const [showTG, setShowTG] = useState(false);
+  const [tgVol, setTgVol] = useState(null);
+  const [tgSec, setTgSec] = useState(null);
+  const [tgHymn, setTgHymn] = useState(null);
   const [concEd, setConcEd] = useState('SDAH1985');
   const [concNum, setConcNum] = useState('');
   const [refEditions, setRefEditions] = useState(DEFAULT_REFS);
@@ -427,12 +435,14 @@ export default function App() {
     if (id === 'MISSION') { setShowMission(true); return; }
     if (id === 'CONCORDANCE') { stopSound(); setShowConcordance(true); return; }
     if (id === 'SBH') { stopSound(); setShowSBH(true); return; }
+    if (id === 'RPMBIBLE') { stopSound(); setShowRPM(true); return; }
+    if (id === 'TG') { stopSound(); setShowTG(true); return; }
     stopSound(); setEdition(id); setEntered(false); setSelected(null);
     setQuery(''); setTab('all'); setLang('en'); setProjecting(false);
   };
   const backToShelf = () => {
     stopSound(); setEdition(null); setEntered(false); setSelected(null);
-    setQuery(''); setTab('all'); setShowMission(false); setShowConcordance(false); setShowRefPicker(false); setShowSBH(false); setSbhQuery('');
+    setQuery(''); setTab('all'); setShowMission(false); setShowConcordance(false); setShowRefPicker(false); setShowSBH(false); setSbhQuery(''); setShowRPM(false); setShowTG(false); setTgVol(null); setTgSec(null); setTgHymn(null);
   };
 
   const activeEdition = EDITIONS.find(e => e.id === edition);
@@ -447,6 +457,144 @@ export default function App() {
     if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
     return list.filter(h => h.t.toLowerCase().includes(q));
   }, [edition, query, favorites, tab]);
+
+  // ---- RPM BIBLE bridge book ----
+  if (showRPM) {
+    const RPM_LINKS = {
+      android: '', // when live: 'https://play.google.com/store/apps/details?id=com.therunningpreacher.rpmbible'
+      ios: '',     // when live: App Store URL
+    };
+    const openStore = (url) => { if (url) require('react-native').Linking.openURL(url); };
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={backToShelf}><Text style={s.titleBack}>‹ Shelf</Text></TouchableOpacity>
+        <ScrollView contentContainerStyle={s.concPage}>
+          <View style={s.rpmMark}>
+            <Text style={s.rpmHidden}>1 P 2 : 9</Text>
+            <Text style={s.rpmWord}>RPM</Text>
+            <View style={s.rpmRule} />
+            <Text style={s.rpmSub}>HOLY BIBLE</Text>
+            <Text style={s.rpmMin}>ROYAL PRIESTHOOD MINISTRY</Text>
+          </View>
+          <Text style={s.concSub}>The Word of God — King James Version with Thai, Burmese, and S'gaw Karen editions. From the same shelf-makers as this hymnal, for the same singing church.</Text>
+          <View style={s.titleRule} />
+          {RPM_LINKS.android ? (
+            <TouchableOpacity style={s.rpmBtn} onPress={() => openStore(RPM_LINKS.android)}>
+              <Text style={s.rpmBtnTxt}>Get it on Google Play</Text>
+            </TouchableOpacity>
+          ) : null}
+          {RPM_LINKS.ios ? (
+            <TouchableOpacity style={s.rpmBtn} onPress={() => openStore(RPM_LINKS.ios)}>
+              <Text style={s.rpmBtnTxt}>Download on the App Store</Text>
+            </TouchableOpacity>
+          ) : null}
+          {(!RPM_LINKS.android && !RPM_LINKS.ios) ? (
+            <View style={s.concNote}><Text style={s.concNoteTxt}>Coming soon to the App Store and Google Play. This page will light up the moment it arrives — no update needed.</Text></View>
+          ) : null}
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+
+  // ---- THEMATIC GUIDE book ----
+  if (showTG) {
+    const vols = TG.volumes || [];
+    const inVol = tgVol !== null ? vols[tgVol] : null;
+    const inSec = inVol && tgSec !== null ? inVol.sections[tgSec] : null;
+    const entry = inSec && tgHymn !== null ? inSec.hymns[tgHymn] : null;
+    const tgBack = () => {
+      if (tgHymn !== null) setTgHymn(null);
+      else if (tgSec !== null) setTgSec(null);
+      else if (tgVol !== null) setTgVol(null);
+      else backToShelf();
+    };
+    const openRef = (ed, n) => {
+      const h = (HYMNS[ed] || []).find(x => x.n === n);
+      if (!h) return;
+      setShowTG(false); setEdition(ed); setEntered(true); openHymn(h);
+    };
+    return (
+      <SafeAreaView style={s.titleRoot}>
+        <StatusBar barStyle="dark-content" />
+        <TouchableOpacity onPress={tgBack}><Text style={s.titleBack}>‹ {tgHymn !== null ? inSec.title : tgSec !== null ? inVol.title : tgVol !== null ? 'Volumes' : 'Shelf'}</Text></TouchableOpacity>
+        <ScrollView contentContainerStyle={s.concPage}>
+          {entry ? (
+            <View>
+              <Text style={s.titleBook}>{entry.title}</Text>
+              <View style={s.tgChipsRow}>
+                {(entry.refs || []).map((r, i) => (
+                  <TouchableOpacity key={i} style={s.tgChip} onPress={() => openRef(r.ed, r.n)}>
+                    <Text style={s.tgChipTxt}>{(EDITION_LABELS[r.ed] || r.ed)} · {r.n} — open ›</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+              <View style={s.titleRule} />
+              <Text style={s.tgLabel}>SCRIPTURE FOUNDATION (KJV)</Text>
+              <Text style={s.tgBody}>{entry.scripture}</Text>
+              <Text style={s.tgLabel}>THEME</Text>
+              <Text style={s.tgBody}>{entry.theme}</Text>
+              <Text style={s.tgLabel}>THE STORY BEHIND THE HYMN</Text>
+              <Text style={s.tgBody}>{entry.story}</Text>
+              <Text style={s.tgLabel}>ABOUT THE AUTHOR</Text>
+              <Text style={s.tgBody}>{entry.author}</Text>
+              <Text style={s.tgLabel}>LESSON FOR YOUTH</Text>
+              <Text style={s.tgBody}>{entry.youth}</Text>
+              <Text style={s.tgLabel}>DISCUSSION QUESTIONS</Text>
+              {(entry.questions || []).map((q, i) => (
+                <Text key={i} style={s.tgBody}>{i + 1}.  {q}</Text>
+              ))}
+              <Text style={s.tgLabel}>PRAYER</Text>
+              <Text style={[s.tgBody, s.tgPrayer]}>{entry.prayer}</Text>
+              <Text style={s.tgLabel}>RELATED HYMNS</Text>
+              {(entry.related || []).map((r, i) => r.ed ? (
+                <TouchableOpacity key={i} onPress={() => openRef(r.ed, r.n)}>
+                  <Text style={s.tgRelated}>{r.label}  ({(EDITION_LABELS[r.ed]||r.ed)} {r.n}) ›</Text>
+                </TouchableOpacity>
+              ) : <Text key={i} style={s.tgBody}>{r.label}</Text>)}
+              <Text style={s.tgLabel}>SUGGESTED OBJECT LESSON</Text>
+              <Text style={s.tgBody}>{entry.object}</Text>
+            </View>
+          ) : inSec ? (
+            <View>
+              <Text style={s.titleBook}>{inSec.title}</Text>
+              <Text style={s.concSub}>{inSec.purpose}</Text>
+              <View style={s.titleRule} />
+              {inSec.hymns.map((h, i) => (
+                <TouchableOpacity key={i} style={s.sbhRow} onPress={() => setTgHymn(i)}>
+                  <Text style={s.sbhRowTitle}>{h.title}</Text>
+                  <Text style={s.sbhRowMeta}>{(h.refs||[]).map(r=>(EDITION_LABELS[r.ed]||r.ed)+' '+r.n).join(' · ')}  ›</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          ) : inVol ? (
+            <View>
+              <Text style={s.titleBook}>{inVol.title}</Text>
+              <View style={s.titleRule} />
+              {inVol.sections.map((sec, i) => (
+                <TouchableOpacity key={i} style={s.sbhRow} onPress={() => setTgSec(i)}>
+                  <Text style={s.sbhRowTitle}>Section {i + 1} — {sec.title}</Text>
+                  <Text style={s.sbhRowMeta}>{sec.purpose}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          ) : (
+            <View>
+              <Text style={s.titleBook}>A Thematic Guide to the Hymns of Our Faith</Text>
+              <Text style={s.concSub}>Hymns arranged for teaching — scripture, story, and lesson together. New volumes arrive in free updates.</Text>
+              <View style={s.titleRule} />
+              {vols.map((v, i) => (
+                <TouchableOpacity key={i} style={s.sbhRow} onPress={() => setTgVol(i)}>
+                  <Text style={s.sbhRowTitle}>Volume {i + 1} — {v.title}</Text>
+                  <Text style={s.sbhRowMeta}>{v.sections.length} section{v.sections.length===1?'':'s'}  ›</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
 
   // ---- HYMN STORIES (Stories Behind the Hymns) book ----
   if (showSBH) {
@@ -641,7 +789,7 @@ export default function App() {
 
   // ---- Library: the bookcase ----
   if (!edition) {
-    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || id === 'CONCORDANCE' || id === 'SBH' || HYMNS[id]);
+    const ids = BOOK_ORDER.filter(id => id === 'MISSION' || id === 'CONCORDANCE' || id === 'SBH' || id === 'TG' || id === 'RPMBIBLE' || HYMNS[id]);
     return (
       <SafeAreaView style={s.shelfRoot}>
         <StatusBar barStyle="light-content" />
@@ -1021,6 +1169,21 @@ const s = StyleSheet.create({
   sbhRow: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: 'rgba(168,132,42,0.18)' },
   sbhRowTitle: { color: '#1a1a1a', fontSize: 16, fontWeight: '600' },
   sbhRowMeta: { color: '#7a6a45', fontSize: 12.5, marginTop: 2 },
+  rpmMark: { backgroundColor: '#16276e', borderRadius: 20, paddingVertical: 30, alignItems: 'center', marginBottom: 18 },
+  rpmHidden: { color: '#1b2f7d', fontSize: 13, letterSpacing: 6, marginBottom: 2 },
+  rpmWord: { color: '#c9a227', fontSize: 64, fontWeight: '800', letterSpacing: 2 },
+  rpmRule: { width: 160, height: 2, backgroundColor: '#c9a227', marginVertical: 8 },
+  rpmSub: { color: '#e8d48b', fontSize: 16, letterSpacing: 6 },
+  rpmMin: { color: '#c9a227', fontSize: 10, letterSpacing: 3, marginTop: 6, opacity: 0.85 },
+  rpmBtn: { backgroundColor: '#16276e', borderRadius: 24, paddingVertical: 13, alignItems: 'center', marginTop: 12 },
+  rpmBtnTxt: { color: '#c9a227', fontSize: 15, fontWeight: '700' },
+  tgChipsRow: { flexDirection: 'row', flexWrap: 'wrap', marginTop: 6 },
+  tgChip: { backgroundColor: 'rgba(74,44,111,0.12)', borderColor: 'rgba(74,44,111,0.5)', borderWidth: 1, borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12, marginRight: 8, marginBottom: 6 },
+  tgChipTxt: { color: '#4a2c6f', fontSize: 13, fontWeight: '700' },
+  tgLabel: { color: '#4a2c6f', fontSize: 12.5, fontWeight: '800', letterSpacing: 1.5, marginTop: 16, marginBottom: 4 },
+  tgBody: { color: INK, fontSize: 15, lineHeight: 23, marginBottom: 6 },
+  tgPrayer: { fontStyle: 'italic' },
+  tgRelated: { color: '#4a2c6f', fontSize: 15, fontWeight: '600', marginBottom: 6 },
   storyText: { color: INK, fontSize: 15, lineHeight: 24, marginBottom: 18 },
   comingScreen: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 36 },
   comingBig: { color: GOLD, fontSize: 52, marginBottom: 10 },
