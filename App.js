@@ -14,6 +14,7 @@ import SDAH_LYRICS from './sdah_lyrics.json';
 import CIS_LYRICS from './cis_lyrics.json';
 import STORIES from './stories.json';
 import TG from './thematic_guide.json';
+import CHORDS from './chords.json';
 import { SDAH1985, EDITIONS, sectionFor } from './hymns_data';
 import { getAudio, ALL_TUNE_KEYS } from './audio_manifest';
 import { getPlayableUri, getPlayable, isCached, downloadAll, cachedCount } from './audio_cache';
@@ -252,6 +253,7 @@ function audioFor(edition, n) {
 const LYRICS = {};
 
 // Resolve a hymn's words (array of stanza strings) for any edition, or null.
+function chordFor(edition, n) { return CHORDS[edition + ':' + n] || null; }
 function storyFor(edition, n) {
   return STORIES[edition + ':' + n] || null;
 }
@@ -316,6 +318,7 @@ export default function App() {
   const [showSBH, setShowSBH] = useState(false);
   const [sbhQuery, setSbhQuery] = useState('');
   const [showStory, setShowStory] = useState(false);
+  const [showChords, setShowChords] = useState(false);
   const [showRPM, setShowRPM] = useState(false);
   const [showTG, setShowTG] = useState(false);
   const [tgVol, setTgVol] = useState(null);
@@ -427,7 +430,7 @@ export default function App() {
     } catch (e) { setPlaying(false); }
   };
 
-  const openHymn = (h) => { setLang('en'); setProjecting(false); setPIdx(0); setSinging(false); setSingIdx(0); verseY.current = {}; setShowStory(false); setSelected(h); };
+  const openHymn = (h) => { setLang('en'); setProjecting(false); setPIdx(0); setSinging(false); setSingIdx(0); verseY.current = {}; setShowStory(false); setShowChords(false); setSelected(h); };
   const closeHymn = async () => { await stopSound(); setProjecting(false); setSinging(false); setSelected(null); };
 
   // Each book opens fresh: clear search, tab, selection, language.
@@ -987,6 +990,20 @@ export default function App() {
               {showStory ? <Text style={s.storyText}>{storyFor(edition, selected.n)}</Text> : null}
             </View>
           ) : null}
+          {chordFor(edition, selected.n) ? (
+            <View>
+              <View style={s.rule} />
+              <TouchableOpacity style={s.storyBtn} onPress={() => setShowChords(v => !v)}>
+                <Text style={s.storyBtnTxt}>{showChords ? '\u25be  Chords' : '\ud83c\udfb8  Chords \u2014 Key of ' + chordFor(edition, selected.n).key}</Text>
+              </TouchableOpacity>
+              {showChords ? (
+                <View style={s.chordWrap}>
+                  <Text style={s.chordKey}>Key of {chordFor(edition, selected.n).key} \u00b7 one bar per segment</Text>
+                  <Text style={s.chordBars}>{'| ' + chordFor(edition, selected.n).bars.join(' | ') + ' |'}</Text>
+                </View>
+              ) : null}
+            </View>
+          ) : null}
         </ScrollView>
         {singing && displayLyr && displayLyr.length > 0 && (
           <View style={s.singBar}>
@@ -1165,6 +1182,9 @@ const s = StyleSheet.create({
   storyHeading: { color: GOLD, fontSize: 17, fontWeight: '700', marginBottom: 10 },
   storyBtn: { backgroundColor: 'rgba(75,156,211,0.12)', borderColor: 'rgba(75,156,211,0.5)', borderWidth: 1, borderRadius: 20, paddingVertical: 10, paddingHorizontal: 16, alignItems: 'center', marginBottom: 12 },
   storyBtnTxt: { color: '#2f6f9f', fontSize: 14, fontWeight: '700' },
+  chordWrap: { backgroundColor: 'rgba(168,132,42,0.08)', borderRadius: 10, padding: 12, marginBottom: 14 },
+  chordKey: { color: '#7a6a45', fontSize: 12.5, marginBottom: 6 },
+  chordBars: { color: INK, fontSize: 16, lineHeight: 28, fontVariant: ['tabular-nums'] },
   sbhSearch: { borderColor: 'rgba(75,156,211,0.55)', borderWidth: 1, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 11, fontSize: 16, color: '#1a1a1a', backgroundColor: 'rgba(255,255,255,0.55)', marginBottom: 14 },
   sbhRow: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: 'rgba(168,132,42,0.18)' },
   sbhRowTitle: { color: '#1a1a1a', fontSize: 16, fontWeight: '600' },
