@@ -252,6 +252,11 @@ function audioFor(edition, n) {
 
 const LYRICS = {};
 
+// Normalize text for word-based search: lowercase, keep a-z/0-9 and Myanmar, spaces elsewhere.
+function searchNorm(x) {
+  return (x || '').toLowerCase().replace(/[^a-z0-9\u1000-\u109f\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 // Resolve a hymn's words (array of stanza strings) for any edition, or null.
 function chordFor(edition, n) { return CHORDS[edition + ':' + n] || null; }
 function storyFor(edition, n) {
@@ -451,15 +456,49 @@ export default function App() {
   const activeEdition = EDITIONS.find(e => e.id === edition);
   const fullList = HYMNS[edition] || [];
 
+  // Precompute a search haystack per edition: title + full lyrics (minus license placeholders),
+  // so searching any WORD in a hymn's title OR its lyrics finds it. Rebuilds only on edition change.
+  const searchHay = useMemo(() => {
+    const list = HYMNS[edition] || [];
+    const m = {};
+    for (const h of list) {
+      let lx = '';
+      const ly = lyricsFor(edition, h.n);
+      if (ly && ly.length) {
+        const joined = ly.join(' ');
+        if (!/license agreement|accept the license|hope publishing/i.test(joined)) lx = joined;
+      }
+      m[h.n] = searchNorm(h.t + ' ' + lx);
+    }
+    return m;
+  }, [edition]);
+
   const data = useMemo(() => {
     let list = HYMNS[edition] || [];
     if (tab === 'favorites') list = list.filter(h => favorites[`${edition}:${h.n}`]);
     else if (tab === 'music') list = list.filter(h => audioFor(edition, h.n));
-    const q = query.trim().toLowerCase();
-    if (!q) return list;
-    if (/^\d+$/.test(q)) return list.filter(h => String(h.n).startsWith(q));
-    return list.filter(h => h.t.toLowerCase().includes(q));
-  }, [edition, query, favorites, tab]);
+    const raw = query.trim();
+    if (!raw) return list;
+    if (/^\d+$/.test(raw)) return list.filter(h => String(h.n).startsWith(raw));
+    const phrase = searchNorm(raw);
+    const toks = phrase.split(' ').filter(Boolean);
+    if (!toks.length) return list;
+    const scored = [];
+    for (const h of list) {
+      const hay = searchHay[h.n] || searchNorm(h.t);
+      if (!toks.every(t => hay.includes(t))) continue;   // every word must appear
+      const tn = searchNorm(h.t);
+      let score;
+      if (tn === phrase) score = 0;                      // exact title
+      else if (tn.includes(phrase)) score = 1;           // title contains the phrase
+      else if (hay.includes(phrase)) score = 2;          // lyrics contain the phrase
+      else if (toks.every(t => tn.includes(t))) score = 3; // all words in the title
+      else score = 4;                                     // all words, scattered in lyrics
+      scored.push([score, h]);
+    }
+    scored.sort((a, b) => a[0] - b[0] || a[1].n - b[1].n);
+    return scored.map(x => x[1]);
+  }, [edition, query, favorites, tab, searchHay]);
 
   // ---- RPM BIBLE bridge book ----
   if (showRPM) {
